@@ -1,16 +1,16 @@
 ===== Description =====
 
-Objectif : Mettre en contacte des personnes qui proposer des services et ceux qui en ont besoin.
+Objectif : Mettre en contact des personnes qui proposent des services et ceux qui en ont besoin.
 
 Site ou chacun peut proposer des services comme :
- - Courses groupée
+ - Courses groupées
  - Sortir les chiens
  - Petits bricolage
  - Garderie
 
 Dans le cadre de quarantaine ou pour les personnes à risque
-Les personnes à risque evite d'etre contaminé
-Les personnes en quarentaine evite de contaminer
+Les personnes à risque évitent d'être contaminées
+Les personnes en quarantaine évitent de contaminer
 
 ========================
 
@@ -24,11 +24,11 @@ Risques :
 - Modération (ex : insulte tchat)
 - Arnaques
 
-===== Fonctionalitée ====
+===== Fonctionalités ====
 - FAQ
 - Guides
-  -> redaction annonce
-  -> règles sanitaire
+  -> Rédaction annonce
+  -> Règles sanitaires
 - Recherche
 - Tchat
 - Localisation
