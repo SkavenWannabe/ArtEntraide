@@ -1,11 +1,13 @@
 ===== Description =====
 
 Objectif : Mettre en contact des personnes qui proposent des services et ceux qui en ont besoin.
+Entraide entre particulier.
 
 Site ou chacun peut proposer des services comme :
  - Courses groupées
  - Sortir les chiens
  - Petits bricolage
+ - Arrosage de plantes
  - Garderie
 
 Dans le cadre de quarantaine ou pour les personnes à risque
@@ -31,4 +33,24 @@ Risques :
   -> Règles sanitaires
 - Recherche
 - Tchat
-- Localisation
+- Localisation (+ ou - affinée)
+- Payement
+  -> Troc de services
+  -> Bénévolat
+  -> payement monetaire ?
+
+
+=== Itération 1 ===
+analyse existant :
+   allo voisin différence : service régulier + moins accès service payant
+   YakaSaider différence : proposition service payant
+   Pwiic différence : site plus ergonomique/simple + inscription plus simple
+
+cadre de notre travail :
+
+technologie envisageable :
+   web - internet
+   smartphone
+   Localisation
+
+critère qualité choisi:
