@@ -33,7 +33,7 @@ rendus
 Tout document textuel dans un autre format ne sera pas considéré.**
 
 
-##### Fichiers particuliers
+### Fichiers particuliers
 
 Les deux fichiers `.gitattributes` et `.gitignore` sont liés à la configuration de git.<br>
 Vous pouvez modifier le fichier `.gitignore` en fonction des technologies utilisées et de l'organisation du dépôt choisie.<br>
@@ -41,7 +41,7 @@ Il est vivement déconseillé de modifier le fichier `.gitattributes`.
 
 Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
-##### art-entraide
+### art-entraide
 
 **art-entraide** contient le code.<br>
 **controler/** contient les contrôleurs en php.<br>
