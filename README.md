@@ -3,11 +3,25 @@
 Ce dépôt est le dépôt de référence de votre équipe pour le module M3301.
 Vos rendus se feront en déposant tous les fichiers pertinents pour chaque itération ici.
 
-Ce dépôt est initialement organisé comme suit :
+Ce dépôt organisé comme suit :
 ```console
 rendus
 ├── docs/
 │   └── README.md
+├── art-entraide/
+|   └── controler/
+|       └── start.ctrl.php
+|   └── data/
+|       └── create.sql
+|   └── framework/
+|       └── view.class.php
+|   └── model/
+|       └── DAO.class.php
+|   └── test/
+|       └── test.php
+|   └── view/
+|       └── design/
+|           └── style.css
 ├── .gitattributes
 ├── .gitignore
 ├── .gitlab
@@ -27,6 +41,12 @@ Il est vivement déconseillé de modifier le fichier `.gitattributes`.
 
 Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
-##### code
+##### art-entraide
 
-Le dossier 'art-entraide' contiendra le code.
+**art-entraide** contient le code.
+**controler/** contient les contrôleurs en php.
+**data/** contient les fichiers de la base de données.
+**framework/** contient la vue général.
+**model/** contient classe php.
+**test/** contient tout les tests.
+**view/** contient tout le visuel.
