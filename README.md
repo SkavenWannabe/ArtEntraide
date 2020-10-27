@@ -43,10 +43,10 @@ Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
 ##### art-entraide
 
-**art-entraide** contient le code.
-**controler/** contient les contrôleurs en php.
-**data/** contient les fichiers de la base de données.
-**framework/** contient la vue général.
-**model/** contient classe php.
-**test/** contient tout les tests.
-**view/** contient tout le visuel.
+**art-entraide** contient le code.<br>
+**controler/** contient les contrôleurs en php.<br>
+**data/** contient les fichiers de la base de données.<br>
+**framework/** contient la vue général.<br>
+**model/** contient classe php.<br>
+**test/** contient tout les tests.<br>
+**view/** contient tout le visuel.<br>
