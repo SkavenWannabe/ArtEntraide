@@ -50,3 +50,9 @@ Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 **model/** contient classe php.<br>
 **test/** contient tout les tests.<br>
 **view/** contient tout le visuel.<br>
+
+
+### Base de données
+Utilisateur(id, nom, prenom, password, adresse)
+Annonce(id, nom, description, adresse, #id_createur) id_createur clef étrangère de Utilisateur
+Reponse(#id_annonce, #id_repondeur, chat) id_annonce clef étrangère de Annonce, id_repondeur clef étrangère de Utilisateur
