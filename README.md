@@ -16,7 +16,9 @@ rendus
 |   └── framework/
 |       └── view.class.php
 |   └── model/
-|       └── DAO.class.php
+|       ├── DAO.class.php
+|       ├── Annonce.class.php
+|       └── Utilisateur.class.php
 |   └── test/
 |       └── test.php
 |   └── view/
@@ -53,6 +55,6 @@ Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
 
 ### Base de données
-Utilisateur(id, nom, prenom, password, adresse)
-Annonce(id, nom, description, adresse, #id_createur) id_createur clef étrangère de Utilisateur
-Reponse(#id_annonce, #id_repondeur, chat) id_annonce clef étrangère de Annonce, id_repondeur clef étrangère de Utilisateur
+Utilisateur(id, nom, prenom, password, adresse)<br>
+Annonce(id, nom, description, adresse, #id_createur) id_createur clef étrangère de Utilisateur<br>
+Reponse(#id_annonce, #id_repondeur, chat) id_annonce clef étrangère de Annonce, id_repondeur clef étrangère de Utilisateur<br>
