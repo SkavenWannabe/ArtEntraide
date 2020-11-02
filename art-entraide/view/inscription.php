@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Insciption</title>
+  </head>
+  <body>
+    <?php include_once(__DIR__."/../view/header.php"); ?>
+
+    <section>
+      <header>
+        <h2>Inscription</h2>
+      </header>
+      <form class="inscription" action="???" method="post">
+        <label for="nom">Nom</label>
+        <input type="text" name="nom">
+
+        <label for="nom">Prénom</label>
+        <input type="text" name="prenom">
+
+        <label for="numtel">Numéro de téléphone</label>
+        <input type="tel" name="phone" pattern="[0-9]{10}">
+
+        <label for="p_adresse">Adresse postale</label>
+        <input type="text" name="p_adresse">
+
+        <label for="email">Adresse email</label>
+        <input type="email" name="email">
+
+        <label for="passwd">Mot de passe</label>
+        <input type="password" name="passwd">
+
+        <button type="submit" name="valider">Valider</button>
+      </form>
+    </section>
+
+    <?php include_once(__DIR__."/../view/footer.php"); ?>
+  </body>
+</html>
