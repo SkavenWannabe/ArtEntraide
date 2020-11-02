@@ -16,7 +16,9 @@ rendus
 |   └── framework/
 |       └── view.class.php
 |   └── model/
-|       └── DAO.class.php
+|       ├── DAO.class.php
+|       ├── Annonce.class.php
+|       └── Utilisateur.class.php
 |   └── test/
 |       └── test.php
 |   └── view/
@@ -33,7 +35,7 @@ rendus
 Tout document textuel dans un autre format ne sera pas considéré.**
 
 
-##### Fichiers particuliers
+### Fichiers particuliers
 
 Les deux fichiers `.gitattributes` et `.gitignore` sont liés à la configuration de git.<br>
 Vous pouvez modifier le fichier `.gitignore` en fonction des technologies utilisées et de l'organisation du dépôt choisie.<br>
@@ -41,7 +43,7 @@ Il est vivement déconseillé de modifier le fichier `.gitattributes`.
 
 Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
-##### art-entraide
+### art-entraide
 
 **art-entraide** contient le code.<br>
 **controler/** contient les contrôleurs en php.<br>
@@ -50,3 +52,9 @@ Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 **model/** contient classe php.<br>
 **test/** contient tout les tests.<br>
 **view/** contient tout le visuel.<br>
+
+
+### Base de données
+Utilisateur(id, nom, prenom, password, adresse)<br>
+Annonce(id, nom, description, adresse, #id_createur) id_createur clef étrangère de Utilisateur<br>
+Reponse(#id_annonce, #id_repondeur, chat) id_annonce clef étrangère de Annonce, id_repondeur clef étrangère de Utilisateur<br>
