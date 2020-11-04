@@ -1,0 +1,449 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage[french]{babel}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
+\title{Compte rendu}
+\author{
+  Alexandre Legendre\\
+  \and
+  Eliott Sammier\\
+  \and
+  Vincenzo Carminati\\
+  \and
+  Elian Loraux\\
+  \and
+  Marion Chauvineau\\
+  \and
+  Lucas Lacouture\\
+}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+
+\section{Cadrage du projet}
+\subsection{Description du projet}
+En cette période de crise sanitaire, et notamment durant le confinement, nous avons pu observer une
+émergence de la solidarité entre voisins. Au travers d’un immeuble, d’une rue ou bien d’un quartier,
+certains voisins ont œuvré pour une ambiance conviviale, voir familiale, afin d’apporter un soutien en
+cette période. Au travers de concerts improvisés, de cours de sport ou même de variantes de jeux
+télévisés “Question pour un champion” transformé en “Question pour un balcon”, un certain
+communautarisme entre voisins a vu le jour. Récemment, les grandes crues dévastatrices dans le Sud-
+Est ont soulevé un élan de solidarité. La finalité de notre projet serait de donner un cadre à cette
+entraide pour pouvoir la rendre plus régulière et plus simple à mettre en place.\\
+
+Notre projet est un service de mise en relation et d’échange de services entre particuliers à proximité.\\
+
+Il prendra la forme d’un site Web. L’utilisateur pourra demander, consulter et répondre à un service.
+Les services iront de la garderie aux petits travaux en passant par le dépannage informatique, ou
+même des courses régulières. L’idée est de faire une plateforme participative et diversifiée grâce aux
+compétences individuelles de chaque utilisateur.\\
+
+Durant cette période de crise sanitaire, cela prend du sens notamment pour la mutualisation des
+courses. Prenons l’exemple d’une personne fragile, à la place d’aller faire ses courses elle-même et
+d’être par conséquent en contact avec tous les clients du magasin, elle n’est qu’en contact avec un
+voisin. Inversement pour une personne atteinte ou avec des suspicions de Covid-19, cela limite les
+contacts et par conséquent les risques de transmission.\\
+
+\subsection{Objectifs}
+
+Notre projet a pour but de simplifier l’entraide entre voisins. Cette simplification entraînera une
+régularisation, une spontanéité et une diversité des services.\\
+
+Cependant, cet objectif peut être diviser en plusieurs sous-objectifs.\\
+
+Pour le 24 Novembre 2020 :
+\begin{itemize}
+  \item Support d’une centaine d’inscrits.
+  \item Support d’une centaine d’annonces.
+\end{itemize}
+
+Pour le 15 Janvier 2021 :
+\begin{itemize}
+  \item Avoir une interface utilisateur facile d'accès, évaluée grâce aux questionnaire SUS.
+  \item Effectuer des tests approfondis des fonctionnalités.
+\end{itemize}
+
+\subsection{Description du contexte}
+
+Il existe plusieurs sites fournissant des services similaires à ceux de notre projet, les principaux étant :\\
+
+\begin{itemize}
+  \item AlloVoisins qui propose un service de mise en relation entre particuliers avec 3,5 millions
+  d'utilisateurs. La grande majorité des annonces y sont rémunérées, l’option non rémunérée
+  n’étant que très peu utilisée. Certaines entreprises sont aussi présentes sur le site.
+
+  \item Pwiic, c’est un site qui permet d’échanger des services ou objets auprès de particuliers. Il suffit
+  d’envoyer un “Pwiic” pour que la demande s’affiche sur le site. Un algorithme se charge de
+  l’envoyer aux bonnes personnes.
+  
+  \item YakaSaider, c’est un site communautaire qui met en relation des particuliers ayant besoin ou
+  rendant un service. Il se base sur un nombre d’heure, pour chaque heure passé à rendre des
+  services, l’utilisateur a le droit de demander une heure de service.
+\end{itemize}
+
+Nous avons comparé ces sites sur la base de critères simple (figure 1).
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/figure-1.png}
+  \caption{Tableau de comparaison des critères.}
+  \label{fig:table1}
+\end{figure}
+
+La justification de ces choix se trouve en annexe.\\
+
+\subsection{Acteurs du projet}
+\subsubsection{Maîtrise d’ouvrage}
+
+Le domaine d’activité visé est la mise en relation et l’échange des services pour particuliers.\\
+
+Les enseignants sont ceux qui ont commandé le projet, par l’intermédiaire du sujet.\\
+
+Les utilisateurs seront des personnes à risque, des personnes âgées ou simplement des particuliers
+voulant échanger des services. Ils s’attendront à pouvoir demander et proposer des services
+simplement à des personnes à proximité.\\
+
+\subsubsection{Maîtrise d'œuvre}
+
+Elle est composée 6 étudiants en 2 e année de DUT Informatique, qui s’occuperont de définir les
+besoins, et de les réaliser.\\
+
+Compétences attendues : être capable de réaliser une page web, la programmation côté serveur et
+être capable de lier un programme à une base de données.\\
+
+\subsubsection{Intervention de sous-traitants}
+
+Les sous-traitants possibles sont des associations ou des mairies pour vérifier l’identité des utilisateurs
+bénévoles.\\
+
+\subsection{Contraintes}
+
+Notre projet est affecté par l’environnement actuel, les conditions sanitaires, le public cible, etc...
+Toutes ces inconnues définissent un certain nombre de contraintes.\\
+
+\subsubsection{Contrainte temporelle}
+
+Pour ce projet la contrainte temporelle est assez forte. En effet, le déroulé se présente sous forme de
+3 itérations successives (le 13 Octobre 2020, le 24 Novembre 2020 et le 15 Janvier 2021) avec pour
+chacune une date de rendu de dossier et d’évaluation.\\
+
+La charge totale attendue est d’environ 950 heures et nous disposons de 17 semaines (vacances
+comprises) pour réaliser ce projet.\\
+
+\subsubsection{Contrainte sanitaire}
+
+À la suite de la crise sanitaire du COVID-19, la moitié des séances de projet que nous avons sont en
+distanciel et de manière générale il est recommandé de ne pas trop se regrouper.\\
+
+Cela pose donc la question du travail à distance. En effet, une bonne partie du travail à fournir devra
+être effectué à distance. Nous devrons utiliser des outils informatiques pour continuer à échanger des
+informations, discuter de l’avancée du projet, répartir les tâches etc...\\
+
+\subsubsection{Contrainte matérielle}
+
+Le travail à distance implique aussi une contrainte matérielle. En effet, les membres du groupe doivent
+avoir un minimum de matériel informatique pour pouvoir travailler depuis chez eux.\\
+
+Les membres du groupe sont-ils tous dans de bonnes conditions pour travailler correctement à
+distance ? Au minimum, il faudra un ordinateur pour développer le site, ainsi qu’une connexion
+Internet.\\
+
+\subsubsection{Contrainte juridique}
+
+La création de compte sur le site implique le stockage des données personnelles de l’utilisateur. Ces
+données pouvant être sensibles, telles que des adresses ou des mots de passe, elles sont soumises à
+certaines lois. Nous devrons donc nous conformer à ces dernières, ce qui entraîne une contrainte
+juridique.\\
+
+\subsection{Risques}
+
+Durant la réalisation ce de projet, il est possible que ce dernier ne s’exécute pas comme prévu. Il nous
+faut donc tenter d’identifier ces risques et mettre en place un plan de mitigation.\\
+
+\subsubsection{Risque temporel}
+
+Une mauvaise organisation des membres du groupe peut entraîner un retard. Cette éventualité est
+probable et son impact serait critique. En effet, nous pourrions accumuler ce retard, or les échéances
+successives nous en empêchent. La criticité de ce risque est donc substantielle.\\
+
+Une mauvaise compréhension des besoins est un évènement probable. Pour les mêmes raisons
+qu'une mauvaise organisation, ce risque a un impact critique. Sa criticité est donc substantielle.\\
+
+\subsubsection{Risque humain}
+
+La fermeture des universités est un scénario probable pour les semaines à venir. Son impact serait
+modéré car nous devrions majoritairement interagir en distanciel. Durant le dernier semestre, nous
+avons appris à travailler à distance et nous avons les outils pour communiquer en distanciel. La criticité
+de ce risque est donc modérée.\\
+
+Si un ou plusieurs membres du groupe doivent se confiner. Ce scénario est probable. Mais son impact
+serait majeur si la ou les personnes sont dans l’incapacité de travailler, ou mineur s’ils n’ont pas de
+symptômes.\\
+
+\subsubsection{Risque matériel}
+
+La perte de documents est probable, une feuille égarée ou un disque dur défaillant sont des choses
+qui peuvent arriver. Il est probable que ce risque survienne et son impact serait critique car le travail
+devra alors être réalisé de nouveau, ce qui serait une perte de temps, une ressource précieuse dans
+ce projet. Sa criticité est alors substantielle.\\
+
+\subsubsection{Risque juridique}
+
+L’utilisation du site pour des actes malveillants est une éventualité probable et son impact serait
+majeur car cela pourrait mettre en danger les utilisateurs. Sa criticité est donc substantielle.\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/matrice-criticite.png}
+  \caption{Matrice des risques.}
+  \label{fig:matrice-risques}
+\end{figure}
+
+\subsubsection{Plan de mitigation}
+
+Concernant la fermeture des universités ainsi que le confinement d’un ou plusieurs membres du
+groupe, nous optons pour les réserves : nous allons mettre en place des outils supplémentaires pour
+être capables de travailler correctement à distance.\\
+
+Pour la perte de documents, nous choisissons la protection : nous mettrons en place une redondance
+des documents en numérisant tous les documents physiques et en les stockant dans le cloud, ainsi
+que sur le disque dur d’au moins deux de nos machines.\\
+
+Enfin, par rapport à l’utilisation du site pour des actes malveillants, nous transférerons le risque à des
+associations ou des mairies avec qui nous traiterons pour certifier les utilisateurs du site.\\
+
+Concernant la mauvaise organisation du groupe, nous prenons la réduction. Nous nous organiserons
+à l'avance et en se concertant tous ensemble. Si malgré cela l'organisation est mauvaise, nous
+assumerons les pertes de temps. Quant à la mauvaise compréhension des besoins, nous choisissons
+aussi la réduction. Nous poserons des questions à la maîtrise d'ouvrage et nous pourrions aussi sonder
+les clients.\\
+
+\section{Expression du besoin}
+
+L’utilisateur a soif d’une réponse à ces exigences.
+
+\subsection{Besoins fonctionnels}
+
+Le site devra permettre une mise en relation entre les particuliers (c’est sa fonction principale). Il
+permettra ainsi à des individus proches géographiquement de se rencontrer pour pouvoir s’entraider
+sur différents types de tâches.\\
+
+\subsection{Besoins non fonctionnels}
+
+Étant donné que le public visé par ce projet est très large, le site doit être accessible et utilisable par
+tout type de personnes. Cela inclut donc les personnes qui ne sont pas familières avec Internet, ou
+avec les ordinateurs en général. Il est donc nécessaire de rendre le site le plus accessible possible.\\
+
+\subsubsection{Visuels adaptés}
+
+Les textes devront être adaptés à l’utilisateur, par exemple si ce dernier a des problèmes de vue.\\
+
+Il sera donc nécessaire de choisir des polices d’écritures simples à lire, de s’assurer que sa taille soit
+réglable via le navigateur, d’utiliser un contraste et des couleurs adaptés.\\
+
+Il faut également prendre en compte d’éventuels daltoniens qui pourraient utiliser le site, en
+choisissant des couleurs assez différentes.\\
+
+Pour cela nous nous vérifierons que les critères SQUARE de lisibilité et d’adaptabilité soient respectés.\\
+
+\subsubsection{Avoir tout sous les yeux}
+
+Beaucoup d’utilisateurs n’essaient pas de chercher plus en détails sur un site s’il ne tombe pas
+directement sur ce qu’ils cherchent. Pour avoir une bonne qualité au sens SQUARE, le site doit avoir
+une bonne capacité fonctionnelle, c'est-à-dire présenter les attributs et fonctions qui satisferont
+directement le besoin utilisateur. Il faut donc réunir toutes les informations nécessaires à l’utilisateur
+en haut de la page, de façon à ce qu’il ait accès à tout ce dont il a besoin sans avoir à défiler vers le
+bas de la page. Il faut donc réussir à réduire la densité informationnelle, il faudra pour cela bien choisir
+de quelles informations l’utilisateur a besoin sur chacune des pages, et les présenter de la façon la
+plus brève et explicite possible. Le site pouvant être utilisé sur des appareils variés (ordinateurs,
+téléphones, etc...), il faudra soigner l’adaptabilité et donc en particulier au niveau qualité SQUARE
+garantir le critère de portabilité.\\
+
+\subsubsection{Toujours savoir où aller}
+
+Il est important que ce qu’on attend de l’utilisateur soit toujours évident, pour cela il nous faut un
+guidage efficace. En effet, afin d’avoir un bon niveau de qualité au sens SQUARE, il est important de
+garantir que la capacité fonctionnelle soit associée à une bonne facilité d’usage. Cela passe par la
+facilité de compréhension de l’utilisateur. Il ne doit à aucun moment avoir à réfléchir à ce qu’il est
+censé faire. Des textes et des boutons mis en avant sont nécessaires. Pour simplifier le guidage de
+l’utilisateur, une gestion des erreurs et un retour sur le résultat de ses actions sont importants. On
+devra également rester cohérent dans l’interface.\\
+
+\subsubsection{Sécurité}
+
+Les données que les utilisateurs nous confient, tels que leur adresse, numéro de téléphone, etc... sont
+sensibles : une certaine sécurité doit donc être assurée.\\
+
+\subsection{Fonctions attendues}
+
+\subsubsection{Création d’annonces}
+
+Notre site doit permettre aux utilisateurs de mettre en ligne des annonces créées par leurs soins. Cela
+peut-être une annonce de recherche d’aide, ou une annonce pour au contraire proposer de l’aide. Le
+site doit également permettre aux utilisateurs de personnaliser leurs annonces, en choisissant le type
+de travail fourni/demandé, en ajoutant une description, et en précisant d’autres détails, tels que le
+niveau d’expertise demandé ou laps de temps dans lequel le travail doit avoir été effectué.\\
+
+\subsubsection{Recherche d’annonces}
+
+Une page de recherche d’annonces sera disponible sur le site, et permettra aux utilisateurs de
+rechercher des annonces correspondantes à leurs attentes. Ils pourront trier les annonces par
+localisation, par type de service demandé, et par service proposé/demandé. Une fois que l’utilisateur
+a trouvé une annonce qui lui convient, il pourra ensuite entrer en communication avec celui qui a
+publié l’annonce via un chat textuel.\\
+
+\subsubsection{Gestion de comptes}
+
+Le site demandera aux utilisateurs de créer un compte avant de pouvoir créer ou répondre à des
+annonces. Une page permettra de se connecter à son compte et une autre de gérer ses informations
+personnelles.\\
+
+\section{Solutions}
+
+\subsection{Spécifications détaillées}
+
+Compte tenu des besoins détaillés précédemment, le service que nous souhaitons mettre en œuvre
+sera réalisé par un service Web, et non pas une application logicielle à installer qui serait moins
+adaptée au public cible.\\
+
+\subsubsection{Maquette}
+
+A titre d’exemple, voici deux pages qui préfigurent l’ergonomie et la charte graphique qui s’appliquera
+à tout le site dont le reste des pages se trouvent en annexe. Les différentes pages doivent rester
+simples en termes de composants, avoir des couleurs sobres et claires afin d’être compréhensibles
+par le public cible, notamment des personnes âgées.\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/maquette-accueil.png}
+  \caption{Page d'accueil.}
+  \label{fig:maquette-accueil}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/maquette-recherche.png}
+  \caption{Recherche dans une catégorie.}
+  \label{fig:maquette-recherche}
+\end{figure}
+
+\subsubsection{Évaluation ergonomique}
+
+Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\\
+
+\begin{itemize}
+  \item Le guidage : un fil d’Ariane toujours visible sur le haut de l’IHM permettra aux utilisateurs de
+  se repérer facilement dans le site et sur les actions en cours. Une illustration des actions 
+  possibles et des formulaires sur le panneau central du site facilitera l’accès aux différents
+  services.
+  \item Le contrôle explicite : la suppression des offres de service sera protégée par une double
+  demande et la mise en relation sera explicite afin de protéger les utilisateurs.
+  \item La gestion des erreurs : un pop-up va être mis en place pour permettre un guidage des
+  utilisateurs en cas d’erreur de saisie et en particulier pour aider les personnes âgées.
+  \item La charge de travail : la création des offres se fera avec un formulaire afin de limiter les étapes
+  nécessaires à l’enregistrement avec un pré-remplissage des champs lorsque cela est possible
+  avec les informations de compte de l’utilisateur lorsqu’il est authentifié. La recherche des
+  offres sera également simplifiée, avec l’utilisation des préférences de l’utilisateur pour
+  préremplir les champs de recherche.
+  \item L’adaptabilité : compte tenu du public visé, nous allons mettre en place un mode spécifique
+  pour les personnes malvoyantes, activable avec une adaptation de la taille de la police pour
+  une meilleur accessibilité.  
+\end{itemize}
+
+\subsection{Solutions techniques envisageables}
+
+La conception d’un site web dynamique se décompose en deux parties : d’une part l’IHM qui
+s’exécutera sur le navigateur, et d’autre part la logique côté serveur.\\
+
+Pour suivre un modèle MVC, l’application sera donc découpée en plusieurs parties, chacune ayant
+besoin de solutions techniques différentes :\\
+
+\begin{itemize}
+  \item La logique applicative doit s’exécuter sur un serveur distant protégé qui garantira la protection
+  des données des utilisateurs et gérera l’accès et le stockage persistant des données.
+  \item La communication entre le serveur et le client se fera avec des protocoles standards pour la
+  navigation web HTTP/HTTPS.
+\end{itemize}
+
+Ce modèle a pour avantage de permettre une maintenabilité accrue, par exemple si nous décidons de
+changer l’affichage (la partie vue), nous n’avons pas à toucher à la logique (la partie modèle).\\
+
+Pour implémenter la partie IHM, les solutions envisageables sont basées sur les différentes
+technologies actuelles.
+L’ossature des pages sera en HTML et du CSS pour gérer la charte graphique et la structure des
+bandeaux et centres de page. On utilisera plus particulière la dernière version (HTML 5) qui permet
+d’ajouter plus facilement des composants multimédias. Afin d’ajouter une dynamique moderne aux
+pages (menu illustré par exemple) les sites web actuels utilisent également un framework Javascript
+comme jQuery, AngularJS, ou React. Aux vues des délais et de la complexité des différent frameworks,
+il est envisagé de n’utiliser que du HTML 5.\\
+
+Pour implémenter la partie logique applicative et connexion aux stockages de données, qui doit être
+sur un serveur distant sécurisé, il existe plusieurs technologies disponibles. On peut utiliser du PHP sur
+serveur Apache pour s’interfacer avec des fichiers ou des bases de données. Il est aussi possible de
+recourir à l’usage de conteneurs JEE comme Tomcat, ou des serveurs d’application comme Weblogic
+ou JBOSS. L’usage de Java JEE offre plus de possibilités, mais du fait de l’intensité du travail demandé
+pour le développement et la complexité associé à JEE, il est préférable de baser notre service sur PHP.
+Pour implémenter le stockage de l’information, il existe plusieurs possibilité : le stockage dans des
+fichiers ; ou bien l’utilisation de base de données, qu’elle soit non relationnelle comme MongoDB,
+Cassandra, ou relationnelle comme PostgreSQL, Oracle DB, MySQL ou bien SQLite. Compte tenu des
+informations à stocker et des possibilités de recherche offertes sur l’IHM, une base de données et un
+modèle relationnel sont plus indiqués. Compte tenu du temps imparti et de la complexité de mise en
+œuvre, il est envisagé d’utiliser une base relationnelle simple et facilement intégrable avec PHP et
+dans un serveur Apache, comme SQLite ou MySQL.\\
+
+Pour sécuriser l’accès aux services du site, il est nécessaire de mettre un place une authentification
+avec un accès en mode HTTPS pour protéger les données qui circuleront sur le réseau. Il existe
+plusieurs protocoles possibles pour l’authentification, notamment pour le SSO comme SAML ou
+OAUTH2 avec certificats ou identifiant et mot de passe. En raison de l’échéance, il sera impossible de
+mettre en place ces technologies. L’authentification se fera donc par un simple identifiant et mot de
+passe sur HTTPS. Les informations d’identification seront stockées dans une partie spécifique de la
+base de données. Cette dernière stockera aussi les préférences des utilisateurs.\\
+
+\subsection{Réalisations techniques}
+
+La conséquence des choix techniques envisagés pour la réalisation : HTML/CSS, Apache, PHP, MySQL.
+Il va être nécessaire de mettre en place un serveur Apache avec son module PHP et le driver MySQL
+associé sur un serveur Linux.\\
+
+Pour le développement nous utiliserons des éditeurs de code standard, et GIMP pour le design des
+images et composants graphiques.\\
+
+Le partage du code, le stockage et la gestion des versions seront gérés par un dépôt Git hébergé sur
+Gricad-GitLab.\\
+
+\subsection{Organisation du travail}
+
+\subsubsection{Choix du modèle}
+
+Pour ce projet, nous utiliserons une méthode itérative. Nous effectuerons des itérations toutes les 4
+à 5 semaines de travail.\\
+
+\subsubsection{Découpage du projet}
+
+Pour la deuxième itération, le projet a été découpé en 3 parties. L’équipe sera divisée en 3 binômes.\\
+
+Ce choix de binôme permet une plus grande flexibilité et une parallélisation des tâches, tout en étant
+moins stressant que du travail seul.\\
+
+Sur ce diagramme, Alexandre et Lucas seront les verts,
+Elian et Marion seront les bleu clair et
+Eliott et Vincenzo seront les bleu foncé.\\
+
+\end{document}
