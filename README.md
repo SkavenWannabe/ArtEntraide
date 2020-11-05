@@ -25,7 +25,8 @@ rendus
 |   ├── model/
 |   |   ├── DAO.class.php
 |   |   ├── Annonce.class.php
-|   |   └── Utilisateur.class.php
+|   |   ├── Utilisateur.class.php
+|   |   └── Reponse.class.php
 |   ├── test/
 |   |   └── test.php
 |   └── view/
@@ -66,6 +67,10 @@ Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
 ### conception
 Dossier de conseption pour les diagramme UML par example.
+
+PHP :
+Il reste la classe Reponse à faire
+
 
 ### Base de données
 Utilisateur(id, nom, prenom, password, adresse)<br>

@@ -15,6 +15,8 @@ class Annonce{
 
   private int $id_createur;
 
+  // --- Constructeur --- //
+  
   function __construct(int $id, string $nom, string $description, string $adresse, int $id_createur){
     $this->id = $id;
 
