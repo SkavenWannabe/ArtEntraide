@@ -8,22 +8,33 @@ Ce dépôt organisé comme suit :
 rendus
 ├── docs/
 │   └── README.md
+├── rapport/
+|   ├── images/
+|   |   ├── maquette-accueil.png
+|   |   ├── maquette-recherche.png
+|   |   ├── maquette-criticite.png
+|   |   └── tableau-ergo.png
+|   └── rapport.tex
 ├── art-entraide/
-|   └── controler/
-|       └── start.ctrl.php
-|   └── data/
-|       └── create.sql
-|   └── framework/
-|       └── view.class.php
-|   └── model/
-|       ├── DAO.class.php
-|       ├── Annonce.class.php
-|       └── Utilisateur.class.php
-|   └── test/
-|       └── test.php
+|   ├── controler/
+|   |   └── start.ctrl.php
+|   ├── data/
+|   |   └── create.sql
+|   ├── framework/
+|   |   └── view.class.php
+|   ├── model/
+|   |   ├── DAO.class.php
+|   |   ├── Annonce.class.php
+|   |   └── Utilisateur.class.php
+|   ├── test/
+|   |   └── test.php
 |   └── view/
 |       └── design/
 |           └── style.css
+├── conception/
+|   └── PHP/
+|       └── DC.drawio
+├── art-entraide/
 ├── .gitattributes
 ├── .gitignore
 ├── .gitlab
