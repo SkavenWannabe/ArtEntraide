@@ -64,6 +64,8 @@ Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 **test/** contient tout les tests.<br>
 **view/** contient tout le visuel.<br>
 
+### conception
+Dossier de conseption pour les diagramme UML par example.
 
 ### Base de données
 Utilisateur(id, nom, prenom, password, adresse)<br>
