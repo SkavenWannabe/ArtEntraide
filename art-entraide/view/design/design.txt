@@ -1,0 +1,3 @@
+Couleurs d'accent :
+  Orange : #FF8037
+  Bleu : #556FFF
