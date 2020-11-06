@@ -30,8 +30,16 @@ rendus
 |   ├── test/
 |   |   └── test.php
 |   └── view/
-|       └── design/
-|           └── style.css
+|       ├── design/
+|       |   ├── design.txt
+|       |   ├── logo.png
+|       |   ├── logo2.png
+|       |   └── style.css
+|       ├── accueil.view.php
+|       ├── creationAnnonce.view.php
+|       ├── footer.php
+|       ├── header.php
+|       └── inscription.view.php
 ├── conception/
 |   └── PHP/
 |       └── DC.drawio
