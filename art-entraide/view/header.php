@@ -5,9 +5,12 @@
   <!-- </div> -->
   <nav>
     <ul>
-      <li><a href="">Catégories</a></li>
-      <li><a href="">Se connecter</a></li>
-      <li><input type="search" placeholder="Rechercher une annonce" name="" value=""></li>
+      <form class="" action="index.html" method="post">
+        <li><input type="search" placeholder="Rechercher une annonce" name="" value=""></li>
+        <li><button type="submit" name="" value="">Catégories</button></li>
+        <li><button type="submit" name="" value="">Se connecter</button></li>
+        <li><button type="submit" name="" value="">Créer un compte</button></li>
+      </form>
     </ul>
   </nav>
 </header>
