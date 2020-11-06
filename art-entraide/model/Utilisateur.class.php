@@ -6,12 +6,12 @@ class Utilisateur{
 
   // --- Atribut --- //
 
-  private int $id:
+  private int $id;
 
   private string $nom;
   private string $prenom;
 
-  private int $reputation
+  private int $reputation;
 
   private string $password;
 
