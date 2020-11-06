@@ -13,11 +13,15 @@ class Annonce{
 
   private string $adresse;
 
+  private string $date_creation;
+  private string $date_service;
+
   private int $id_createur;
+  private int $id_categorie;
 
   // --- Constructeur --- //
 
-  function __construct(int $id, string $nom, string $description, string $adresse, int $id_createur){
+  function __construct(int $id, string $nom, string $description, string $adresse, string $date_creation, string $date_service, int $id_createur, int $id_categorie){
     $this->id = $id;
 
     $this->nom = $nom;
@@ -25,11 +29,15 @@ class Annonce{
 
     $this->adresse = $adresse;
 
+    $this->date_creation = $date_creation;
+    $this->date_service = $date_service;
+
     $this->id_createur = $id_createur;
+    $this->id_categorie = $id_categorie;
   }
 
   // --- Getteurs --- //
-  // un getteur général pour tout les artibuts
+  
   function getId() : int{
     return $this->id;
   }
@@ -46,8 +54,20 @@ class Annonce{
     return $this->adresse;
   }
 
+  function getDateCreation() : string{
+    return $this->date_creation;
+  }
+
+  function getDateService() : string{
+    return $this->date_service;
+  }
+
   function getIdCreateur() : int{
     return $this->id_createur;
+  }
+
+  function getIdCategorie() : int{
+    return $this->id_categorie;
   }
 }
 ?>

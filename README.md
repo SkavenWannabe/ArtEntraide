@@ -24,11 +24,14 @@ rendus
 |   |   └── view.class.php
 |   ├── model/
 |   |   ├── DAO.class.php
-|   |   ├── Annonce.class.php
 |   |   ├── Utilisateur.class.php
+|   |   ├── Categorie.class.php
+|   |   ├── Annonce.class.php
 |   |   └── Reponse.class.php
 |   ├── test/
-|   |   └── test.php
+|   |   ├── Utilisateur.class.php
+|   |   ├── Categorie.class.php
+|   |   └── Annonce.test.php
 |   └── view/
 |       ├── design/
 |       |   ├── design.txt

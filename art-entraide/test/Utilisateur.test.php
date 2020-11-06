@@ -5,7 +5,7 @@ require_once(__DIR__.'/../model/Utilisateur.class.php');
 try {
   // ===== création utilisateur ===== //
   print("Création d'un utilisateur : ");
-  $utilisateur = new Utilisateur(1, "michel", "4ever", "2night", "bloqué dans les années 80");
+  $utilisateur = new Utilisateur(1, "4ever", "michel", TRUE, "michel.4ever@gmail.com", "2night", "bloqué dans les années 80");
   print("OK\n");
 
   // ===== Test des attributs ===== //
@@ -20,16 +20,23 @@ try {
 
   // --- Test nom --- //
   $value = $utilisateur->getNom();
-  $expected = "michel";
+  $expected = "4ever";
   if ($value != $expected) {
     throw new Exception("Nom incorrect : $value, attendu $expected\n");
   }
 
   // --- Test prénom --- //
   $value = $utilisateur->getPrenom();
-  $expected = "4ever";
+  $expected = "michel";
   if ($value != $expected) {
     throw new Exception("Prénom incorrectt : $value, attendu $expected\n");
+  }
+
+  // --- Test Email --- //
+  $value = $utilisateur->getEmail();
+  $expected = "michel.4ever@gmail.com";
+  if ($value != $expected) {
+    throw new Exception("Email incorrectt : $value, attendu $expected\n");
   }
 
   // --- Test password --- //
@@ -51,6 +58,13 @@ try {
   $expected = 0;
   if ($value != $expected) {
     throw new Exception("Reputation incorrectt : $value, attendu $expected\n");
+  }
+
+  // --- Test certif --- //
+  $value = $utilisateur->getEmail();
+  $expected = TRUE;
+  if ($value != $expected) {
+    throw new Exception("Email incorrectt : $value, attendu $expected\n");
   }
 
   print("OK\n");
