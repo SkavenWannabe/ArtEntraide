@@ -1,16 +1,36 @@
 <?php
-//Annonce(id, nom, description, adresse, #id_createur) id_createur clef étrangère de Utilisateur
+//Reponse(id_annonce, id_repondeur, id_message)
 
 // ===== CLASSE ===== //
 class Reponse{
 
   // --- Atribut --- //
 
-  // --- Constructeur --- //
-  function __construct(){
+  private int $id_annonce;
+  private int $id_repondeur;
 
+  private int $id_message;
+
+  // --- Constructeur --- //
+  function __construct(int $id_annonce, int $id_repondeur, int $id_message){
+    $this->id_annonce = $id_annonce;
+    $this->id_repondeur = $id_repondeur;
+
+    $this->id_message = $id_message;
   }
 
   // --- Getteurs --- //
-  // un getteur général pour tout les artibuts
+
+  function getIdAnnonce() : int {
+    return $this->id_annonce;
+  }
+
+  function getIdRepondeur() : int {
+    return $this->id_repondeur;
+  }
+
+  function getIdMessage() : int {
+    return $this->id_message;
+  }
+}
 ?>

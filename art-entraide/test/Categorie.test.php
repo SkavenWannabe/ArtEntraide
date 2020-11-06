@@ -1,6 +1,8 @@
 <?php
 // Acces aux classe
 require_once(__DIR__.'/../model/Categorie.class.php');
+//Categorie(id, nom)
+
 
 try {
   // ===== création categorie ==== //

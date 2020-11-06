@@ -1,6 +1,8 @@
 <?php
 // Acces aux classe
 require_once(__DIR__.'/../model/Annonce.class.php');
+//Annonce(id, nom, description, adresse, #id_createur) id_createur clef étrangère de Utilisateur
+
 
 try {
   // ===== création annonce ==== //

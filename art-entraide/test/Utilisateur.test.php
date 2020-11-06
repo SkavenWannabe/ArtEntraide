@@ -1,6 +1,8 @@
 <?php
 // Acces aux classe
 require_once(__DIR__.'/../model/Utilisateur.class.php');
+//Utilisateur(id, nom, prenom, password, adresse)
+
 
 try {
   // ===== création utilisateur ===== //

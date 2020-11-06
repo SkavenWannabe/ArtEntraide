@@ -27,11 +27,14 @@ rendus
 |   |   ├── Utilisateur.class.php
 |   |   ├── Categorie.class.php
 |   |   ├── Annonce.class.php
+|   |   ├── Message.class.php
 |   |   └── Reponse.class.php
 |   ├── test/
-|   |   ├── Utilisateur.class.php
-|   |   ├── Categorie.class.php
-|   |   └── Annonce.test.php
+|   |   ├── Utilisateur.test.php
+|   |   ├── Categorie.test.php
+|   |   ├── Annonce.test.php
+|   |   ├── Message.test.php
+|   |   └── Reponse.test.php
 |   └── view/
 |       ├── design/
 |       |   ├── design.txt
