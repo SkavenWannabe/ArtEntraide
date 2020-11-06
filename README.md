@@ -79,6 +79,10 @@ Dossier de conception pour les diagramme UML par example.
 Pour les fichier .drawio il faut les ouvrires depuis draw.io (https://app.diagrams.net/) et ouvrire fro device
 
 PHP :
+diagramme de classe uniquement de modèle
+diagramme de classe uniquement view (option)
+diagramme de sequence
+=> diagrammes sert a communiquer !
 Il reste la classe Reponse à faire
 
 
