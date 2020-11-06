@@ -16,7 +16,7 @@ class Annonce{
   private int $id_createur;
 
   // --- Constructeur --- //
-  
+
   function __construct(int $id, string $nom, string $description, string $adresse, int $id_createur){
     $this->id = $id;
 
@@ -30,26 +30,24 @@ class Annonce{
 
   // --- Getteurs --- //
   // un getteur général pour tout les artibuts
-
-  function __get(string $name){
-    switch($name){
-      case 'id' : return $this->$name;
-        break;
-      case 'nom' : return $this->$name;
-        break;
-      case 'description' : return $this->$name;
-        break;
-      case 'adresse' : return $this->$name;
-        break;
-      case 'id_createur' : return $this->$name;
-        break;
-
-      default:
-        return "NoGet";
-        break;
-    }
+  function getId() : int{
+    return $this->id;
   }
 
-}
+  function getNom() : string{
+    return $this->nom;
+  }
+
+  function getDescription() : string{
+    return $this->description;
+  }
+
+  function getAdresse() : string{
+    return $this->adresse;
+  }
+
+  function getIdCreateur() : int{
+    return $this->id_createur; 
+  }
 
 ?>
