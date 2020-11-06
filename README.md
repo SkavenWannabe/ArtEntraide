@@ -83,7 +83,8 @@ diagramme de classe uniquement de modèle
 diagramme de classe uniquement view (option)
 diagramme de sequence
 => diagrammes sert a communiquer !
-Il reste la classe Reponse à faire
+Il reste la classe Reponse à faire pour l'iteration 3
+
 
 
 ### Base de données
