@@ -22,7 +22,7 @@ try {
   $value = $utilisateur->getNom();
   $expected = "michel";
   if ($value != $expected) {
-    throw new Exception("Nom incorrectt : $value, attendu $expected\n");
+    throw new Exception("Nom incorrect : $value, attendu $expected\n");
   }
 
   // --- Test prénom --- //
