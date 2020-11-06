@@ -6,7 +6,7 @@ class Annonce{
 
   // --- Atribut --- //
 
-  private int $id:
+  private int $id;
 
   private string $nom;
   private string $description;
@@ -47,7 +47,7 @@ class Annonce{
   }
 
   function getIdCreateur() : int{
-    return $this->id_createur; 
+    return $this->id_createur;
   }
-
+}
 ?>
