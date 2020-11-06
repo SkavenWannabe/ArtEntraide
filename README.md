@@ -75,6 +75,7 @@ Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
 ### conception
 Dossier de conception pour les diagramme UML par example.
+Pour les fichier .drawio il faut les ouvrires depuis draw.io (https://app.diagrams.net/) et ouvrire fro device
 
 PHP :
 Il reste la classe Reponse à faire
