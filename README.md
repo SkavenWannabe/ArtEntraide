@@ -74,7 +74,7 @@ Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 **view/** contient tout le visuel.<br>
 
 ### conception
-Dossier de conseption pour les diagramme UML par example.
+Dossier de conception pour les diagramme UML par example.
 
 PHP :
 Il reste la classe Reponse à faire
