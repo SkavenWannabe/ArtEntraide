@@ -6,10 +6,12 @@ class Utilisateur{
 
   // --- Atribut --- //
 
-  private int $id:
+  private int $id;
 
   private string $nom;
   private string $prenom;
+
+  private int $reputation;
 
   private string $password;
 
@@ -24,6 +26,8 @@ class Utilisateur{
     $this->nom = $nom;
     $this->prenom = $prenom;
 
+    $this->reputation = 0;
+
     $this->password = $password;
 
     $this->adresse = $adresse;
@@ -32,23 +36,28 @@ class Utilisateur{
   // --- Getteurs --- //
   // un getteur général pour tout les artibuts
 
-  function __get(string $name){
-    switch($name){
-      case 'id' : return $this->$name;
-        break;
-      case 'nom' : return $this->$name;
-        break;
-      case 'prenom' : return $this->$name;
-        break;
-      case 'password' : return $this->$name;
-        break;
-      case 'adresse' : return $this->$name;
-        break;
+  function getId() : int {
+    return $this->id;
+  }
 
-      default:
-        return "NoGet";
-        break;
-    }
+  function getNom() : string {
+    return $this->nom;
+  }
+
+  function getPrenom() : string {
+    return $this->prenom;
+  }
+
+  function getReputation() : int {
+    return $this->reputation;
+  }
+
+  function getPassword() : string {
+    return $this->password;
+  }
+
+  function getAdresse() : string {
+    return $this->adresse;
   }
 
 }
