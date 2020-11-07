@@ -22,14 +22,14 @@ $annonces : Variable contenant les deux annonces à afficher en page d'accueil
             <h2><?= $value->getIntitule() ?></h2>
             <p><?= $value->getDescription() ?></p>
             <p><?= $value->getDate() ?></p>
-            <form class="" action="### Contrôleur adapté ###" method="get">
+            <form class="" action="annonce.ctrl.php" method="get">
               <button type="submit" name="idAnnonce" value="<?= $value->getId() ?>">Voir le détail</button>
               <button type="submit" name="idCategorie" value="<?= $value->getCategorie()->getId() ?>"><?= $value->getCategorie()->getNom() ?></button>
             </form>
           </article>
         <?php endforeach; ?>
       </div>
-      <form class="" action="### Contrôleur page annonces ###" method="get">
+      <form class="" action="listeAnnnonces.ctrl.php" method="get">
         <button type="submit" name="" value="">Voir plus</button>
       </form>
     </section>

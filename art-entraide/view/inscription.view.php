@@ -12,7 +12,7 @@
       <header>
         <h2>Inscription</h2>
       </header>
-      <form class="inscription" action="???" method="post">
+      <form class="inscription" action="inscription.ctrl.php" method="post">
         <label for="nom">Nom</label>
         <input type="text" name="nom" id="nom">
 
