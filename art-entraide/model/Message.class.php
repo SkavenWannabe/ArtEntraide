@@ -1,5 +1,6 @@
 <?php
-//Message(id, contenue, date_message, id_auteur)
+//Message(id, contenue, date_message, #id_auteur)
+//id_auteur clef 2trangère de Utilisateur
 
 // ===== CLASSE ===== //
 class Message{

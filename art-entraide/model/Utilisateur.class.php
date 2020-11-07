@@ -1,5 +1,5 @@
 <?php
-//Utilisateur(id, nom, prenom, password, adresse)
+//Utilisateur(id, nom, prenom, reputation, certif, email, password, adresse)
 
 // ===== CLASSE ===== //
 class Utilisateur{

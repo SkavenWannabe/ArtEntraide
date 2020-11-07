@@ -94,6 +94,15 @@ Il reste la classe Reponse à faire pour l'iteration 3
 
 
 ### Base de données
-Utilisateur(id, nom, prenom, password, adresse)<br>
-Annonce(id, nom, description, adresse, #id_createur) id_createur clef étrangère de Utilisateur<br>
-Reponse(#id_annonce, #id_repondeur, chat) id_annonce clef étrangère de Annonce, id_repondeur clef étrangère de Utilisateur<br>
+Utilisateur(id, nom, prenom, reputation, certif, email, password, adresse)<br>
+
+Annonce(id, nom, description, adresse, date_creation, date_service, #id_createur, #id_categorie)
+id_createur clef étrangère de Utilisateur, id_categorie clef étrangère de Categorie<br>
+
+Categorie(id, nom)<br>
+
+Message(id, contenue, date_message, #id_auteur)
+id_auteur clef 2trangère de Utilisateur<br>
+
+Reponse(#id_annonce, #id_repondeur, #id_message)
+id_annonce clef étrangère de Annonce, id_repondeur clef étrangère de Utilisateur, id_message clef étrangère de Message<br>

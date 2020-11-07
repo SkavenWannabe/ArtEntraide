@@ -1,5 +1,6 @@
 <?php
-//Annonce(id, nom, description, adresse, #id_createur) id_createur clef étrangère de Utilisateur
+//Annonce(id, nom, description, adresse, date_creation, date_service, #id_createur, #id_categorie)
+//id_createur clef étrangère de Utilisateur, id_categorie clef étrangère de Categorie
 
 // ===== CLASSE ===== //
 class Annonce{
@@ -37,7 +38,7 @@ class Annonce{
   }
 
   // --- Getteurs --- //
-  
+
   function getId() : int{
     return $this->id;
   }

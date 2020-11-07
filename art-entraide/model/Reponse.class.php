@@ -1,5 +1,6 @@
 <?php
-//Reponse(id_annonce, id_repondeur, id_message)
+//Reponse(#id_annonce, #id_repondeur, #id_message)
+//id_annonce clef étrangère de Annonce, id_repondeur clef étrangère de Utilisateur, id_message clef étrangère de Message
 
 // ===== CLASSE ===== //
 class Reponse{
