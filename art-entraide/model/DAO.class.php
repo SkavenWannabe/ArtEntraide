@@ -45,6 +45,127 @@ class DAO{
     return $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce")[0];
   }
 
+  
+  // --- Utilitaire pour les Utilisateur --- //
+
+  // Sauvegarde d'un utilisateur dans la base de données
+  // $utilisateur : l'utilisateur à sauvegarder
+  function createUtilisateur(Utilisateur $utilisateur) {
+    $sql = "INSERT INTO Annonce (id,nom,prenom,reputation,certif,email,password,adresse)
+            values (:id,:nom,:prenom,:reputation,:certif,:email,:password,:adresse)";
+
+    $stmt = $this->db->prepare($sql);
+
+    $id = $utilisateur->getId(); $nom = $utilisateur->getNom();
+    $prenom = $utilisateur->getPrenom(); $adresse = $utilisateur->getAdresse();
+    $reputation = $utilisateur->getReputation(); $certif = $utilisateur->getCertif();
+    $email = $utilisateur->getEmail(); $password = $utilisateur->getPassword();
+
+    $stmt->BindParam(':id',$id); $stmt->BindParam(':nom',$nom);
+    $stmt->BindParam(':prenom',$prenom); $stmt->BindParam(':adresse',$adresse);
+    $stmt->BindParam(':reputation',$reputation); $stmt->BindParam(':certif',$certif);
+    $stmt->BindParam(':email',$email); $stmt->BindParam(':password',$password);
+
+    $stmt->execute();
+  }
+
+  // Mise à jour d'un Utilisateur
+  // $utilisateur : l'utilisateur à mettre à jour
+  function updateUtilisateur(Utiliteur $utilisateur) {
+    $id = $utilisateur->getId();
+    $nom = $utilisateur->getNom();
+    $email = $utilisateur->getEmail();
+    $adresse = $utilisateur->getAdresse();
+    $password = $utilisateur->getPassword();
+
+    try{
+      $sql="UPDATE utilisateur
+            SET nom = '$nom',
+                email = '$email',
+                adresse = '$adresse',
+                password = '$password'
+            WHERE id = '$id'";
+
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute();
+      echo $stmt->rowCount() . " records UPDATED successfully";
+
+    }catch(PDOException $e){
+      echo $sql ."<br>" . $e->getMessage();
+    }
+  }
+
+  // Suppression d'un Utilisateur
+  // $utilisateur : l'utilisateur à supprimer
+  function deleteUtilisateur(Utilisateur $utilisateur) {
+    $id = $utilisateur->getId();
+    $sql = "DELETE from utilisateur WHERE id='$id'";
+    //$this->lastQuery = $sql;
+    $this->db->exec($sql);
+  }
+
+  // --- Utilitaire pour les Annonces --- //
+
+  // Sauvegarde d'une annonce dans la base de données
+  // $annonce : l'annonce à sauvegarder
+  function createAnnonce(Annonce $annonce) {
+    $sql = "INSERT INTO Annonce (id,nom,desrciption,adresse,date_creation,date_service,id_createur,id_categorie)
+            values (:id,:nom,:desrciption,:adresse,:date_creation,:date_service,:id_createur,:id_categorie)";
+
+    $stmt = $this->db->prepare($sql);
+
+    $id = $annonce->getId(); $nom = $annonce->getNom();
+    $description = $annonce->getDescription(); $adresse = $annonce->getAdresse();
+    $date_creation = $annonce->getDateCreation(); $date_service = $annonce->getDateService();
+    $id_createur = $annonce->getIdCreateur(); $id_cat = $annonce->getIdCategorie()->getId();
+
+    $stmt->BindParam(':id',$id); $stmt->BindParam(':nom',$nom);
+    $stmt->BindParam(':description',$description); $stmt->BindParam(':adresse',$adresse);
+    $stmt->BindParam(':date_creation',$date_creation); $stmt->BindParam(':date_service',$date_service);
+    $stmt->BindParam(':id_createur',$id_createur); $stmt->BindParam(':id_categorie',$id_categorie);
+
+    $stmt->execute();
+  }
+
+  // Mise à jour d'une annonce
+  // $annonce : l'annonce à mettre à jour
+  function updateAnnonce(Annonce $annonce) {
+    $id = $annonce->getId();
+    $nom = $annonce->getNom();
+    $description = $annonce->getDescription();
+    $adresse = $annonce->getAdresse();
+    //$date_creation = $annonce->getDateCreation();
+    $date_service = $annonce->getDateService(); // /!\ verification nom dans la BDD
+    //$id_createur = $annonce->getIdCreateur();
+    //$id_categorie = $annonce->getIdCategorie();
+
+    try{
+      $sql="UPDATE annonce
+            SET nom = '$nom',
+                description= '$description',
+                adresse = '$adresse',
+                date_service = $date_service
+            WHERE id = '$id'";
+
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute();
+      echo $stmt->rowCount() . " records UPDATED successfully";
+
+    }catch(PDOException $e){
+      echo $sql ."<br>" . $e->getMessage();
+    }
+  }
+
+  // Suppression d'une annonce
+  // $annonce : l'annonce à supprimer
+  function deleteAnnonce(Annonce $annonce) {
+    $id = $annonce->getId();
+    $sql = "DELETE from annonce WHERE id='$id'";
+    //$this->lastQuery = $sql;
+    $this->db->exec($sql);
+  }
+
+
 }
 
 ?>

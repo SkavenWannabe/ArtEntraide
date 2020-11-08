@@ -7,13 +7,28 @@ include_once(__DIR__."/../framework/view.class.php");
 //include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-
-//-> récupération bouton cliqué
-
+if ($_POST['etat'] != '') {
+  $etat = $_POST['etat'];
+}else{
+  $etat = '';
+}
+echo $etat;
 // ==== PARTIE USAGE DU MODELE ==== //
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
-//->affichage vu adéquate en fonction des boutons cliqué 
+switch ($etat) {
+  case 'categorie':
+    $view->display("categorie.view.php");
+    break;
+  case 'connexion':
+    $view->display("categorie.view.php");
+    break;
+  case 'creation':
+    $view->display("inscription.view.php");
+    break;
+  default:
+    break;
+}
 
 ?>

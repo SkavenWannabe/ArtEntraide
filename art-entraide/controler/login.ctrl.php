@@ -46,7 +46,7 @@ if ($connected) {
   $view->display("listeAnnnonces.view.php");
 } else {
   $view->assign('error',$error);
-  $view->display("login.view.php");
+  $view->display("connexion.view.php");
 }
 
 ?>

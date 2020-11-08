@@ -71,5 +71,21 @@ class Utilisateur{
     return $this->adresse;
   }
 
+  // --- Setteurs --- //
+  function setNom(string $nm) : void{
+    $this->nom = $nm;
+  }
+
+  function setEmail(string $email) : void{
+    $this->email = $email;
+  }
+
+  function setAdresse(string $ad) : void{
+    $this->adresse = $ad;
+  }
+
+  function setPassword(string $password) : void{
+    $this->password = $password; 
+  }
 }
 ?>
