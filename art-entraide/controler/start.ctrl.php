@@ -10,12 +10,12 @@ include_once(__DIR__."/../framework/view.class.php");
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
-$utilisateur = new DAO();
+//$utilisateur = new DAO();
 
 //->interrogation DAO pour récupérer 2 annonces
 
 
-$_SESSION['session'] = $utilisateur;
+//$_SESSION['session'] = $utilisateur;
 
 session_write_close();
 

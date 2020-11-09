@@ -5,7 +5,7 @@
   <!-- </div> -->
   <nav>
     <ul>
-      <form class="" action="index.html" method="post">
+      <form class="" action="menu.ctrl.php" method="post">
         <li><input type="search" placeholder="Rechercher une annonce" name="" value=""></li>
         <li><button type="submit" name="etat" value="categorie">Catégories</button></li>
         <li><button type="submit" name="etat" value="connexion">Se connecter</button></li>

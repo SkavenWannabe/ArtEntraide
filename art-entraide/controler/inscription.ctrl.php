@@ -54,7 +54,7 @@ if (/*insertion pas réussi*/ true) {
   $view->assign('error',$error);
   $view->display("inscription.view.php");
 }else{
-  $view->display("listeAnnnonces.view.php");  
+  $view->display("listeAnnnonces.view.php");
 }
 
 ?>

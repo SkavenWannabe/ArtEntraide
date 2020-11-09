@@ -70,5 +70,22 @@ class Annonce{
   function getIdCategorie() : int{
     return $this->id_categorie;
   }
+
+  // --- Setteur --- //
+  function setNom(string $nm) : void{
+    $this->nom = $nm;
+  }
+
+  function setDescription(string $desc) : void{
+    $this->description = $desc;
+  }
+
+  function setAdresse(string $ad) : void{
+    $this->adresse = $ad;
+  }
+
+  function setDateService(string $dService) : void{
+    $this->date_service = $dService;
+  }
 }
 ?>
