@@ -22,7 +22,7 @@ On écrira:
 \subsubsection{Petit titre
 ```
 
-# Listes à puce
+# Listes
 Pour faire des listes à puce comme ceci:
 * Un point
 * Deux points
