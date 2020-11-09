@@ -1,3 +1,8 @@
+:root {
+	--accent-color-vert: #64b350;
+	--accent-color-violet: #963CBA;
+}
+
 /*=========== GÉNÉRAL ===========*/
 body {
   font-family: sans-serif;
@@ -36,7 +41,7 @@ nav ul li {
 }
 
 nav ul li input[type=search] {
-  width: 1000px;
+  width: 1000px; /* À CHANGER */
 }
 
 /*=========== CONTENU ===========*/
@@ -44,6 +49,48 @@ nav ul li input[type=search] {
 body section{
   width: 95%;
   margin: auto;
+}
+
+section.section_annonces > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article.annonce {
+  position: relative;
+  border: solid 2px var(--accent-color-vert);
+  border-radius: 15px;
+  margin: 15px;
+  padding: 15px;
+  padding-bottom: 25px;
+  flex: 1 0 40%;
+}
+
+article.annonce > header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+article.annonce > header > img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+article.annonce h2 {
+  text-decoration: underline;
+}
+
+article.annonce > form button:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  background-color: var(--accent-color-violet);
+  border: solid 2px var(--accent-color-violet);
+  color: white;
 }
 
 /*=========== FOOTER ===========*/
