@@ -1,5 +1,5 @@
-DROP TABLE Reponse;
-DROP TABLE Message;
-DROP TABLE Annonce;
-DROP TABLE Categorie;
-DROP TABLE Utilisateur;
+DROP TABLE IF EXISTS Reponse;
+DROP TABLE IF EXISTS Message;
+DROP TABLE IF EXISTS Annonce;
+DROP TABLE IF EXISTS Categorie;
+DROP TABLE IF EXISTS Utilisateur;

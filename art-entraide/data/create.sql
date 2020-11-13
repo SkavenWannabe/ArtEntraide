@@ -1,4 +1,4 @@
-CREATE TABLE Utilisateur (
+CREATE TABLE IF NOT EXISTS Utilisateur (
   id INTEGER PRIMARY KEY,
   email VARCHAR NOT NULL,
   password VARCHAR NOT NULL,
@@ -9,12 +9,12 @@ CREATE TABLE Utilisateur (
   reputation INTEGER NOT NULL
 );
 
-CREATE TABLE Categorie (
+CREATE TABLE IF NOT EXISTS Categorie (
   id INTEGER PRIMARY KEY,
   nom VARCHAR NOT NULL
 );
 
-CREATE TABLE Annonce (
+CREATE TABLE IF NOT EXISTS Annonce (
   id INTEGER PRIMARY KEY,
   nom VARCHAR NOT NULL,
   description VARCHAR,
@@ -28,16 +28,16 @@ CREATE TABLE Annonce (
   FOREIGN KEY(id_createur) REFERENCES Utilisateur(id)
 );
 
-CREATE TABLE Message (
+CREATE TABLE IF NOT EXISTS Message (
   id INTEGER PRIMARY KEY,
   contenue VARCHAR NOT NULL,
-  date_message DATETIME NOT NULL,
+  date_message TIMESTAMP NOT NULL,
   id_auteur INTEGER NOT NULL,
 
   FOREIGN KEY(id_auteur) REFERENCES Utilisateur(id)
 );
 
-CREATE TABLE Reponse (
+CREATE TABLE IF NOT EXISTS Reponse (
   id_annonce INTEGER,
   id_repondeur INTEGER,
   id_message INTEGER,
