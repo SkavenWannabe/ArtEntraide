@@ -1,4 +1,4 @@
-CREATE TABLE Utilisateur {
+CREATE TABLE Utilisateur (
   id INTEGER PRIMARY KEY,
   email VARCHAR NOT NULL,
   password VARCHAR NOT NULL,
@@ -7,14 +7,14 @@ CREATE TABLE Utilisateur {
   adresse VARCHAR,
   certif BOOLEAN NOT NULL,
   reputation INTEGER NOT NULL
-};
+);
 
-CREATE TABLE Categorie {
+CREATE TABLE Categorie (
   id INTEGER PRIMARY KEY,
   nom VARCHAR NOT NULL
-};
+);
 
-CREATE TABLE Annonce {
+CREATE TABLE Annonce (
   id INTEGER PRIMARY KEY,
   nom VARCHAR NOT NULL,
   description VARCHAR,
@@ -26,18 +26,18 @@ CREATE TABLE Annonce {
 
   FOREIGN KEY(id_categorie) REFERENCES Categorie(id),
   FOREIGN KEY(id_createur) REFERENCES Utilisateur(id)
-};
+);
 
-CREATE TABLE Message {
+CREATE TABLE Message (
   id INTEGER PRIMARY KEY,
   contenue VARCHAR NOT NULL,
   date_message DATETIME NOT NULL,
   id_auteur INTEGER NOT NULL,
 
   FOREIGN KEY(id_auteur) REFERENCES Utilisateur(id)
-};
+);
 
-CREATE TABLE Reponse {
+CREATE TABLE Reponse (
   id_annonce INTEGER,
   id_repondeur INTEGER,
   id_message INTEGER,
@@ -47,4 +47,4 @@ CREATE TABLE Reponse {
   FOREIGN KEY(id_message) REFERENCES Message(id),
 
   PRIMARY KEY(id_annonce, id_repondeur, id_message)
-};
+);
