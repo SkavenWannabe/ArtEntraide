@@ -22,7 +22,7 @@ class Annonce{
 
   // --- Constructeur --- //
 
-  function __construct(int $id, string $nom, string $description, string $adresse, string $date_creation, string $date_service, int $id_createur, int $id_categorie){
+  function __construct(int $id=0, string $nom='nomAnnonce', string $description='descriptionAnnonce', string $adresse='adresse', string $date_creation='01/01/1970', string $date_service='01/01/1970', int $id_createur=0, int $id_categorie=0){
     $this->id = $id;
 
     $this->nom = $nom;
