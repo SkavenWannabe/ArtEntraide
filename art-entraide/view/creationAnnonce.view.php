@@ -1,8 +1,17 @@
 <!-- Variables à donner à cette vue
 $categories : Liste du nom de chaque catégories
 $user : Utilisateur connecté
- -->
-
+-->
+<?=
+  $categories = array (  "Jardinage",
+                        "Baby-sitting",
+                        "Plomberie",
+                        "Mécanique",
+                        "Peinture",
+                        "Courses",
+                        "Animaux"
+                      );
+ ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -11,7 +20,7 @@ $user : Utilisateur connecté
     <link rel="stylesheet" href="/view/design/style.css">
   </head>
 
-  
+
   <body>
     <?php include_once(__DIR__."/../view/header.php"); ?>
 
@@ -34,7 +43,9 @@ $user : Utilisateur connecté
         <input type="text" name="description" id="description">
 
         <label for="lieu">Lieu du service</label>
-        <input type="text" name="lieu" id="lieu" value="<?= $user->getAdresse() ?>">
+        <input type="text" name="lieu" id="lieu" value="tamere">
+
+        <!-- <?= $user->getAdresse() ?> -->
 
         <label for="date">Quand avez-vous besoin d'aide ?</label>
         <input type="date" name="date" id="date">
