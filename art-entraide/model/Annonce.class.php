@@ -72,8 +72,8 @@ class Annonce{
   }
 
   // --- Setteur --- //
-  function setNom(string $nm) : void{
-    $this->nom = $nm;
+  function setNom(string $nom) : void{
+    $this->nom = $nom;
   }
 
   function setDescription(string $desc) : void{

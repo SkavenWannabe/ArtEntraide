@@ -72,8 +72,8 @@ class Utilisateur{
   }
 
   // --- Setteurs --- //
-  function setNom(string $nm) : void{
-    $this->nom = $nm;
+  function setNom(string $nom) : void{
+    $this->nom = $nom;
   }
 
   function setEmail(string $email) : void{
@@ -85,7 +85,7 @@ class Utilisateur{
   }
 
   function setPassword(string $password) : void{
-    $this->password = $password; 
+    $this->password = $password;
   }
 }
 ?>
