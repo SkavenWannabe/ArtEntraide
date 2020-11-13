@@ -175,6 +175,10 @@ section.section_annonces > form > button {
   transform: translate(-50%, -50%);
 }
 
+.connexion {
+  align-items: center;
+}
+
 /*=========== FOOTER ===========*/
 
 body > footer {
