@@ -520,3 +520,4 @@ rapport/*.out
 rapport/*.aux
 rapport/*.pdf
 
+.ftpconfig
