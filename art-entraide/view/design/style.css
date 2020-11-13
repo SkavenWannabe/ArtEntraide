@@ -1,16 +1,46 @@
 :root {
-	--accent-color-vert: #64b350;
-	--accent-color-violet: #963CBA;
+	--accent-color-vert: #74ae5b;
+	--accent-color-violet: #8b49b4;
 }
 
 /*=========== GÉNÉRAL ===========*/
+html {
+	scroll-behavior: smooth;
+}
+
 body {
   font-family: sans-serif;
   margin: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 
 a {
   color: #6c6c6c;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:not(.boutonCategorie) {
+	background-color: none;
+	font-size: 1.05em;
+	line-height: 1;
+	margin: 0.2em;
+	padding: 0.7em;
+	border-radius: 10px;
+	border: solid 2px var(--accent-color-violet);
+	color: var(--accent-color-violet);
+	font-weight: 600;
+	transition: 0.25s;
+}
+
+button:not(.boutonCategorie):hover {
+	box-shadow: inset 6.5em 0 0 0 var(--accent-color-violet);
+	color: white;
+	background: var(--accent-color-violet);
+	border-color: var(--accent-color-violet);
+	/* transform: translateY(-0.25em); */
 }
 
 /*=========== HEADER ===========*/
@@ -40,8 +70,20 @@ nav ul li {
 	margin: 5px;
 }
 
+nav ul li:first-child {
+	flex-grow: 1;
+	margin-left: 20px;
+}
+
+nav ul form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+}
+
 nav ul li input[type=search] {
-  width: 1000px; /* À CHANGER */
+  width: 100%;
 }
 
 /*=========== CONTENU ===========*/
@@ -54,6 +96,7 @@ body section{
 section.section_annonces > div {
   display: flex;
   flex-wrap: wrap;
+	margin: 0px 20%;
 }
 
 article.annonce {
@@ -62,7 +105,7 @@ article.annonce {
   border-radius: 15px;
   margin: 15px;
   padding: 15px;
-  padding-bottom: 25px;
+  padding-bottom: 100px;
   flex: 1 0 40%;
 }
 
@@ -81,46 +124,92 @@ article.annonce h2 {
   text-decoration: underline;
 }
 
+article.annonce > form button:first-child {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 1.5em;
+  transform: translate(-50%, -50%);
+}
+
 article.annonce > form button:last-child {
   position: absolute;
   bottom: 0;
+  font-size: 1.1em;
   left: 0;
   width: 100%;
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
-  background-color: var(--accent-color-violet);
-  border: solid 2px var(--accent-color-violet);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: var(--accent-color-vert);
+  border: solid 2px var(--accent-color-vert);
   color: white;
+	transition: 0.25s;
+	font-weight: 600;
+}
+
+article.annonce > form button:last-child:hover {
+	font-size: 1.2em;
+}
+
+article.annonce > p.date {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: var(--accent-color-vert);
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 3px;
+	margin: 0;
+	color: white;
+}
+
+section.section_annonces > form {
+	margin: 20px 0px;
+	position: relative;
+	height: 1em;
+}
+
+section.section_annonces > form > button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*=========== FOOTER ===========*/
 
-footer {
+body > footer {
   padding: 0px 15px;
   background-color: #DDDDDD;
 }
 
-footer > header {
+body > footer > header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-footer > header p {
+body > footer > header p {
   margin: 5px 0px;
+  flex: 1 0 9.375em;
 }
 
-footer > section {
+body > footer > section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-footer > section > section:first-child {
+body > footer > section > section {
+  flex: 1 0 200px;
+}
+
+body > footer > section > section:first-child {
   display: flex;
   flex-direction: column;
 }
 
-footer > section > section:last-child {
+body > footer > section > section:last-child {
   text-align: right;
 }
