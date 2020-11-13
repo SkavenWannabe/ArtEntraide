@@ -176,6 +176,8 @@ section.section_annonces > form > button {
 }
 
 .login {
+  display: flex;
+  flex-direction: row-reverse; 
   align-items: center;
 }
 
