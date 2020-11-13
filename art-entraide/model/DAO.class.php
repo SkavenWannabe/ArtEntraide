@@ -5,6 +5,7 @@
 // importation des classe Annonce, Utilisateur et Reponse
 require_once(__DIR__."/Utilisateur.class.php");
 require_once(__DIR__."/Annonce.class.php");
+require_once("/home/synntix/db.php");
 //require_once(__DIR__."/Reponse.class.php");
 
 // ===== CLASSE ===== //
@@ -16,7 +17,7 @@ class DAO{
   private PDO $db;
 
   // Le type, le chemin et le nom de la base de donnée
-  private string $database = 'sqlite:'.__DIR__.'/../data/[nom].db';
+  private string $database = 'pgsql:host=localhost;port=5432;dbname=projets3;user=projets3;password='.dbpasswd;
 
   // --- Constructeur --- //
 
@@ -45,7 +46,7 @@ class DAO{
     return $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce")[0];
   }
 
-  
+
   // --- Utilitaire pour les Utilisateur --- //
 
   // Sauvegarde d'un utilisateur dans la base de données
