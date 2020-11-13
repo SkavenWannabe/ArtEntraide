@@ -15,9 +15,9 @@ $user : Utilisateur connecté
   <body>
     <?php include_once(__DIR__."/../view/header.php"); ?>
 
-    <section>
+    <section class="login">
       <h2>Connexion</h2>
-      <form class="login" action="???" method="post">
+      <form action="???" method="post">
         <section>
           <label for="pseudo">Pseudonyme</label>
           <input type="text" name="pseudo" id="pseudo">
