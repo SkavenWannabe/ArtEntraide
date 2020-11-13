@@ -17,7 +17,7 @@ $user : Utilisateur connecté
 
     <section class="login">
       <h2>Connexion</h2>
-      <form action="???" method="post">
+      <form class="login" action="???" method="post">
         <section>
           <label for="pseudo">Pseudonyme</label>
           <input type="text" name="pseudo" id="pseudo">
