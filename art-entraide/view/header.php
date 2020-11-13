@@ -1,6 +1,8 @@
 <header>
   <!-- <div class=""> -->
+  <a href="http://<?= $_SERVER['SERVER_NAME'] ?>:<?= $_SERVER['SERVER_PORT'] ?>/">
     <img src="/view/design/logo2.png" alt="Logo de l'art de l'entraide">
+  </a>
     <!-- <h1>L'art de l'entraide</h1> -->
   <!-- </div> -->
   <nav>
