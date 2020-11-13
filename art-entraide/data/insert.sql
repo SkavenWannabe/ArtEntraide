@@ -1,12 +1,12 @@
 set datestyle to EUROPEAN;
 
-INSERT INTO Utilisateur VALUES(1, 'jean.patrik@yahoo.fr', 'motdepassesuperfort', 'Jean', 'Partrik', 'Grenoble', FALSE, 0);
-INSERT INTO Utilisateur VALUES(2, 'koin.kanar@yahoo.fr', 'coincoin', 'Koin', 'Kanar', 'Carcanard', FALSE, -100);
-INSERT INTO Utilisateur VALUES(3, 'michel.fauraiveur@yahoo.fr', '2night', 'Michel', 'Fauraiveur', 'Brasil', TRUE, 100);
-INSERT INTO Utilisateur VALUES(4, 'jean.neymar@yahoo.fr', 'gonnaGoFast', 'Jean', 'Neymar', 'Grenoble', FALSE, 0);
-INSERT INTO Utilisateur VALUES(5, 'bob.more@yahoo.fr', 'anne', 'Bob', 'More', 'Faceauvent', FALSE, 0);
-INSERT INTO Utilisateur VALUES(6, 'tu.plante@yahoo.fr', '', '', '', '', TRUE, -101);
-INSERT INTO Utilisateur VALUES(7, 'tu.plante@yahoo.fr', 'aussi', '', '', '', TRUE, 101);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'jean.patrik@yahoo.fr', 'motdepassesuperfort', 'Jean', 'Partrik', 'Grenoble', FALSE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'koin.kanar@yahoo.fr', 'coincoin', 'Koin', 'Kanar', 'Carcanard', FALSE, -100);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'michel.fauraiveur@yahoo.fr', '2night', 'Michel', 'Fauraiveur', 'Brasil', TRUE, 100);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'jean.neymar@yahoo.fr', 'gonnaGoFast', 'Jean', 'Neymar', 'Grenoble', FALSE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'bob.more@yahoo.fr', 'anne', 'Bob', 'More', 'Faceauvent', FALSE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'tu.plante@yahoo.fr', '', '', '', '', TRUE, -101);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'tu.plante@yahoo.fr', 'aussi', '', '', '', TRUE, 101);
 
 INSERT INTO Categorie VALUES(1, 'Garde bébé');
 INSERT INTO Categorie VALUES(2, 'Location');
