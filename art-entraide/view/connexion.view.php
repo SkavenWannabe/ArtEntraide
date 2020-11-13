@@ -16,12 +16,17 @@ $user : Utilisateur connecté
     <?php include_once(__DIR__."/../view/header.php"); ?>
 
     <section>
+      <h2>Connexion</h2>
       <form class="login" action="???" method="post">
-        <label for="pseudo">Pseudonyme</label>
-        <input type="text" name="pseudo" id="pseudo">
+        <section>
+          <label for="pseudo">Pseudonyme</label>
+          <input type="text" name="pseudo" id="pseudo">
+        </section>
 
-        <label for="password">Mot de passe</label>
-        <input type="text" name="password" id="pasword">
+        <section>
+          <label for="password">Mot de passe</label>
+          <input type="text" name="password" id="pasword">
+        </section>
 
         <button type="submit" name="connexion">Connexion</button>
       </form>
