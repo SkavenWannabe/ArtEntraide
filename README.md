@@ -20,6 +20,9 @@ rendus
 |   |   └── start.ctrl.php
 |   ├── data/
 |   |   └── create.sql
+|   |   └── drop.sql
+|   |   └── insert.sql
+|   |   └── reset.sql
 |   ├── framework/
 |   |   └── view.class.php
 |   ├── model/
@@ -50,6 +53,9 @@ rendus
 |   └── PHP/
 |       ├── DC.png
 |       └── DC.drawio
+|   └── BDD/
+|       ├── bdd.tex
+|       ├── Schema-relationnel-BDD.png
 ├── art-entraide/
 ├── .gitattributes
 ├── .gitignore
@@ -94,15 +100,18 @@ Il reste la classe Reponse à faire pour l'iteration 3
 
 
 ### Base de données
-Utilisateur(id, nom, prenom, reputation, certif, email, password, adresse)<br>
+**Utilisateur(<u>id</u>, nom, prenom, reputation, certif, email, password, adresse)**
 
-Annonce(id, nom, description, adresse, date_creation, date_service, #id_createur, #id_categorie)
-id_createur clef étrangère de Utilisateur, id_categorie clef étrangère de Categorie<br>
+**Categorie(<u>id</u>, nom)**
 
-Categorie(id, nom)<br>
+**Annonce(<u>id</u>, nom, description, adresse, date_creation, date_service, #id_createur, #id_categorie)**
+id_createur clef étrangère de Utilisateur
+id_categorie clef étrangère de Categorie
 
-Message(id, contenue, date_message, #id_auteur)
-id_auteur clef 2trangère de Utilisateur<br>
+**Message(<u>id</u>, contenue, date_message, #id_auteur)**
+id_auteur clef 2trangère de Utilisateur
 
-Reponse(#id_annonce, #id_repondeur, #id_message)
-id_annonce clef étrangère de Annonce, id_repondeur clef étrangère de Utilisateur, id_message clef étrangère de Message<br>
+**Reponse(<u>#id_annonce, #id_repondeur, #id_message</u>)**
+id_annonce clef étrangère de Annonce
+id_repondeur clef étrangère de Utilisateur
+id_message clef étrangère de Message
