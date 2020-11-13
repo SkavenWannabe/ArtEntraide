@@ -12,6 +12,7 @@ if ($_POST['etat'] != '') {
 }else{
   $etat = '';
 }
+echo $etat;
 // ==== PARTIE USAGE DU MODELE ==== //
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
