@@ -7,7 +7,7 @@ include_once(__DIR__."/../framework/view.class.php");
 //include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-
+echo "liste annonces ctrl";
 // ==== PARTIE USAGE DU MODELE ==== //
 
 // ==== PARTIE SELECTION DE LA VUE ==== //

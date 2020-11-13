@@ -10,18 +10,18 @@ include_once(__DIR__."/../framework/view.class.php");
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
-//$utilisateur = new DAO();
+//$art = new DAO();
 
-//->interrogation DAO pour récupérer 2 annonces
-
-
-//$_SESSION['session'] = $utilisateur;
+//$annonce[] = $art->getAnnonce(1);
+//$annonce[] = $art->getAnnonce(2);
+//$annonce[] = $art->getAnnonce(3);
 
 session_write_close();
 
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
+//$view->assign('annonce', $annonce);
 
 //->transmition des 2 annonces a la page d'accueil
 $view->display("accueil.view.php");

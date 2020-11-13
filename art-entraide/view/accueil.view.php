@@ -34,7 +34,7 @@ $annonces : Variable contenant les deux annonces à afficher en page d'accueil
           </article>
         <?php endforeach; ?>
       </div>
-      <form class="" action="listeAnnnonces.ctrl.php" method="get">
+      <form class="" action="listeAnnonces.ctrl.php" method="get">
         <button type="submit" name="" value="">Voir plus d'annonces</button>
       </form>
     </section>
