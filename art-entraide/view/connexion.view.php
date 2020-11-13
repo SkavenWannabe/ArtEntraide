@@ -23,9 +23,6 @@ $user : Utilisateur connecté
         <label for="password">Mot de passe</label>
         <input type="text" name="password" id="pasword">
 
-        <label for="test">test</label>
-        <input type="text" name="test" id="test">
-
         <button type="submit" name="connexion">Connexion</button>
       </form>
     </section>
