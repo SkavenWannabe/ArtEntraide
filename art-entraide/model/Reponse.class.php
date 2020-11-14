@@ -13,7 +13,7 @@ class Reponse{
   private int $id_message;
 
   // --- Constructeur --- //
-  function __construct(int $id_annonce, int $id_repondeur, int $id_message){
+  function __construct(int $id_annonce=1, int $id_repondeur=1, int $id_message=1){
     $this->id_annonce = $id_annonce;
     $this->id_repondeur = $id_repondeur;
 

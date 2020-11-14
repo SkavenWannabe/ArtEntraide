@@ -16,7 +16,7 @@ class Message{
   private int $id_auteur;
 
   // --- Constructeur --- //
-  function __construct(int $id, string $contenue, string $date_message, $id_auteur){
+  function __construct(int $id=0, string $contenue='uneCategorie', string $date_message='uneDate', $id_auteur=1){
     $this->id = $id;
 
     $this->contenue = $contenue;

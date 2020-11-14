@@ -15,6 +15,7 @@ $art = new DAO();
 $annonces[] = $art->getAnnonce(1);
 $annonces[] = $art->getAnnonce(2);
 $annonces[] = $art->getAnnonce(3);
+$annonces[] = $art->getAnnonce(3);
 
 session_write_close();
 

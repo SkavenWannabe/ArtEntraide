@@ -38,6 +38,14 @@ class DAO{
     return $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Utilisateur")[0];
   }
 
+  function getPass(int $email) : Utilisateur{
+    $req = "SELECT password FROM utilisateur WHERE email='$email'";
+
+    $sth = $this->db->query($req);
+    $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    return $return[0];
+  }
+
 
   function getAnnonce(int $id) : Annonce{
     $req = "SELECT * FROM annonce WHERE id='$id'";

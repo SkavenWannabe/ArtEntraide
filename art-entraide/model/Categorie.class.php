@@ -13,7 +13,7 @@ class Categorie {
 
   // --- Constructeur --- //
 
-  function __construct(int $id, string $nom) {
+  function __construct(int $id=0, string $nom='nomCategorie') {
     $this->id = $id;
 
     $this->nom = $nom;

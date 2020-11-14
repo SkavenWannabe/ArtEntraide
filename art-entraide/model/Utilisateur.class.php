@@ -22,7 +22,7 @@ class Utilisateur{
 
   // --- Constructeur --- //
 
-  function __construct(int $id, string $nom, string $prenom, bool $certif , string $email, string $password, string $adresse){
+  function __construct(int $id=0, string $nom='nomUtilisateur', string $prenom='prenomUtilisateur', bool $certif=false , string $email='unEmail', string $password='unPass', string $adresse='uneAdresse'){
     $this->id = $id;
 
     $this->nom = $nom;
