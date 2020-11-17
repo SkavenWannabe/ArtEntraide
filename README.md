@@ -98,6 +98,8 @@ diagramme de sequence
 Il reste la classe Reponse à faire pour l'iteration 3
 
 
+### .tex
+Il y à un readme dedié dans rapport/.
 
 ### Base de données
 **Utilisateur(<u>id</u>, nom, prenom, reputation, certif, email, password, adresse)**
