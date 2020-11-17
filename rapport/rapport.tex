@@ -7,8 +7,11 @@
 \usepackage{enumitem}
 \usepackage{pifont}
 \usepackage[french]{babel}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
 \usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\setlength{\parindent}{0in}
 \renewcommand{\familydefault}{\sfdefault}
 
 \hypersetup{
@@ -128,7 +131,7 @@ Il existe plusieurs sites fournissant des services similaires à ceux de notre p
 Nous avons comparé ces sites sur la base de critères simple (figure 1).
 
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/figure-1.png}
+  \includegraphics[width=\linewidth]{images/tableau-ergo.png}
   \caption{Tableau de comparaison des critères.}
   \label{fig:table1}
 \end{figure}
@@ -468,5 +471,152 @@ moins stressant que du travail seul.\\
 Sur ce diagramme, Alexandre et Lucas seront les verts,
 Elian et Marion seront les bleu clair et
 Eliott et Vincenzo seront les bleu foncé.\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/gantt-iteration2.png}
+  \caption{Diagramme de GANTT pour l'Itération 2}
+  \label{fig:gantt-iteration2}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/gantt-iteration3.png}
+  \caption{Diagramme de GANTT pour l'Itération 3}
+  \label{fig:gantt-iteration3}
+\end{figure}
+
+\section{Annexe}
+
+\subsection{Analyse de l'existant}
+
+\subsubsection{Services}
+
+Notre projet consistant à fournir un service, il nous fallait regarder quels sont nos concurrents sur le marché.
+Visent-ils une rentabilité ou juste à rendre service ? Pour cela, nous avons vérifier si, pour chaque site,
+il était possible de rendre un service gratuitement, contre un autre service ou en étant payé.\\
+
+AlloVoisins possède des services gratuits (dits “non-rémunérés”) mais ils sont très peu utilisés,
+dû au fait qu’il est impossible d’échanger ce service contre un autre.\\
+ 
+\begin{figure}[H]
+  \includegraphics[width=200px]{images/services-allovoisins.png}
+  \label{fig:services-allovoisins}
+\end{figure}
+
+Pwiic propose un système d’échange de pièces contre des services. Ces pièces peuvent être soit achetées,
+soit gagnées en échange des services. Le site se base sur une proposition de prix, plutôt qu’un prix fixé au départ.\\
+
+\begin{figure}[H]
+  \includegraphics[width=250px]{images/pieces-pwiic.png}
+  \label{fig:pieces-pwiic}
+\end{figure}
+
+YakaSaider met en place des profils : par exemple, ici Aurélie est coiffeuse. Il n’y a aucun prix affiché,
+aucune durée, juste un bouton Contacter. Sur ce site, il faut payer en heures. Lorsque l’on crée un compte,
+on dispose d’une heure “gratuite” après quoi il faut rendre des services pour en gagner.
+On les consomme lorsque l’on demande un service.\\
+
+\begin{figure}[H]
+  \includegraphics[width=500px]{images/aurelie-yakasaider.png}
+  \label{fig:aurelie-yakasaider}
+\end{figure}
+
+\subsubsection{Critères d'ergonomie}
+
+Étant donné le public cible, il est important de respecter certains critères ergonomiques.\\
+
+\paragraph{Guidage}
+
+Nous nous sommes laissés guider sur les sites, pour voir comment ces sites s’y prenaient pour attirer
+l’attention là où se trouve l’information.\\
+
+AlloVoisins a un guidage simple. Les boutons importants sont en couleur.\\
+
+\begin{figure}[H]
+  \includegraphics[width=350px]{images/Guidage-allovoisins.png}
+  \label{fig:Guidage-allovoisins}
+\end{figure}
+
+Mais pour les demandes, le titre de la demande est l’endroit où il faut cliquer pour accéder aux informations,
+or il n’est pas assez mis en valeur.\\
+
+\begin{figure}[H]
+  \includegraphics[width=350px]{images/demande-allovoisins.png}
+  \label{fig:demande-allovoisins}
+\end{figure}
+
+Pwiic a un guidage peu intuitif. Par exemple, sur les cartes servant à donner les caractéristiques d’une personne
+lorsque l’on cherche un service, le bouton “Voir ce Pwiic” n’est pas en couleur. De plus, le pouce en l’air donne
+l’impression que le bouton est là pour donner un avis et non pour voir le profil.\\
+
+\begin{figure}[H]
+  \includegraphics[width=350px]{images/guidage-pwiic.png}
+  \label{fig:guidage-pwiic}
+\end{figure}
+
+Et lorsque l’on clique sur Voir ce Pwiic, le bouton pour contacter la personne n’est pas trouvable du premier coup d’œil.\\
+
+\begin{figure}[H]
+  \includegraphics[width=350px]{images/voir-ce-pwiic.png}
+  \label{fig:voir-ce-pwiic}
+\end{figure}
+
+De plus, le mot “Pwiic” est un terme abstrait créé à partir du nom de marque du site, moins clair que “annonce”
+par exemple, ce qui ne facilite pas forcément la navigation pour des personnes peu à l’aise.\\
+
+YakaSaider possède un guidage peu efficace. Lorsque l’on recherche pour “Tous les services”, on ne voit aucune
+compétence ni même description, seulement le visage de la personne, son nom et sa ville.\\
+
+\begin{figure}[H]
+  \includegraphics[width=400px]{images/guidage-yakasaider.png}
+  \label{fig:guidage-yakasaider}
+\end{figure}
+
+Pour régler le problème, il faut faire une recherche plus affinée.\\
+
+\paragraph{Gestion des erreurs}
+
+Ensuite, nous avons essayé de faire des actions qui n’étaient pas celles demandées, une erreur peut très vite perdre un utilisateur.\\
+
+AlloVoisins et Pwiic semblent bien gérer les erreurs. Par exemple, si l’on saisit dans la barre de recherche quelque chose
+qui n’est pas valable, on retourne sur la page de résultats par défaut, c’est à dire tous les résultats près de
+chez nous ou de l’endroit où notre demande se trouve.\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/gestion-erreur-allovoisins.png}
+  \label{fig:gestion-erreur-allovoisins}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=400px]{images/gestion-erreur-yakasaider.png}
+  \label{fig:gestion-erreur-yakasaider}
+\end{figure}
+
+YakaSaider gère le résultat de la recherche différemment. Lorsqu’aucun résultat n’est disponible,
+il affiche simplement un message disant qu’aucun résultat n’a été trouvé.\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/pas-trouve-yakasaider.png}
+  \label{fig:pas-trouve-yakasaider}
+\end{figure}
+
+Mais la liste des services possède une erreur, on peut sélectionner les tirets qui servent à délimiter les catégories.\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/erreur-yakasaider.png}
+  \label{fig:erreur-yakasaider}
+\end{figure}
+
+\paragraph{Certification}
+
+Enfin, la certification nous semblait importante, puisqu’elle permet de limiter certains risques, tels que les arnaques.\\
+
+YakaSaider et Pwiic ne possèdent aucun système de certification.\\
+
+Pwiic ne demande même pas de nom, l’utilisateur s’identifie par un pseudo.\\
+
+AlloVoisins possèdent un système où un utilisateur est certifié par son numéro de téléphone,
+cela lui permet notamment d’accéder à la messagerie du site. (\href{https://support.allovoisins.com/hc/fr/articles/360000816614-Pourquoi-dois-je-certifier-mon-num%C3%A9ro-de-mobile-pour-pouvoir-acc%C3%A9der-%C3%A0-la-messagerie-}{source})
+
+\subsection{Maquettes}
 
 \end{document}
