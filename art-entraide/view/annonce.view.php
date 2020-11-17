@@ -1,23 +1,8 @@
 <!-- Variables à donner à cette vue
-$categories : Liste du nom de chaque catégories
-$user : Utilisateur connecté
+$annonce = Objet annonce concernée
+$nomAuteur = nom de l'auteur de l'annonce
+$nomCategorie = nom de la catégorie de l'annonce
  -->
- <?php
-
-   include_once(__DIR__."/../view/placeholderfunction.php");
-
-   if (isset($_GET['id'])){
-     $id = $_GET['id'];
-   } else {
-     $id = 0;
-   }
-
-   $titre = getAnnonceTitre($id);
-   $description = getAnnonceDescription($id);
-   $lieu = getAnnonceLieu($id);
-   $date = getAnnonceDate($id);
-
-  ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -29,15 +14,27 @@ $user : Utilisateur connecté
   <body>
     <?php include_once(__DIR__."/../view/header.php"); ?>
 
+    <header>
+      <h2>Annonce de <?= $nomAuteur ?> : <?= $annonce->getNom() ?></h2>
+    </header>
+
     <section>
+      <div>
+        <p>Catégorie : <?= $nomCategorie ?></p>
+        <p>Date du service : <?= $annonce->getDateService() ?></p>
+        <p>Lieu du service : <?= $annonce->getAdresse() ?></p>
+      </div>
 
-      <h2><?= $titre ?></h2>
-
-      <p><?= $lieu ?></p>
-      <p><?= $date ?></p>
-      <p><?= $description ?></p>
-
+      <div>
+        <h3>Description de l'annonce</h3>
+        <p><?= $annonce->getDescription() ?></p>
+      </div>
     </section>
+
+    <form class="" action="--- Controleur adapté ---" method="post">
+      <button type="button" name="action" value="repondre">Répondre à l'annonce</button>
+      <button type="button" name="action" value="proposerEchange">Proposer un échange de sevice</button>
+    </form>
 
     <?php include_once(__DIR__."/../view/footer.php"); ?>
   </body>
