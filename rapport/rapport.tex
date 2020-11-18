@@ -43,6 +43,7 @@
 \maketitle
 \newpage
 \tableofcontents
+\newpage
 
 \section{Cadrage du projet}
 \subsection{Description du projet}
@@ -73,7 +74,7 @@ contacts et par conséquent les risques de transmission.\\
 Notre projet a pour but de simplifier l’entraide entre voisins. Cette simplification entraînera une
 régularisation, une spontanéité et une diversité des services.\\
 
-Cependant, cet objectif peut être sub-diviser en plusieurs sous-objectifs.\\
+Cependant, cet objectif peut être diviser en plusieurs sous-objectifs.\\
 
 %---------------==================== NOUVEAUX ====================-----------------
 
@@ -94,24 +95,24 @@ Cependant, cet objectif peut être sub-diviser en plusieurs sous-objectifs.\\
 \underline{Facilité d'utilisation}\\
 
 Un voisinage étant un des meilleurs exemples de mixité social.
-Il y a des jeunes, des vieux, des ouvrier, des ingénieurs, des familles, autant de personnes qui sont plus ou moins à l'aise en informatique.
+On y trouve des jeunes, des personnes agées, des ouvrier, des ingénieurs, des familles, autant de personnes qui sont plus ou moins à l'aise en informatique.
 C'est à nous de nous adapter à tous ses différents niveaux. Il faut donc que le site soit simple et facile d'utilisation.
-Pour atteindre cet objectif, on peut faire un guidage sur le site, suivre les règles d'accessibilité de W3C et faire une foire aux questions par exemple.\\
+Pour atteindre cet objectif, nous pouvons faire un guidage sur le site en suivant les règles d'accessibilité du W3C et faire une foire aux questions par exemple.\\
 
 \underline{Des utilisateurs de confiances}\\
 
 Selon les services on peut avoir besoin d'utilisateur de confiance.
 Par exemple pour des travaux de plomberie, il faut quelqu'un capable de réparer et surtout de ne pas empirer les dégâts.
-Ou encore, pour les personne agées, il faut que les personnes qui interviennent au domicile ne soit pas mal intentionnée.
+Ou encore, pour les personnes agées, il faut que les personnes qui interviennent au domicile ne soit pas mal intentionnée.
 Il faut donc un moyen pour vérifier la confiance envers les utilisateurs.
 % Je corrige les fautes après manger
-Pour cela on a pensé à un système de réputation variable entre -100 et 100 qui est un premier critère de confiance.
-Autre possibilité qui peut venir en compléments es deux système de certification :\\
-  - Un pour l'identité des utilisateur via un tier, une mairie ou une association\\
-  - Un pour les competance des utilisateur,\\
-le moyen n'est pas encre définie avec exactitude mais comme solutions envisagés il y a la certification pas diplômes et/ou la certification de compétence par les usager.
-Si X personne assure que la compétence utilisé lors du service rendu est aquis la certification peut être donnée.
-Il faut neamois se protéger de ne pas certifier quelqu'un qui na pas les compétances.\\
+Pour cela on a pensé à un système de réputation qui est un premier critère de confiance.
+Autre possibilité qui peut venir en compléments est deux système de certification :\\
+  - Un pour l'identité des utilisateur via un tier comme une mairie ou une association\\
+  - Un pour les compétences des utilisateurs\\
+le moyen n'est pas encore définie avec exactitude mais comme solutions envisagés il y a la certification par diplômes et/ou la certification de compétence par les usagers.
+Si X personnes assure que la compétence utilisé lors du service rendu est aquise, la certification peut être donnée.
+Il faut néanmois se protéger de ne pas certifier quelqu'un qui na pas les compétences.\\
 
 %la suite au prochain push
 
@@ -144,7 +145,7 @@ Nous avons comparé ces sites sur la base de critères simple (figure 1).
   \label{fig:table1}
 \end{figure}
 
-Art Entraide cherche à se différentier par sa certification plus pousser que les autres sites.\\ 
+Art entraide se différenti par une certification plus poussée.
 La justification de ces choix se trouve en annexe.\\
 
 \subsection{Acteurs du projet}
@@ -272,6 +273,7 @@ assumerons les pertes de temps. Quant à la mauvaise compréhension des besoins,
 aussi la réduction. Nous poserons des questions à la maîtrise d'ouvrage et nous pourrions aussi sonder
 les clients.\\
 
+\newpage
 \section{Expression du besoin}
 
 L’utilisateur a soif d’une réponse à ces exigences.
@@ -386,6 +388,7 @@ Le site demandera aux utilisateurs de créer un compte avant de pouvoir créer o
 annonces. Une page permettra de se connecter à son compte et une autre de gérer ses informations
 personnelles.\\
 
+\newpage
 \section{Solutions}
 
 \subsection{Spécifications détaillées}
@@ -528,40 +531,31 @@ Eliott et Vincenzo seront les bleu foncé.\\
 \end{figure}
 
 %---------------==================== NOUVEAUX ====================-----------------
+\newpage
 \section{Conception de la solution}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{../Conception/DCU.png}
+  \caption{Diagramme des cas d'utilisation}
+  \label{fig:<un-label-court>}
+\end{figure}
 
 \subsection{MVC}
 \subsubsection{Modèle}
 Le modèle est composée de plusieurs classes PHP comme définie par le diagramme de classe ci-dessous
 plus la classe DAO qui permet l'acces a la base de données qui n'apparait pas pour des question de visibilité :\\
+
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
   \caption{Diagramme de classe php}
   \label{fig:<un-label-court>}
 \end{figure}
-De même que pour une question de lisibilité les getteur n'apparaise mais mais il y a un getteur pour chaque attribut
 
-\subsection{Base de données}
-
-\includegraphics[width=8cm, height=15cm]{images/Schema-relationnel-BDD.png}\\\\
-Serial est un type de donnée qui sert à créer des id, il est équivalent à dire que l'on auto-incremente les id à chaque INSERT.\\\\
-\textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
-\textbf{Categorie(\underline{id}, nom)}\\\\
-\textbf{Annonce(\underline{id}, nom, description, adresse, date\_creation, date\_service, \#id\_createur, \#id\_categorie)}\\
-id\_createur clef étrangère de Utilisateur.\\
-id\_categorie clef étrangère de Categorie.\\\\
-\textbf{Message(\underline{id}, contenue, date\_message, \#id\_auteur)}\\
-id\_auteur clef étrangère de Utilisateur.\\\\
-\textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
-id\_annonce clef étrangère de Annonce.\\
-id\_repondeur clef étrangère de Utilisateur.\\
-id\_message clef étrangère de Message.\\\\
-
-Lorsqu'un utilisateur clique sur une annonce qu'il a crée, on lui affiche la liste de personne ayant répondu. Après son choix, il nous reste alors tout les messages entre le créateur de l'annonce et le repondeur.
+De même que pour une question de lisibilité les getteur n'apparaise mais il y a un getteur pour chaque attribut.
 
 %---------------==================== FIN NOUVEAUX ====================-----------------
 
-
+\newpage
 \section{Annexe}
 
 \subsection{Analyse de l'existant}
@@ -644,16 +638,12 @@ par exemple, ce qui ne facilite pas forcément la navigation pour des personnes 
 YakaSaider possède un guidage peu efficace. Lorsque l’on recherche pour “Tous les services”, on ne voit aucune
 compétence ni même description, seulement le visage de la personne, son nom et sa ville.\\
 
-
-
 \begin{figure}[H]
   \includegraphics[width=400px]{images/guidage-yakasaider.png}
   \label{fig:guidage-yakasaider}
 \end{figure}
 
 Pour régler le problème, il faut faire une recherche plus affinée.\\
-
-Pour Art Entraide, nous suivrons les critères du W3C.
 
 \paragraph{Gestion des erreurs}
 
@@ -688,9 +678,6 @@ Mais la liste des services possède une erreur, on peut sélectionner les tirets
   \label{fig:erreur-yakasaider}
 \end{figure}
 
-
-Pour Art Entraide, nous mettrons en place des pages affichant les erreurs.
-
 \paragraph{Certification}
 
 Enfin, la certification nous semblait importante, puisqu’elle permet de limiter certains risques, tels que les arnaques.\\
@@ -702,7 +689,6 @@ Pwiic ne demande même pas de nom, l’utilisateur s’identifie par un pseudo.\
 AlloVoisins possèdent un système où un utilisateur est certifié par son numéro de téléphone,
 cela lui permet notamment d’accéder à la messagerie du site. (\href{https://support.allovoisins.com/hc/fr/articles/360000816614-Pourquoi-dois-je-certifier-mon-num%C3%A9ro-de-mobile-pour-pouvoir-acc%C3%A9der-%C3%A0-la-messagerie-}{source})
 
-Art Entraide possedera un système de certification plus poussé, l'utilisateur devra être certifié par une Mairie ou une association.
 \subsection{Maquettes}
 
 \end{document}
