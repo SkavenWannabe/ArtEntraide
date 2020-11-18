@@ -539,6 +539,25 @@ plus la classe DAO qui permet l'acces a la base de données qui n'apparait pas p
   \label{fig:<un-label-court>}
 \end{figure}
 De même que pour une question de lisibilité les getteur n'apparaise mais mais il y a un getteur pour chaque attribut
+
+\subsection{Base de données}
+
+\includegraphics[width=8cm, height=15cm]{images/Schema-relationnel-BDD.png}\\\\
+Serial est un type de donnée qui sert à créer des id, il est équivalent à dire que l'on auto-incremente les id à chaque INSERT.\\\\
+\textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
+\textbf{Categorie(\underline{id}, nom)}\\\\
+\textbf{Annonce(\underline{id}, nom, description, adresse, date\_creation, date\_service, \#id\_createur, \#id\_categorie)}\\
+id\_createur clef étrangère de Utilisateur.\\
+id\_categorie clef étrangère de Categorie.\\\\
+\textbf{Message(\underline{id}, contenue, date\_message, \#id\_auteur)}\\
+id\_auteur clef étrangère de Utilisateur.\\\\
+\textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
+id\_annonce clef étrangère de Annonce.\\
+id\_repondeur clef étrangère de Utilisateur.\\
+id\_message clef étrangère de Message.\\\\
+
+Lorsqu'un utilisateur clique sur une annonce qu'il a crée, on lui affiche la liste de personne ayant répondu. Après son choix, il nous reste alors tout les messages entre le créateur de l'annonce et le repondeur.
+
 %---------------==================== FIN NOUVEAUX ====================-----------------
 
 
