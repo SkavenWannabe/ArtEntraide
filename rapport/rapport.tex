@@ -543,13 +543,12 @@ Eliott et Vincenzo seront les bleu foncé.\\
 \end{figure}
 
 %---------------==================== NOUVEAUX ====================-----------------
-\newpage
 \section{Conception de la solution}
 
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/DCU.png}
+  \includegraphics[width=250px]{../Conception/DCU.png}
   \caption{Diagramme des cas d'utilisation}
-  \label{fig:<un-label-court>}
+  \label{fig:DCU}
 \end{figure}
 
 \subsection{Diagramme de Séquence}
@@ -584,7 +583,7 @@ Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour
 
 %---------------==================== FIN NOUVEAUX ====================-----------------
 
-\subsection{Base de donnée}
+\paragraph{Base de donnée}
 
 \includegraphics[width=8cm, height=15cm]{images/Schema-relationnel-BDD.png}\\\\
 SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
@@ -602,7 +601,7 @@ id\_message clef étrangère de Message.\\\\
 
 Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
 
-\subsection{Vues}
+\subsubsection{Vues}
 
 Pour notre interface, les critères prioritaires que nous avons choisis sont :
 
@@ -641,7 +640,7 @@ Lors de la réalisation des maquettes, nous avons essayé de les respecter au ma
 Notamment pour la cohérence interne : l'en-tête et le pied de page sont communs à toutes
 les pages du site.
 
-\subsubsection{Header}
+\paragraph{Header}
 
 Le header est composé du logo du site, une barre de recherche et de 3 boutons.
 Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
@@ -654,7 +653,7 @@ Si l'utilisateur est déjà connecté, les boutons "Se connecter" et "S'inscrire
 sont remplacés par le nom de l'utilisateur et son icône de profil, qui seront
 cliquables afin d'accéder aux paramètres de son compte.\\
 
-\subsubsection{Page d'accueil}
+\paragraph{Page d'accueil}
 
 La page d'accueil est composée d'une courte description du site, de quatre annonces et
 d'un bouton permettant d'atteindre la page d'affichage/filtrage des annonces.
@@ -669,17 +668,17 @@ est en fait un bouton permettant d'accéder à toutes les annonces de la même c
 renforcant encore une fois la flexibilité avec le header, de plus le titre de l'annonce
 est aussi un lien menant vers le détail de l'annonce.\\
 
-\subsubsection{Page du détail d'une annonce}
+\paragraph{Page du détail d'une annonce}
 
 Pour appuyer sur le guidage, toutes les informations essentielles de l'annonce sont groupées sur la gauche.
 
-\subsubsection{Page de création d'une annonce}
+\paragraph{Page de création d'une annonce}
 
 Sur cette page, nous avons essayé de réduire la densité informationnelle au maximum pour que publier
 une annonce reste une action simple. Ainsi la page est constituée d'un titre, de 6 blocs, un pour chaque paramètre
 de l'annonce, ainsi qu'un bouton pour confirmer.
 
-\subsubsection{Page d'inscription}
+\paragraph{Page d'inscription}
 
 Sur la partie gauche de cette page, un paragraphe explique les avantages de créer son compte,
 toujours dans l'objectif de renforcer le guidage. Sur la partie droite, un formulaire comportant
@@ -687,7 +686,7 @@ tous les champs nécéssaires à la création de compte. La connexion via compte
 disponible pour améliorer la brièveté, la flexibilité et la prise en compte de l'expérience de
 l'utilisateur car cela rend l'inscription beaucoup plus accessible.
 
-\subsubsection{Page de connexion}
+\paragraph{Page de connexion}
 
 Cette page a pour but d'être simple, avec une densité informationnelle faible.
 Un lien permet de rediriger vers la création d'un compte si l'utilisateur n'en
@@ -695,7 +694,7 @@ avait pas encore un, améliorant la correction des erreurs.
 Encore une fois ici, la connexion via compte Google est présente pour plus de
 flexibilité et de prise en compte de l'expérience de l'utilisateur.
 
-\subsubsection{Page de recherche d'annonce}
+\paragraph{Page de recherche d'annonce}
 
 Sur cette page, les critères de recherches sont tous groupés sur une même ligne,
 et la prévisualisation des annonces a été reprise de la page d'accueil pour plus de cohérence interne.
