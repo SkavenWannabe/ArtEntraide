@@ -472,7 +472,7 @@ changer l’affichage (la partie vue), nous n’avons pas à toucher à la logiq
 
 Pour implémenter la partie IHM, les solutions envisageables sont basées sur les différentes
 technologies actuelles.
-L’ossature des pages sera en HTML et du CSS pour gérer la charte graphique et la structure des
+L’ossature des pages sera en HTML et en CSS pour gérer la charte graphique et la structure des
 bandeaux et centres de page. On utilisera plus particulière la dernière version (HTML 5) qui permet
 d’ajouter plus facilement des composants multimédias. Afin d’ajouter une dynamique moderne aux
 pages (menu illustré par exemple) les sites web actuels utilisent également un framework Javascript
@@ -481,34 +481,49 @@ il est envisagé de n’utiliser que du HTML 5.\\
 
 Pour implémenter la partie logique applicative et connexion aux stockages de données, qui doit être
 sur un serveur distant sécurisé, il existe plusieurs technologies disponibles. On peut utiliser du PHP sur
-serveur Apache pour s’interfacer avec des fichiers ou des bases de données. Il est aussi possible de
+serveur Apache ou nginx pour s’interfacer avec des fichiers ou des bases de données. Il est aussi possible de
 recourir à l’usage de conteneurs JEE comme Tomcat, ou des serveurs d’application comme Weblogic
 ou JBOSS. L’usage de Java JEE offre plus de possibilités, mais du fait de l’intensité du travail demandé
 pour le développement et la complexité associé à JEE, il est préférable de baser notre service sur PHP.
+Il est envisagé d'utiliser un serveur nginx car celui-ci et plus récent, gère mieux les connexions
+multiples et a une configuration plus simple qu'Apache.\\
+
 Pour implémenter le stockage de l’information, il existe plusieurs possibilité : le stockage dans des
-fichiers ; ou bien l’utilisation de base de données, qu’elle soit non relationnelle comme MongoDB,
+fichiers, ou bien l’utilisation de base de données, qu’elle soit non relationnelle comme MongoDB,
 Cassandra, ou relationnelle comme PostgreSQL, Oracle DB, MySQL ou bien SQLite. Compte tenu des
 informations à stocker et des possibilités de recherche offertes sur l’IHM, une base de données et un
-modèle relationnel sont plus indiqués. Compte tenu du temps imparti et de la complexité de mise en
-œuvre, il est envisagé d’utiliser une base relationnelle simple et facilement intégrable avec PHP et
-dans un serveur Apache, comme SQLite ou MySQL.\\
+modèle relationnel sont plus indiqués. Compte tenu du temps imparti et de nos connaissances,
+il est envisagé d’utiliser une base relationnelle simple et facilement intégrable avec PHP et
+dans un serveur nginx, comme PostgreSQL.\\
 
 Pour sécuriser l’accès aux services du site, il est nécessaire de mettre un place une authentification
 avec un accès en mode HTTPS pour protéger les données qui circuleront sur le réseau. Il existe
 plusieurs protocoles possibles pour l’authentification, notamment pour le SSO comme SAML ou
-OAUTH2 avec certificats ou identifiant et mot de passe. En raison de l’échéance, il sera impossible de
-mettre en place ces technologies. L’authentification se fera donc par un simple identifiant et mot de
-passe sur HTTPS. Les informations d’identification seront stockées dans une partie spécifique de la
-base de données. Cette dernière stockera aussi les préférences des utilisateurs.\\
+OAUTH2 avec certificats ou identifiant et mot de passe. Il est aussi possible de déléguer l'authentification
+SSO aux réseaux sociaux (social login) comme google ou facebook qui permettraient aux personnes âgés de ne
+pas avoir à s’inquiéter de retenir un mot de passe et ainsi faciliter l’utilisation de
+notre sites.  En raison de l’échéance, l’authentification se fera de façons basique à travers un simple
+identifiant(l'email) et mot de passe sur HTTPS. Les informations d’identification seront stockées dans une
+partie spécifique de la base de données. Cette dernière stockera aussi les préférences des utilisateurs.
+Si le temps le permet on ajoutera le social login avec google.\\
+
+Le tableau ci dessous résume les possibilitées pour chaque catégorie et montre (cases bleus)
+les choix que nous avons fait pour le projet \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/choixTechno.PNG}
+  \caption{Choix Technologiques pour le projet}
+  \label{fig:choix-techno}
+\end{figure}
 
 \subsection{Réalisations techniques}
 
-La conséquence des choix techniques envisagés pour la réalisation : HTML/CSS, Apache, PHP, MySQL.
-Il va être nécessaire de mettre en place un serveur Apache avec son module PHP et le driver MySQL
-associé sur un serveur Linux.\\
+Compte tenu des choix techniques fait pour la réalisation (HTML/CSS, nginx, PHP, PostgreSQL) nous avons
+mis en place un serveur nginx avec son module PHP et un driver Postgres. Le tout a été déployé
+sur un serveur Linux.\\
 
-Pour le développement nous utiliserons des éditeurs de code standard, et GIMP pour le design des
-images et composants graphiques.\\
+Pour le développement nous utiliserons des éditeurs de code standard (Atom, Visual Studio Code), et Visual Paradigm
+pour le design des images et composants graphiques.\\
 
 Le partage du code, le stockage et la gestion des versions seront gérés par un dépôt Git hébergé sur
 Gricad-GitLab.\\
@@ -550,6 +565,23 @@ Eliott et Vincenzo seront les bleu foncé.\\
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/DCU.png}
   \caption{Diagramme des cas d'utilisation}
+  \label{fig:<un-label-court>}
+\end{figure}
+
+\subsection{Diagramme de Séquence}
+Les diagrammes de sequence de haut niveau permettent de mieux définir la dynamique des cas d'utilisations dans le cadre de notre
+modèle MVC. Nous présentons en particulier ci-dessous les diagrammes correspondant à l'authentification et à la
+création d'une annonce. \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{../Conception/DS_Connexion.png}
+  \caption{Diagramme de Séquence haut niveau représentant la connexion}
+  \label{fig:<un-label-court>}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{../Conception/DS_annonce.png}
+  \caption{Diagramme de Séquence haut niveau représentant la création d'une annonce}
   \label{fig:<un-label-court>}
 \end{figure}
 
