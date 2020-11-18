@@ -39,6 +39,12 @@ On écrira:
 
 Pour une liste ordonnée un remplacera simplement `itemize` par `enumerate`
 
+# gras, italique
+
+\textbf{text en gras}
+\textit{text en italique}
+\underline{test souligné}
+
 # Les images
 Pour insérer des images il faut reprendre la structure du bloc suivant:
 ```
