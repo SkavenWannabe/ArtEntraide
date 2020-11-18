@@ -553,7 +553,7 @@ Eliott et Vincenzo seront les bleu foncé.\\
 \end{figure}
 
 \subsection{Diagramme de Séquence}
-Les diagrammes de sequence de haut niveau permettent de mieux définir la dynamique des cas d'utilisations dans le cadre de notre
+Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre
 modèle MVC. Nous présentons en particulier ci-dessous les diagrammes correspondant à l'authentification et à la
 création d'une annonce. \\
 
@@ -571,8 +571,8 @@ création d'une annonce. \\
 
 \subsection{MVC}
 \subsubsection{Modèle}
-Le modèle est composée de plusieurs classes PHP comme définie par le diagramme de classe ci-dessous
-plus la classe DAO qui permet l'acces a la base de données qui n'apparait pas pour des question de visibilité :\\
+Le modèle est composé de plusieurs classes PHP comme définies par le diagramme de classes ci-dessous,
+plus la classe DAO qui permet l'accès a la base de données qui n'apparaît pas pour des questions de visibilité :\\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
@@ -580,14 +580,14 @@ plus la classe DAO qui permet l'acces a la base de données qui n'apparait pas p
   \label{fig:<un-label-court>}
 \end{figure}
 
-De même que pour une question de lisibilité les getteur n'apparaise mais il y a un getteur pour chaque attribut.
+Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour chaque attribut.
 
 %---------------==================== FIN NOUVEAUX ====================-----------------
 
 \subsection{Base de donnée}
 
 \includegraphics[width=8cm, height=15cm]{images/Schema-relationnel-BDD.png}\\\\
-Serial est un type de donnée qui sert à créer des id, il est équivalent à dire que l'on auto-incremente les id à chaque INSERT.\\\\
+SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
 \textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
 \textbf{Categorie(\underline{id}, nom)}\\\\
 \textbf{Annonce(\underline{id}, nom, description, adresse, date\_creation, date\_service, \#id\_createur, \#id\_categorie)}\\
@@ -600,11 +600,11 @@ id\_annonce clef étrangère de Annonce.\\
 id\_repondeur clef étrangère de Utilisateur.\\
 id\_message clef étrangère de Message.\\\\
 
-Lorsqu'un utilisateur clique sur une annonce qu'il a crée, on lui affiche la liste de personne ayant répondu. Après son choix, il nous reste alors tout les messages entre le créateur de l'annonce et le repondeur.
+Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
 
 \subsection{Vues}
 
-Pour notre interface les critères prioritaires que nous avons choisis sont :
+Pour notre interface, les critères prioritaires que nous avons choisis sont :
 
 \begin{itemize}
 
@@ -638,7 +638,7 @@ Pour notre interface les critères prioritaires que nous avons choisis sont :
 \end{itemize}
 
 Lors de la réalisation des maquettes, nous avons essayé de les respecter au maximum.
-Notamment pour la cohérence interne: Le haut et bas de page sont communs à toutes
+Notamment pour la cohérence interne : l'en-tête et le pied de page sont communs à toutes
 les pages du site.
 
 \subsubsection{Header}
@@ -646,12 +646,12 @@ les pages du site.
 Le header est composé du logo du site, une barre de recherche et de 3 boutons.
 Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
 La barre de recherche et le bouton "Catégories" servent tous les deux à rechercher une
-annonce, l'un avec des mots clés, l'autre en filtrant par catégorie, renforcant
-la fléxibilité.\\
+annonce, l'un avec des mots-clés, l'autre en filtrant par catégorie, renforcant
+la flexibilité.\\
 
 
-Si l'utilisateur est déjà connecté, les boutons "Se connecter" est "S'inscrire"
-sont remplacés par le nom de la personne avec sa photo de profil, qui seront
+Si l'utilisateur est déjà connecté, les boutons "Se connecter" et "S'inscrire"
+sont remplacés par le nom de l'utilisateur et son icône de profil, qui seront
 cliquables afin d'accéder aux paramètres de son compte.\\
 
 \subsubsection{Page d'accueil}
@@ -663,8 +663,8 @@ dès l'arrivée sur le site renforce l'incitation, expliquant tout de suite à q
 le site.\\
 
 Les sections représentant les annonces comportent les informations importantes des
-annonces. Notamment leur titre, leur catégorie et un badge présent près de la photo de profil
-du posteur de l'annonce témoignant de sa certification s'il en a une. La catégorie d'une annonce
+annonces, notamment leur titre, leur catégorie et un badge présent près de la photo de profil
+de l'auteur de l'annonce témoignant de sa certification s'il en a une. La catégorie d'une annonce
 est en fait un bouton permettant d'accéder à toutes les annonces de la même catégorie,
 renforcant encore une fois la flexibilité avec le header, de plus le titre de l'annonce
 est aussi un lien menant vers le détail de l'annonce.\\
@@ -675,7 +675,7 @@ Pour appuyer sur le guidage, toutes les informations essentielles de l'annonce s
 
 \subsubsection{Page de création d'une annonce}
 
-Sur cette page nous avons essayé de réduire la densité informationnelle au maximum pour que publier
+Sur cette page, nous avons essayé de réduire la densité informationnelle au maximum pour que publier
 une annonce reste une action simple. Ainsi la page est constituée d'un titre, de 6 blocs, un pour chaque paramètre
 de l'annonce, ainsi qu'un bouton pour confirmer.
 
@@ -692,14 +692,13 @@ l'utilisateur car cela rend l'inscription beaucoup plus accessible.
 Cette page a pour but d'être simple, avec une densité informationnelle faible.
 Un lien permet de rediriger vers la création d'un compte si l'utilisateur n'en
 avait pas encore un, améliorant la correction des erreurs.
-Encore une fois ici, la connexion via compte google est présente pour plus de
+Encore une fois ici, la connexion via compte Google est présente pour plus de
 flexibilité et de prise en compte de l'expérience de l'utilisateur.
 
 \subsubsection{Page de recherche d'annonce}
 
-Sur cette page, les critères de recherches sont tous groupés sur une mème ligne
-Et les previews des annonces ont été reprises de la page d'accueil pour plus de
-cohérence interne.
+Sur cette page, les critères de recherches sont tous groupés sur une même ligne,
+et la prévisualisation des annonces a été reprise de la page d'accueil pour plus de cohérence interne.
 
 \newpage
 \section{Annexe}
@@ -709,7 +708,7 @@ cohérence interne.
 \subsubsection{Services}
 
 Notre projet consistant à fournir un service, il nous fallait regarder quels sont nos concurrents sur le marché.
-Visent-ils une rentabilité ou juste à rendre service ? Pour cela, nous avons vérifier si, pour chaque site,
+Visent-ils une rentabilité ou simplement à rendre service ? Pour cela, nous avons vérifié si, pour chaque site,
 il était possible de rendre un service gratuitement, contre un autre service ou en étant payé.\\
 
 AlloVoisins possède des services gratuits (dits “non-rémunérés”) mais ils sont très peu utilisés,
