@@ -7,6 +7,8 @@ Une ligne\\
 Une autre ligne
 ```
 
+% commentaire sur une ligne
+
 # Structure
 Pour créer des sections et des sous-sections on utilise `\section{}` et `\subsection{}`\
 Par exemple, pour réaliser cette structure:
