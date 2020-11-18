@@ -586,6 +586,105 @@ id\_message clef étrangère de Message.\\\\
 
 Lorsqu'un utilisateur clique sur une annonce qu'il a crée, on lui affiche la liste de personne ayant répondu. Après son choix, il nous reste alors tout les messages entre le créateur de l'annonce et le repondeur.
 
+\subsection{Vues}
+
+Pour notre interface les critères prioritaires que nous avons choisis sont :
+
+\begin{itemize}
+
+  \item Charge de travail
+  \begin{itemize}
+    \item Densité informationnelle
+  \end{itemize}
+
+  \item Guidage
+  \begin{itemize}
+    \item Incitation
+  \end{itemize}
+  
+  \item Gestion des erreurs
+  \begin{itemize}
+    \item Protection contre les erreurs
+    \item Qualité des messages d'erreur
+  \end{itemize}
+  
+  \item Homogénéité/Cohérence
+  \begin{itemize}
+    \item Cohérence interne
+  \end{itemize}
+  
+  \item Adaptabilité
+  \begin{itemize}
+    \item Flexibilité
+    \item Prise en compte de l'expérience de l'utilisateur
+  \end{itemize}
+  
+\end{itemize}
+
+Lors de la réalisation des maquettes, nous avons essayé de les respecter au maximum.
+Notamment pour la cohérence interne: Le haut et bas de page sont communs à toutes
+les pages du site.
+
+\subsubsection{Header}
+
+Le header est composé du logo du site, une barre de recherche et de 3 boutons.
+Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
+La barre de recherche et le bouton "Catégories" servent tous les deux à rechercher une
+annonce, l'un avec des mots clés, l'autre en filtrant par catégorie, renforcant
+la fléxibilité.\\
+
+
+Si l'utilisateur est déjà connecté, les boutons "Se connecter" est "S'inscrire"
+sont remplacés par le nom de la personne avec sa photo de profil, qui seront
+cliquables afin d'accéder aux paramètres de son compte.\\
+
+\subsubsection{Page d'accueil}
+
+La page d'accueil est composée d'une courte description du site, de quatre annonces et 
+d'un bouton permettant d'atteindre la page d'affichage/filtrage des annonces. 
+Le fait d'avoir uniquement une courte description et ces quatre premières annonces
+dès l'arrivée sur le site renforce l'incitation, expliquant tout de suite à quoi sert
+le site.\\
+
+Les sections représentant les annonces comportent les informations importantes des
+annonces. Notamment leur titre, leur catégorie et un badge présent près de la photo de profil
+du posteur de l'annonce témoignant de sa certification s'il en a une. La catégorie d'une annonce
+est en fait un bouton permettant d'accéder à toutes les annonces de la même catégorie,
+renforcant encore une fois la flexibilité avec le header, de plus le titre de l'annonce
+est aussi un lien menant vers le détail de l'annonce.\\
+
+\subsubsection{Page du détail d'une annonce}
+
+Pour appuyer sur le guidage, toutes les informations essentielles de l'annonce sont groupées sur la gauche.
+
+\subsubsection{Page de création d'une annonce}
+
+Sur cette page nous avons essayé de réduire la densité informationnelle au maximum pour que publier
+une annonce reste une action simple. Ainsi la page est constituée d'un titre, de 6 blocs, un pour chaque paramètre
+de l'annonce, ainsi qu'un bouton pour confirmer.
+
+\subsubsection{Page d'inscription}
+
+Sur la partie gauche de cette page, un paragraphe explique les avantages de créer son compte,
+toujours dans l'objectif de renforcer le guidage. Sur la partie droite, un formulaire comportant
+tous les champs nécéssaires à la création de compte. La connexion via compte Google est aussi
+disponible pour améliorer la brièveté, la flexibilité et la prise en compte de l'expérience de
+l'utilisateur car cela rend l'inscription beaucoup plus accessible.
+
+\subsubsection{Page de connexion}
+
+Cette page a pour but d'être simple, avec une densité informationnelle faible.
+Un lien permet de rediriger vers la création d'un compte si l'utilisateur n'en
+avait pas encore un, améliorant la correction des erreurs.
+Encore une fois ici, la connexion via compte google est présente pour plus de
+flexibilité et de prise en compte de l'expérience de l'utilisateur.
+
+\subsubsection{Page de recherche d'annonce}
+
+Sur cette page, les critères de recherches sont tous groupés sur une mème ligne
+Et les previews des annonces ont été reprises de la page d'accueil pour plus de
+cohérence interne.
+
 \newpage
 \section{Annexe}
 
