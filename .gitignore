@@ -519,5 +519,6 @@ rapport/*.fdb_latexmk
 rapport/*.out
 rapport/*.aux
 rapport/*.pdf
+rapport/latexmake.sh
 
 .ftpconfig
