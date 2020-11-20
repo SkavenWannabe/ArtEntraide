@@ -52,7 +52,12 @@ cette période. Au travers de concerts improvisés, de cours de sport ou même d
 télévisés “Question pour un champion” transformé en “Question pour un balcon”, un certain
 communautarisme entre voisins a vu le jour. Récemment, les grandes crues dévastatrices dans le Sud-
 Est ont soulevé un élan de solidarité. La finalité de notre projet serait de donner un cadre à cette
-entraide pour pouvoir la rendre plus régulière et plus simple à mettre en place.\\
+entraide pour pouvoir la rendre plus régulière et plus simple à mettre en place.
+Durant cette période de crise sanitaire, cela prend du sens notamment pour la mutualisation des
+courses. Prenons l’exemple d’une personne fragile, à la place d’aller faire ses courses elle-même et
+d’être par conséquent en contact avec tous les clients du magasin, elle n’est qu’en contact avec un
+voisin. Inversement pour une personne atteinte ou avec des suspicions de Covid-19, cela limite les
+contacts et par conséquent les risques de transmission.\\
 
 Notre projet est un service de mise en relation et d’échange de services entre particuliers à proximité.\\
 
@@ -61,20 +66,8 @@ Les services iront de la garderie aux petits travaux en passant par le dépannag
 même des courses régulières. L’idée est de faire une plateforme participative et diversifiée grâce aux
 compétences individuelles de chaque utilisateur.\\
 
-Durant cette période de crise sanitaire, cela prend du sens notamment pour la mutualisation des
-courses. Prenons l’exemple d’une personne fragile, à la place d’aller faire ses courses elle-même et
-d’être par conséquent en contact avec tous les clients du magasin, elle n’est qu’en contact avec un
-voisin. Inversement pour une personne atteinte ou avec des suspicions de Covid-19, cela limite les
-contacts et par conséquent les risques de transmission.\\
 
 \subsection{Objectifs}
-
-Notre projet a pour but de simplifier l’entraide entre voisins. Cette simplification entraînera une
-régularisation, une spontanéité et une diversité des services.\\
-
-Cependant, cet objectif peut être divisé en plusieurs sous-objectifs.\\
-
-%---------------==================== NOUVEAUX ====================-----------------
 
 %----- ça c'est mes notes -----
 %objectif générale du Projet = petit paragraphe
@@ -90,6 +83,12 @@ Cependant, cet objectif peut être divisé en plusieurs sous-objectifs.\\
 %Avoir des utilisateur de confiance (via certification et reputation)
 
 %----- fin des notes -----
+\underline{Simplifier l'entraide}\\
+
+L'objectif principale ça sera de simplifier l'entraide entre voisins. Cette simplification entraînera une pérennisation,
+une spontanéité et une diversité des services.\\
+%enquete de satisfaction
+
 \underline{Facilité d'utilisation}\\
 
 Un voisinage est un des meilleurs exemples de mixité sociale.
@@ -99,11 +98,11 @@ Pour atteindre cet objectif, nous pouvons assurer un guidage sur le site en suiv
 
 \underline{Des utilisateurs de confiances}\\
 
-Selon les services on peut avoir besoin d'utilisateur de confiance.
+Selon les services, on peut avoir besoin d'utilisateur de confiance.
 Par exemple pour des travaux de plomberie, il faut quelqu'un capable de réparer et surtout de ne pas empirer les dégâts.
-Ou encore, pour les personnes agées, il faut que les personnes qui interviennent au domicile ne soit pas mal intentionnée.
+Ou encore, pour les personnes âgées, il faut que les personnes qui interviennent au domicile ne soit pas mal intentionnée.
 Il faut donc un moyen pour vérifier la confiance envers les utilisateurs.
-% Je corrige les fautes après manger
+
 Pour cela on a pensé à un système de réputation qui est un premier critère de confiance.
 Autre possibilité qui peut venir en compléments est deux système de certification :\\
   - Un pour l'identité des utilisateur via un tier comme une mairie ou une association\\
@@ -112,10 +111,6 @@ Le moyen pour la vérification compétences des n'est pas encore définie avec e
 Si X personnes assure que la compétence utilisé lors du service rendu est acquise, la certification peut être donnée.
 Il faut néanmoins faire attention à ne pas certifier quelqu'un qui n'a pas les compétences.\\
 
-%la suite au prochain push
-
-
-%---------------==================== FIN NOUVEAUX ====================-----------------
 
 \subsection{Description du contexte}
 
@@ -583,7 +578,7 @@ Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour
 
 \paragraph{Base de donnée}
 
-\includegraphics[width=300px]{images/Schema-relationnel-BDD.png}\\\\
+\includegraphics[width=8cm, height=15cm]{images/Schema-relationnel-BDD.png}\\\\
 SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
 \textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
 \textbf{Categorie(\underline{id}, nom)}\\\\
@@ -705,7 +700,7 @@ et la prévisualisation des annonces a été reprise de la page d'accueil pour p
 \subsubsection{Services}
 
 Notre projet consistant à fournir un service, il nous fallait regarder quels sont nos concurrents sur le marché.
-Visent-ils une rentabilité ou simplement à rendre service ? Pour cela, nous avons vérifié si, pour chaque site,
+Visent-ils une rentabilité ou simplement à rendre service ? Pour cela, nous avons vérifié si, pour chaque site,
 il était possible de rendre un service gratuitement, contre un autre service ou en étant payé.\\
 
 AlloVoisins possède des services gratuits (dits “non-rémunérés”) mais ils sont très peu utilisés,
