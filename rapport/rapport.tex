@@ -433,7 +433,7 @@ Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\
 \subsubsection{Conception logicielle}
 \paragraph{MVC}\mbox{} \\
 
-Afin de garantir une meilleur maintenabilité de l'application, une capacité à mieux fractionner le développement
+Afin de garantir une meilleure maintenabilité de l'application, une capacité à mieux fractionner le développement
 et surtout à isoler les actions utilisateurs du modèle de données et de la présentation du site nous avons décidé
 d'adopter un modèle MVC. Ce modèle offre de plus une meilleur maitrise de l'évolution de chaque composant
 indépendamment les uns des autres, ce qui facilite l'ajout progressif de fonctionnalités, par exemple modifier
@@ -447,6 +447,14 @@ L'application sera donc découpée en 3 modules:
 \end{itemize}
 
 \paragraph{Diagramme de séquence}\mbox{} \\
+Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre
+modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{../Conception/DS_annonce.png}
+  \caption{Diagramme de Séquence haut niveau représentant la création d'une annonce}
+  \label{fig:<un-label-court>}
+\end{figure}
 
 \paragraph{Diagramme de classe}\mbox{} \\
 
@@ -566,6 +574,7 @@ Eliott et Vincenzo seront les bleu foncé.\\
 %---------------==================== NOUVEAUX ====================-----------------
 \section{Conception de la solution}
 
+% A mettre dans la partie besoin fonctionnelle qui explicitera le diagramme 
 \begin{figure}[H]
   \includegraphics[width=250px]{../Conception/DCU.png}
   \caption{Diagramme des cas d'utilisation}
@@ -573,21 +582,15 @@ Eliott et Vincenzo seront les bleu foncé.\\
 \end{figure}
 
 \subsection{Diagramme de Séquence}
-Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre
-modèle MVC. Les diagrammes ci-dessous correspondent à l'authentification et à la
-création d'une annonce. \\
 
+% A mettre dans l'annexe
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/DS_Connexion.png}
   \caption{Diagramme de Séquence haut niveau représentant l'authentification}
   \label{fig:<un-label-court>}
 \end{figure}
 
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/DS_annonce.png}
-  \caption{Diagramme de Séquence haut niveau représentant la création d'une annonce}
-  \label{fig:<un-label-court>}
-\end{figure}
+
 
 \subsection{MVC}
 \subsubsection{Modèle}
