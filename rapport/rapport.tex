@@ -413,8 +413,8 @@ personnelles.\\
 \subsubsection{Conception ergonomique}
 \paragraph{Maquette}\mbox{} \\
 
-A titre d’exemple, voici deux pages qui préfigurent l’ergonomie qui s’appliquera
-à tout le site. Le reste des maquettes se trouve en \underline{\hyperref[sec:maquettes-annexe]{annexe}}. Les différentes pages doivent rester
+A titre d’exemple, voici une page qui préfigurent l’ergonomie qui s’appliquera
+au site. Le reste des maquettes se trouve en \underline{\hyperref[sec:maquettes-annexe]{annexe}}. Les différentes pages doivent rester
 simples en termes de composants, avoir des couleurs sobres et claires afin d’être compréhensibles
 par le public ciblé, notamment des personnes âgées.\\
 
@@ -424,11 +424,33 @@ par le public ciblé, notamment des personnes âgées.\\
   \label{fig:maquette-accueil}
 \end{figure}
 
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/maquette-recherche.png}
-  \caption{Recherche dans une catégorie.}
-  \label{fig:maquette-recherche}
-\end{figure}
+\subparagraph{Header}
+
+Le header est composé du logo du site, une barre de recherche et de 3 boutons.
+Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
+La barre de recherche et le bouton "Catégories" servent tous les deux à rechercher une
+annonce, l'un avec des mots-clés, l'autre en filtrant par catégorie, renforcant
+la flexibilité.\\
+
+
+Si l'utilisateur est déjà connecté, les boutons "Se connecter" et "S'inscrire"
+sont remplacés par le nom de l'utilisateur et son icône de profil, qui seront
+cliquables afin d'accéder aux paramètres de son compte.\\
+
+\subparagraph{Page d'accueil}
+
+La page d'accueil est composée d'une courte description du site, de quatre annonces et
+d'un bouton permettant d'atteindre la page d'affichage/filtrage des annonces.
+Le fait d'avoir uniquement une courte description et ces quatre premières annonces
+dès l'arrivée sur le site renforce l'incitation, expliquant tout de suite à quoi sert
+le site.\\
+
+Les sections représentant les annonces comportent les informations importantes des
+annonces, notamment leur titre, leur catégorie et un badge présent près de la photo de profil
+de l'auteur de l'annonce témoignant de sa certification s'il en a une. La catégorie d'une annonce
+est en fait un bouton permettant d'accéder à toutes les annonces de la même catégorie,
+renforcant encore une fois la flexibilité avec le header, de plus le titre de l'annonce
+est aussi un lien menant vers le détail de l'annonce.\\
 
 \paragraph{Évaluation ergonomique}\mbox{} \\
 
@@ -452,10 +474,17 @@ Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\
   avec les informations de compte de l’utilisateur lorsqu’il est authentifié. La recherche des
   offres sera également simplifiée, avec l’utilisation des préférences de l’utilisateur pour
   préremplir les champs de recherche.
+  \item Cohérence interne : chaque page sera la plus similaire possible aux autres pour faciliter
+  l'apprentissage du site et ne pas se sentir perdu.
+  \item Fléxibilité : pour faciliter l'utilisation du site, il y aura souvent plusieurs actions possibles
+  pour arriver à faire la même chose.
   \item L’adaptabilité : compte tenu du public visé, nous allons mettre en place un mode spécifique
   pour les personnes malvoyantes, activable avec une adaptation de la taille de la police pour
   une meilleur accessibilité.
 \end{itemize}
+
+Lors de la réalisation des maquettes, nous avons essayé de respecter ces critères au maximum.
+Par exemple, pour la cohérence interne, l’en-tête et le pied de page sont communs à toutes les pages du site.
 
 \subsubsection{Conception logicielle}
 \paragraph{MVC}\mbox{} \\
@@ -658,105 +687,39 @@ id\_message clef étrangère de Message.\\\\
 
 Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
 
-\subsubsection{Vues}
+\section{Avancement du projet}
 
-Pour notre interface, les critères prioritaires que nous avons choisis sont :
+À l'heure actuelle un serveur est déployé sur un Raspberry PI et l'infrastructure et le modèle MVC
+avec base de donnée est fonctionnelle. Nous avons donc un programme PHP qui va chercher les
+données du modèle dans une base de donnée PostgreSQL pour produire un affichage de pages
+dynamiques avec du HTML/CSS grâce à un serveur web NGINX.\\
 
-\begin{itemize}
+Côté vue, le header, le footer ainsi que la page d'accueil sont réalisés en
+HTML/CSS avec un début d'adaptation aux formats mobiles (\underline{\hyperref[fig:page-accueil]{visuel ci-dessous}}). Des maquettes
+sont faites pour les autres pages.
 
-  \item Charge de travail
-  \begin{itemize}
-    \item Densité informationnelle
-  \end{itemize}
+La structuration de la base de données est terminée, il reste à faire les contrôles
+assurant la cohérence des données en base.
 
-  \item Guidage
-  \begin{itemize}
-    \item Incitation
-  \end{itemize}
+Toutes les classes du modèle PHP sont en place et le contrôleurs avancent avec les vues.
 
-  \item Gestion des erreurs
-  \begin{itemize}
-    \item Protection contre les erreurs
-    \item Qualité des messages d'erreur
-  \end{itemize}
-
-  \item Homogénéité/Cohérence
-  \begin{itemize}
-    \item Cohérence interne
-  \end{itemize}
-
-  \item Adaptabilité
-  \begin{itemize}
-    \item Flexibilité
-    \item Prise en compte de l'expérience de l'utilisateur
-  \end{itemize}
-
-\end{itemize}
-
-Lors de la réalisation des maquettes, nous avons essayé de les respecter au maximum.
-Notamment pour la cohérence interne : l'en-tête et le pied de page sont communs à toutes
-les pages du site.
-
-\paragraph{Header}
-
-Le header est composé du logo du site, une barre de recherche et de 3 boutons.
-Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
-La barre de recherche et le bouton "Catégories" servent tous les deux à rechercher une
-annonce, l'un avec des mots-clés, l'autre en filtrant par catégorie, renforcant
-la flexibilité.\\
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/page-accueil.png}
+  \label{Page d'accueil du site.}
+  \label{fig:page-accueil}
+\end{figure}
 
 
-Si l'utilisateur est déjà connecté, les boutons "Se connecter" et "S'inscrire"
-sont remplacés par le nom de l'utilisateur et son icône de profil, qui seront
-cliquables afin d'accéder aux paramètres de son compte.\\
 
-\paragraph{Page d'accueil}
-
-La page d'accueil est composée d'une courte description du site, de quatre annonces et
-d'un bouton permettant d'atteindre la page d'affichage/filtrage des annonces.
-Le fait d'avoir uniquement une courte description et ces quatre premières annonces
-dès l'arrivée sur le site renforce l'incitation, expliquant tout de suite à quoi sert
-le site.\\
-
-Les sections représentant les annonces comportent les informations importantes des
-annonces, notamment leur titre, leur catégorie et un badge présent près de la photo de profil
-de l'auteur de l'annonce témoignant de sa certification s'il en a une. La catégorie d'une annonce
-est en fait un bouton permettant d'accéder à toutes les annonces de la même catégorie,
-renforcant encore une fois la flexibilité avec le header, de plus le titre de l'annonce
-est aussi un lien menant vers le détail de l'annonce.\\
-
-\paragraph{Page du détail d'une annonce}
-
-Pour appuyer sur le guidage, toutes les informations essentielles de l'annonce sont groupées sur la gauche.
-
-\paragraph{Page de création d'une annonce}
-
-Sur cette page, nous avons essayé de réduire la densité informationnelle au maximum pour que publier
-une annonce reste une action simple. Ainsi la page est constituée d'un titre, de 6 blocs, un pour chaque paramètre
-de l'annonce, ainsi qu'un bouton pour confirmer.
-
-\paragraph{Page d'inscription}
-
-Sur la partie gauche de cette page, un paragraphe explique les avantages de créer son compte,
-toujours dans l'objectif de renforcer le guidage. Sur la partie droite, un formulaire comportant
-tous les champs nécéssaires à la création de compte. La connexion via compte Google est aussi
-disponible pour améliorer la brièveté, la flexibilité et la prise en compte de l'expérience de
-l'utilisateur car cela rend l'inscription beaucoup plus accessible.
-
-\paragraph{Page de connexion}
-
-Cette page a pour but d'être simple, avec une densité informationnelle faible.
-Un lien permet de rediriger vers la création d'un compte si l'utilisateur n'en
-avait pas encore un, améliorant la correction des erreurs.
-Encore une fois ici, la connexion via compte Google est présente pour plus de
-flexibilité et de prise en compte de l'expérience de l'utilisateur.
-
-\paragraph{Page de recherche d'annonce}
-
-Sur cette page, les critères de recherches sont tous groupés sur une même ligne,
-et la prévisualisation des annonces a été reprise de la page d'accueil pour plus de cohérence interne.
 
 \newpage
+
+
+%===============================================================
+%                           ANNEXE
+%===============================================================
+
+
 \section{Annexe}
 
 \subsection{Analyse de l'existant}
@@ -918,43 +881,75 @@ cela lui permet notamment d’accéder à la messagerie du site. (\href{https://
   \caption{Maquette originale de la création d'une annonce}
   \label{fig:maquette-creation-annonce-original}
 \end{figure}
+\newpage
 
 \subsubsection{Maquettes actuelles}
 
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/maquette-accueil.png}
-  \caption{Page d'accueil.}
-  \label{fig:maquette-accueil}
-\end{figure}
+\paragraph{Page du détail d'une annonce}
+
+Pour appuyer sur le guidage, toutes les informations essentielles de l'annonce sont groupées sur la gauche.
+
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-detail-annonce.png}
   \caption{Page du détail d'une annonce.}
   \label{fig:maquette-detail-annonce}
 \end{figure}
+\newpage
+
+\paragraph{Page de création d'une annonce}
+
+Sur cette page, nous avons essayé de réduire la densité informationnelle au maximum pour que publier
+une annonce reste une action simple. Ainsi la page est constituée d'un titre, de 6 blocs, un pour chaque paramètre
+de l'annonce, ainsi qu'un bouton pour confirmer.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-creation-annonce.png}
   \caption{Page de création d'une annonce.}
   \label{fig:maquette-creation-annonce}
 \end{figure}
+\newpage
+
+\paragraph{Page d'inscription}
+
+Sur la partie gauche de cette page, un paragraphe explique les avantages de créer son compte,
+toujours dans l'objectif de renforcer le guidage. Sur la partie droite, un formulaire comportant
+tous les champs nécéssaires à la création de compte. La connexion via compte Google est aussi
+disponible pour améliorer la brièveté, la flexibilité et la prise en compte de l'expérience de
+l'utilisateur car cela rend l'inscription beaucoup plus accessible.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-inscription.png}
   \caption{Page d'inscription.}
   \label{fig:maquette-inscription}
 \end{figure}
+\newpage
+
+\paragraph{Page de connexion}
+
+Cette page a pour but d'être simple, avec une densité informationnelle faible.
+Un lien permet de rediriger vers la création d'un compte si l'utilisateur n'en
+avait pas encore un, améliorant la correction des erreurs.
+Encore une fois ici, la connexion via compte Google est présente pour plus de
+flexibilité et de prise en compte de l'expérience de l'utilisateur.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-connexion.png}
   \caption{Page de connexion.}
   \label{fig:maquette-connexion}
 \end{figure}
+\newpage
+
+\paragraph{Page de recherche d'annonce}
+
+Sur cette page, les critères de recherches sont tous groupés sur une même ligne,
+et la prévisualisation des annonces a été reprise de la page d'accueil pour plus de cohérence interne.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-recherche.png}
   \caption{Page de recherche d'annonce.}
   \label{fig:maquette-recherche}
 \end{figure}
+\newpage
 
 \end{document}
