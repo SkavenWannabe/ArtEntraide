@@ -9,8 +9,10 @@
 \usepackage[french]{babel}
 \usepackage[a4paper, total={6in, 9in}]{geometry}
 \usepackage{hyperref}
+\usepackage{perpage}
 \setlength{\parindent}{0in}
 \renewcommand{\familydefault}{\sfdefault}
+\MakePerPage{footnote}
 
 \hypersetup{
     colorlinks,
@@ -117,20 +119,29 @@ Il y 3 critères à vérifiable : La fiabilité, l'identité et la compétence d
 Il existe plusieurs sites fournissant des services similaires à ceux de notre projet, les principaux étant :\\
 
 \begin{itemize}
-  \item AlloVoisins : propose un service de mise en relation entre particuliers avec 3,5 millions
+  \item AlloVoisins\footnote{\url{https://www.allovoisins.com/}} : propose un service de mise en relation entre particuliers avec 3,5 millions
   d'utilisateurs. La grande majorité des annonces y sont rémunérées, l’option non rémunérée
   n’étant que très peu utilisée. Certaines entreprises sont aussi présentes sur le site.
 
-  \item Pwiic : c’est un site qui permet d’échanger des services ou objets auprès de particuliers. Il suffit
+  \item Pwiic\footnote{\url{https://pwiic.com/fr/}} : c’est un site qui permet d’échanger des services ou objets auprès de particuliers. Il suffit
   d’envoyer un “Pwiic” pour que la demande s’affiche sur le site. Un algorithme se charge de
   l’envoyer aux bonnes personnes.
 
-  \item YakaSaider : c’est un site communautaire qui met en relation des particuliers ayant besoin ou
-  rendant un service. Il se base sur un nombre d’heure, pour chaque heure passé à rendre des
+  \item YakaSaider\footnote{\url{https://www.yakasaider.fr/}} : c’est un site communautaire qui met en relation des particuliers ayant besoin ou
+  rendant un service. Il se base sur un nombre d’heures, pour chaque heure passée à rendre des
   services, l’utilisateur a le droit de demander une heure de service.
 \end{itemize}
 
-Nous avons comparé ces sites sur la base de critères simples (figure 1).
+Nous avons comparé ces sites sur la base de critères simples (figure 1).\\
+Pour les services proposés, nous avons choisi le prix ou la gratuité pour comparer notre service aux leurs.
+Notre service se veut basé sur le bénévolat ou l'échange. Seul Pwiic propose ceci.
+Du coup il nous fallait d'autres critères. Comme l'ergonomie, en effet notre site se veut facile d'utilisation.
+Nous avons donc observé pour le guidage et la gestion d'erreur, étant donné que les autres sites du marché ne semblent pas suivre de norme.
+Art Entraide se démarquera en suivant les normes W3C en matière d'ergonomie.
+Et enfin, le critère sur lequel nous voulons nous démarquer, la certification.
+Peut de site possède un système de certification, et même s'il en possède un, il est facilement contournable et n'apporte pas de véritable protection.
+Nous voulons mettre en place un système où la vérification se fera par des institutions, des mairies ou des associations.
+De telle sorte a ce que la certification soit un gage de confiance.\\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/tableau-ergo.png}
@@ -138,8 +149,10 @@ Nous avons comparé ces sites sur la base de critères simples (figure 1).
   \label{fig:table1}
 \end{figure}
 
-Art Entraide se différencie par une certification plus poussée.
-La justification de ces choix se trouve en annexe.\\
+Le marché a donc une limite claire. Les utilisateurs n'ayant pas de moyen concret de savoir si la personne avec qui il communique à vraiment des compétences, ou même existe.
+Art Entraide veut apporter ce moyen.\\
+
+Une description plus poussée des sites est disponible en annexe.\\
 
 \subsection{Acteurs du projet}
 \subsubsection{Maîtrise d’ouvrage}
@@ -565,9 +578,9 @@ Pour la deuxième itération, le projet a été découpé en 3 parties. L’équ
 Ce choix de binôme permet une plus grande flexibilité et une parallélisation des tâches, tout en étant
 moins stressant que du travail seul.\\
 
-Sur ce diagramme, Alexandre et Lucas seront les verts,
-Elian et Marion seront les bleu clair et
-Eliott et Vincenzo seront les bleu foncé.\\
+Sur ce diagramme, Alexandre et Lucas s'occuperont du visuel du site,
+Elian et Marion s'occuperont de la logique de fonctionnement et
+Eliott et Vincenzo s'occuperont du stockage des données.\\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/gantt-iteration2.png}
