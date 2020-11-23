@@ -674,6 +674,25 @@ plus la classe DAO qui permet l'accès a la base de données qui n'apparaît pas
 
 Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour chaque attribut.
 
+\subsection{Vue}
+
+\subsubsection{Plan du site}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/plan-du-site.png}
+  \caption{Plan du site}
+  \label{fig:plan-du-site}
+\end{figure}
+
+Voici une représentation simple du plan du site. L'utilisateur pourra rechercher rapidement une annonce
+à n'importe quel moment grâce à la barre de recherche dans le header.
+
+Aussi, si l'utilisateur va sur la page d'inscription alors qu'il n'a pas de compte, il peut directement
+accéder à la page de connexion dans passer de nouveau par l'accueil.
+
+Depuis chaque page, l'utilisateur pourra accéder aux pages d'un niveau inférieur grâce au fil d'Ariane
+mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant sur le logo du header. 
+
 %---------------==================== FIN NOUVEAUX ====================-----------------
 
 \paragraph{Base de donnée}\leavevmode
@@ -690,7 +709,7 @@ id\_auteur clef étrangère de Utilisateur.\\\\
 \textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
 id\_annonce clef étrangère de Annonce.\\
 id\_repondeur clef étrangère de Utilisateur.\\
-id\_message clef étrangère de Message.\\\\
+id\_message clef étrangère de Message.\\
 
 Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
 
@@ -712,7 +731,7 @@ Toutes les classes du modèle PHP sont en place et le contrôleurs avancent avec
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/page-accueil.png}
-  \label{Page d'accueil du site.}
+  \caption{Page d'accueil du site.}
   \label{fig:page-accueil}
 \end{figure}
 
