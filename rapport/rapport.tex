@@ -485,6 +485,20 @@ modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. \
 
 \paragraph{Diagramme de classe}\mbox{} \\
 
+Pour faire le lien entre la base de donnée et les controleurs on utilise plusieurs classes php comme définies par le diagramme de classes ci-dessous,
+plus la classe DAO qui permet l'accès a la base de données qui n'apparaît pas pour des questions de visibilité :\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
+  \caption{Diagramme de classe php}
+  \label{fig:<un-label-court>}
+\end{figure}
+
+Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour chaque attribut.
+L'attribut Date\_creation sert à indiquer la date de création de l'annonce.
+En revanche, l'attribut Date\_service est optionnel dans le constructeur et sert à indiquer si l'annonce à un impératif de date.
+Par exemple pour de la garde d'enfants, la plupart du temps cela s'effectue sur un jour précis si ce n'est pas hebdomadaire.\\
+
 
 \subsubsection{Conception Base De Données}
 
@@ -627,16 +641,7 @@ Et le visuel n'a pas eux le temps de faire toutes les vues prévues, le retard e
 
 \subsection{MVC}
 \subsubsection{Modèle}
-Le modèle est composé de plusieurs classes PHP comme définies par le diagramme de classes ci-dessous,
-plus la classe DAO qui permet l'accès a la base de données qui n'apparaît pas pour des questions de visibilité :\\
 
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
-  \caption{Diagramme de classe php}
-  \label{fig:<un-label-court>}
-\end{figure}
-
-Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour chaque attribut.
 
 %---------------==================== FIN NOUVEAUX ====================-----------------
 
