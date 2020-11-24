@@ -268,7 +268,7 @@ les clients.\\
 
 Pour mieux comprendre les fontionnalités et les besoins auxquels nous devons répondre, nous avons créé un diagramme de cas d'utilisations.
 Celui-ci sera explicité dans les prochaines sous-parties.
-/
+
 \begin{figure}[H]
   \includegraphics[width=250px]{../Conception/DCU.png}
   \caption{Diagramme des cas d'utilisation}
@@ -332,23 +332,28 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
 
 \subsubsection{Critères qualité}
 
-\textbf{SQUARE}\\
-
 \textbf{Sécurité}\\
+
+* A APPROFONDIR *
+Les données que les utilisateurs nous confient, tels que leur adresse, numéro de téléphone, etc... sont
+sensibles : une certaine sécurité doit donc être assurée.\\
+
+\textbf{Echelle du projet}\\
+
+Pour commencer, nous voudrions mettre en place un site permettant de gérer au minimum une centaine de comptes et annonces simultanéments.\\
 
 \subsubsection{Critères ergonomiques}
 
-\textbf{Cohérence}\\
-
-\textbf{Lisibilité}\\
+Étant donné que le public visé par ce projet est très large, le site doit être accessible et utilisable par
+tout type de personnes majeure. Cela inclut donc les personnes qui ne sont pas familières avec Internet, ou
+avec les ordinateurs en général. Il est donc nécessaire de rendre le site le plus accessible et simple d'utilisation
+possible, en suivant notamment les critères ergonomiques de Bastien et Scapin.\\
 
 \textbf{Guidage}\\
 
-Étant donné que le public visé par ce projet est très large, le site doit être accessible et utilisable par
-tout type de personnes majeure. Cela inclut donc les personnes qui ne sont pas familières avec Internet, ou
-avec les ordinateurs en général. Il est donc nécessaire de rendre le site le plus accessible possible.\\
+Pour faciliter l'utilisation du site aux utilisateurs et éviter qu'ils ne se retrouvent perdus, ils sera important dans le design des pages du site, de s'assurer de bien disposer les informations essentielles au centre et en haut de la page, afin que ce soit la première chose que l'utilisateur voit sans avoir besoin de scroller.\\
 
-\subsubsection{Visuels adaptés}
+Il est important que l'utilisateur n'ait pas à ce demander ce que l'on attend de lui, dès l'instant ou il pose ses yeux sur la page, ce qu'il doit faire est clair.\\
 
 Les textes devront être adaptés à l’utilisateur, par exemple si ce dernier a des problèmes de vue.\\
 
@@ -358,35 +363,15 @@ réglable via le navigateur, d’utiliser un contraste et des couleurs adaptés.
 Il faut également prendre en compte d’éventuels daltoniens qui pourraient utiliser le site, en
 choisissant des couleurs assez différentes.\\
 
-Pour cela nous nous vérifierons que les critères SQUARE de lisibilité et d’adaptabilité soient respectés.\\
+\textbf{Charge de travail}\\
 
-\subsubsection{Avoir tout sous les yeux}
+Il faudra en même temps éviter de surcharger ce haut de page, et de n'y laisser que les informations essentielles, afin d'éviter de surcharger l'utilisateur d'informations.\\
 
-Beaucoup d’utilisateurs n’essaient pas de chercher plus en détails sur un site s’il ne tombe pas
-directement sur ce qu’ils cherchent. Pour avoir une bonne qualité au sens SQUARE, le site doit avoir
-une bonne capacité fonctionnelle, c'est-à-dire présenter les attributs et fonctions qui satisferont
-directement le besoin utilisateur. Il faut donc réunir toutes les informations nécessaires à l’utilisateur
-en haut de la page, de façon à ce qu’il ait accès à tout ce dont il a besoin sans avoir à défiler vers le
-bas de la page. Il faut donc réussir à réduire la densité informationnelle, il faudra pour cela bien choisir
-de quelles informations l’utilisateur a besoin sur chacune des pages, et les présenter de la façon la
-plus brève et explicite possible. Le site pouvant être utilisé sur des appareils variés (ordinateurs,
-téléphones, etc...), il faudra soigner l’adaptabilité et donc en particulier au niveau qualité SQUARE
-garantir le critère de portabilité.\\
+\textbf{Cohérence}\\
 
-\subsubsection{Toujours savoir où aller}
+Chacune des informations du site doivent être présentés de la même façon à chacune de leurs apparitions, afin de le rendre plus compréhensibles pour l'utilisateur.
 
-Il est important que ce qu’on attend de l’utilisateur soit toujours évident, pour cela il nous faut un
-guidage efficace. En effet, afin d’avoir un bon niveau de qualité au sens SQUARE, il est important de
-garantir que la capacité fonctionnelle soit associée à une bonne facilité d’usage. Cela passe par la
-facilité de compréhension de l’utilisateur. Il ne doit à aucun moment avoir à réfléchir à ce qu’il est
-censé faire. Des textes et des boutons mis en avant sont nécessaires. Pour simplifier le guidage de
-l’utilisateur, une gestion des erreurs et un retour sur le résultat de ses actions sont importants. On
-devra également rester cohérent dans l’interface.\\
-
-\subsubsection{Sécurité}
-
-Les données que les utilisateurs nous confient, tels que leur adresse, numéro de téléphone, etc... sont
-sensibles : une certaine sécurité doit donc être assurée.\\
+Par exemple, la catégorie d'une annonce, si elle est représentée sur une page via un logo, ou écrite d'une certaine couleur, elle devra être représentée de la même façon sur toute les pages du site.
 
 %---------------================== FIN NOUVEAUX ===================-----------------
 
@@ -422,11 +407,10 @@ personnelles.\\
 \subsubsection{Conception ergonomique}
 \paragraph{Maquette}\mbox{} \\
 
-A titre d’exemple, voici une pages qui préfigure l’ergonomie qui s’appliquera
-au le site. Les maquettes et leur discussion se trouve en \underline{\hyperref[sec:maquettes-annexe]{annexe}}. Les différentes pages doivent rester
+A titre d’exemple, voici une page qui préfigurent l’ergonomie qui s’appliquera
+au site. Le reste des maquettes se trouve en \underline{\hyperref[sec:maquettes-annexe]{annexe}}. Les différentes pages doivent rester
 simples en termes de composants, avoir des couleurs sobres et claires afin d’être compréhensibles
 par le public ciblé, notamment des personnes âgées.\\
-
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-accueil.png}
@@ -434,7 +418,33 @@ par le public ciblé, notamment des personnes âgées.\\
   \label{fig:maquette-accueil}
 \end{figure}
 
-\newpage
+\subparagraph{Header}
+
+Le header est composé du logo du site, une barre de recherche et de 3 boutons.
+Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
+La barre de recherche et le bouton "Catégories" servent tous les deux à rechercher une
+annonce, l'un avec des mots-clés, l'autre en filtrant par catégorie, renforcant
+la flexibilité.\\
+
+
+Si l'utilisateur est déjà connecté, les boutons "Se connecter" et "S'inscrire"
+sont remplacés par le nom de l'utilisateur et son icône de profil, qui seront
+cliquables afin d'accéder aux paramètres de son compte.\\
+
+\subparagraph{Page d'accueil}
+
+La page d'accueil est composée d'une courte description du site, de quatre annonces et
+d'un bouton permettant d'atteindre la page d'affichage/filtrage des annonces.
+Le fait d'avoir uniquement une courte description et ces quatre premières annonces
+dès l'arrivée sur le site renforce l'incitation, expliquant tout de suite à quoi sert
+le site.\\
+
+Les sections représentant les annonces comportent les informations importantes des
+annonces, notamment leur titre, leur catégorie et un badge présent près de la photo de profil
+de l'auteur de l'annonce témoignant de sa certification s'il en a une. La catégorie d'une annonce
+est en fait un bouton permettant d'accéder à toutes les annonces de la même catégorie,
+renforcant encore une fois la flexibilité avec le header, de plus le titre de l'annonce
+est aussi un lien menant vers le détail de l'annonce.\\
 
 \paragraph{Évaluation ergonomique}\mbox{} \\
 
@@ -458,15 +468,34 @@ Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\
   avec les informations de compte de l’utilisateur lorsqu’il est authentifié. La recherche des
   offres sera également simplifiée, avec l’utilisation des préférences de l’utilisateur pour
   préremplir les champs de recherche.
-  \item Cohérence interne : pour que l'utilisateur puisse apprendre plus rapidement à utiliser le site,
-  les pages doivent se ressembler le plus possible. Dans ce sens, l'en-tête et le pied de page sont communs à toutes
-  les pages du site.
-  \item Flexibilité : pour faciliter l'utilisation du site, il y aura souvent plusieurs moyen
-  d'effectuer une action
+  \item Cohérence interne : chaque page sera la plus similaire possible aux autres pour faciliter
+  l'apprentissage du site et ne pas se sentir perdu.
+  \item Fléxibilité : pour faciliter l'utilisation du site, il y aura souvent plusieurs actions possibles
+  pour arriver à faire la même chose.
   \item L’adaptabilité : compte tenu du public visé, nous allons mettre en place un mode spécifique
   pour les personnes malvoyantes, activable avec une adaptation de la taille de la police pour
   une meilleur accessibilité.
 \end{itemize}
+
+Lors de la réalisation des maquettes, nous avons essayé de respecter ces critères au maximum.
+Par exemple, pour la cohérence interne, l’en-tête et le pied de page sont communs à toutes les pages du site.
+
+\paragraph{Plan du site}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/plan-du-site.png}
+  \caption{Plan du site}
+  \label{fig:plan-du-site}
+\end{figure}
+
+Voici une représentation simple du plan du site. L'utilisateur pourra rechercher rapidement une annonce
+à n'importe quel moment grâce à la barre de recherche dans le header.
+
+Aussi, si l'utilisateur va sur la page d'inscription alors qu'il n'a pas de compte, il peut directement
+accéder à la page de connexion dans passer de nouveau par l'accueil.
+
+Depuis chaque page, l'utilisateur pourra accéder aux pages d'un niveau inférieur grâce au fil d'Ariane
+mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant sur le logo du header.
 
 \subsubsection{Conception logicielle}
 \paragraph{MVC}\mbox{} \\
@@ -486,8 +515,7 @@ L'application sera donc découpée en 3 modules:
 
 \paragraph{Diagramme de séquence}\mbox{} \\
 Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre
-modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. En \underline{\hyperref[fig:ds-connexion]{annexe}} se trouve le
-diagramme correspondant à l'authentification.
+modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. \\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/DS_annonce.png}
@@ -511,14 +539,9 @@ L'attribut Date\_creation sert à indiquer la date de création de l'annonce.
 En revanche, l'attribut Date\_service est optionnel dans le constructeur et sert à indiquer si l'annonce à un impératif de date.
 Par exemple pour de la garde d'enfants, la plupart du temps cela s'effectue sur un jour précis si ce n'est pas hebdomadaire.\\
 
-
 \subsubsection{Conception Base De Données}
 
-\begin{figure}[H]
-  \includegraphics[width=400px]{images/Schema-relationnel-BDD.png}
-  \label{fig:<un-label-court>}
-\end{figure}
-
+\includegraphics[width=400px]{images/Schema-relationnel-BDD.png}\\\\
 SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
 \textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
 \textbf{Categorie(\underline{id}, nom)}\\\\
@@ -530,7 +553,7 @@ id\_auteur clef étrangère de Utilisateur.\\\\
 \textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
 id\_annonce clef étrangère de Annonce.\\
 id\_repondeur clef étrangère de Utilisateur.\\
-id\_message clef étrangère de Message.\\\\
+id\_message clef étrangère de Message.\\
 
 Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
 
@@ -650,11 +673,39 @@ Et le visuel n'a pas eux le temps de faire toutes les vues prévues, le retard e
   \label{fig:gantt-iteration3}
 \end{figure}
 
-% ===========================================================
-% ANNEXE
-% ===========================================================
+\section{Avancement du projet}
+
+À l'heure actuelle un serveur est déployé sur un Raspberry PI et l'infrastructure et le modèle MVC
+avec base de donnée est fonctionnelle. Nous avons donc un programme PHP qui va chercher les
+données du modèle dans une base de donnée PostgreSQL pour produire un affichage de pages
+dynamiques avec du HTML/CSS grâce à un serveur web NGINX.\\
+
+Côté vue, le header, le footer ainsi que la page d'accueil sont réalisés en
+HTML/CSS avec un début d'adaptation aux formats mobiles (\underline{\hyperref[fig:page-accueil]{visuel ci-dessous}}). Des maquettes
+sont faites pour les autres pages.
+
+La structuration de la base de données est terminée, il reste à faire les contrôles
+assurant la cohérence des données en base.
+
+Toutes les classes du modèle PHP sont en place et le contrôleurs avancent avec les vues.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/page-accueil.png}
+  \caption{Page d'accueil du site.}
+  \label{fig:page-accueil}
+\end{figure}
+
+
+
 
 \newpage
+
+
+%===============================================================
+%                           ANNEXE
+%===============================================================
+
+
 \section{Annexe}
 
 \subsection{Analyse de l'existant}
@@ -788,14 +839,13 @@ Pwiic ne demande même pas de nom, l’utilisateur s’identifie par un pseudo.\
 AlloVoisins possèdent un système où un utilisateur est certifié par son numéro de téléphone,
 cela lui permet notamment d’accéder à la messagerie du site. (\href{https://support.allovoisins.com/hc/fr/articles/360000816614-Pourquoi-dois-je-certifier-mon-num%C3%A9ro-de-mobile-pour-pouvoir-acc%C3%A9der-%C3%A0-la-messagerie-}{source})
 
-\subsection{Diagramme de séquence}
+\subsection{Diragramme de séquence}
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/DS_Connexion.png}
   \caption{Diagramme de Séquence haut niveau représentant l'authentification}
   \label{fig:ds-connexion}
 \end{figure}
-
 
 \subsection{Maquettes}
 \label{sec:maquettes-annexe}
@@ -825,59 +875,20 @@ cela lui permet notamment d’accéder à la messagerie du site. (\href{https://
   \caption{Maquette originale de la création d'une annonce}
   \label{fig:maquette-creation-annonce-original}
 \end{figure}
+\newpage
 
 \subsubsection{Maquettes actuelles}
-
-\paragraph{Header}
-
-Le header est composé du logo du site, une barre de recherche et de 3 boutons.
-Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
-La barre de recherche et le bouton "Catégories" servent tous les deux à rechercher une
-annonce, l'un avec des mots-clés, l'autre en filtrant par catégorie, renforcant
-la flexibilité.\\
-Si l'utilisateur est déjà connecté, les boutons "Se connecter" et "S'inscrire"
-sont remplacés par le nom de l'utilisateur et son icône de profil, qui seront
-cliquables afin d'accéder aux paramètres de son compte.\\
-
-\newpage
-
-\paragraph{Page d'accueil}
-
-La page d'accueil est composée d'une courte description du site, de quatre annonces et
-d'un bouton permettant d'atteindre la page d'affichage/filtrage des annonces.
-Le fait d'avoir uniquement une courte description et ces quatre premières annonces
-dès l'arrivée sur le site renforce l'incitation, expliquant tout de suite à quoi sert
-le site.
-
-Les sections représentant les annonces comportent les informations importantes des
-annonces, notamment leur titre, leur catégorie et un badge présent près de la photo de profil
-de l'auteur de l'annonce témoignant de sa certification s'il en a une. La catégorie d'une annonce
-est en fait un bouton permettant d'accéder à toutes les annonces de la même catégorie,
-renforcant encore une fois la flexibilité avec le header, de plus le titre de l'annonce
-est aussi un lien menant vers le détail de l'annonce.\\
-
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/maquette-accueil.png}
-  \caption{Page d'accueil.}
-  \label{fig:maquette-accueil}
-\end{figure}
-
-
-\newpage
-
-
 
 \paragraph{Page du détail d'une annonce}
 
 Pour appuyer sur le guidage, toutes les informations essentielles de l'annonce sont groupées sur la gauche.
+
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-detail-annonce.png}
   \caption{Page du détail d'une annonce.}
   \label{fig:maquette-detail-annonce}
 \end{figure}
-
 \newpage
 
 \paragraph{Page de création d'une annonce}
@@ -891,7 +902,6 @@ de l'annonce, ainsi qu'un bouton pour confirmer.
   \caption{Page de création d'une annonce.}
   \label{fig:maquette-creation-annonce}
 \end{figure}
-
 \newpage
 
 \paragraph{Page d'inscription}
@@ -907,7 +917,6 @@ l'utilisateur car cela rend l'inscription beaucoup plus accessible.
   \caption{Page d'inscription.}
   \label{fig:maquette-inscription}
 \end{figure}
-
 \newpage
 
 \paragraph{Page de connexion}
@@ -925,7 +934,6 @@ flexibilité et de prise en compte de l'expérience de l'utilisateur.
 \end{figure}
 \newpage
 
-
 \paragraph{Page de recherche d'annonce}
 
 Sur cette page, les critères de recherches sont tous groupés sur une même ligne,
@@ -936,5 +944,6 @@ et la prévisualisation des annonces a été reprise de la page d'accueil pour p
   \caption{Page de recherche d'annonce.}
   \label{fig:maquette-recherche}
 \end{figure}
+\newpage
 
 \end{document}
