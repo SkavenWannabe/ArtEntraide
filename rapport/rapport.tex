@@ -9,15 +9,17 @@
 \usepackage[french]{babel}
 \usepackage[a4paper, total={6in, 9in}]{geometry}
 \usepackage{hyperref}
+\usepackage{perpage}
 \setlength{\parindent}{0in}
 \renewcommand{\familydefault}{\sfdefault}
+\MakePerPage{footnote}
 
 \hypersetup{
     colorlinks,
     citecolor=black,
     filecolor=black,
     linkcolor=black,
-    urlcolor=black
+    urlcolor=blue
 }
 
 
@@ -36,9 +38,13 @@
   Lucas Lacouture\\
 }
 
+\begin{figure}[H]
+  \includegraphics[width=500px]{images/page-de-garde.png}
+  \label{fig:mpage-de-garde}
+\end{figure}
+
 \begin{document}
 
-\maketitle
 \newpage
 \tableofcontents
 \newpage
@@ -52,7 +58,12 @@ cette période. Au travers de concerts improvisés, de cours de sport ou même d
 télévisés “Question pour un champion” transformé en “Question pour un balcon”, un certain
 communautarisme entre voisins a vu le jour. Récemment, les grandes crues dévastatrices dans le Sud-
 Est ont soulevé un élan de solidarité. La finalité de notre projet serait de donner un cadre à cette
-entraide pour pouvoir la rendre plus régulière et plus simple à mettre en place.\\
+entraide pour pouvoir la rendre plus régulière et plus simple à mettre en place.
+Durant cette période de crise sanitaire, cela prend du sens notamment pour la mutualisation des
+courses. Prenons l’exemple d’une personne fragile, à la place d’aller faire ses courses elle-même et
+d’être par conséquent en contact avec tous les clients du magasin, elle n’est qu’en contact avec un
+voisin. Inversement pour une personne atteinte ou avec des suspicions de Covid-19, cela limite les
+contacts et par conséquent les risques de transmission.\\
 
 Notre projet est un service de mise en relation et d’échange de services entre particuliers à proximité.\\
 
@@ -61,20 +72,8 @@ Les services iront de la garderie aux petits travaux en passant par le dépannag
 même des courses régulières. L’idée est de faire une plateforme participative et diversifiée grâce aux
 compétences individuelles de chaque utilisateur.\\
 
-Durant cette période de crise sanitaire, cela prend du sens notamment pour la mutualisation des
-courses. Prenons l’exemple d’une personne fragile, à la place d’aller faire ses courses elle-même et
-d’être par conséquent en contact avec tous les clients du magasin, elle n’est qu’en contact avec un
-voisin. Inversement pour une personne atteinte ou avec des suspicions de Covid-19, cela limite les
-contacts et par conséquent les risques de transmission.\\
 
 \subsection{Objectifs}
-
-Notre projet a pour but de simplifier l’entraide entre voisins. Cette simplification entraînera une
-régularisation, une spontanéité et une diversité des services.\\
-
-Cependant, cet objectif peut être divisé en plusieurs sous-objectifs.\\
-
-%---------------==================== NOUVEAUX ====================-----------------
 
 %----- ça c'est mes notes -----
 %objectif générale du Projet = petit paragraphe
@@ -89,7 +88,18 @@ Cependant, cet objectif peut être divisé en plusieurs sous-objectifs.\\
 %Facile d'utilisation (accecibilité W3C, FAQ...)
 %Avoir des utilisateur de confiance (via certification et reputation)
 
+%smart
+%Specifque Mesurable Ambitieux Realiste Temporel
+
 %----- fin des notes -----
+\underline{Simplifier l'entraide}\\
+
+L'objectif principal est de simplifier l'entraide entre voisins.
+Cette simplification entraînera une pérennisation et une diversité des services.
+En proposant des sondages et des questionnaires à nos inscrits.
+Cela nous permettra d'évaluer si notre site effectivement facilite l'entraide et à quel point.\\
+%enquete de satisfaction
+
 \underline{Facilité d'utilisation}\\
 
 Le voisinage est un des meilleurs exemples de mixité sociale.
@@ -97,45 +107,45 @@ On y trouve des jeunes, des personnes âgées, des ouvriers, des ingénieurs, de
 C'est à nous de nous adapter à tous ces différents niveaux. Il faut donc que le site soit simple et facile d'utilisation.
 Pour atteindre cet objectif, nous pouvons assurer un guidage sur le site en suivant les règles d'accessibilité du W3C et faire une foire aux questions par exemple.\\
 
-\underline{Des utilisateurs de confiances}\\
+\underline{Des utilisateurs de confiance}\\
 
-Selon les services on peut avoir besoin d'utilisateur de confiance.
+Selon les services, on peut avoir besoin d'utilisateurs de confiance.
 Par exemple pour des travaux de plomberie, il faut quelqu'un capable de réparer et surtout de ne pas empirer les dégâts.
-Ou encore, pour les personnes agées, il faut que les personnes qui interviennent au domicile ne soit pas mal intentionnée.
-Il faut donc un moyen pour vérifier la confiance envers les utilisateurs.
-% Je corrige les fautes après manger
-Pour cela on a pensé à un système de réputation qui est un premier critère de confiance.
-Autre possibilité qui peut venir en compléments est deux système de certification :\\
-  - Un pour l'identité des utilisateur via un tier comme une mairie ou une association\\
-  - Un pour les compétences des utilisateurs\\
-Le moyen pour la vérification compétences des n'est pas encore définie avec exactitude mais comme solutions envisagés il y a la certification par diplômes et/ou la certification de compétence par les usagers.
-Si X personnes assure que la compétence utilisé lors du service rendu est acquise, la certification peut être donnée.
-Il faut néanmoins faire attention à ne pas certifier quelqu'un qui n'a pas les compétences.\\
-
-%la suite au prochain push
+Ou encore, pour les personnes âgées, il faut que les personnes qui interviennent au domicile ne soit pas mal intentionnées.
+Il faut donc un moyen pour vérifier les utilisateurs.\\
+Il y 3 critères à vérifiable : La fiabilité, l'identité et la compétence des utilisateurs.\\
 
 
-%---------------==================== FIN NOUVEAUX ====================-----------------
+
 
 \subsection{Description du contexte}
 
 Il existe plusieurs sites fournissant des services similaires à ceux de notre projet, les principaux étant :\\
 
 \begin{itemize}
-  \item \href{https://www.allovoisins.com/}{AlloVoisins} : propose un service de mise en relation entre particuliers avec 3,5 millions
+  \item AlloVoisins\footnote{\url{https://www.allovoisins.com/}} : propose un service de mise en relation entre particuliers avec 3,5 millions
   d'utilisateurs. La grande majorité des annonces y sont rémunérées, l’option non rémunérée
   n’étant que très peu utilisée. Certaines entreprises sont aussi présentes sur le site.
 
-  \item \href{https://pwiic.com/fr/}{Pwiic} : c’est un site qui permet d’échanger des services ou objets auprès de particuliers. Il suffit
+  \item Pwiic\footnote{\url{https://pwiic.com/fr/}} : c’est un site qui permet d’échanger des services ou objets auprès de particuliers. Il suffit
   d’envoyer un “Pwiic” pour que la demande s’affiche sur le site. Un algorithme se charge de
   l’envoyer aux bonnes personnes.
 
-  \item \href{http://www.yakasaider.fr/}{YakaSaider} : c’est un site communautaire qui met en relation des particuliers ayant besoin ou
-  rendant un service. Il se base sur un nombre d’heure, pour chaque heure passé à rendre des
+  \item YakaSaider\footnote{\url{https://www.yakasaider.fr/}} : c’est un site communautaire qui met en relation des particuliers ayant besoin ou
+  rendant un service. Il se base sur un nombre d’heures, pour chaque heure passée à rendre des
   services, l’utilisateur a le droit de demander une heure de service.
 \end{itemize}
 
-Nous avons comparé ces sites sur la base de critères simples (figure 1).
+Nous avons comparé ces sites sur la base de critères simples (figure 1).\\
+Pour les services proposés, nous avons choisi le prix ou la gratuité pour comparer notre service aux leurs.
+Notre service se veut basé sur le bénévolat ou l'échange. Seul Pwiic propose ceci.
+Du coup il nous fallait d'autres critères. Comme l'ergonomie, en effet notre site se veut facile d'utilisation.
+Nous avons donc observé pour le guidage et la gestion d'erreur, étant donné que les autres sites du marché ne semblent pas suivre de norme.
+Art Entraide se démarquera en suivant les normes W3C en matière d'ergonomie.
+Et enfin, le critère sur lequel nous voulons nous démarquer, la certification.
+Peut de site possède un système de certification, et même s'il en possède un, il est facilement contournable et n'apporte pas de véritable protection.
+Nous voulons mettre en place un système où la vérification se fera par des institutions, des mairies ou des associations.
+De telle sorte a ce que la certification soit un gage de confiance.\\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/tableau-ergo.png}
@@ -143,8 +153,10 @@ Nous avons comparé ces sites sur la base de critères simples (figure 1).
   \label{fig:table1}
 \end{figure}
 
-Art Entraide se différencie par une certification plus poussée.
-La justification de ces choix se trouve en annexe.\\
+Le marché a donc une limite claire. Les utilisateurs n'ayant pas de moyen concret de savoir si la personne avec qui il communique à vraiment des compétences, ou même existe.
+Art Entraide veut apporter ce moyen.\\
+
+Une description plus poussée des sites est disponible en annexe.\\
 
 \subsection{Acteurs du projet}
 \subsubsection{Maîtrise d’ouvrage}
@@ -159,11 +171,8 @@ simplement à des personnes à proximité.\\
 
 \subsubsection{Maîtrise d'œuvre}
 
-Elle est composée 6 étudiants en 2 e année de DUT Informatique, qui s’occuperont de définir les
-besoins, et de les réaliser.\\
-
-Compétences attendues : être capable de réaliser une page Web, la programmation côté serveur et
-être capable de lier un programme à une base de données.\\
+Elle est composée 6 étudiants en deuxième année de DUT Informatique, qui s’occuperont de définir les
+besoins, de concevoir et réaliser une solution.\\
 
 \subsubsection{Intervention de sous-traitants}
 
@@ -173,11 +182,11 @@ bénévoles.\\
 \subsection{Contraintes}
 
 Notre projet est affecté par l’environnement actuel, les conditions sanitaires, le public cible, etc...
-Toutes ces inconnues définissent un certain nombre de contraintes.\\
+Le cadre du projet définit donc un certain nombre de contraintes.
 
 \subsubsection{Contrainte temporelle}
 
-Pour ce projet la contrainte temporelle est assez forte. En effet, le déroulé se présente sous forme de
+Pour ce projet la contrainte temporelle est forte. En effet, le déroulé se présente sous forme de
 3 itérations successives (le 13 Octobre 2020, le 24 Novembre 2020 et le 15 Janvier 2021) avec pour
 chacune une date de rendu de dossier et d’évaluation.\\
 
@@ -186,11 +195,11 @@ comprises) pour réaliser ce projet.\\
 
 \subsubsection{Contrainte sanitaire}
 
-À la suite de la crise sanitaire du COVID-19, la moitié des séances de projet que nous avons sont en
-distanciel et de manière générale il est recommandé de ne pas trop se regrouper.\\
+À la suite de la deuxième vague de la crise sanitaire du COVID-19, la contrainte sanitaire s'est renforcée.
+En effet, toutes les séances de projet sont désormais en distanciel.\\
 
-Cela pose donc la question du travail à distance. En effet, une bonne partie du travail à fournir devra
-être effectué à distance. Nous devrons utiliser des outils informatiques pour continuer à échanger des
+Cela pose donc la question du travail à distance. En effet, à présent la totalité du travail à fournir devra
+être effectué à distance. Nous devrons donc utiliser des outils informatiques pour continuer à échanger des
 informations, discuter de l’avancée du projet, répartir les tâches etc...\\
 
 \subsubsection{Contrainte matérielle}
@@ -206,8 +215,8 @@ Internet.\\
 
 La création de compte sur le site implique le stockage des données personnelles de l’utilisateur. Ces
 données pouvant être sensibles, telles que des adresses ou des mots de passe, elles sont soumises à
-certaines lois. Nous devrons donc nous conformer à ces dernières, ce qui entraîne une contrainte
-juridique.\\
+certaines lois, notamment le règlement général sur la protection des données (RGPD). Nous devrons donc nous
+conformer à ces dernières, c'est donc une contrainte juridique.\\
 
 \subsection{Risques}
 
@@ -223,13 +232,6 @@ successives nous en empêchent. La criticité de ce risque est donc substantiell
 Une mauvaise compréhension des besoins est un évènement probable. Pour les mêmes raisons
 qu'une mauvaise organisation, ce risque a un impact critique. Sa criticité est donc substantielle.\\
 
-\subsubsection{Risque humain}
-
-La fermeture des universités est un scénario probable pour les semaines à venir. Son impact serait
-modéré car nous devrions majoritairement interagir en distanciel. Durant le dernier semestre, nous
-avons appris à travailler à distance et nous avons les outils pour communiquer en distanciel. La criticité
-de ce risque est donc modérée.\\
-
 Si un ou plusieurs membres du groupe doivent se confiner. Ce scénario est probable. Mais son impact
 serait majeur si la ou les personnes sont dans l’incapacité de travailler, ou mineur s’ils n’ont pas de
 symptômes.\\
@@ -241,22 +243,12 @@ qui peuvent arriver. Il est probable que ce risque survienne et son impact serai
 devra alors être réalisé de nouveau, ce qui serait une perte de temps, une ressource précieuse dans
 ce projet. Sa criticité est alors substantielle.\\
 
-\subsubsection{Risque juridique}
+\subsubsection{Risque judiciaire}
 
 L’utilisation du site pour des actes malveillants est une éventualité probable et son impact serait
 majeur car cela pourrait mettre en danger les utilisateurs. Sa criticité est donc substantielle.\\
 
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/matrice-criticite.png}
-  \caption{Matrice des risques.}
-  \label{fig:matrice-risques}
-\end{figure}
-
 \subsubsection{Plan de mitigation}
-
-Concernant la fermeture des universités ainsi que le confinement d’un ou plusieurs membres du
-groupe, nous optons pour les réserves : nous allons mettre en place des outils supplémentaires pour
-être capables de travailler correctement à distance.\\
 
 Pour la perte de documents, nous choisissons la protection : nous mettrons en place une redondance
 des documents en numérisant tous les documents physiques et en les stockant dans le cloud, ainsi
@@ -265,10 +257,10 @@ que sur le disque dur d’au moins deux de nos machines.\\
 Enfin, par rapport à l’utilisation du site pour des actes malveillants, nous transférerons le risque à des
 associations ou des mairies avec qui nous traiterons pour certifier les utilisateurs du site.\\
 
-Concernant la mauvaise organisation du groupe, nous prenons la réduction. Nous nous organiserons
+Concernant la mauvaise organisation du groupe, nous prenons une statégie de réduction. Nous nous organiserons
 à l'avance et en se concertant tous ensemble. Si malgré cela l'organisation est mauvaise, nous
 assumerons les pertes de temps. Quant à la mauvaise compréhension des besoins, nous choisissons
-aussi la réduction. Nous poserons des questions à la maîtrise d'ouvrage et nous pourrions aussi sonder
+aussi une statégie de réduction. Nous poserons des questions à la maîtrise d'ouvrage et nous pourrions aussi sonder
 les clients.\\
 
 \newpage
@@ -288,14 +280,28 @@ Afin de mettre en relation les particuliers, le site permettra la création d'"a
 
 Ces annonces seront accessibles à la consultation au public, et les utilisateurs intéressés par une annonce pourront y répondre et être directement mis en contact avec l'auteur de l'annonce.
 
+\subsubsection{Comptes }
+
+Afin de permettre d'identifier les différents utilisateurs sur le site, un système de comptes, que l'on pourra créer et gérer, et auquels seront associés chaque actions faites par l'utilisateur (création d'annonce, réponse aux annonces, messages, etc...) devra être mis en place.
+
+\subsubsection{Certification des utilisateur}
+
+Pour vérifier la fiabilité des utilisateurs,
+nous avons pensé à un système de réputation qui est un premier critère de confiance.\\
+
+Pour la vérification de l'identité, les utilisateurs pourraient se faire via un tiers comme une mairie ou une association.\\
+
+Et le moyen pour la certification des compétences n'est pas encore défini avec exactitude, mais comme solutions envisagées il y a la certification par diplômes et/ou la certification de compétence par les usagers.
+Si X personnes assurent que la compétence utilisée lors du service rendu est acquise, la certification peut être donnée.
+Il faut néanmoins faire attention à ne pas certifier quelqu'un qui n'a pas les compétences.\\
+
 \subsubsection{Différents types de comptes}
 
 Le site doit permettre la création de comptes pour les utilisateurs, mais également de comptes
-pour les certificateurs, c'est à dire les organisations chargées de vérifier que les utilisateurs
+pour les certificateurs, c'est à dire les organisations mentionnée ci-dessus chargées de vérifier que les utilisateurs
 qui proposent des services possèdent bel et bien les compétences requises.\\
 
-Étant donné que ces comptes certificateurs auront la capacité de certifier les autres comptes (une responsabilité importante), une authentification
-plus poussée devra être mise en place pour s'y connecter.\\
+Étant donné que ces comptes certificateurs auront la capacité de certifier d'autres comptes (une responsabilité importante), une authentification plus poussée devra être mise en place pour s'y connecter.\\
 
 \subsubsection{Localisation}
 
@@ -311,15 +317,34 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
   \item Récupérer la localisation de l'appareil via la permission du navigateur.
 \end{itemize}
 
-%---------------================== FIN NOUVEAUX ===================-----------------
+
 
 \subsection{Besoins non fonctionnels}
 
-Étant donné que le public visé par ce projet est très large, le site doit être accessible et utilisable par
-tout type de personnes. Cela inclut donc les personnes qui ne sont pas familières avec Internet, ou
-avec les ordinateurs en général. Il est donc nécessaire de rendre le site le plus accessible possible.\\
+\subsubsection{Critères qualité}
 
-\subsubsection{Visuels adaptés}
+\textbf{Sécurité}\\
+
+* A APPROFONDIR *
+Les données que les utilisateurs nous confient, tels que leur adresse, numéro de téléphone, etc... sont
+sensibles : une certaine sécurité doit donc être assurée.\\
+
+\textbf{Echelle du projet}\\
+
+Pour commencer, nous voudrions mettre en place un site permettant de gérer au minimum une centaine de comptes et annonces simultanéments.\\
+
+\subsubsection{Critères ergonomiques}
+
+Étant donné que le public visé par ce projet est très large, le site doit être accessible et utilisable par
+tout type de personnes majeure. Cela inclut donc les personnes qui ne sont pas familières avec Internet, ou
+avec les ordinateurs en général. Il est donc nécessaire de rendre le site le plus accessible et simple d'utilisation
+possible, en suivant notamment les critères ergonomiques de Bastien et Scapin.\\
+
+\textbf{Guidage}\\
+
+Pour faciliter l'utilisation du site aux utilisateurs et éviter qu'ils ne se retrouvent perdus, ils sera important dans le design des pages du site, de s'assurer de bien disposer les informations essentielles au centre et en haut de la page, afin que ce soit la première chose que l'utilisateur voit sans avoir besoin de scroller.\\
+
+Il est important que l'utilisateur n'ait pas à ce demander ce que l'on attend de lui, dès l'instant ou il pose ses yeux sur la page, ce qu'il doit faire est clair.\\
 
 Les textes devront être adaptés à l’utilisateur, par exemple si ce dernier a des problèmes de vue.\\
 
@@ -329,35 +354,17 @@ réglable via le navigateur, d’utiliser un contraste et des couleurs adaptés.
 Il faut également prendre en compte d’éventuels daltoniens qui pourraient utiliser le site, en
 choisissant des couleurs assez différentes.\\
 
-Pour cela nous nous vérifierons que les critères SQUARE de lisibilité et d’adaptabilité soient respectés.\\
+\textbf{Charge de travail}\\
 
-\subsubsection{Avoir tout sous les yeux}
+Il faudra en même temps éviter de surcharger ce haut de page, et de n'y laisser que les informations essentielles, afin d'éviter de surcharger l'utilisateur d'informations.\\
 
-Beaucoup d’utilisateurs n’essaient pas de chercher plus en détails sur un site s’il ne tombe pas
-directement sur ce qu’ils cherchent. Pour avoir une bonne qualité au sens SQUARE, le site doit avoir
-une bonne capacité fonctionnelle, c'est-à-dire présenter les attributs et fonctions qui satisferont
-directement le besoin utilisateur. Il faut donc réunir toutes les informations nécessaires à l’utilisateur
-en haut de la page, de façon à ce qu’il ait accès à tout ce dont il a besoin sans avoir à défiler vers le
-bas de la page. Il faut donc réussir à réduire la densité informationnelle, il faudra pour cela bien choisir
-de quelles informations l’utilisateur a besoin sur chacune des pages, et les présenter de la façon la
-plus brève et explicite possible. Le site pouvant être utilisé sur des appareils variés (ordinateurs,
-téléphones, etc...), il faudra soigner l’adaptabilité et donc en particulier au niveau qualité SQUARE
-garantir le critère de portabilité.\\
+\textbf{Cohérence}\\
 
-\subsubsection{Toujours savoir où aller}
+Chacune des informations du site doivent être présentés de la même façon à chacune de leurs apparitions, afin de le rendre plus compréhensibles pour l'utilisateur.
 
-Il est important que ce qu’on attend de l’utilisateur soit toujours évident, pour cela il nous faut un
-guidage efficace. En effet, afin d’avoir un bon niveau de qualité au sens SQUARE, il est important de
-garantir que la capacité fonctionnelle soit associée à une bonne facilité d’usage. Cela passe par la
-facilité de compréhension de l’utilisateur. Il ne doit à aucun moment avoir à réfléchir à ce qu’il est
-censé faire. Des textes et des boutons mis en avant sont nécessaires. Pour simplifier le guidage de
-l’utilisateur, une gestion des erreurs et un retour sur le résultat de ses actions sont importants. On
-devra également rester cohérent dans l’interface.\\
+Par exemple, la catégorie d'une annonce, si elle est représentée sur une page via un logo, ou écrite d'une certaine couleur, elle devra être représentée de la même façon sur toute les pages du site.
 
-\subsubsection{Sécurité}
-
-Les données que les utilisateurs nous confient, tels que leur adresse, numéro de téléphone, etc... sont
-sensibles : une certaine sécurité doit donc être assurée.\\
+%---------------================== FIN NOUVEAUX ===================-----------------
 
 \subsection{Fonctions attendues}
 
@@ -388,16 +395,13 @@ personnelles.\\
 
 \subsection{Spécifications détaillées}
 
-Compte tenu des besoins détaillés précédemment, le service que nous souhaitons mettre en œuvre
-sera réalisé par un service Web, et non pas une application logicielle à installer qui serait moins
-adaptée au public cible.\\
+\subsubsection{Conception ergonomique}
+\paragraph{Maquette}\mbox{} \\
 
-\subsubsection{Maquette}
-
-A titre d’exemple, voici deux pages qui préfigurent l’ergonomie et la charte graphique qui s’appliquera
-à tout le site dont le reste des pages se trouvent en annexe. Les différentes pages doivent rester
+A titre d’exemple, voici une page qui préfigurent l’ergonomie qui s’appliquera
+au site. Le reste des maquettes se trouve en \underline{\hyperref[sec:maquettes-annexe]{annexe}}. Les différentes pages doivent rester
 simples en termes de composants, avoir des couleurs sobres et claires afin d’être compréhensibles
-par le public cible, notamment des personnes âgées.\\
+par le public ciblé, notamment des personnes âgées.\\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-accueil.png}
@@ -405,240 +409,7 @@ par le public cible, notamment des personnes âgées.\\
   \label{fig:maquette-accueil}
 \end{figure}
 
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/maquette-recherche.png}
-  \caption{Recherche dans une catégorie.}
-  \label{fig:maquette-recherche}
-\end{figure}
-
-\subsubsection{Évaluation ergonomique}
-
-Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\\
-
-\begin{itemize}
-  \item Le guidage : un fil d’Ariane toujours visible sur le haut de l’IHM permettra aux utilisateurs de
-  se repérer facilement dans le site et sur les actions en cours. Une illustration des actions
-  possibles et des formulaires sur le panneau central du site facilitera l’accès aux différents
-  services.
-  \item Le contrôle explicite : la suppression des offres de service sera protégée par une double
-  demande et la mise en relation sera explicite afin de protéger les utilisateurs.
-  \item La gestion des erreurs : un pop-up va être mis en place pour permettre un guidage des
-  utilisateurs en cas d’erreur de saisie et en particulier pour aider les personnes âgées.
-  \item La charge de travail : la création des offres se fera avec un formulaire afin de limiter les étapes
-  nécessaires à l’enregistrement avec un pré-remplissage des champs lorsque cela est possible
-  avec les informations de compte de l’utilisateur lorsqu’il est authentifié. La recherche des
-  offres sera également simplifiée, avec l’utilisation des préférences de l’utilisateur pour
-  préremplir les champs de recherche.
-  \item L’adaptabilité : compte tenu du public visé, nous allons mettre en place un mode spécifique
-  pour les personnes malvoyantes, activable avec une adaptation de la taille de la police pour
-  une meilleur accessibilité.
-\end{itemize}
-
-\subsection{Solutions techniques envisageables}
-
-La conception d’un site web dynamique se décompose en deux parties : d’une part l’IHM qui
-s’exécutera sur le navigateur, et d’autre part la logique côté serveur.\\
-
-Pour suivre un modèle MVC, l’application sera donc découpée en plusieurs parties, chacune ayant
-besoin de solutions techniques différentes :\\
-
-\begin{itemize}
-  \item La logique applicative doit s’exécuter sur un serveur distant protégé qui garantira la protection
-  des données des utilisateurs et gérera l’accès et le stockage persistant des données.
-  \item La communication entre le serveur et le client se fera avec des protocoles standards pour la
-  navigation web HTTP/HTTPS.
-\end{itemize}
-
-Ce modèle a pour avantage de permettre une maintenabilité accrue, par exemple si nous décidons de
-changer l’affichage (la partie vue), nous n’avons pas à toucher à la logique (la partie modèle).\\
-
-Pour implémenter la partie IHM, les solutions envisageables sont basées sur les différentes
-technologies actuelles.
-L’ossature des pages sera en HTML et en CSS pour gérer la charte graphique et la structure des
-bandeaux et centres de page. On utilisera plus particulière la dernière version (HTML 5) qui permet
-d’ajouter plus facilement des composants multimédias. Afin d’ajouter une dynamique moderne aux
-pages (menu illustré par exemple) les sites web actuels utilisent également un framework Javascript
-comme jQuery, AngularJS, ou React. Aux vues des délais et de la complexité des différent frameworks,
-il est envisagé de n’utiliser que du HTML 5.\\
-
-Pour implémenter la partie logique applicative et connexion aux stockages de données, qui doit être
-sur un serveur distant sécurisé, il existe plusieurs technologies disponibles. On peut utiliser du PHP sur
-serveur Apache ou nginx pour s’interfacer avec des fichiers ou des bases de données. Il est aussi possible de
-recourir à l’usage de conteneurs JEE comme Tomcat, ou des serveurs d’application comme Weblogic
-ou JBOSS. L’usage de Java JEE offre plus de possibilités, mais du fait de l’intensité du travail demandé
-pour le développement et la complexité associé à JEE, il est préférable de baser notre service sur PHP.
-Il est envisagé d'utiliser un serveur nginx car celui-ci et plus récent, gère mieux les connexions
-multiples et a une configuration plus simple qu'Apache.\\
-
-Pour implémenter le stockage de l’information, il existe plusieurs possibilité : le stockage dans des
-fichiers, ou bien l’utilisation de base de données, qu’elle soit non relationnelle comme MongoDB,
-Cassandra, ou relationnelle comme PostgreSQL, Oracle DB, MySQL ou bien SQLite. Compte tenu des
-informations à stocker et des possibilités de recherche offertes sur l’IHM, une base de données et un
-modèle relationnel sont plus indiqués. Compte tenu du temps imparti et de nos connaissances,
-il est envisagé d’utiliser une base relationnelle simple et facilement intégrable avec PHP et
-dans un serveur nginx, comme PostgreSQL.\\
-
-Pour sécuriser l’accès aux services du site, il est nécessaire de mettre un place une authentification
-avec un accès en mode HTTPS pour protéger les données qui circuleront sur le réseau. Il existe
-plusieurs protocoles possibles pour l’authentification, notamment pour le SSO comme SAML ou
-OAUTH2 avec certificats ou identifiant et mot de passe. Il est aussi possible de déléguer l'authentification
-SSO aux réseaux sociaux (social login) comme google ou facebook qui permettraient aux personnes âgés de ne
-pas avoir à s’inquiéter de retenir un mot de passe et ainsi faciliter l’utilisation de
-notre sites.  En raison de l’échéance, l’authentification se fera de façons basique à travers un simple
-identifiant(l'email) et mot de passe sur HTTPS. Les informations d’identification seront stockées dans une
-partie spécifique de la base de données. Cette dernière stockera aussi les préférences des utilisateurs.
-Si le temps le permet on ajoutera le social login avec google.\\
-
-Le tableau ci dessous résume les possibilitées pour chaque catégorie et montre (cases bleus)
-les choix que nous avons fait pour le projet \\
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/choixTechno.PNG}
-  \caption{Choix Technologiques pour le projet}
-  \label{fig:choix-techno}
-\end{figure}
-
-\subsection{Réalisations techniques}
-
-Compte tenu des choix techniques fait pour la réalisation (HTML/CSS, nginx, PHP, PostgreSQL) nous avons
-mis en place un serveur nginx avec son module PHP et un driver Postgres. Le tout a été déployé
-sur un serveur Linux.\\
-
-Pour le développement nous utiliserons des éditeurs de code standard (Atom, Visual Studio Code), et Visual Paradigm
-pour le design des images et composants graphiques.\\
-
-Le partage du code, le stockage et la gestion des versions seront gérés par un dépôt Git hébergé sur
-Gricad-GitLab.\\
-
-\subsection{Organisation du travail}
-
-\subsubsection{Choix du modèle}
-
-Pour ce projet, nous utiliserons une méthode itérative. Nous effectuerons des itérations toutes les 4
-à 5 semaines de travail.\\
-
-\subsubsection{Découpage du projet}
-
-Pour la deuxième itération, le projet a été découpé en 3 parties. L’équipe sera divisée en 3 binômes.\\
-
-Ce choix de binôme permet une plus grande flexibilité et une parallélisation des tâches, tout en étant
-moins stressant que du travail seul.\\
-
-Sur ce diagramme, Alexandre et Lucas seront les verts,
-Elian et Marion seront les bleu clair et
-Eliott et Vincenzo seront les bleu foncé.\\
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/gantt-iteration2.png}
-  \caption{Diagramme de GANTT pour l'Itération 2}
-  \label{fig:gantt-iteration2}
-\end{figure}
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/gantt-iteration3.png}
-  \caption{Diagramme de GANTT pour l'Itération 3}
-  \label{fig:gantt-iteration3}
-\end{figure}
-
-%---------------==================== NOUVEAUX ====================-----------------
-\section{Conception de la solution}
-
-\begin{figure}[H]
-  \includegraphics[width=250px]{../Conception/DCU.png}
-  \caption{Diagramme des cas d'utilisation}
-  \label{fig:DCU}
-\end{figure}
-
-\subsection{Diagramme de Séquence}
-Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre
-modèle MVC. Nous présentons en particulier ci-dessous les diagrammes correspondant à l'authentification et à la
-création d'une annonce. \\
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/DS_Connexion.png}
-  \caption{Diagramme de Séquence haut niveau représentant la connexion}
-  \label{fig:<un-label-court>}
-\end{figure}
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/DS_annonce.png}
-  \caption{Diagramme de Séquence haut niveau représentant la création d'une annonce}
-  \label{fig:<un-label-court>}
-\end{figure}
-
-\subsection{MVC}
-\subsubsection{Modèle}
-Le modèle est composé de plusieurs classes PHP comme définies par le diagramme de classes ci-dessous,
-plus la classe DAO qui permet l'accès a la base de données qui n'apparaît pas pour des questions de visibilité :\\
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
-  \caption{Diagramme de classe php}
-  \label{fig:<un-label-court>}
-\end{figure}
-
-Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour chaque attribut.
-
-%---------------==================== FIN NOUVEAUX ====================-----------------
-
-\paragraph{Base de donnée}
-
-\includegraphics[width=8cm, height=15cm]{images/Schema-relationnel-BDD.png}\\\\
-SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
-\textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
-\textbf{Categorie(\underline{id}, nom)}\\\\
-\textbf{Annonce(\underline{id}, nom, description, adresse, date\_creation, date\_service, \#id\_createur, \#id\_categorie)}\\
-id\_createur clef étrangère de Utilisateur.\\
-id\_categorie clef étrangère de Categorie.\\\\
-\textbf{Message(\underline{id}, contenue, date\_message, \#id\_auteur)}\\
-id\_auteur clef étrangère de Utilisateur.\\\\
-\textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
-id\_annonce clef étrangère de Annonce.\\
-id\_repondeur clef étrangère de Utilisateur.\\
-id\_message clef étrangère de Message.\\\\
-
-Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
-
-\subsubsection{Vues}
-
-Pour notre interface, les critères prioritaires que nous avons choisis sont :
-
-\begin{itemize}
-
-  \item Charge de travail
-  \begin{itemize}
-    \item Densité informationnelle
-  \end{itemize}
-
-  \item Guidage
-  \begin{itemize}
-    \item Incitation
-  \end{itemize}
-
-  \item Gestion des erreurs
-  \begin{itemize}
-    \item Protection contre les erreurs
-    \item Qualité des messages d'erreur
-  \end{itemize}
-
-  \item Homogénéité/Cohérence
-  \begin{itemize}
-    \item Cohérence interne
-  \end{itemize}
-
-  \item Adaptabilité
-  \begin{itemize}
-    \item Flexibilité
-    \item Prise en compte de l'expérience de l'utilisateur
-  \end{itemize}
-
-\end{itemize}
-
-Lors de la réalisation des maquettes, nous avons essayé de les respecter au maximum.
-Notamment pour la cohérence interne : l'en-tête et le pied de page sont communs à toutes
-les pages du site.
-
-\paragraph{Header}
+\subparagraph{Header}
 
 Le header est composé du logo du site, une barre de recherche et de 3 boutons.
 Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
@@ -651,7 +422,7 @@ Si l'utilisateur est déjà connecté, les boutons "Se connecter" et "S'inscrire
 sont remplacés par le nom de l'utilisateur et son icône de profil, qui seront
 cliquables afin d'accéder aux paramètres de son compte.\\
 
-\paragraph{Page d'accueil}
+\subparagraph{Page d'accueil}
 
 La page d'accueil est composée d'une courte description du site, de quatre annonces et
 d'un bouton permettant d'atteindre la page d'affichage/filtrage des annonces.
@@ -666,38 +437,293 @@ est en fait un bouton permettant d'accéder à toutes les annonces de la même c
 renforcant encore une fois la flexibilité avec le header, de plus le titre de l'annonce
 est aussi un lien menant vers le détail de l'annonce.\\
 
-\paragraph{Page du détail d'une annonce}
+\paragraph{Évaluation ergonomique}\mbox{} \\
 
-Pour appuyer sur le guidage, toutes les informations essentielles de l'annonce sont groupées sur la gauche.
+Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\\
 
-\paragraph{Page de création d'une annonce}
+\begin{itemize}
+  \item Le guidage : un fil d’Ariane toujours visible sur le haut de l’IHM permettra aux utilisateurs de
+  se repérer facilement dans le site et sur les actions en cours. Une illustration des actions
+  possibles et des formulaires sur le panneau central du site facilitera l’accès aux différents
+  services.
+  \item Le contrôle explicite : la suppression des offres de service sera protégée par une double
+  demande et la mise en relation sera explicite afin de protéger les utilisateurs.
+  \item Prévention des erreurs : un contrôle local sera mis au niveau de chaque champ pour vérifier que
+  les données entrées par l'utilisateur sont conformes (format mail, tel ...) avec un sticker check vert
+  dès que le champ est valide. Pour tous les champs où c'est possible, mise en place de liste de selections
+  plutôt que de champ libre pour limiter les risques d'erreur de saisie.
+  \item La gestion des erreurs : un pop-up va être mis en place pour permettre un guidage des
+  utilisateurs en cas d’erreur de saisie et en particulier pour aider les personnes âgées.
+  \item La charge de travail : la création des offres se fera avec un formulaire afin de limiter les étapes
+  nécessaires à l’enregistrement avec un pré-remplissage des champs lorsque cela est possible
+  avec les informations de compte de l’utilisateur lorsqu’il est authentifié. La recherche des
+  offres sera également simplifiée, avec l’utilisation des préférences de l’utilisateur pour
+  préremplir les champs de recherche.
+  \item Cohérence interne : chaque page sera la plus similaire possible aux autres pour faciliter
+  l'apprentissage du site et ne pas se sentir perdu.
+  \item Fléxibilité : pour faciliter l'utilisation du site, il y aura souvent plusieurs actions possibles
+  pour arriver à faire la même chose.
+  \item L’adaptabilité : compte tenu du public visé, nous allons mettre en place un mode spécifique
+  pour les personnes malvoyantes, activable avec une adaptation de la taille de la police pour
+  une meilleur accessibilité.
+\end{itemize}
 
-Sur cette page, nous avons essayé de réduire la densité informationnelle au maximum pour que publier
-une annonce reste une action simple. Ainsi la page est constituée d'un titre, de 6 blocs, un pour chaque paramètre
-de l'annonce, ainsi qu'un bouton pour confirmer.
+Lors de la réalisation des maquettes, nous avons essayé de respecter ces critères au maximum.
+Par exemple, pour la cohérence interne, l’en-tête et le pied de page sont communs à toutes les pages du site.
 
-\paragraph{Page d'inscription}
+\subsubsection{Conception logicielle}
+\paragraph{MVC}\mbox{} \\
 
-Sur la partie gauche de cette page, un paragraphe explique les avantages de créer son compte,
-toujours dans l'objectif de renforcer le guidage. Sur la partie droite, un formulaire comportant
-tous les champs nécéssaires à la création de compte. La connexion via compte Google est aussi
-disponible pour améliorer la brièveté, la flexibilité et la prise en compte de l'expérience de
-l'utilisateur car cela rend l'inscription beaucoup plus accessible.
+Afin de garantir une meilleure maintenabilité de l'application, une capacité à mieux fractionner le développement
+et surtout à isoler les actions utilisateurs du modèle de données et de la présentation du site nous avons décidé
+d'adopter un modèle MVC. Ce modèle offre de plus une meilleur maitrise de l'évolution de chaque composant
+indépendamment les uns des autres, ce qui facilite l'ajout progressif de fonctionnalités, par exemple modifier
+une fonction de recherche sur l'IHM sans avoir besoin de toucher au modèle de données.
 
-\paragraph{Page de connexion}
+L'application sera donc découpée en 3 modules:
+\begin{itemize}
+  \item la vue (IHM) qui sera côté client sur le navigateur
+  \item le contrôleur côté serveur qui gèrera la logique applicative
+  \item le modèle côté serveur également qui gèrera les données, leurs modifications et leurs sauvegardes sécurisées
+\end{itemize}
 
-Cette page a pour but d'être simple, avec une densité informationnelle faible.
-Un lien permet de rediriger vers la création d'un compte si l'utilisateur n'en
-avait pas encore un, améliorant la correction des erreurs.
-Encore une fois ici, la connexion via compte Google est présente pour plus de
-flexibilité et de prise en compte de l'expérience de l'utilisateur.
+\paragraph{Diagramme de séquence}\mbox{} \\
+Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre
+modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. \\
 
-\paragraph{Page de recherche d'annonce}
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{../Conception/DS_annonce.png}
+  \caption{Diagramme de Séquence haut niveau représentant la création d'une annonce}
+  \label{fig:<un-label-court>}
+\end{figure}
 
-Sur cette page, les critères de recherches sont tous groupés sur une même ligne,
-et la prévisualisation des annonces a été reprise de la page d'accueil pour plus de cohérence interne.
+\paragraph{Diagramme de classe}\mbox{} \\
+
+
+\subsubsection{Conception Base De Données}
+
+
+\subsection{Solutions techniques envisageables}
+
+Compte tenu des besoins détaillés précédemment, le service que nous souhaitons mettre en œuvre
+sera réalisé par un service Web, et non par une application logicielle à installer qui serait moins
+adaptée au public cible. La conception d’un site web dynamique se décompose en : \\
+
+\begin{itemize}
+  \item Une IHM qui s’exécute sur le navigateur client avec la gestion locale des animations, formulaires, ...
+  \item Une logique applicative qui s’exécute sur un serveur distant protégé afin de garantir la protection
+  des données des utilisateurs et gérer l’accès et le stockage persistant des données.
+  \item Une communication entre client et serveur qui utilise des protocoles standards sécurisées HTTPS.
+\end{itemize}
+
+
+Pour implémenter la partie IHM, les solutions envisageables sont basées sur les différentes
+technologies actuelles.
+L’ossature des pages sera en HTML et en CSS pour gérer la charte graphique et la structure des
+bandeaux et centres de page. On utilisera plus particulièrement la dernière version (HTML 5) qui permet
+d’ajouter plus facilement des composants multimédias. Afin d’ajouter une dynamique moderne aux
+pages (menu illustré par exemple) les sites web actuels utilisent également un framework Javascript
+comme jQuery, AngularJS, ou React. Aux vues des délais et de la complexité des différent frameworks,
+il est envisagé de n’utiliser que du HTML 5.\\
+
+Pour implémenter la partie logique applicative et connexion aux stockages de données, qui doit être
+sur un serveur distant sécurisé, il existe plusieurs technologies disponibles. On peut utiliser du PHP sur
+serveur Apache ou nginx pour s’interfacer avec des fichiers ou des bases de données. Il est aussi possible de
+recourir à l’usage de conteneurs JEE comme Tomcat, ou des serveurs d’application comme Weblogic
+ou JBOSS. L’usage de Java JEE offre plus de possibilités, mais du fait de l’intensité du travail demandé
+pour le développement et la complexité associé à JEE, il est préférable de baser notre service sur PHP.
+Il est envisagé d'utiliser un serveur nginx car celui-ci et plus récent, gère mieux les connexions
+multiples et a une configuration plus simple qu'Apache.\\
+
+Pour implémenter le stockage de l’information, il existe plusieurs possibilités : le stockage dans des
+fichiers, ou bien l’utilisation de base de données, qu’elle soit non relationnelle comme MongoDB,
+Cassandra, ou relationnelle comme PostgreSQL, Oracle DB, MySQL ou bien SQLite. Compte tenu des
+informations à stocker et des possibilités de recherche offertes sur l’IHM, une base de données et un
+modèle relationnel sont plus indiqués. En effet les données que l'on manipule sont catégorisables
+en uplet ordonnés (les données de profil d'un utilisateur, les données d'une annonce, etc), la
+cardinalité entre ces relations est facilement définissable (un utilisateur à plusieurs anonces, les
+annonces ont des types communs, des lieux ...) et les capacités de manipulation des données que l'on
+veut proposer s'appuient simplement sur une combinaison de ces relations. De plus un tel modèle permet de
+limiter la duplication des données. Ce type de relations et de schémas d'accès sont caracteristiques
+d'un modèle relationnel. Compte tenu du temps imparti et de nos connaissances,
+il est envisagé d’utiliser une base relationnelle simple et facilement intégrable avec PHP et
+dans un serveur nginx, comme PostgreSQL.\\
+
+Pour sécuriser l’accès aux services du site, il est nécessaire de mettre un place une authentification
+avec un accès en mode HTTPS pour protéger les données qui circuleront sur le réseau. Il existe
+plusieurs protocoles possibles pour l’authentification, notamment pour le SSO comme SAML ou
+OAUTH2 avec certificats ou identifiant et mot de passe. Il est aussi possible de déléguer l'authentification
+SSO aux réseaux sociaux comme google ou facebook qui mettent à disposition des développeurs leur framework de login.
+Ce type d'authentification qui permet de limiter la création des comptes est appelé Social Login.
+Dans notre cas le but est de permettre aux personnes âgées de ne pas avoir à s’inquiéter de retenir un mot
+de passe et ainsi faciliter l’utilisation de notre site. Si le temps le permet on ajoutera aussi le social login
+avec google, mais en raison de l’échéance, dans un premier temps l’authentification se fera de façon basique à
+travers un simple identifiant(l'email) et mot de passe sur HTTPS. Les informations d’identification seront stockées
+dans une partie spécifique de la base de données. Cette dernière stockera aussi les préférences des utilisateurs. \\
+
+Le tableau ci dessous résume les possibilités pour chaque catégorie et montre (cases bleus)
+les choix que nous avons fait pour le projet \\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/choixTechno.PNG}
+  \caption{Choix Technologiques pour le projet}
+  \label{fig:choix-techno}
+\end{figure}
+
+\subsection{Réalisations techniques}
+
+Compte tenu des choix techniques faits pour la réalisation (HTML/CSS, nginx, PHP, PostgreSQL) nous avons
+mis en place un serveur nginx avec son module PHP et un driver Postgres. Le tout a été déployé
+sur un serveur Linux.\\
+
+Pour le développement nous utiliserons des éditeurs de code standard (Atom, Visual Studio Code), et Visual Paradigm
+pour le design des images et composants graphiques.\\
+
+Le partage du code, le stockage et la gestion des versions seront gérés par un dépôt Git hébergé sur
+Gricad-GitLab.\\
+
+\subsection{Organisation du travail}
+
+\subsubsection{Choix du modèle}
+
+Pour ce projet, nous utiliserons une méthode itérative. Nous effectuerons des itérations toutes les 4
+à 5 semaines de travail. Avec cette méthode, la mise en commun et l'intégration au sein du groupe se font toutes les semaines.
+Ce qui permet de corriger au plus tôt les problèmes liés au partage des tâches et les potentiels retards.\\
+
+\subsubsection{Découpage du projet}
+
+Pour la deuxième itération, le projet a été découpé en 3 parties. L’équipe sera divisée en 3 binômes.\\
+
+Ce choix de binôme permet une plus grande flexibilité et une parallélisation des tâches, tout en étant
+moins stressant que du travail seul.\\
+
+Sur ce diagramme, Alexandre et Lucas s'occuperont du visuel du site,
+Elian et Marion s'occuperont de la logique de fonctionnement et
+Eliott et Vincenzo s'occuperont du stockage des données.\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/gantt-iteration2.png}
+  \caption{Diagramme de GANTT pour l'Itération 2}
+  \label{fig:gantt-iteration2}
+\end{figure}
+
+Suite à cette itération, les trois équipes on prit du retard, le travail était trop conséquent pour le temps donné.\\
+En effet, tous les binômes ont du retard. Le stockage des données a une semaine de retard.
+La logique de fonctionnement a du sauté quelque formulaire, le retard est d'environ une semaine.
+Et le visuel n'a pas eux le temps de faire toutes les vues prévues, le retard est de deux semaines, car leur binôme était celui avec le plus de travail.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/gantt-iteration3.png}
+  \caption{Diagramme de GANTT pour l'Itération 3}
+  \label{fig:gantt-iteration3}
+\end{figure}
+
+%---------------==================== NOUVEAUX ====================-----------------
+\section{Conception de la solution}
+
+% A mettre dans la partie besoin fonctionnelle qui explicitera le diagramme
+\begin{figure}[H]
+  \includegraphics[width=250px]{../Conception/DCU.png}
+  \caption{Diagramme des cas d'utilisation}
+  \label{fig:DCU}
+\end{figure}
+
+\subsection{Diagramme de Séquence}
+
+% A mettre dans l'annexe
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{../Conception/DS_Connexion.png}
+  \caption{Diagramme de Séquence haut niveau représentant l'authentification}
+  \label{fig:<un-label-court>}
+\end{figure}
+
+
+
+\subsection{MVC}
+\subsubsection{Modèle}
+Le modèle est composé de plusieurs classes PHP comme définies par le diagramme de classes ci-dessous,
+plus la classe DAO qui permet l'accès a la base de données qui n'apparaît pas pour des questions de visibilité :\\
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
+  \caption{Diagramme de classe php}
+  \label{fig:<un-label-court>}
+\end{figure}
+
+Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour chaque attribut.
+
+\subsection{Vue}
+
+\subsubsection{Plan du site}
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/plan-du-site.png}
+  \caption{Plan du site}
+  \label{fig:plan-du-site}
+\end{figure}
+
+Voici une représentation simple du plan du site. L'utilisateur pourra rechercher rapidement une annonce
+à n'importe quel moment grâce à la barre de recherche dans le header.
+
+Aussi, si l'utilisateur va sur la page d'inscription alors qu'il n'a pas de compte, il peut directement
+accéder à la page de connexion dans passer de nouveau par l'accueil.
+
+Depuis chaque page, l'utilisateur pourra accéder aux pages d'un niveau inférieur grâce au fil d'Ariane
+mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant sur le logo du header.
+
+%---------------==================== FIN NOUVEAUX ====================-----------------
+
+\paragraph{Base de donnée}\leavevmode
+\\\\
+\includegraphics[width=400px]{images/Schema-relationnel-BDD.png}\\\\
+SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
+\textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
+\textbf{Categorie(\underline{id}, nom)}\\\\
+\textbf{Annonce(\underline{id}, nom, description, adresse, date\_creation, date\_service, \#id\_createur, \#id\_categorie)}\\
+id\_createur clef étrangère de Utilisateur.\\
+id\_categorie clef étrangère de Categorie.\\\\
+\textbf{Message(\underline{id}, contenue, date\_message, \#id\_auteur)}\\
+id\_auteur clef étrangère de Utilisateur.\\\\
+\textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
+id\_annonce clef étrangère de Annonce.\\
+id\_repondeur clef étrangère de Utilisateur.\\
+id\_message clef étrangère de Message.\\
+
+Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
+
+\section{Avancement du projet}
+
+À l'heure actuelle un serveur est déployé sur un Raspberry PI et l'infrastructure et le modèle MVC
+avec base de donnée est fonctionnelle. Nous avons donc un programme PHP qui va chercher les
+données du modèle dans une base de donnée PostgreSQL pour produire un affichage de pages
+dynamiques avec du HTML/CSS grâce à un serveur web NGINX.\\
+
+Côté vue, le header, le footer ainsi que la page d'accueil sont réalisés en
+HTML/CSS avec un début d'adaptation aux formats mobiles (\underline{\hyperref[fig:page-accueil]{visuel ci-dessous}}). Des maquettes
+sont faites pour les autres pages.
+
+La structuration de la base de données est terminée, il reste à faire les contrôles
+assurant la cohérence des données en base.
+
+Toutes les classes du modèle PHP sont en place et le contrôleurs avancent avec les vues.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/page-accueil.png}
+  \caption{Page d'accueil du site.}
+  \label{fig:page-accueil}
+\end{figure}
+
+
+
 
 \newpage
+
+
+%===============================================================
+%                           ANNEXE
+%===============================================================
+
+
 \section{Annexe}
 
 \subsection{Analyse de l'existant}
@@ -832,6 +858,7 @@ AlloVoisins possèdent un système où un utilisateur est certifié par son num�
 cela lui permet notamment d’accéder à la messagerie du site. (\href{https://support.allovoisins.com/hc/fr/articles/360000816614-Pourquoi-dois-je-certifier-mon-num%C3%A9ro-de-mobile-pour-pouvoir-acc%C3%A9der-%C3%A0-la-messagerie-}{source})
 
 \subsection{Maquettes}
+\label{sec:maquettes-annexe}
 
 \subsubsection{Maquettes originales}
 
@@ -858,43 +885,75 @@ cela lui permet notamment d’accéder à la messagerie du site. (\href{https://
   \caption{Maquette originale de la création d'une annonce}
   \label{fig:maquette-creation-annonce-original}
 \end{figure}
+\newpage
 
 \subsubsection{Maquettes actuelles}
 
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/maquette-accueil.png}
-  \caption{Page d'accueil.}
-  \label{fig:maquette-accueil}
-\end{figure}
+\paragraph{Page du détail d'une annonce}
+
+Pour appuyer sur le guidage, toutes les informations essentielles de l'annonce sont groupées sur la gauche.
+
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-detail-annonce.png}
   \caption{Page du détail d'une annonce.}
   \label{fig:maquette-detail-annonce}
 \end{figure}
+\newpage
+
+\paragraph{Page de création d'une annonce}
+
+Sur cette page, nous avons essayé de réduire la densité informationnelle au maximum pour que publier
+une annonce reste une action simple. Ainsi la page est constituée d'un titre, de 6 blocs, un pour chaque paramètre
+de l'annonce, ainsi qu'un bouton pour confirmer.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-creation-annonce.png}
   \caption{Page de création d'une annonce.}
   \label{fig:maquette-creation-annonce}
 \end{figure}
+\newpage
+
+\paragraph{Page d'inscription}
+
+Sur la partie gauche de cette page, un paragraphe explique les avantages de créer son compte,
+toujours dans l'objectif de renforcer le guidage. Sur la partie droite, un formulaire comportant
+tous les champs nécéssaires à la création de compte. La connexion via compte Google est aussi
+disponible pour améliorer la brièveté, la flexibilité et la prise en compte de l'expérience de
+l'utilisateur car cela rend l'inscription beaucoup plus accessible.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-inscription.png}
   \caption{Page d'inscription.}
   \label{fig:maquette-inscription}
 \end{figure}
+\newpage
+
+\paragraph{Page de connexion}
+
+Cette page a pour but d'être simple, avec une densité informationnelle faible.
+Un lien permet de rediriger vers la création d'un compte si l'utilisateur n'en
+avait pas encore un, améliorant la correction des erreurs.
+Encore une fois ici, la connexion via compte Google est présente pour plus de
+flexibilité et de prise en compte de l'expérience de l'utilisateur.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-connexion.png}
   \caption{Page de connexion.}
   \label{fig:maquette-connexion}
 \end{figure}
+\newpage
+
+\paragraph{Page de recherche d'annonce}
+
+Sur cette page, les critères de recherches sont tous groupés sur une même ligne,
+et la prévisualisation des annonces a été reprise de la page d'accueil pour plus de cohérence interne.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/maquette-recherche.png}
   \caption{Page de recherche d'annonce.}
   \label{fig:maquette-recherche}
 \end{figure}
+\newpage
 
 \end{document}
