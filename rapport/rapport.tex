@@ -281,8 +281,6 @@ Le site devra permettre une mise en relation entre les particuliers (c’est sa 
 permettra ainsi à des individus proches géographiquement de se rencontrer pour pouvoir s’entraider
 sur différents types de tâches.\\
 
-%---------------==================== NOUVEAUX ====================-----------------
-
 \subsubsection{Annonces}
 
 Afin de mettre en relation les particuliers, le site permettra la création d'"annonces", correspondant à une recherche ou proposition de service.\\
@@ -334,9 +332,14 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
 
 \textbf{Sécurité}\\
 
-* A APPROFONDIR *
 Les données que les utilisateurs nous confient, tels que leur adresse, numéro de téléphone, etc... sont
 sensibles : une certaine sécurité doit donc être assurée.\\
+
+Il faudra donc mettre en place un système d'authentification aux comptes mentionnés plus haut.\\
+
+On pourra ou bien se connecter via un système d'authentification programmé par nos soins, ou bien via l'API de login fournie par Google pour permettre aux utilisateurs de se connecter sur le site via leurs comptes Google.\\
+
+Il faudra aussi s'assurer que la partie logique du site soit stockée du coté serveur et de n'envoyer à la machine de l'utilisateur que les informations auquelles il est supposé avoir accès.\\
 
 \textbf{Echelle du projet}\\
 
@@ -373,7 +376,7 @@ Chacune des informations du site doivent être présentés de la même façon à
 
 Par exemple, la catégorie d'une annonce, si elle est représentée sur une page via un logo, ou écrite d'une certaine couleur, elle devra être représentée de la même façon sur toute les pages du site.
 
-%---------------================== FIN NOUVEAUX ===================-----------------
+
 
 \subsection{Fonctions attendues}
 
