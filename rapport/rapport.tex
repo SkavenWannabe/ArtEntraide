@@ -106,6 +106,8 @@ On y trouve des jeunes, des personnes âgées, des ouvriers, des ingénieurs, de
 C'est à nous de nous adapter à tous ces différents niveaux. Il faut donc que le site soit simple et facile d'utilisation.
 Pour atteindre cet objectif, nous pouvons assurer un guidage sur le site en suivant les règles d'accessibilité du W3C et faire une foire aux questions par exemple.\\
 
+\pagebreak
+
 \underline{Des utilisateurs de confiance}\\
 
 Selon les services, on peut avoir besoin d'utilisateurs de confiance.
@@ -209,6 +211,8 @@ données pouvant être sensibles, telles que des adresses ou des mots de passe, 
 certaines lois, notamment le règlement général sur la protection des données (RGPD). Nous devrons donc nous
 conformer à ces dernières, c'est donc une contrainte juridique.\\
 
+\pagebreak
+
 \subsection{Risques}
 
 Durant la réalisation ce de projet, il est possible que ce dernier ne s’exécute pas comme prévu. Il nous
@@ -242,10 +246,10 @@ majeur car cela pourrait mettre en danger les utilisateurs. Sa criticité est do
 
 Pour la perte de documents, nous choisissons la protection : nous mettrons en place une redondance
 des documents en numérisant tous les documents physiques et en les stockant dans le cloud, ainsi
-que sur le disque dur d’au moins deux de nos machines. Le code sera hébergé sur le dépôt Gricad-Gitlab ainsi que sur chacune de nos machines.\\
+que sur le disque dur d’au moins deux de nos machines. Le code sera hébergé sur le dépôt Gricad-Gitlab ainsi que sur chacune de nos machines.
 
 Enfin, par rapport à l’utilisation du site pour des actes malveillants, nous transférerons le risque à des
-associations ou des mairies avec qui nous traiterons pour certifier les utilisateurs du site.\\
+associations ou des mairies avec qui nous traiterons pour certifier les utilisateurs du site.
 
 Concernant la mauvaise organisation du groupe, nous prenons une statégie de réduction. Nous nous organiserons
 à l'avance et en se concertant tous ensemble. Si malgré cela l'organisation est mauvaise, nous
@@ -344,12 +348,12 @@ possible, en suivant notamment les critères ergonomiques de Bastien et Scapin.\
 
 Pour faciliter l'utilisation du site aux utilisateurs et éviter qu'ils ne se retrouvent perdus, ils sera important dans le design des pages du site, de s'assurer de bien disposer les informations essentielles au centre et en haut de la page, afin que ce soit la première chose que l'utilisateur voie sans avoir besoin de \textit{scroller}.\\
 
-Il est important que l'utilisateur n'ait pas à se demander ce que l'on attend de lui, dès l'instant où il pose ses yeux sur la page, ce qu'il doit faire est clair.\\
+Il est important que l'utilisateur n'ait pas à se demander ce que l'on attend de lui, dès l'instant où il pose ses yeux sur la page, ce qu'il doit faire est clair.
 
-Les textes devront être adaptés à l’utilisateur, par exemple si ce dernier a des problèmes de vue.\\
+Les textes devront être adaptés à l’utilisateur, par exemple si ce dernier a des problèmes de vue.
 
 Il sera donc nécessaire de choisir des polices d’écritures simples à lire, de s’assurer que sa taille soit
-réglable via le navigateur, d’utiliser un contraste et des couleurs adaptés.\\
+réglable via le navigateur, d’utiliser un contraste et des couleurs adaptés.
 
 Il faut également prendre en compte d’éventuels daltoniens qui pourraient utiliser le site, en
 choisissant des couleurs assez différentes.\\
@@ -398,7 +402,7 @@ personnelles.\\
 \subsubsection{Conception ergonomique}
 \paragraph{Maquette}\mbox{} \\
 
-A titre d’exemple, voici une page qui préfigure l’ergonomie qui s’appliquera au site. Le reste des maquettes se trouve en \underline{\hyperref[sec:maquettes-annexe]{annexe}}. Les différentes pages doivent rester
+A titre d’exemple, voici une page qui préfigure l’ergonomie qui s’appliquera au site. Le reste des maquettes ainsi que les toutes premières se trouve en \underline{\hyperref[sec:maquettes-annexe]{annexe}}. Les différentes pages doivent rester
 simples en termes de composants, avoir des couleurs sobres et claires afin d’être compréhensibles
 par le public ciblé, notamment des personnes âgées.\\
 
@@ -407,6 +411,8 @@ par le public ciblé, notamment des personnes âgées.\\
   \caption{Page d'accueil.}
   \label{fig:maquette-accueil}
 \end{figure}
+
+\pagebreak
 
 \subparagraph{En-tête}
 
@@ -486,6 +492,8 @@ accéder à la page d'inscription sans passer de nouveau par l'accueil.
 Depuis chaque page, l'utilisateur pourra accéder aux pages d'un niveau inférieur grâce au fil d'Ariane
 mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant sur le logo de l'en-tête.
 
+\pagebreak
+
 \subsubsection{Conception logicielle}
 \paragraph{MVC}\mbox{} \\
 
@@ -506,7 +514,7 @@ L'application sera donc découpée en 3 modules:
 Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. \\
 
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/DS_annonce.png}
+  \includegraphics[width=350px]{../Conception/DS_annonce.png}
   \caption{Diagramme de Séquence haut niveau représentant la création d'une annonce}
   \label{fig:<un-label-court>}
 \end{figure}
@@ -591,6 +599,7 @@ limiter la duplication des données. Ce type de relations et de schémas d'accè
 d'un modèle relationnel. Compte tenu du temps imparti et de nos connaissances,
 il est envisagé d’utiliser une base relationnelle simple et facilement intégrable avec PHP et
 dans un serveur NginX, comme PostgreSQL.\\
+\pagebreak
 
 Pour sécuriser l’accès aux services du site, il est nécessaire de mettre un place une authentification
 avec un accès en mode HTTPS pour protéger les données qui circuleront sur le réseau. Il existe
@@ -729,6 +738,8 @@ On les consomme lorsque l’on demande un service.\\
   \label{fig:aurelie-yakasaider}
 \end{figure}
 
+\pagebreak
+
 \subsubsection{Critères d'ergonomie}
 
 Étant donné le public cible, il est important de respecter certains critères ergonomiques.\\
@@ -770,7 +781,7 @@ Et lorsque l’on clique sur "Voir ce Pwiic", le bouton pour contacter la person
 \end{figure}
 
 De plus, le mot "Pwiic" est un terme abstrait créé à partir du nom de marque du site, moins clair que "annonce"
-par exemple, ce qui ne facilite pas forcément la navigation pour des personnes peu à l’aise.\\
+par exemple, ce qui ne facilite pas forcément la navigation pour des personnes peu à l’aise.
 
 YakaSaider possède un guidage peu efficace. Lorsque l’on recherche pour "Tous les services", on ne voit aucune
 compétence ni même description, seulement le visage de la personne, son nom et sa ville.\\
@@ -796,7 +807,7 @@ chez nous ou de l’endroit où notre demande se trouve.\\
 \end{figure}
 
 \begin{figure}[H]
-  \includegraphics[width=400px]{images/gestion-erreur-yakasaider.png}
+  \includegraphics[width=350px]{images/gestion-erreur-yakasaider.png}
   \label{fig:gestion-erreur-yakasaider}
 \end{figure}
 
