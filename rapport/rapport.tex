@@ -408,7 +408,7 @@ par le public ciblé, notamment des personnes âgées.\\
   \label{fig:maquette-accueil}
 \end{figure}
 
-\subparagraph{Header}
+\subparagraph{En-tête}
 
 L'en-tête est composé du logo du site, d'une barre de recherche et de 3 boutons.
 Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
@@ -441,30 +441,29 @@ est aussi un lien menant vers le détail de l'annonce.\\
 Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\\
 
 \begin{itemize}
-  \item Le guidage : un fil d’Ariane toujours visible sur le haut de l’IHM permettra aux utilisateurs de
+  \item Le \textbf{guidage} : un fil d’Ariane toujours visible sur le haut de l’interface permettra aux utilisateurs de
   se repérer facilement dans le site et sur les actions en cours. Une illustration des actions
   possibles et des formulaires sur le panneau central du site facilitera l’accès aux différents
-  services.
-  \item Le contrôle explicite : la suppression des offres de service sera protégée par une double
-  demande et la mise en relation sera explicite afin de protéger les utilisateurs.
-  \item Prévention des erreurs : un contrôle local sera mis au niveau de chaque champ pour vérifier que
-  les données entrées par l'utilisateur sont conformes (format mail, tel ...) avec un sticker check vert
-  dès que le champ est valide. Pour tous les champs où c'est possible, mise en place de liste de selections
-  plutôt que de champ libre pour limiter les risques d'erreur de saisie.
-  \item La gestion des erreurs : un pop-up va être mis en place pour permettre un guidage des
+  services. Les éléments cliquables auront également des infobulles au survol qui préciseront leur fonction.
+  \item Le \textbf{contrôle explicite} : la suppression des offres de service sera protégée par une double
+  demande, et la mise en relation sera explicite afin de protéger les utilisateurs.
+  \item La \textbf{prévention des erreurs} : un contrôle local sera mis au niveau de chaque champ pour vérifier que
+  les données entrées par l'utilisateur sont conformes (format email, tel ...) avec un sticker \textit{check} vert
+  dès que le champ est valide. Pour tous les champs qui s'y prêtent, la saisie se fera par menu déroulant, boutons radio ou cases à cocher plutôt que par champ texte libre pour limiter les risques d'erreur de saisie.
+  \item La \textbf{gestion des erreurs} : un pop-up sera mis en place pour permettre un guidage des
   utilisateurs en cas d’erreur de saisie et en particulier pour aider les personnes âgées.
-  \item La charge de travail : la création des offres se fera avec un formulaire afin de limiter les étapes
-  nécessaires à l’enregistrement avec un pré-remplissage des champs lorsque cela est possible
+  \item La \textbf{charge de travail} : la création des offres se fera avec un formulaire, afin de limiter les étapes
+  nécessaires à l’enregistrement grâce à un pré-remplissage des champs -- lorsque cela est possible --
   avec les informations de compte de l’utilisateur lorsqu’il est authentifié. La recherche des
   offres sera également simplifiée, avec l’utilisation des préférences de l’utilisateur pour
-  préremplir les champs de recherche.
-  \item Cohérence interne : chaque page sera la plus similaire possible aux autres pour faciliter
+  pré-remplir les champs de recherche.
+  \item La \textbf{cohérence interne} : chaque page sera la plus similaire possible aux autres pour faciliter
   l'apprentissage du site et ne pas se sentir perdu.
-  \item Fléxibilité : pour faciliter l'utilisation du site, il y aura souvent plusieurs actions possibles
+  \item La \textbf{flexibilité} : pour faciliter l'utilisation du site, il y aura souvent plusieurs actions possibles
   pour arriver à faire la même chose.
-  \item L’adaptabilité : compte tenu du public visé, nous allons mettre en place un mode spécifique
-  pour les personnes malvoyantes, activable avec une adaptation de la taille de la police pour
-  une meilleur accessibilité.
+  \item L'\textbf{adaptabilité} : compte tenu du public visé, nous allons mettre en place un mode spécifique
+  pour les personnes malvoyantes, activant une adaptation de taille et contraste de police pour
+  une meilleure accessibilité.
 \end{itemize}
 
 Lors de la réalisation des maquettes, nous avons essayé de respecter ces critères au maximum.
@@ -479,33 +478,32 @@ Par exemple, pour la cohérence interne, l’en-tête et le pied de page sont co
 \end{figure}
 
 Voici une représentation simple du plan du site. L'utilisateur pourra rechercher rapidement une annonce
-à n'importe quel moment grâce à la barre de recherche dans le header.
+à n'importe quel moment grâce à la barre de recherche dans l'en-tête.
 
-Aussi, si l'utilisateur va sur la page d'inscription alors qu'il n'a pas de compte, il peut directement
-accéder à la page de connexion dans passer de nouveau par l'accueil.
+Si l'utilisateur va sur la page de connexion alors qu'il n'a pas de compte, il peut directement
+accéder à la page d'inscription sans passer de nouveau par l'accueil.
 
 Depuis chaque page, l'utilisateur pourra accéder aux pages d'un niveau inférieur grâce au fil d'Ariane
-mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant sur le logo du header.
+mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant sur le logo de l'en-tête.
 
 \subsubsection{Conception logicielle}
 \paragraph{MVC}\mbox{} \\
 
 Afin de garantir une meilleure maintenabilité de l'application, une capacité à mieux fractionner le développement
-et surtout à isoler les actions utilisateurs du modèle de données et de la présentation du site nous avons décidé
-d'adopter un modèle MVC. Ce modèle offre de plus une meilleur maitrise de l'évolution de chaque composant
-indépendamment les uns des autres, ce qui facilite l'ajout progressif de fonctionnalités, par exemple modifier
+et surtout à isoler les actions utilisateurs du modèle de données et de la présentation du site, nous avons décidé
+d'adopter un modèle MVC. Ce modèle offre de plus une meilleur maîtrise de l'évolution de chaque composant
+indépendamment des autres, ce qui facilite l'ajout progressif de fonctionnalités. Cela permettrait par exemple de modifier
 une fonction de recherche sur l'IHM sans avoir besoin de toucher au modèle de données.
 
 L'application sera donc découpée en 3 modules:
 \begin{itemize}
   \item la vue (IHM) qui sera côté client sur le navigateur
-  \item le contrôleur côté serveur qui gèrera la logique applicative
-  \item le modèle côté serveur également qui gèrera les données, leurs modifications et leurs sauvegardes sécurisées
+  \item le contrôleur, côté serveur, qui gèrera la logique applicative
+  \item le modèle, côté serveur également, qui gèrera les données, leur modification et leur stockage sécurisé
 \end{itemize}
 
 \paragraph{Diagramme de séquence}\mbox{} \\
-Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre
-modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. \\
+Les diagrammes de séquence de haut niveau permettent de mieux définir la dynamique des cas d'utilisation dans le cadre de notre modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. \\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/DS_annonce.png}
@@ -513,37 +511,37 @@ modèle MVC. Le diagramme ci-dessous correspond à la création d'une annonce. \
   \label{fig:<un-label-court>}
 \end{figure}
 
-\paragraph{Diagramme de classe}\mbox{} \\
+\paragraph{Diagramme de classes}\mbox{} \\
 
-Pour faire le lien entre la base de donnée et les controleurs on utilise plusieurs classes php comme définies par le diagramme de classes ci-dessous,
-plus la classe DAO qui permet l'accès a la base de données qui n'apparaît pas pour des questions de visibilité :\\
+Pour faire le lien entre la base de données et les contrôleurs, on utilise plusieurs classes PHP comme définies par le diagramme de classes ci-dessous,
+plus la classe DAO qui permet l'accès à la base de données (cette dernière n'apparaît pas pour des questions de visibilité) :\\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
-  \caption{Diagramme de classe php}
+  \caption{Diagramme de classes PHP}
   \label{fig:<un-label-court>}
 \end{figure}
 
-Pour la même raison, les getters n'apparaissent pas, mais il y a un getter pour chaque attribut.
-L'attribut Date\_creation sert à indiquer la date de création de l'annonce.
-En revanche, l'attribut Date\_service est optionnel dans le constructeur et sert à indiquer si l'annonce à un impératif de date.
-Par exemple pour de la garde d'enfants, la plupart du temps cela s'effectue sur un jour précis si ce n'est pas hebdomadaire.\\
+Pour la même raison, les \textit{getters} n'apparaissent pas, mais il y en a un pour chaque attribut.
+L'attribut \texttt{Date\_creation} sert à indiquer la date de création de l'annonce.
+En revanche, l'attribut \texttt{Date\_service} est optionnel dans le constructeur et sert à indiquer si l'annonce à un impératif de date.
+Par exemple, pour de la garde d'enfants, la plupart du temps cela s'effectue sur un jour précis si ce n'est pas hebdomadaire.\\
 
-\subsubsection{Conception Base De Données}
+\subsubsection{Conception base de données}
 
 \includegraphics[width=400px]{images/Schema-relationnel-BDD.png}\\\\
 SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
 \textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
 \textbf{Categorie(\underline{id}, nom)}\\\\
 \textbf{Annonce(\underline{id}, nom, description, adresse, date\_creation, date\_service, \#id\_createur, \#id\_categorie)}\\
-id\_createur clef étrangère de Utilisateur.\\
-id\_categorie clef étrangère de Categorie.\\\\
+id\_createur clé étrangère de Utilisateur.\\
+id\_categorie clé étrangère de Categorie.\\\\
 \textbf{Message(\underline{id}, contenue, date\_message, \#id\_auteur)}\\
-id\_auteur clef étrangère de Utilisateur.\\\\
+id\_auteur clé étrangère de Utilisateur.\\\\
 \textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
-id\_annonce clef étrangère de Annonce.\\
-id\_repondeur clef étrangère de Utilisateur.\\
-id\_message clef étrangère de Message.\\
+id\_annonce clé étrangère de Annonce.\\
+id\_repondeur clé étrangère de Utilisateur.\\
+id\_message clé étrangère de Message.\\
 
 Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
 
@@ -552,61 +550,61 @@ Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la lis
 
 Compte tenu des besoins détaillés précédemment, le service que nous souhaitons mettre en œuvre
 sera réalisé par un service Web, et non par une application logicielle à installer qui serait moins
-adaptée au public cible. La conception d’un site web dynamique se décompose en : \\
+adaptée au public cible. La conception d’un site Web dynamique se décompose en : \\
 
 \begin{itemize}
   \item Une IHM qui s’exécute sur le navigateur client avec la gestion locale des animations, formulaires, ...
   \item Une logique applicative qui s’exécute sur un serveur distant protégé afin de garantir la protection
   des données des utilisateurs et gérer l’accès et le stockage persistant des données.
-  \item Une communication entre client et serveur qui utilise des protocoles standards sécurisées HTTPS.
+  \item Une communication entre client et serveur qui utilise des protocoles standards sécurisés HTTPS.
 \end{itemize}
 
 
 Pour implémenter la partie IHM, les solutions envisageables sont basées sur les différentes
 technologies actuelles.
-L’ossature des pages sera en HTML et en CSS pour gérer la charte graphique et la structure des
-bandeaux et centres de page. On utilisera plus particulièrement la dernière version (HTML 5) qui permet
-d’ajouter plus facilement des composants multimédias. Afin d’ajouter une dynamique moderne aux
-pages (menu illustré par exemple) les sites web actuels utilisent également un framework Javascript
-comme jQuery, AngularJS, ou React. Aux vues des délais et de la complexité des différent frameworks,
+L’ossature des pages sera en HTML et en CSS pour gérer la charte graphique, la structure des
+bandeaux et des centres de page. On utilisera plus particulièrement la dernière version (HTML 5) qui permet
+d’ajouter plus facilement des composants multimédia. Afin d’ajouter une dynamique moderne aux
+pages (menu illustré par exemple) les sites Web actuels utilisent également des \textit{frameworks} Javascript
+comme jQuery, AngularJS, ou React. Aux vues des délais et de la complexité des différent \textit{frameworks},
 il est envisagé de n’utiliser que du HTML 5.\\
 
 Pour implémenter la partie logique applicative et connexion aux stockages de données, qui doit être
 sur un serveur distant sécurisé, il existe plusieurs technologies disponibles. On peut utiliser du PHP sur
-serveur Apache ou nginx pour s’interfacer avec des fichiers ou des bases de données. Il est aussi possible de
+serveur Apache ou NginX pour s’interfacer avec des fichiers ou des bases de données. Il est aussi possible de
 recourir à l’usage de conteneurs JEE comme Tomcat, ou des serveurs d’application comme Weblogic
 ou JBOSS. L’usage de Java JEE offre plus de possibilités, mais du fait de l’intensité du travail demandé
 pour le développement et la complexité associé à JEE, il est préférable de baser notre service sur PHP.
-Il est envisagé d'utiliser un serveur nginx car celui-ci et plus récent, gère mieux les connexions
+Il est envisagé d'utiliser un serveur NginX car celui-ci et plus récent, gère mieux les connexions
 multiples et a une configuration plus simple qu'Apache.\\
 
 Pour implémenter le stockage de l’information, il existe plusieurs possibilités : le stockage dans des
-fichiers, ou bien l’utilisation de base de données, qu’elle soit non relationnelle comme MongoDB,
+fichiers, ou bien l’utilisation d'une base de données, qu’elle soit non relationnelle comme MongoDB,
 Cassandra, ou relationnelle comme PostgreSQL, Oracle DB, MySQL ou bien SQLite. Compte tenu des
 informations à stocker et des possibilités de recherche offertes sur l’IHM, une base de données et un
 modèle relationnel sont plus indiqués. En effet les données que l'on manipule sont catégorisables
-en uplet ordonnés (les données de profil d'un utilisateur, les données d'une annonce, etc), la
-cardinalité entre ces relations est facilement définissable (un utilisateur à plusieurs anonces, les
+en n-uplets ordonnés (les données de profil d'un utilisateur, les données d'une annonce, etc), la
+cardinalité entre ces relations est facilement définissable (un utilisateur a plusieurs anonces, les
 annonces ont des types communs, des lieux ...) et les capacités de manipulation des données que l'on
-veut proposer s'appuient simplement sur une combinaison de ces relations. De plus un tel modèle permet de
-limiter la duplication des données. Ce type de relations et de schémas d'accès sont caracteristiques
+veut proposer s'appuient simplement sur une combinaison de ces relations. De plus, un tel modèle permet de
+limiter la duplication des données. Ce type de relations et de schémas d'accès sont caractéristiques
 d'un modèle relationnel. Compte tenu du temps imparti et de nos connaissances,
 il est envisagé d’utiliser une base relationnelle simple et facilement intégrable avec PHP et
-dans un serveur nginx, comme PostgreSQL.\\
+dans un serveur NginX, comme PostgreSQL.\\
 
 Pour sécuriser l’accès aux services du site, il est nécessaire de mettre un place une authentification
 avec un accès en mode HTTPS pour protéger les données qui circuleront sur le réseau. Il existe
-plusieurs protocoles possibles pour l’authentification, notamment pour le SSO comme SAML ou
+plusieurs protocoles possibles pour l’authentification, notamment pour le SSO (Single Sign-On) comme SAML ou
 OAUTH2 avec certificats ou identifiant et mot de passe. Il est aussi possible de déléguer l'authentification
-SSO aux réseaux sociaux comme google ou facebook qui mettent à disposition des développeurs leur framework de login.
+SSO à des grandes entreprises du numérique comme Google ou Facebook, qui mettent à disposition des développeurs leur \textit{framework} d'authentification.
 Ce type d'authentification qui permet de limiter la création des comptes est appelé Social Login.
-Dans notre cas le but est de permettre aux personnes âgées de ne pas avoir à s’inquiéter de retenir un mot
-de passe et ainsi faciliter l’utilisation de notre site. Si le temps le permet on ajoutera aussi le social login
-avec google, mais en raison de l’échéance, dans un premier temps l’authentification se fera de façon basique à
-travers un simple identifiant(l'email) et mot de passe sur HTTPS. Les informations d’identification seront stockées
+Dans notre cas, le but est de permettre aux personnes âgées de ne pas avoir à s’inquiéter de retenir un mot
+de passe et ainsi faciliter l’utilisation de notre site. Si le temps le permet, nous ajouterons le Social Login
+via Google, mais en raison de l’échéance, l’authentification se fera dans un premier temps de façon classique, à
+travers un simple identifiant (l'email) + mot de passe sur HTTPS. Les informations d’identification seront stockées
 dans une partie spécifique de la base de données. Cette dernière stockera aussi les préférences des utilisateurs. \\
 
-Le tableau ci dessous résume les possibilités pour chaque catégorie et montre (cases bleus)
+Le tableau ci-dessous résume les possibilités pour chaque catégorie et montre (cases bleues)
 les choix que nous avons fait pour le projet \\
 
 \begin{figure}[H]
@@ -617,11 +615,11 @@ les choix que nous avons fait pour le projet \\
 
 \subsection{Réalisations techniques}
 
-Compte tenu des choix techniques faits pour la réalisation (HTML/CSS, nginx, PHP, PostgreSQL) nous avons
-mis en place un serveur nginx avec son module PHP et un driver Postgres. Le tout a été déployé
+Compte tenu des choix techniques faits pour la réalisation (HTML/CSS, NginX, PHP, PostgreSQL) nous avons
+mis en place un serveur NginX avec son module PHP et un \textit{driver} Postgres. Le tout a été déployé
 sur un serveur Linux.\\
 
-Pour le développement nous utiliserons des éditeurs de code standard (Atom, Visual Studio Code), et Visual Paradigm
+Pour le développement nous utiliserons des éditeurs de code standard (Atom, Visual Studio Code, Vim), et Visual Paradigm
 pour le design des images et composants graphiques.\\
 
 Le partage du code, le stockage et la gestion des versions seront gérés par un dépôt Git hébergé sur
@@ -633,7 +631,7 @@ Gricad-GitLab.\\
 
 Pour ce projet, nous utiliserons une méthode itérative. Nous effectuerons des itérations toutes les 4
 à 5 semaines de travail. Avec cette méthode, la mise en commun et l'intégration au sein du groupe se font toutes les semaines.
-Ce qui permet de corriger au plus tôt les problèmes liés au partage des tâches et les potentiels retards.\\
+Cela permet de corriger au plus tôt les problèmes liés au partage des tâches et les potentiels retards.\\
 
 \subsubsection{Découpage du projet}
 
@@ -652,10 +650,10 @@ Eliott et Vincenzo s'occuperont du stockage des données.\\
   \label{fig:gantt-iteration2}
 \end{figure}
 
-Suite à cette itération, les trois équipes on prit du retard, le travail était trop conséquent pour le temps donné.\\
-En effet, tous les binômes ont du retard. Le stockage des données a une semaine de retard.
-La logique de fonctionnement a du sauté quelque formulaire, le retard est d'environ une semaine.
-Et le visuel n'a pas eux le temps de faire toutes les vues prévues, le retard est de deux semaines, car leur binôme était celui avec le plus de travail.
+Suite à cette itération, les trois équipes on pris du retard, le travail était trop conséquent pour le temps donné.\\
+En effet, tous les binômes ont du retard. L'équipe stockage des données a une semaine de retard.
+L'équipe logique de fonctionnement a dû sauter quelques formulaires, le retard est d'environ une semaine.
+Et l'équipe visuels n'a pas eu le temps de faire toutes les vues prévues, le retard est de deux semaines, car leur binôme était celui avec le plus de travail.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/gantt-iteration3.png}
@@ -665,19 +663,18 @@ Et le visuel n'a pas eux le temps de faire toutes les vues prévues, le retard e
 
 \section{Avancement du projet}
 
-À l'heure actuelle un serveur est déployé sur un Raspberry PI et l'infrastructure et le modèle MVC
-avec base de donnée est fonctionnelle. Nous avons donc un programme PHP qui va chercher les
-données du modèle dans une base de donnée PostgreSQL pour produire un affichage de pages
-dynamiques avec du HTML/CSS grâce à un serveur web NGINX.\\
+À l'heure actuelle, un serveur est déployé sur un Raspberry Pi, et l'infrastructure et le modèle MVC
+avec base de données sont fonctionnels. Nous avons donc un programme PHP qui va chercher les
+données du modèle dans une base de données PostgreSQL pour produire un affichage de pages
+dynamiques avec du HTML/CSS grâce à un serveur Web NginX.\\
 
-Côté vue, le header, le footer ainsi que la page d'accueil sont réalisés en
-HTML/CSS avec un début d'adaptation aux formats mobiles (\underline{\hyperref[fig:page-accueil]{visuel ci-dessous}}). Des maquettes
-sont faites pour les autres pages.
+Côté vues, l'en-tête, le pied de page ainsi que la page d'accueil sont réalisés en
+HTML/CSS avec un début d'adaptation aux formats mobiles (\underline{\hyperref[fig:page-accueil]{visuel ci-dessous}}). Des maquettes sont faites pour les autres pages.
 
-La structuration de la base de données est terminée, il reste à faire les contrôles
+La structuration de la base de données est terminée, il reste à mettre en place les contrôles
 assurant la cohérence des données en base.
 
-Toutes les classes du modèle PHP sont en place et le contrôleurs avancent avec les vues.
+Toutes les classes du modèle PHP sont en place et les contrôleurs avancent avec les vues.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/page-accueil.png}
@@ -722,9 +719,9 @@ soit gagnées en échange des services. Le site se base sur une proposition de p
   \label{fig:pieces-pwiic}
 \end{figure}
 
-YakaSaider met en place des profils : par exemple, ici Aurélie est coiffeuse. Il n’y a aucun prix affiché,
-aucune durée, juste un bouton Contacter. Sur ce site, il faut payer en heures. Lorsque l’on crée un compte,
-on dispose d’une heure “gratuite” après quoi il faut rendre des services pour en gagner.
+YakaSaider met en place des profils : par exemple, ici, Aurélie est coiffeuse. Il n’y a aucun prix affiché,
+aucune durée, juste un bouton "Contacter". Sur ce site, il faut payer en heures. Lorsque l’on crée un compte,
+on dispose d’une heure "gratuite" après quoi il faut rendre des services pour en gagner.
 On les consomme lorsque l’on demande un service.\\
 
 \begin{figure}[H]
@@ -757,7 +754,7 @@ or il n’est pas assez mis en valeur.\\
 \end{figure}
 
 Pwiic a un guidage peu intuitif. Par exemple, sur les cartes servant à donner les caractéristiques d’une personne
-lorsque l’on cherche un service, le bouton “Voir ce Pwiic” n’est pas en couleur. De plus, le pouce en l’air donne
+lorsque l’on cherche un service, le bouton "Voir ce Pwiic" n’est pas en couleur. De plus, le pouce en l’air donne
 l’impression que le bouton est là pour donner un avis et non pour voir le profil.\\
 
 \begin{figure}[H]
@@ -765,17 +762,17 @@ l’impression que le bouton est là pour donner un avis et non pour voir le pro
   \label{fig:guidage-pwiic}
 \end{figure}
 
-Et lorsque l’on clique sur Voir ce Pwiic, le bouton pour contacter la personne n’est pas trouvable du premier coup d’œil.\\
+Et lorsque l’on clique sur "Voir ce Pwiic", le bouton pour contacter la personne n’est pas trouvable du premier coup d’œil.\\
 
 \begin{figure}[H]
   \includegraphics[width=350px]{images/voir-ce-pwiic.png}
   \label{fig:voir-ce-pwiic}
 \end{figure}
 
-De plus, le mot “Pwiic” est un terme abstrait créé à partir du nom de marque du site, moins clair que “annonce”
+De plus, le mot "Pwiic" est un terme abstrait créé à partir du nom de marque du site, moins clair que "annonce"
 par exemple, ce qui ne facilite pas forcément la navigation pour des personnes peu à l’aise.\\
 
-YakaSaider possède un guidage peu efficace. Lorsque l’on recherche pour “Tous les services”, on ne voit aucune
+YakaSaider possède un guidage peu efficace. Lorsque l’on recherche pour "Tous les services", on ne voit aucune
 compétence ni même description, seulement le visage de la personne, son nom et sa ville.\\
 
 \begin{figure}[H]
@@ -787,10 +784,10 @@ Pour régler le problème, il faut faire une recherche plus affinée.\\
 
 \paragraph{Gestion des erreurs}
 
-Ensuite, nous avons essayé de faire des actions qui n’étaient pas celles demandées, une erreur peut très vite perdre un utilisateur.\\
+Ensuite, nous avons essayé de faire des actions qui n’étaient pas celles demandées -- une erreur peut très vite perdre un utilisateur.\\
 
 AlloVoisins et Pwiic semblent bien gérer les erreurs. Par exemple, si l’on saisit dans la barre de recherche quelque chose
-qui n’est pas valable, on retourne sur la page de résultats par défaut, c’est à dire tous les résultats près de
+qui n’est pas valable, on est renvoyé sur la page de résultats par défaut, c’est à dire tous les résultats près de
 chez nous ou de l’endroit où notre demande se trouve.\\
 
 \begin{figure}[H]
@@ -898,7 +895,7 @@ de l'annonce, ainsi qu'un bouton pour confirmer.
 
 Sur la partie gauche de cette page, un paragraphe explique les avantages de créer son compte,
 toujours dans l'objectif de renforcer le guidage. Sur la partie droite, un formulaire comportant
-tous les champs nécéssaires à la création de compte. La connexion via compte Google est aussi
+tous les champs nécessaires à la création de compte. La connexion via compte Google est aussi
 disponible pour améliorer la brièveté, la flexibilité et la prise en compte de l'expérience de
 l'utilisateur car cela rend l'inscription beaucoup plus accessible.
 
