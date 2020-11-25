@@ -76,30 +76,31 @@ Il est vivement déconseillé de modifier le fichier `.gitattributes`.
 
 Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
-### art-entraide
+### Répertoire `art-entraide`
 
-**art-entraide** contient le code.<br>
-**controler/** contient les contrôleurs en php.<br>
-**data/** contient les fichiers de la base de données.<br>
-**framework/** contient la vue général.<br>
-**model/** contient les classes PHP.<br>
-**test/** contient tout les tests.<br>
-**view/** contient tout le visuel.<br>
+Ce répertoire contient le code de l'application elle-même.
 
-### conception
-Dossier de conception pour les diagramme UML par exemple.
-Pour les fichier .drawio il faut les ouvrir avec draw.io (https://app.diagrams.net/), "Open from device". Un package Atom permet également de visualiser ces diagrammes.
+- `controler/` contient les contrôleurs PHP ;
+- `data/` contient les fichiers de la base de données ;
+- `framework/` contient la vue générale (micro-framework) ;
+- `model/` contient les classes PHP ;
+- `test/` contient tous les tests ;
+- `view/` contient les vues.
 
-PHP :
-diagramme de classes uniquement de modèle
-diagramme de classes uniquement view (option)
-diagramme de sequence
-=> diagrammes sert a communiquer !
-Il reste la classe Reponse à faire pour l'iteration 3
+### Répertoire `conception`
+Ce répertoire contient le matériel le conception, notamment les diagrammes UML par exemple.
+Pour les fichiers `.drawio`, il faut les ouvrir avec [draw.io](https://app.diagrams.net/), e choisissant "Open from device". Un [package Atom](https://atom.io/packages/atom-drawio) permet également de visualiser ces fichiers directement dans l'éditeur.
 
+- `BDD/` : schéma relationnel de la base de données
+- `PHP/` : diagramme de classes uniquement de modèle
+- `Vue/` : schémas concernant le site (plan,...)
 
-### .tex
-Voir [le README dédié](https://gricad-gitlab.univ-grenoble-alpes.fr/iut2-info/m3301/2020-s3/team-9/rendus/-/blob/master/rapport/README.md) dans rapport/.
+### Répertoire `rapport` et LaTeX
+Le rapport est rédigé en LaTeX, un langage de préparation de documents en texte simple, ce qui facilite la collaboration via Git. Ce texte est ensuite interprété pour générer un PDF.\
+Le répertoire `rapport` contient le fichier source `rapport.tex`, le fichier généré `rapport.pdf` (en `.gitignore` pour éviter les conflits Git), les nombreux fichiers intermédiaires laissés par la génération (eux aussi ignorés) ainsi que le répertoire `images/` qui contient les images à insérer dans le rapport.\
+Lors des rendus, le `rapport.pdf` est copié dans `docs/` pour ne plus être "gitignoré".
+
+Voir [le README dédié](https://gricad-gitlab.univ-grenoble-alpes.fr/iut2-info/m3301/2020-s3/team-9/rendus/-/blob/master/rapport/README.md) dans `rapport/` pour la syntaxe LaTeX.
 
 ### Schéma base de données
 **Utilisateur(<u>id</u>, nom, prenom, reputation, certif, email, password, adresse)**
