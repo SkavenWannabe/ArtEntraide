@@ -30,6 +30,12 @@ class DAO{
   }
 
   // --- Getteur --- //
+  function getLastId() : int{
+    $req = "SELECT max(id) FROM utilisateur";
+    $stmt = $this->db->query($req);
+    $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    return $return[0];
+  }
 
   function getUtilisateur(int $id) : Utilisateur{
     $req = "SELECT * FROM utilisateur WHERE id='$id'";
@@ -46,14 +52,12 @@ class DAO{
     return $return[0];
   }
 
-
   function getAnnonce(int $id) : Annonce{
     $req = "SELECT * FROM annonce WHERE id='$id'";
 
     $sth = $this->db->query($req);
     return $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce")[0];
   }
-
 
   // --- Utilitaire pour les Utilisateur --- //
 

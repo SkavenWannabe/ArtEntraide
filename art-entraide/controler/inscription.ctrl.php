@@ -42,9 +42,21 @@ if ($_POST['passwd'] != '') {
   $error[] = "Le passwd doit être non nul";
 }
 
+//recuperation de l'adresse
+$adresse = "2 rue laville";
+
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
-//-> insert dans la base de données
+// insert dans la base de données
+if(!isset($error)){
+  $art = new DAO();
+  $id = $art->getLastId();
+  $uti = new Utilisateur($id,$nom,$prenom,$phone,false,$email,$passwd,$adresse);
+  $art->createUtilisateur($uti);
+  $_SESSION['connected'] = true;
+}
+
+$_SESSION['connected'] = false;
 
 session_write_close();
 
