@@ -1,0 +1,20 @@
+body > section {
+  width: 85%;
+}
+
+body > section > section {
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+body > section > section form {
+  display: flex;
+  flex-direction: column;
+}
+
+body > section > section form button {
+  margin-top: 15px !important;
+}

@@ -22,7 +22,7 @@ switch ($etat) {
     $view->display("categorie.view.php");
     break;
   case 'connexion':
-    $view->display("categorie.view.php");
+    $view->display("connexion.view.php");
     break;
   case 'creation':
     $view->display("inscription.view.php");
