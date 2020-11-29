@@ -59,6 +59,13 @@ class DAO{
     return $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce")[0];
   }
 
+  function getCategorie(int $id) : Categorie{
+    $req = "SELECT * FROM categorie WHERE id = '$id'";
+    $sth = $this->db->query($req);
+    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce");
+    return $return[0];
+  }
+
   // --- Utilitaire pour les Utilisateur --- //
 
   // Sauvegarde d'un utilisateur dans la base de données
