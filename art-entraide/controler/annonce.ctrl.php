@@ -22,7 +22,7 @@ $auteur = $art->getUtilisateur($idAuteur);
 $nomAuteur = $auteur->getNom();
 
 //récupération du nom de la catégorie
-$idCategorie = $annonce->getIdCategorie()
+$idCategorie = $annonce->getIdCategorie();
 $categorie = $art->getCategorie();
 $nomCategorie = $categorie->getNom();
 
