@@ -7,7 +7,7 @@ $nomCategorie = nom de la catégorie de l'annonce
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title><?= $titre ?></title>
+    <title><?= testtest ?></title>
     <link rel="stylesheet" href="/view/css/master.css">
   </head>
 
