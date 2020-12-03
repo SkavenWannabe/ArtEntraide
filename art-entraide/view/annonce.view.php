@@ -16,7 +16,7 @@ $nomCategorie = nom de la catégorie de l'annonce
 
     <section>
       <header>
-        <h2>Annonce de bloubloubloub TEST<?= $nomAuteur ?> : <?= $annonce->getNom() ?></h2>
+        <h2>Annonce de <?= $nomAuteur ?> : <?= $annonce->getNom() ?></h2>
       </header>
 
       <section>
