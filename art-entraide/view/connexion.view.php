@@ -25,7 +25,7 @@ $user : Utilisateur connecté
 
       <section>
         <div class="">
-          <form class="login" action="???" method="post">
+          <form class="login" action="login.ctrl.php" method="post">
             <label for="pseudo">Adresse mail</label>
             <input type="text" name="pseudo" id="pseudo">
 

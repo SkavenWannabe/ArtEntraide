@@ -11,7 +11,10 @@ include_once(__DIR__."/../model/DAO.class.php");
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
-
+if(!isset($_SESSION['connected'])){
+  $_SESSION['connected'] = false;
+}
+echo " session : " . $_SESSION['connected'];
 $annonces[] = $art->getAnnonce(1);
 $annonces[] = $art->getAnnonce(2);
 $annonces[] = $art->getAnnonce(3);
