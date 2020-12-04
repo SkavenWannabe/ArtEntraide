@@ -4,7 +4,8 @@
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
 // Inclusion du modèle
-//include_once(__DIR__."/../model/DAO.class.php");
+include_once(__DIR__."/../model/DAO.class.php");
+include_once(__DIR__."/../model/Categorie.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 $idAnnonce = $_GET['idAnnonce'];
@@ -14,7 +15,7 @@ $idCategorie = $_GET['idCategorie'];
 session_start();
 $art = new DAO();
 //récupération de l'annonce
-$annonce = $art->getAnnonce($idAnnonce);
+$annonce = $art->getAnnonce((int)$idAnnonce);
 
 //récupération du nom de l'auteur
 $idAuteur = $annonce->getIdCreateur();
@@ -23,7 +24,7 @@ $nomAuteur = $auteur->getNom();
 
 //récupération du nom de la catégorie
 $idCategorie = $annonce->getIdCategorie();
-$categorie = $art->getCategorie();
+$categorie = $art->getCategorie($idCategorie);
 $nomCategorie = $categorie->getNom();
 
 session_write_close();
@@ -37,5 +38,5 @@ $view->assign('annonce', $annonce);
 $view->assign('nomAuteur',$nomAuteur);
 $view->assign('nomCategorie',$nomCategorie);
 
-$view->dispay("annonce.view.php");
+$view->display("annonce.view.php");
 ?>
