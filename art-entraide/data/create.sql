@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Utilisateur (
   prenom VARCHAR NOT NULL,
   adresse VARCHAR,
   certif BOOLEAN NOT NULL DEFAULT false,
-  reputation INTEGER NOT NULL DEFAULT 0
+  reputation INTEGER NOT NULL DEFAULT 0 CONSTRAINT reputation_intervalle CHECK (reputation>=-100 AND reputation<=100)
 );
 
 CREATE TABLE IF NOT EXISTS Categorie (
@@ -19,6 +19,10 @@ CREATE TABLE IF NOT EXISTS Annonce (
   nom VARCHAR NOT NULL,
   description VARCHAR,
   adresse VARCHAR,
+
+  est_demande BOOLEAN NOT NULL DEFAULT true, -- vrai si l'annonce est une demande de service
+  est_active BOOLEAN NOT NULL DEFAULT true, -- vrai si l'annonce est active, faux si elle est finit
+
   date_creation DATE NOT NULL,
   date_service DATE,
   id_createur INTEGER NOT NULL,
