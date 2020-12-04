@@ -60,7 +60,7 @@ article.annonce > p.date {
 	position: absolute;
 	top: 0;
 	right: 0;
-	background-color: var(--accent-color-vert);
+	/* background-color: var(--accent-color-vert); */
 	border-bottom-left-radius: 10px;
 	border-top-right-radius: 10px;
 	padding: 3px;
@@ -78,4 +78,10 @@ section.section_annonces > form > button {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px){
+  section.section_annonces > div {
+    margin: 0px 0%;
+  }
 }

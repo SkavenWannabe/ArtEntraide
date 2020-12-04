@@ -2,20 +2,12 @@
 $categories : Liste du nom de chaque catégories
 $user : Utilisateur connecté
 -->
-<?=
-  $categories = array (  "Jardinage",
-                        "Baby-sitting",
-                        "Plomberie",
-                        "Mécanique",
-                        "Peinture",
-                        "Courses",
-                        "Animaux"
-                      );
- ?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title>Création d'une annonce</title>
     <link rel="stylesheet" href="/view/design/style.css">
   </head>
@@ -43,9 +35,7 @@ $user : Utilisateur connecté
         <input type="text" name="description" id="description">
 
         <label for="lieu">Lieu du service</label>
-        <input type="text" name="lieu" id="lieu" value="tamere">
-
-        <!-- <?= $user->getAdresse() ?> -->
+        <input type="text" name="lieu" id="lieu" value="<?= $user->getAdresse() ?>">
 
         <label for="date">Quand avez-vous besoin d'aide ?</label>
         <input type="date" name="date" id="date">
