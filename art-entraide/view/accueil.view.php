@@ -16,6 +16,9 @@ $annonces : array contenant les quatre annonces à afficher en page d'accueil
 
 
   <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+
     <?php include_once(__DIR__."/header.php"); ?>
 
     <section class="section_annonces">
@@ -39,6 +42,8 @@ $annonces : array contenant les quatre annonces à afficher en page d'accueil
         <button type="submit" name="" value="">Voir plus d'annonces</button>
       </form>
     </section>
+
+    <script type="text/javascript" src="/view/js/accueil.js"></script>
 
     <?php include_once(__DIR__."/footer.php"); ?>
   </body>
