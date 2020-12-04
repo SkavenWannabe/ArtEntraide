@@ -56,7 +56,11 @@ class DAO{
     $req = "SELECT password FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
-    return $return[0];
+    if ($return[0] === NULL) {
+      return '';
+    } else {
+      return $return[0];
+    }
   }
 
   function getAnnonce(int $id) : Annonce{

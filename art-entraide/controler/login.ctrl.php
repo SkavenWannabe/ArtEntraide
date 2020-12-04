@@ -43,8 +43,8 @@ if (!isset($error)) {
     $annonces[] = $art->getAnnonce(3);
     $annonces[] = $art->getAnnonce(3);
     $message = "Vous êtes connecté";
-  }else{
-    $error[] = "Ce n'est pas le bon mot de passe";
+  } else {
+    $error[] = "Identifiant ou mot de passe incorrect.";
     $_SESSION['connected'] = false;
   }
 
