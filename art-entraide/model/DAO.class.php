@@ -69,7 +69,7 @@ class DAO{
   function getCategorie(int $id) : Categorie{
     $req = "SELECT * FROM categorie WHERE id = '$id'";
     $sth = $this->db->query($req);
-    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce");
+    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
     return $return[0];
   }
 
