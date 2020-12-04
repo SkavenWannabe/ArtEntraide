@@ -30,7 +30,7 @@ $user : Utilisateur connecté
             <input type="text" name="pseudo" id="pseudo">
 
             <label for="password">Mot de passe</label>
-            <input type="text" name="password" id="pasword">
+            <input type="password" name="password" id="password">
 
             <button type="submit" name="connexion">Connexion</button>
           </form>
