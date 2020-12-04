@@ -2,6 +2,7 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title>Inscription</title>
     <link rel="stylesheet" href="/view/css/master.css">
     <link rel="stylesheet" href="/view/css/inscription.css">

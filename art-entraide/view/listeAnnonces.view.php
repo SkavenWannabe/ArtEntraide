@@ -22,6 +22,7 @@ $user : Utilisateur connecté
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title><?= $titre ?></title>
     <link rel="stylesheet" href="/view/design/style.css">
   </head>

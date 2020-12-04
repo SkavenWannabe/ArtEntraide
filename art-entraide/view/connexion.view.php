@@ -6,6 +6,7 @@ $user : Utilisateur connecté
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <title>Connexion</title>
