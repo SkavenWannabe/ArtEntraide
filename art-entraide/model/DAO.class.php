@@ -62,8 +62,21 @@ class DAO{
   function getAnnonce(int $id) : Annonce{
     $req = "SELECT * FROM annonce WHERE id='$id'";
     $sth = $this->db->query($req);
-    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce");
-    return $return[0];
+    $data = $sth->fetchAll(PDO::FETCH_ASSOC)[0];
+
+    if ($data['date_service'] === NULL) {
+      $data['date_service'] = '';
+    }
+    if ($data['description'] === NULL) {
+      $data['description'] = '';
+    }
+    if ($data['adresse'] === NULL) {
+      $data['adresse'] = '';
+    }
+
+    $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],$data['date_creation'],$data['date_service'],$data['id_createur'],$data['id_categorie']);
+
+    return $annonce;
   }
 
   function getCategorie(int $id) : Categorie{
