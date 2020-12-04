@@ -59,7 +59,7 @@ $view = new View();
 if (!isset($error) && $connected) {
   $view->assign('annonces', $annonces);
   $view->assign('message', $message);
-  $view->assign('connecter', $connected)
+  $view->assign('connecter', $connected);
   $view->display("accueil.view.php");
 } else {
   $view->assign('error',$error);
