@@ -33,11 +33,14 @@ if (!isset($error)) {
 
   if($verif == $passwd){
     $_SESSION['connected'] = true;
+    //récupération nom de l'utilisateur connecté
+    $nom = $art->getNomUtilisateur($email);
+    $_SESSION['user'] = $nom;
   }else{
     $_SESSION['connected'] = false;
   }
 
-  $connected = $_SESSION['connected']; 
+  $connected = $_SESSION['connected'];
 }
 
 session_write_close();

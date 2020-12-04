@@ -39,14 +39,21 @@ class DAO{
 
   function getUtilisateur(int $id) : Utilisateur{
     $req = "SELECT * FROM utilisateur WHERE id='$id'";
-
     $sth = $this->db->query($req);
-    return $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Utilisateur")[0];
+    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Utilisateur");
+    return $return[0];
   }
 
-  function getPass(int $email) : Utilisateur{
-    $req = "SELECT password FROM utilisateur WHERE email='$email'";
+  //a voir si nécessaire, utiliser dans login.crtl.php pour le user pour listesAnnonces.crtl.php
+  function getNomUtilisateur(int $email) : string{
+    $req = "SELECT * FROM utilisateur WHERE email='$email'";
+    $sth = $this->db->query($req);
+    $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    return $return[0];
+  }
 
+  function getPass(int $email) : string{
+    $req = "SELECT password FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
     return $return[0];
@@ -54,9 +61,23 @@ class DAO{
 
   function getAnnonce(int $id) : Annonce{
     $req = "SELECT * FROM annonce WHERE id='$id'";
-
     $sth = $this->db->query($req);
-    return $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce")[0];
+    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce");
+    return $return[0];
+  }
+
+  function getCategorie(int $id) : Categorie{
+    $req = "SELECT * FROM categorie WHERE id = '$id'";
+    $sth = $this->db->query($req);
+    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Annonce");
+    return $return[0];
+  }
+
+  function getAllCategorie(){
+    $req = "SELECT * FROM categorie";
+    $sth = $this->db->query($req);
+    $result = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Categorie');
+    return $result;
   }
 
   // --- Utilitaire pour les Utilisateur --- //

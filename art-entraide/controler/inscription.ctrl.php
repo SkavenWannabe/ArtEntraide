@@ -50,10 +50,14 @@ session_start();
 // insert dans la base de données
 if(!isset($error)){
   $art = new DAO();
+  //création d'un utilisateur
   $id = $art->getLastId();
   $uti = new Utilisateur($id,$nom,$prenom,$phone,false,$email,$passwd,$adresse);
   $art->createUtilisateur($uti);
+
+  //Sstockage information de connexion
   $_SESSION['connected'] = true;
+  $_SESSION['user'] = $nom;
 }
 
 $_SESSION['connected'] = false;

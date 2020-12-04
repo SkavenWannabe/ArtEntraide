@@ -7,13 +7,35 @@ include_once(__DIR__."/../framework/view.class.php");
 //include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
+$idAnnonce = $_GET['idAnnonce'];
+$idCategorie = $_GET['idCategorie'];
 
 // ==== PARTIE USAGE DU MODELE ==== //
+session_start();
+$art = new DAO();
+//récupération de l'annonce
+$annonce = $art->getAnnonce($idAnnonce);
+
+//récupération du nom de l'auteur
+$idAuteur = $annonce->getIdCreateur();
+$auteur = $art->getUtilisateur($idAuteur);
+$nomAuteur = $auteur->getNom();
+
+//récupération du nom de la catégorie
+$idCategorie = $annonce->getIdCategorie();
+$categorie = $art->getCategorie();
+$nomCategorie = $categorie->getNom();
+
+session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
-$view->assign('error',$error);
+//$view->assign('error',$error);
+//$view->display("annonce.view.php");
 
-$view->display("annonce.view.php");
+$view->assign('annonce', $annonce);
+$view->assign('nomAuteur',$nomAuteur);
+$view->assign('nomCategorie',$nomCategorie);
 
+$view->dispay("annonce.view.php");
 ?>
