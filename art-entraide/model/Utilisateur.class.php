@@ -22,14 +22,14 @@ class Utilisateur{
 
   // --- Constructeur --- //
 
-  function __construct(int $id=0, string $nom='nomUtilisateur', string $prenom='prenomUtilisateur', bool $certif=false , string $email='unEmail', string $password='unPass', string $adresse='uneAdresse'){
+  function __construct(int $id=0, string $nom='nomUtilisateur', string $prenom='prenomUtilisateur', string $email='unEmail', string $password='unPass', string $adresse='uneAdresse'){
     $this->id = $id;
 
     $this->nom = $nom;
     $this->prenom = $prenom;
 
     $this->reputation = 0;
-    $this->certif = $certif;
+    $this->certif = false;
 
     $this->email = $email;
     $this->password = $password;

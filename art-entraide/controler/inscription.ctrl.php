@@ -4,7 +4,7 @@
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
 // Inclusion du modèle
-//include_once(__DIR__."/../model/DAO.class.php");
+include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 // --- recuperation du nom --- //
@@ -21,13 +21,6 @@ if ($_POST['prenom'] != '') {
   $error[] = "Le prenom doit être non nul";
 }
 
-// --- recuperation du numéro de téléphone --- //
-if ($_POST['phone'] != '') {
-  $phone = $_POST['phone'];
-}else{
-  $error[] = "Le numero de telephone doit être non nul";
-}
-
 // --- recuperation de l'adresse email --- //
 if ($_POST['email'] != '') {
   $email = $_POST['email'];
@@ -42,18 +35,37 @@ if ($_POST['passwd'] != '') {
   $error[] = "Le passwd doit être non nul";
 }
 
+if ($_POST['passwdverif'] != '') {
+  $passwdverif = $_POST['passwdverif'];
+}else{
+  $error[] = "La verification du passwd doit être non nul";
+}
+
+if ($passwd !== $passwdverif) {
+  $error[] = "Le passwd doit être le même";
+}
+
 //recuperation de l'adresse
-$adresse = "2 rue laville";
+if ($_POST['p_adresse'] != '') {
+  $p_adresse = $_POST['p_adresse'];
+}else{
+  $error[] = "L'adresse doit être non nul";
+}
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
+
 // insert dans la base de données
 if(!isset($error)){
   $art = new DAO();
+  echo "dans le DAO";
   //création d'un utilisateur
   $id = $art->getLastId();
-  $uti = new Utilisateur($id,$nom,$prenom,$phone,false,$email,$passwd,$adresse);
+  echo "recup dernière id : " . $id;
+
+  $uti = new Utilisateur($id,$nom,$prenom,$email,$passwd,$adresse);
   $art->createUtilisateur($uti);
+  echo "utilisateur créer";
 
   //Sstockage information de connexion
   $_SESSION['connected'] = true;
@@ -66,7 +78,7 @@ session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
-if (/*insertion pas réussi*/ true) {
+if (!isset($error)) {
   $view->assign('error',$error);
   $view->display("inscription.view.php");
 }else{

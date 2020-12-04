@@ -40,16 +40,26 @@ class DAO{
   function getUtilisateur(int $id) : Utilisateur{
     $req = "SELECT * FROM utilisateur WHERE id='$id'";
     $sth = $this->db->query($req);
-    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Utilisateur");
-    return $return[0];
+    $data = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    if ($data['adresse'] === NULL) {
+      $data['adresse'] = '';
+    }
+
+    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],false,$data['email'],$data['password'],$data['adresse']);
+    return $utilisateur;
   }
 
   //a voir si nécessaire, utiliser dans login.crtl.php pour le user pour listesAnnonces.crtl.php
   function getNomUtilisateur(string $email) : string{
     $req = "SELECT * FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
-    $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
-    return $return[0];
+    $data = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    if ($data['adresse'] === NULL) {
+      $data['adresse'] = '';
+    }
+
+    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],false,$data['email'],$data['password'],$data['adresse']);
+    return $utilisateur;
   }
 
   function getPass(string $email) : string{
@@ -102,20 +112,18 @@ class DAO{
   // Sauvegarde d'un utilisateur dans la base de données
   // $utilisateur : l'utilisateur à sauvegarder
   function createUtilisateur(Utilisateur $utilisateur) {
-    $sql = "INSERT INTO Annonce (id,nom,prenom,reputation,certif,email,password,adresse)
-            values (:id,:nom,:prenom,:reputation,:certif,:email,:password,:adresse)";
+    $sql = "INSERT INTO Annonce (id,nom,prenom,email,password,adresse)
+            values (:id,:nom,:prenom,:certif,:email,:password,:adresse)";
 
     $stmt = $this->db->prepare($sql);
 
     $id = $utilisateur->getId(); $nom = $utilisateur->getNom();
     $prenom = $utilisateur->getPrenom(); $adresse = $utilisateur->getAdresse();
-    $reputation = $utilisateur->getReputation(); $certif = $utilisateur->getCertif();
     $email = $utilisateur->getEmail(); $password = $utilisateur->getPassword();
 
     $stmt->BindParam(':id',$id); $stmt->BindParam(':nom',$nom);
-    $stmt->BindParam(':prenom',$prenom); $stmt->BindParam(':adresse',$adresse);
-    $stmt->BindParam(':reputation',$reputation); $stmt->BindParam(':certif',$certif);
-    $stmt->BindParam(':email',$email); $stmt->BindParam(':password',$password);
+    $stmt->BindParam(':prenom',$prenom); $stmt->BindParam(':email',$email);
+    $stmt->BindParam(':password',$password); $stmt->BindParam(':adresse',$adresse);
 
     $stmt->execute();
   }

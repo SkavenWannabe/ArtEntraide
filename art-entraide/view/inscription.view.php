@@ -28,9 +28,6 @@
         <label for="prenom">Prénom</label>
         <input type="text" name="prenom" id="prenom">
 
-        <label for="numtel">Numéro de téléphone</label>
-        <input type="tel" name="phone" pattern="[0-9]{10}" id="numtel">
-
         <label for="p_adresse">Adresse postale</label>
         <input type="text" name="p_adresse" id="p_adresse">
 
@@ -41,7 +38,7 @@
         <input type="password" name="passwd" id="passwd">
 
         <label for="passwd">Confirmation du mot de passe</label>
-        <input type="password" name="passwd" id="passwd">
+        <input type="password" name="passwdverif" id="passwdverif">
 
         <button type="submit" name="valider">Valider</button>
       </form>
