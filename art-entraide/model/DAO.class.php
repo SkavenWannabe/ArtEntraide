@@ -45,14 +45,14 @@ class DAO{
   }
 
   //a voir si nécessaire, utiliser dans login.crtl.php pour le user pour listesAnnonces.crtl.php
-  function getNomUtilisateur(int $email) : string{
+  function getNomUtilisateur(string $email) : string{
     $req = "SELECT * FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
     return $return[0];
   }
 
-  function getPass(int $email) : string{
+  function getPass(string $email) : string{
     $req = "SELECT password FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
