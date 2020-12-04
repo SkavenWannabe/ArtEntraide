@@ -7,6 +7,7 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
+$_SESSION['connected'] = false;
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();

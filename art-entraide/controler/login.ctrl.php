@@ -37,7 +37,14 @@ if (!isset($error)) {
     $nom = $art->getNomUtilisateur($email);
 
     $_SESSION['user'] = $nom;
+
+    $annonces[] = $art->getAnnonce(1);
+    $annonces[] = $art->getAnnonce(2);
+    $annonces[] = $art->getAnnonce(3);
+    $annonces[] = $art->getAnnonce(3);
+    $message = "Vous êtes connecté";
   }else{
+    $error[] = "Ce n'est pas le bon mot de passe";
     $_SESSION['connected'] = false;
   }
 
@@ -50,6 +57,9 @@ session_write_close();
 $view = new View();
 
 if (!isset($error) && $connected) {
+  $view->assign('annonces', $annonces);
+  $view->assign('message', $message);
+  $view->assign('connecter', $connected)
   $view->display("accueil.view.php");
 } else {
   $view->assign('error',$error);
