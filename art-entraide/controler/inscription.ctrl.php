@@ -58,21 +58,20 @@ session_start();
 // insert dans la base de données
 if(!isset($error)){
   $art = new DAO();
-  echo "dans le DAO";
   //création d'un utilisateur
   $id = $art->getLastId();
-  echo "recup dernière id : " . $id;
-
-  $uti = new Utilisateur($id,$nom,$prenom,$email,$passwd,$adresse);
+  $uti = new Utilisateur($id,$nom,$prenom,$email,$passwd,$p_adresse);
   $art->createUtilisateur($uti);
   echo "utilisateur créer";
 
   //Sstockage information de connexion
   $_SESSION['connected'] = true;
   $_SESSION['user'] = $nom;
+} else {
+  $_SESSION['connected'] = false;
 }
 
-$_SESSION['connected'] = false;
+$connected = $_SESSION['connected'];
 
 session_write_close();
 
@@ -82,6 +81,7 @@ if (!isset($error)) {
   $view->assign('error',$error);
   $view->display("inscription.view.php");
 }else{
+  $view->assign('connecter', $connected);
   $view->display("listeAnnnonces.view.php");
 }
 

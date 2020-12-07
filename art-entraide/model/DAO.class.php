@@ -31,9 +31,9 @@ class DAO{
 
   // --- Getteur --- //
   function getLastId() : int{
-    $req = "SELECT max(id) FROM utilisateur";
+    $req = "SELECT MAX(id) FROM utilisateur";
     $stmt = $this->db->query($req);
-    $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
     return $return[0];
   }
 
