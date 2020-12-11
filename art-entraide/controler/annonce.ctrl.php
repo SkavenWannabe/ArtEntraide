@@ -9,7 +9,6 @@ include_once(__DIR__."/../model/Categorie.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 $idAnnonce = $_GET['idAnnonce'];
-$idCategorie = $_GET['idCategorie'];
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
@@ -23,11 +22,8 @@ $auteur = $art->getUtilisateur($idAuteur);
 $nomAuteur = $auteur->getNom();
 
 //récupération du nom de la catégorie
-$idCategorie = $annonce->getIdCategorie();
-$categorie = $art->getCategorie($idCategorie);
+$categorie = $annonce->getCategorie();
 $nomCategorie = $categorie->getNom();
-
-$categories = $_SESSION['nomCategories'];
 
 session_write_close();
 
@@ -39,7 +35,6 @@ $view = new View();
 $view->assign('annonce', $annonce);
 $view->assign('nomAuteur',$nomAuteur);
 $view->assign('nomCategorie',$nomCategorie);
-$view->assign('nomCategories', $categories);
 
 $view->display("annonce.view.php");
 ?>

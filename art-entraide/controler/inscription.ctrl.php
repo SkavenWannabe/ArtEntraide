@@ -62,7 +62,6 @@ if(!isset($error)){
   $id = $art->getLastId() +1; echo "recup id ";
   $uti = new Utilisateur($id,$nom,$prenom,$email,$passwd,$p_adresse);
   $art->createUtilisateur($uti);
-  echo "utilisateur créer";
 
   //Sstockage information de connexion
   $_SESSION['connected'] = true;
@@ -72,7 +71,7 @@ if(!isset($error)){
   $annonces[] = $art->getAnnonce(2);
   $annonces[] = $art->getAnnonce(3);
   $annonces[] = $art->getAnnonce(3);
-  $message = "Vous êtes conpte est créer";
+  $message = "Vous êtes compte est créer";
 
 } else {
   $_SESSION['connected'] = false;

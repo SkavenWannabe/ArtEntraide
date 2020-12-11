@@ -37,7 +37,7 @@ article.annonce > form button:first-child {
   transform: translate(-50%, -50%);
 }
 
-article.annonce > form button:last-child {
+article.annonce > form:last-child button {
   position: absolute;
   bottom: 0;
   font-size: 1.1em;
