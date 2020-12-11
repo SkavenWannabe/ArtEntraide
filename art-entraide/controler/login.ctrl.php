@@ -33,19 +33,20 @@ if (!isset($error)) {
 
   if($verif === $passwd){
     $_SESSION['connected'] = true;
-    //récupération nom de l'utilisateur connecté
-    $nom = $art->getNomUtilisateur($email);
 
-    $_SESSION['user'] = $nom;
+    //récupération utilisateur connecté
+    $user = $art->getUtiliMail($email);
 
     $annonces[] = $art->getAnnonce(1);
     $annonces[] = $art->getAnnonce(2);
     $annonces[] = $art->getAnnonce(3);
     $annonces[] = $art->getAnnonce(3);
     $message = "Vous êtes connecté";
+
   } else {
     $error[] = "Identifiant ou mot de passe incorrect.";
     $_SESSION['connected'] = false;
+    $user = NULL;
   }
 
   $connected = $_SESSION['connected'];
@@ -60,6 +61,7 @@ if (!isset($error) && $connected) {
   $view->assign('annonces', $annonces);
   $view->assign('message', $message);
   $view->assign('connecter', $connected);
+  $view->assign('user', $user);
   $view->display("accueil.view.php");
 } else {
   $view->assign('error',$error);

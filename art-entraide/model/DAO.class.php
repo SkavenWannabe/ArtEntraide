@@ -40,25 +40,24 @@ class DAO{
   function getUtilisateur(int $id) : Utilisateur{
     $req = "SELECT * FROM utilisateur WHERE id='$id'";
     $sth = $this->db->query($req);
-    $data = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    $data = $sth->fetchAll(PDO::FETCH_ASSOC)[0];
     if ($data['adresse'] === NULL) {
       $data['adresse'] = '';
     }
 
-    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],false,$data['email'],$data['password'],$data['adresse']);
+    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],$data['email'],$data['password'],$data['adresse']);
     return $utilisateur;
   }
 
-  //a voir si nécessaire, utiliser dans login.crtl.php pour le user pour listesAnnonces.crtl.php
-  function getNomUtilisateur(string $email) : string{
+  function getUtiliMail(string $email) : Utilisateur{
     $req = "SELECT * FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
-    $data = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    $data = $sth->fetchAll(PDO::FETCH_ASSOC)[0];
     if ($data['adresse'] === NULL) {
       $data['adresse'] = '';
     }
 
-    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],false,$data['email'],$data['password'],$data['adresse']);
+    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],$data['email'],$data['password'],$data['adresse']);
     return $utilisateur;
   }
 
@@ -113,24 +112,36 @@ class DAO{
   // $utilisateur : l'utilisateur à sauvegarder
   function createUtilisateur(Utilisateur $utilisateur) {
     $sql = "INSERT INTO Utilisateur (id,nom,prenom,email,password,adresse)
-            values (:id,:nom,:prenom,:certif,:email,:password,:adresse)";
+            values (:id,:nom,:prenom,:email,:password,:adresse)";
 
     $stmt = $this->db->prepare($sql);
 
-    $nom = $utilisateur->getNom(); $prenom = $utilisateur->getPrenom();
-    $adresse = $utilisateur->getAdresse(); $email = $utilisateur->getEmail();
+    $id = $utilisateur->getid();
+    $nom = $utilisateur->getNom();
+    $prenom = $utilisateur->getPrenom();
+    $adresse = $utilisateur->getAdresse();
+    $email = $utilisateur->getEmail();
     $password = $utilisateur->getPassword();
 
-    $stmt->BindParam(':id',"DEFAULT"); $stmt->BindParam(':nom',$nom);
-    $stmt->BindParam(':prenom',$prenom); $stmt->BindParam(':email',$email);
-    $stmt->BindParam(':password',$password); $stmt->BindParam(':adresse',$adresse);
+    $stmt->BindParam(':id',$id);
+    $stmt->BindParam(':nom',$nom);
+    $stmt->BindParam(':prenom',$prenom);
+    $stmt->BindParam(':email',$email);
+    $stmt->BindParam(':password',$password);
+    $stmt->BindParam(':adresse',$adresse);
 
     $stmt->execute();
 
+    $req = "SELECT * FROM Utilisateur where email = '$email'";
+    $sth = $this->db->query($req);
+    $id = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Utilisateur');
+    var_dump($id);
+    /*
     $req = "SELECT id FROM utilisateur where email = '$email'";
     $stmt = $this->db->query($req);
     $id = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
     $utilisateur->setId($id);
+    echo "maj id";*/
   }
 
   // Mise à jour d'un Utilisateur

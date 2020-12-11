@@ -49,7 +49,7 @@ if ($passwd !== $passwdverif) {
 if ($_POST['p_adresse'] != '') {
   $p_adresse = $_POST['p_adresse'];
 }else{
-  $error[] = "L'adresse doit être non nul";
+  $p_adresse = "";
 }
 
 // ==== PARTIE USAGE DU MODELE ==== //
@@ -59,13 +59,21 @@ session_start();
 if(!isset($error)){
   $art = new DAO();
   //création d'un utilisateur
-  $uti = new Utilisateur(0,$nom,$prenom,$email,$passwd,$p_adresse);
+  $id = $art->getLastId() +1; echo "recup id ";
+  $uti = new Utilisateur($id,$nom,$prenom,$email,$passwd,$p_adresse);
   $art->createUtilisateur($uti);
   echo "utilisateur créer";
 
   //Sstockage information de connexion
   $_SESSION['connected'] = true;
   $_SESSION['user'] = $nom;
+
+  $annonces[] = $art->getAnnonce(1);
+  $annonces[] = $art->getAnnonce(2);
+  $annonces[] = $art->getAnnonce(3);
+  $annonces[] = $art->getAnnonce(3);
+  $message = "Vous êtes conpte est créer";
+
 } else {
   $_SESSION['connected'] = false;
 }
@@ -78,7 +86,9 @@ session_write_close();
 $view = new View();
 if (!isset($error)) {
   $view->assign('connecter', $connected);
-  $view->display("listeAnnnonces.view.php");
+  $view->assign('annonces', $annonces);
+  $view->assign('message', $message);
+  $view->display("accueil.view.php");
 }else{
   $view->assign('error',$error);
   $view->display("inscription.view.php");
