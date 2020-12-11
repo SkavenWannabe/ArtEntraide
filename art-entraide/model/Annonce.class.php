@@ -22,7 +22,15 @@ class Annonce{
 
   // --- Constructeur --- //
 
-  function __construct(int $id=0, string $nom='nomAnnonce', string $description='descriptionAnnonce', string $adresse='adresse', string $date_creation='01/01/1970', string $date_service='01/01/1970', int $id_createur=0, int $id_categorie=0){
+  function __construct( int $id=0,
+                        string $nom='nomAnnonce',
+                        string $description='descriptionAnnonce',
+                        string $adresse='adresse',
+                        string $date_creation='01/01/1970',
+                        string $date_service='01/01/1970',
+                        int $id_createur=0,
+                        int $id_categorie=0
+                      ){
     $this->id = $id;
 
     $this->nom = $nom;
@@ -88,4 +96,20 @@ class Annonce{
     $this->date_service = $dService;
   }
 }
+
+function getAnnonceErreur() : Annonce{
+
+  $annonceErreur = new Annonce(  -1,
+                                'Annonce erreur',
+                                'Description erreur : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
+                                'Adresse erreur',
+                                '00/00/0000',
+                                '00/00/0000'
+                                -1,
+                                -1
+                            );
+  return $annonceErreur;
+
+}
+
 ?>

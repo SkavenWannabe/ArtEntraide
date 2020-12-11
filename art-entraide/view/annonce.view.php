@@ -3,6 +3,20 @@ $annonce = Objet annonce concernée
 $nomAuteur = nom de l'auteur de l'annonce
 $nomCategorie = nom de la catégorie de l'annonce
  -->
+ <?php
+  include_once(__DIR__."/../model/Annonce.class.php");
+
+  if(!isset($annonce)){
+    $annonce = getAnnonceErreur();
+  }
+  if(!isset($nomAuteur)){
+    $nomAuteur = "nom de l'auteur introuvable";
+  }
+  if(!isset($nomCatégorie)){
+    $nomCatégorie = "nom de la catégorie introuvable";
+  }
+
+ ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
