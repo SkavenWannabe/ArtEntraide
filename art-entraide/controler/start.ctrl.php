@@ -21,12 +21,22 @@ $annonces[] = $art->getAnnonce(2);
 $annonces[] = $art->getAnnonce(3);
 $annonces[] = $art->getAnnonce(3);
 
+//récupération de l'annonce
+$allCategories = $art->getAllCategorie();
+//récupération du nom de chaque catégorie
+foreach ($allCategories as $value){
+    $categories[] = $value->getNom();
+}
+
+$_SESSION['nomCategories'] = $categories;
+
 session_write_close();
 
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 $view->assign('annonces', $annonces);
+$view->assign('nomCategories', $categories);
 
 //->transmition des 2 annonces a la page d'accueil
 $view->display("accueil.view.php");

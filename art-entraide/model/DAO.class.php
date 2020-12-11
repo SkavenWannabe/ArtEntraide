@@ -5,6 +5,8 @@
 // importation des classe Annonce, Utilisateur et Reponse
 require_once(__DIR__."/Utilisateur.class.php");
 require_once(__DIR__."/Annonce.class.php");
+require_once(__DIR__."/Categorie.class.php");
+
 require_once("/home/synntix/db.php");
 //require_once(__DIR__."/Reponse.class.php");
 
@@ -136,12 +138,6 @@ class DAO{
     $sth = $this->db->query($req);
     $id = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Utilisateur');
     var_dump($id);
-    /*
-    $req = "SELECT id FROM utilisateur where email = '$email'";
-    $stmt = $this->db->query($req);
-    $id = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
-    $utilisateur->setId($id);
-    echo "maj id";*/
   }
 
   // Mise à jour d'un Utilisateur

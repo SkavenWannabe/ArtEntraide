@@ -20,7 +20,7 @@ if ($_POST['pseudo'] != '') {
 if ($_POST['password'] != '') {
   $passwd = $_POST['password'];
 }else{
-  $error[] = "Le passwd doit être non nul";
+  $error[] = "Le mot de passe doit être non nul";
 }
 
 
@@ -51,6 +51,9 @@ if (!isset($error)) {
 
   $connected = $_SESSION['connected'];
 }
+
+$categories = $_SESSION['nomCategories'];
+
 session_write_close();
 
 
@@ -62,9 +65,12 @@ if (!isset($error) && $connected) {
   $view->assign('message', $message);
   $view->assign('connecter', $connected);
   $view->assign('user', $user);
+  $view->assign('nomCategories', $categories);
   $view->display("accueil.view.php");
+
 } else {
   $view->assign('error',$error);
+  $view->assign('nomCategories', $categories);
   $view->display("connexion.view.php");
 }
 

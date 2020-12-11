@@ -22,10 +22,15 @@ if($_SESSION['connected']){
   $annonces[] = $art->getAnnonce(3);
   $annonces[] = $art->getAnnonce(3);
 }
+
+$categories = $_SESSION['nomCategories'];
+
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
+$view->assign('nomCategories', $categories);
+
 switch ($etat) {
   case 'categorie':
     $view->display("categorie.view.php");

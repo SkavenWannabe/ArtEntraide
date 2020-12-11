@@ -27,6 +27,8 @@ $idCategorie = $annonce->getIdCategorie();
 $categorie = $art->getCategorie($idCategorie);
 $nomCategorie = $categorie->getNom();
 
+$categories = $_SESSION['nomCategories'];
+
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
@@ -37,6 +39,7 @@ $view = new View();
 $view->assign('annonce', $annonce);
 $view->assign('nomAuteur',$nomAuteur);
 $view->assign('nomCategorie',$nomCategorie);
+$view->assign('nomCategories', $categories);
 
 $view->display("annonce.view.php");
 ?>
