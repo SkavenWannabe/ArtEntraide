@@ -52,7 +52,7 @@ article.annonce > form:last-child button {
 	font-weight: 600;
 }
 
-article.annonce > form button:last-child:hover {
+article.annonce > form:last-child button:hover {
 	font-size: 1.2em;
 }
 

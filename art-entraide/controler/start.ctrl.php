@@ -19,7 +19,7 @@ echo " session : " . $_SESSION['connected'];
 $annonces[] = $art->getAnnonce(1);
 $annonces[] = $art->getAnnonce(2);
 $annonces[] = $art->getAnnonce(3);
-$annonces[] = $art->getAnnonce(3);
+$annonces[] = $art->getAnnonce(4);
 
 //récupération de l'annonce
 $allCategories = $art->getAllCategorie();

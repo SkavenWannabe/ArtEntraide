@@ -15,22 +15,21 @@ session_start();
 $connected = $_SESSION['connected'];
 $art = new DAO();
 
-$allAnnonce = $art->getAllAnnonce();
+$annonces[] = $art->getAnnonce(1);
+$annonces[] = $art->getAnnonce(2);
+$annonces[] = $art->getAnnonce(3);
+$annonces[] = $art->getAnnonce(4);
 
-$_SESSION['nomCategories'] = $categories;
+$categories = $_SESSION['nomCategories'];
 
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
-if ($connected) {
-  $view->assign('categories',$categories);
-  $view->assign('user',$user);
-  $view->assign('nomCategories', $categories);
-  $view->display("listeAnnnonces.view.php");
-}else {
-  $view->assign('nomCategories', $categories);
-  $view->display("connexion.view.php");
-}
+
+$view->assign('annonces', $annonces);
+$view->assign('nomCategories', $categories);
+$view->display("listeAnnnonces.view.php");
+
 
 ?>
