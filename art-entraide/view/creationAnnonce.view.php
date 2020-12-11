@@ -2,6 +2,13 @@
 $categories : Liste du nom de chaque catégories
 $user : Utilisateur connecté
 -->
+<?php
+  if (isset($user)){
+    $adresse = $user->getAdresse();
+  } else {
+    $adresse = "adresse introuvable";
+  }
+ ?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -9,7 +16,7 @@ $user : Utilisateur connecté
     <meta charset="utf-8">
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title>Création d'une annonce</title>
-    <link rel="stylesheet" href="/view/design/style.css">
+    <link rel="stylesheet" href="/view/css/master.css">
   </head>
 
 
