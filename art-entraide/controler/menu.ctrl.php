@@ -12,6 +12,7 @@ if ($_POST['etat'] != '') {
 }else{
   $etat = '';
 }
+
 echo $etat;
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
@@ -45,6 +46,12 @@ switch ($etat) {
   case 'creation':
     $view->display("inscription.view.php");
     break;
+  case 'creationAnnonce':
+      //$view->display("creationAnnonce.view.php");
+      break;
+  case 'profil':
+      //$view->display("profil.view.php");
+      break;
   default:
     break;
 }
