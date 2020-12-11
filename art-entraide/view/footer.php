@@ -6,7 +6,7 @@
 
 <section>
   <section>
-    <a href="#">Qui sommes-nous ?</a>
+    <a href="description.view.php">Qui sommes-nous ?</a>
     <a href="#">Nous contacter</a>
     <a href="#">F.A.Q</a>
     <a href="#">Mentions légales</a>
