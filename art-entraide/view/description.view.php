@@ -13,9 +13,8 @@
 
     <?php include_once(__DIR__."/header.php"); ?>
 
-    <h1>Qui sommes-nous ?</h1>
-
     <section>
+      <h1>Qui sommes-nous ?</h1>
       <p>
         <strong>Nous sommes</strong> un groupe de 6 étudiants en DUT Informatique à l'<a href="https://iut2.univ-grenoble-alpes.fr/formations/les-departements-de-l-iut2/informatique-info--149104.kjsp">IUT2</a> de Grenoble.
         Le groupe est composé de Vincenzo Carminati, Marion Chauvineau, Lucas Lacouture, Alexandre Legendre, Elian Loraux et Eliott Sammier.

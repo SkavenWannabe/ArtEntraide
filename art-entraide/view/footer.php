@@ -7,7 +7,7 @@
 <section>
   <section>
     <a href="description.view.php">Qui sommes-nous ?</a>
-    <a href="#">Nous contacter</a>
+    <a href="contact.view.php">Nous contacter</a>
     <a href="FAQ.view.php">F.A.Q</a>
     <a href="#">Mentions légales</a>
     <a href="#">Politique de confitendialité</a>
