@@ -29,7 +29,7 @@ article.annonce h2 {
   text-decoration: underline;
 }
 
-article.annonce > form button:first-child {
+article.annonce > form:first-child button {
   margin: 0;
   position: absolute;
   left: 50%;
