@@ -33,8 +33,8 @@
             <li><button type="submit" name="etat" value="creation">Créer un compte</button></li>
           <?php else: ?>
             <li><button type="submit" name="etat" value="creation">Créer une annonce</button></li>
-            <li><button type="submit" name="etat" value="profil"><?= $user->getNomComplet() ?></button></li>
-            <img src="<?= $user->getImage() ?>" alt="Photo de profil">
+            <li><button type="submit" name="etat" value="profil"><?= $user->getNom() ?></button></li>
+            <img src="" alt="Photo de profil">
           <?php endif; ?>
         </form>
       </ul>
