@@ -7,7 +7,7 @@
                     "sont",
                     "introuvables"];
   }
-
+  var_dump($user);
  ?>
 
 <header>
@@ -33,7 +33,7 @@
             <li><button type="submit" name="etat" value="creation">Créer un compte</button></li>
           <?php else: ?>
             <li><button type="submit" name="etat" value="creationAnnonce">Créer une annonce</button></li>
-            <li><button type="submit" name="etat" value="profil"><?= $user->getNomComplet() ?></button></li>
+            <li><button type="submit" name="etat" value="profil"><?= $user->getNom() ?></button></li>
             <img src="<?= $user->getImage() ?>" alt="Photo de profil">
           <?php endif; ?>
         </form>
