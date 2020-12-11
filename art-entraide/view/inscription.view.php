@@ -21,7 +21,7 @@
         </ul>
       </div>
 
-      <form class="inscription" action="inscription.ctrl.php" method="post">
+      <form class="inscription" action="/controler/inscription.ctrl.php" method="post">
         <label for="nom">Nom</label>
         <input type="text" name="nom" id="nom">
 
