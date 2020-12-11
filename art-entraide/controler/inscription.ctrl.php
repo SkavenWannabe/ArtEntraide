@@ -78,11 +78,11 @@ session_write_close();
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 if (!isset($error)) {
-  $view->assign('error',$error);
-  $view->display("inscription.view.php");
-}else{
   $view->assign('connecter', $connected);
   $view->display("listeAnnnonces.view.php");
+}else{
+  $view->assign('error',$error);
+  $view->display("inscription.view.php");
 }
 
 ?>
