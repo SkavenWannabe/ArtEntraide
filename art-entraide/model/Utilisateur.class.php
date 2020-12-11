@@ -72,6 +72,10 @@ class Utilisateur{
   }
 
   // --- Setteurs --- //
+  function setId(int $id) : void{
+    $this->id = $id;
+  }
+
   function setNom(string $nom) : void{
     $this->nom = $nom;
   }

@@ -112,20 +112,25 @@ class DAO{
   // Sauvegarde d'un utilisateur dans la base de données
   // $utilisateur : l'utilisateur à sauvegarder
   function createUtilisateur(Utilisateur $utilisateur) {
-    $sql = "INSERT INTO Annonce (id,nom,prenom,email,password,adresse)
+    $sql = "INSERT INTO Utilisateur (id,nom,prenom,email,password,adresse)
             values (:id,:nom,:prenom,:certif,:email,:password,:adresse)";
 
     $stmt = $this->db->prepare($sql);
 
-    $id = $utilisateur->getId(); $nom = $utilisateur->getNom();
-    $prenom = $utilisateur->getPrenom(); $adresse = $utilisateur->getAdresse();
-    $email = $utilisateur->getEmail(); $password = $utilisateur->getPassword();
+    $nom = $utilisateur->getNom(); $prenom = $utilisateur->getPrenom();
+    $adresse = $utilisateur->getAdresse(); $email = $utilisateur->getEmail();
+    $password = $utilisateur->getPassword();
 
-    $stmt->BindParam(':id',$id); $stmt->BindParam(':nom',$nom);
+    $stmt->BindParam(':id',"DEFAULT"); $stmt->BindParam(':nom',$nom);
     $stmt->BindParam(':prenom',$prenom); $stmt->BindParam(':email',$email);
     $stmt->BindParam(':password',$password); $stmt->BindParam(':adresse',$adresse);
 
     $stmt->execute();
+
+    $req = "SELECT id FROM utilisateur where email = '$email'";
+    $stmt = $this->db->query($req);
+    $id = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
+    $utilisateur->setId($id);
   }
 
   // Mise à jour d'un Utilisateur
