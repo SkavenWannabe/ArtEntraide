@@ -1,7 +1,16 @@
 <!--
 $annonces : array contenant les quatre annonces à afficher en page d'accueil
  -->
-
+ 
+<?php
+  include_once(__DIR__."../model/Annonce.class.php");
+  if(!isset($annonces)){
+    $annonces[] = getAnnonceErreur();
+    $annonces[] = getAnnonceErreur();
+    $annonces[] = getAnnonceErreur();
+    $annonces[] = getAnnonceErreur();
+  }
+ ?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
