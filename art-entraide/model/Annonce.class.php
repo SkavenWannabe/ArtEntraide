@@ -98,19 +98,4 @@ class Annonce{
   }
 }
 
-function getAnnonceErreur() : Annonce{
-
-  $annonceErreur = new Annonce(  -1,
-                                'Annonce erreur',
-                                'Description erreur : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
-                                'Adresse erreur',
-                                '00/00/0000',
-                                '00/00/0000'
-                                -1,
-                                NULL
-                            );
-  return $annonceErreur;
-
-}
-
 ?>
