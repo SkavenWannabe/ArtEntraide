@@ -1,3 +1,15 @@
+<?php
+
+  if (!isset($categories)){
+    $categories = [ "erreur",
+                    "les",
+                    "catégories",
+                    "sont",
+                    "introuvables"];
+  }
+  
+ ?>
+
 <header>
   <div class="">
     <a href="http://<?= $_SERVER['SERVER_NAME'] ?>:<?= $_SERVER['SERVER_PORT'] ?>/">
@@ -9,7 +21,13 @@
       <ul>
         <form class="" action="menu.ctrl.php" method="post">
           <li><input type="search" placeholder="Rechercher une annonce" name="" value=""></li>
-          <li><button type="submit" name="etat" value="categorie">Catégories</button></li>
+          <li>
+              <select name="categorie">
+                <?php foreach ($categories as $value) : ?>
+                  <option value="<?= $value ?>"><?= $value ?></option>
+                <?php endforeach; ?>
+              </select>
+          </li>
           <li><button type="submit" name="etat" value="connexion">Se connecter</button></li>
           <li><button type="submit" name="etat" value="creation">Créer un compte</button></li>
         </form>
