@@ -42,7 +42,7 @@ $annonces : array contenant les quatre annonces à afficher en page d'accueil
             <p class="date"><?= $value->getDateService() ?></p>
             <form class="" action="annonce.ctrl.php" method="get">
               <button type="submit" name="idAnnonce" value="<?= $value->getId() ?>">Voir le détail</button>
-              <button class="boutonCategorie" type="submit" name="idCategorie" value="<?= $value->getIdCategorie() ?>">Catégorie<?php /*$value->getIdCategorie() */ ?></button>
+              <button class="boutonCategorie" type="submit" name="idCategorie" value="<?= $value->getCategorie()->getNom() ?>"><?= $value->getCategorie()->getNom() ?><?php /*$value->getIdCategorie() */ ?></button>
             </form>
           </article>
         <?php endforeach; ?>

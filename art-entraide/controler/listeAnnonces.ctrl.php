@@ -4,7 +4,7 @@
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
 // Inclusion du modèle
-//include_once(__DIR__."/../model/DAO.class.php");
+include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 echo "liste annonces ctrl";
@@ -13,6 +13,9 @@ echo "liste annonces ctrl";
 session_start();
 //vérification utilisateur connecté
 $connected = $_SESSION['connected'];
+$art = new DAO();
+
+$allAnnonce = $art->getAllAnnonce();
 
 $_SESSION['nomCategories'] = $categories;
 

@@ -18,7 +18,7 @@ class Annonce{
   private string $date_service;
 
   private int $id_createur;
-  private int $id_categorie;
+  private Categorie $categorie;
 
   // --- Constructeur --- //
 
@@ -29,7 +29,7 @@ class Annonce{
                         string $date_creation='01/01/1970',
                         string $date_service='01/01/1970',
                         int $id_createur=0,
-                        int $id_categorie=0
+                        Categorie $categorie=NULL
                       ){
     $this->id = $id;
 
@@ -42,7 +42,7 @@ class Annonce{
     $this->date_service = $date_service;
 
     $this->id_createur = $id_createur;
-    $this->id_categorie = $id_categorie;
+    $this->categorie = $categorie;
   }
 
   // --- Getteurs --- //
@@ -75,8 +75,8 @@ class Annonce{
     return $this->id_createur;
   }
 
-  function getIdCategorie() : int{
-    return $this->id_categorie;
+  function getCategorie() : Categorie{
+    return $this->categorie;
   }
 
   // --- Setteur --- //
@@ -106,7 +106,7 @@ function getAnnonceErreur() : Annonce{
                                 '00/00/0000',
                                 '00/00/0000'
                                 -1,
-                                -1
+                                NULL
                             );
   return $annonceErreur;
 
