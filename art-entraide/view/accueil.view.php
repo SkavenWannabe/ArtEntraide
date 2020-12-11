@@ -1,5 +1,6 @@
 <!--
 $annonces : array contenant les quatre annonces à afficher en page d'accueil
+$user : objet utilsateur connecté, NULL si non connecté
  -->
 
 <!DOCTYPE html>
