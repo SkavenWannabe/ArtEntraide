@@ -42,7 +42,7 @@ if (!isset($error)) {
     $annonces[] = $art->getAnnonce(2);
     $annonces[] = $art->getAnnonce(3);
     $annonces[] = $art->getAnnonce(3);
-    $message = "Vous êtes connecté"; var_dump($user);
+    $message = "Vous êtes connecté"; //var_dump($user);
   } else {
     $error[] = "Identifiant ou mot de passe incorrect.";
     $_SESSION['connected'] = false;

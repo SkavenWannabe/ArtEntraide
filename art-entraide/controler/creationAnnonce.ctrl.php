@@ -51,7 +51,7 @@ $est_demande = true; //a recup en post après
 // ==== PARTIE USAGE DU MODELE ==== //
 
 session_start();
-$user = $_SESSION['user']; var_dump($user);
+$user = $_SESSION['user']; //var_dump($user);
 
 if(!isset($error)){
   $art = new DAO();

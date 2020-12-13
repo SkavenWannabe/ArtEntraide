@@ -77,6 +77,7 @@ if(!isset($error)){
   $_SESSION['connected'] = false;
 }
 
+$user = $_SESSION['user'];
 $connected = $_SESSION['connected'];
 $categories = $_SESSION['nomCategories'];
 
@@ -88,6 +89,7 @@ if (!isset($error)) {
   $view->assign('connecter', $connected);
   $view->assign('annonces', $annonces);
   $view->assign('message', $message);
+  $view->assign('user', $user);
   $view->assign('nomCategories', $categories);
   $view->display("accueil.view.php");
 }else{

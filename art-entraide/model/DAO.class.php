@@ -102,8 +102,8 @@ class DAO{
     $req2 = "SELECT * FROM categorie WHERE id='$idCat'";
     $sth2 = $this->db->query($req2);
     $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
-
-    $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],$data['date_creation'],$data['date_service'],$data['id_createur'],$categorie);
+    var_dump($data);
+    $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'], $data['est_demande'],$data['date_creation'],$data['date_service'],$data['id_createur'],$categorie);
 
     return $annonce;
   }

@@ -9,7 +9,7 @@
   }
 // cause erreur à rajouter dans le else
 // <img src="<?= $user->getImage() >" alt="Photo de profil">
-
+// var_dump($user);
  ?>
 
 <header>

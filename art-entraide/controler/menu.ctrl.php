@@ -18,15 +18,30 @@ echo $etat;
 session_start();
 $art = new DAO();
 
+if (!isset($_SESSION['connected'])){
+  $_SESSION['connected'] = false;
+}
+
 if($_SESSION['connected']){
   $annonces[] = $art->getAnnonce(1);
   $annonces[] = $art->getAnnonce(2);
   $annonces[] = $art->getAnnonce(3);
   $annonces[] = $art->getAnnonce(3);
 
+} else {
+  $_SESSION['user'] = NULL;
+
+  //récupération de l'annonce
+  $allCategories = $art->getAllCategorie();
+  //récupération du nom de chaque catégorie
+  foreach ($allCategories as $value){
+      $categories[] = $value->getNom();
+  }
+
+  $_SESSION['nomCategories'] = $categories;
 }
 
-$user = $_SESSION['user']; var_dump($user);
+$user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
 
 session_write_close();

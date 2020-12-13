@@ -30,7 +30,7 @@ class Annonce{
                         string $nom='nomAnnonce',
                         string $description='descriptionAnnonce',
                         string $adresse='adresse',
-                        bool $est_demande=true,
+                        bool $est_demande = True,
                         string $date_creation='01/01/1970',
                         string $date_service='01/01/1970',
                         int $id_createur=0,
@@ -43,7 +43,7 @@ class Annonce{
 
     $this->adresse = $adresse;
     $this->est_demande = $est_demande;
-    $this->est_active = true;
+    $this->est_active = True;
     $this->date_creation = $date_creation;
     $this->date_service = $date_service;
 
