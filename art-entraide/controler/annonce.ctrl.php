@@ -25,6 +25,9 @@ $nomAuteur = $auteur->getNom();
 $categorie = $annonce->getCategorie();
 $nomCategorie = $categorie->getNom();
 
+//recuperation du user si il existe
+$user = $_SESSION['user'];
+
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
@@ -35,6 +38,7 @@ $view = new View();
 $view->assign('annonce', $annonce);
 $view->assign('nomAuteur',$nomAuteur);
 $view->assign('nomCategorie',$nomCategorie);
+$view->assign('user', $user);
 
 $view->display("annonce.view.php");
 ?>

@@ -14,7 +14,9 @@ session_start();
 $art = new DAO();
 if(!isset($_SESSION['connected'])){
   $_SESSION['connected'] = false;
+  $_SESSION['user'] = NULL;
 }
+
 echo " session : " . $_SESSION['connected']; //var_dump($user);
 $annonces[] = $art->getAnnonce(1);
 $annonces[] = $art->getAnnonce(2);
@@ -28,6 +30,7 @@ foreach ($allCategories as $value){
     $categories[] = $value->getNom();
 }
 
+$user = $_SESSION['user'];
 $_SESSION['nomCategories'] = $categories;
 
 session_write_close();
@@ -37,6 +40,7 @@ session_write_close();
 $view = new View();
 $view->assign('annonces', $annonces);
 $view->assign('nomCategories', $categories);
+$view->assign('user', $user);
 
 //->transmition des 2 annonces a la page d'accueil
 $view->display("accueil.view.php");

@@ -69,6 +69,7 @@ if (!isset($error) && $connected) {
 
 } else {
   $view->assign('error',$error);
+  $view->assign('user', $user);
   $view->assign('nomCategories', $categories);
   $view->display("connexion.view.php");
 }

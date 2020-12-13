@@ -102,7 +102,7 @@ class DAO{
     $req2 = "SELECT * FROM categorie WHERE id='$idCat'";
     $sth2 = $this->db->query($req2);
     $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
-    var_dump($data);
+    //var_dump($data);
     $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'], $data['est_demande'],$data['date_creation'],$data['date_service'],$data['id_createur'],$categorie);
 
     return $annonce;
@@ -156,11 +156,11 @@ class DAO{
     $stmt->BindParam(':adresse',$adresse);
 
     $stmt->execute();
-
+    /*
     $req = "SELECT * FROM Utilisateur where email = '$email'";
     $sth = $this->db->query($req);
     $id = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Utilisateur');
-    var_dump($id);
+    var_dump($id);*/
   }
 
   // Mise à jour d'un Utilisateur

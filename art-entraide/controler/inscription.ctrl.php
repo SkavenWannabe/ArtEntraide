@@ -75,6 +75,8 @@ if(!isset($error)){
 
 } else {
   $_SESSION['connected'] = false;
+  $_SESSION['user'] = NULL;
+  $user = NULL;
 }
 
 $user = $_SESSION['user'];
@@ -94,6 +96,7 @@ if (!isset($error)) {
   $view->display("accueil.view.php");
 }else{
   $view->assign('error',$error);
+  $view->assign('user', $user);
   $view->assign('nomCategories', $categories);
   $view->display("inscription.view.php");
 }
