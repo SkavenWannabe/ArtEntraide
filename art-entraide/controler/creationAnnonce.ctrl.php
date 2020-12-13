@@ -29,7 +29,7 @@ if ($_POST['description'] != '') {
 if ($_POST['lieu'] != '') {
   $lieu = $_POST['lieu'];
 }else{
-  $error[] = "Le lieu doit être non nul";
+  $lieu = "";
 }
 
 // --- récupération date de création --- //
@@ -45,6 +45,9 @@ if ($_POST['date'] != '') {
   $error[] = "La date doit être non nul";
 }
 
+// --- recuperation du type de l'annonce --- //
+$est_demande = true; //a recup en post après
+
 // ==== PARTIE USAGE DU MODELE ==== //
 
 session_start();
@@ -59,11 +62,12 @@ if(!isset($error)){
   $categorie = $art->getCategorieNom($nomCategorie);
 
   // création d'une annonce
-  $idAnnonce = $art->getLastIdAnnonce() + 1; 
-  $annonce = new Annonce($idAnnonce, $nom, $description, $lieu, $today, $dateService, $idCreateur, $categorie);
+  $idAnnonce = $art->getLastIdAnnonce() + 1;
+  $annonce = new Annonce($idAnnonce, $nom, $description, $lieu, $est_demande, $today, $dateService, $idCreateur, $categorie);
   $art->createAnnonce($annonce);
 
-  $annonce = $art->getAnnonce((int)$idAnnonce);
+  //$annonce = $art->getAnnonce((int)$idAnnonce);
+  //var_dump($annonce);
 }
 $connected = $_SESSION['connected'];
 $categories = $_SESSION['nomCategories'];
@@ -74,6 +78,7 @@ session_write_close();
 $view = new View();
 if (!isset($error)){
   $view->assign('nomCategories', $categories);
+  $view->assign('nomCategorie', $nomCategorie);
   $view->assign('connecter', $connected);
   $view->assign('annonce', $annonce);
   $view->assign('nomAuteur',$nomAuteur);

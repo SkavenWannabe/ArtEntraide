@@ -15,6 +15,9 @@ class Annonce{
 
   private string $adresse;
 
+  private bool $est_demande;
+  private bool $est_active;
+
   private string $date_creation;
   private string $date_service;
 
@@ -27,6 +30,7 @@ class Annonce{
                         string $nom='nomAnnonce',
                         string $description='descriptionAnnonce',
                         string $adresse='adresse',
+                        bool $est_demande=true,
                         string $date_creation='01/01/1970',
                         string $date_service='01/01/1970',
                         int $id_createur=0,
@@ -38,7 +42,8 @@ class Annonce{
     $this->description = $description;
 
     $this->adresse = $adresse;
-
+    $this->est_demande = $est_demande;
+    $this->est_active = true;
     $this->date_creation = $date_creation;
     $this->date_service = $date_service;
 
@@ -64,6 +69,13 @@ class Annonce{
     return $this->adresse;
   }
 
+  function getEstDemande() : bool{
+    return $this->est_demande;
+  }
+
+  function getEstActive() : bool{
+    return $this->est_active;
+  }
   function getDateCreation() : string{
     return $this->date_creation;
   }
@@ -95,6 +107,10 @@ class Annonce{
 
   function setDateService(string $dService) : void{
     $this->date_service = $dService;
+  }
+
+  function setEstActive(bool $eActive) : void{
+    $this->est_active = $eActive;
   }
 }
 
