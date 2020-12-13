@@ -17,13 +17,16 @@ echo $etat;
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
+
 if($_SESSION['connected']){
   $annonces[] = $art->getAnnonce(1);
   $annonces[] = $art->getAnnonce(2);
   $annonces[] = $art->getAnnonce(3);
   $annonces[] = $art->getAnnonce(3);
+
 }
 
+$user = $_SESSION['user']; var_dump($user);
 $categories = $_SESSION['nomCategories'];
 
 session_write_close();
@@ -31,6 +34,7 @@ session_write_close();
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 $view->assign('nomCategories', $categories);
+$view->assign('user', $user);
 
 switch ($etat) {
   case 'categorie':
@@ -47,9 +51,10 @@ switch ($etat) {
     $view->display("inscription.view.php");
     break;
   case 'creationAnnonce':
-      //$view->display("creationAnnonce.view.php");
+      $view->display("creationAnnonce.view.php");
       break;
   case 'profil':
+      //$view->assign('user', $user);
       //$view->display("profil.view.php");
       break;
   default:

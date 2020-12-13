@@ -7,7 +7,9 @@
                     "sont",
                     "introuvables"];
   }
-  var_dump($user);
+// cause erreur à rajouter dans le else
+// <img src="<?= $user->getImage() >" alt="Photo de profil">
+
  ?>
 
 <header>
@@ -34,7 +36,6 @@
           <?php else: ?>
             <li><button type="submit" name="etat" value="creationAnnonce">Créer une annonce</button></li>
             <li><button type="submit" name="etat" value="profil"><?= $user->getNom() ?></button></li>
-            <img src="<?= $user->getImage() ?>" alt="Photo de profil">
           <?php endif; ?>
         </form>
       </ul>

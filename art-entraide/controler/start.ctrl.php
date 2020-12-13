@@ -15,7 +15,7 @@ $art = new DAO();
 if(!isset($_SESSION['connected'])){
   $_SESSION['connected'] = false;
 }
-echo " session : " . $_SESSION['connected'];
+echo " session : " . $_SESSION['connected']; var_dump($user);
 $annonces[] = $art->getAnnonce(1);
 $annonces[] = $art->getAnnonce(2);
 $annonces[] = $art->getAnnonce(3);

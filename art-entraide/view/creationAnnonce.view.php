@@ -27,7 +27,7 @@ $user : Utilisateur connecté
 
       <h2>Créez votre propre annonce</h2>
 
-      <form class="creation_annonce" action="???" method="post">
+      <form class="creation_annonce" action="creationAnnonce.ctrl.php" method="post">
         <label for="intitule">Intitulé</label>
         <input type="text" name="intitule" id="intitule">
 

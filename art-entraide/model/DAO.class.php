@@ -32,7 +32,7 @@ class DAO{
   }
 
   // --- Getteur --- //
-  function getLastId() : int{
+  function getLastIdUti() : int{
     $req = "SELECT MAX(id) FROM utilisateur";
     $stmt = $this->db->query($req);
     $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
@@ -74,6 +74,15 @@ class DAO{
     }
   }
 
+
+
+  function getLastIdAnnonce() : int{
+    $req = "SELECT MAX(id) FROM annonce";
+    $stmt = $this->db->query($req);
+    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
+    return $return[0];
+  }
+
   function getAnnonce(int $id) : Annonce{
     $req = "SELECT * FROM annonce WHERE id='$id'";
     $sth = $this->db->query($req);
@@ -103,6 +112,13 @@ class DAO{
 
   function getCategorie(int $id) : Categorie{
     $req = "SELECT * FROM categorie WHERE id = '$id'";
+    $sth = $this->db->query($req);
+    $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
+    return $return[0];
+  }
+
+  function getCategorieNom(string $nom) : Categorie{
+    $req = "SELECT * FROM categorie WHERE nom = '$nom'";
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
     return $return[0];
@@ -187,22 +203,33 @@ class DAO{
   // Sauvegarde d'une annonce dans la base de données
   // $annonce : l'annonce à sauvegarder
   function createAnnonce(Annonce $annonce) {
-    $sql = "INSERT INTO Annonce (id,nom,desrciption,adresse,date_creation,date_service,id_createur,id_categorie)
-            values (:id,:nom,:desrciption,:adresse,:date_creation,:date_service,:id_createur,:id_categorie)";
+    $sql = "INSERT INTO Annonce (id,nom,description,adresse,date_creation,date_service,id_createur,id_categorie)
+            values (:id,:nom,:description,:adresse,:date_creation,:date_service,:id_createur,:id_categorie)";
 
     $stmt = $this->db->prepare($sql);
 
-    $id = $annonce->getId(); $nom = $annonce->getNom();
-    $description = $annonce->getDescription(); $adresse = $annonce->getAdresse();
-    $date_creation = $annonce->getDateCreation(); $date_service = $annonce->getDateService();
-    $id_createur = $annonce->getIdCreateur(); $id_cat = $annonce->getIdCategorie()->getId();
+    $id = $annonce->getId(); echo "id : " .$id;
+    $nom = $annonce->getNom(); echo "  nom : " .$nom;
+    $description = $annonce->getDescription(); echo "  description : " .$description;
+    $adresse = $annonce->getAdresse();echo "  adresse : " .$adresse;
+    $date_creation = $annonce->getDateCreation();echo "  date_creation : " .$date_creation;
+    $date_service = $annonce->getDateService();echo "  date_service : " .$date_service;
+    $id_createur = $annonce->getIdCreateur();echo "  id_createur : " .$id_createur;
+    $id_categorie = $annonce->getCategorie()->getId();echo "  id_categorie : " .$id_categorie;
 
-    $stmt->BindParam(':id',$id); $stmt->BindParam(':nom',$nom);
-    $stmt->BindParam(':description',$description); $stmt->BindParam(':adresse',$adresse);
-    $stmt->BindParam(':date_creation',$date_creation); $stmt->BindParam(':date_service',$date_service);
-    $stmt->BindParam(':id_createur',$id_createur); $stmt->BindParam(':id_categorie',$id_categorie);
+    $stmt->BindParam(':id',$id);
+    $stmt->BindParam(':nom',$nom);
+    $stmt->BindParam(':description',$description);
+    $stmt->BindParam(':adresse',$adresse);
+    $stmt->BindParam(':date_creation',$date_creation);
+    $stmt->BindParam(':date_service',$date_service);
+    $stmt->BindParam(':id_createur',$id_createur);
+    $stmt->BindParam(':id_categorie',$id_categorie);
 
     $stmt->execute();
+
+    $ann = $this->getAnnonce($id);
+    var_dump($ann);
   }
 
   // Mise à jour d'une annonce

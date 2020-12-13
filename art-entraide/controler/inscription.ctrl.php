@@ -59,7 +59,7 @@ session_start();
 if(!isset($error)){
   $art = new DAO();
   //création d'un utilisateur
-  $id = $art->getLastId() +1; echo "recup id ";
+  $id = $art->getLastIdUti() +1;
   $uti = new Utilisateur($id,$nom,$prenom,$email,$passwd,$p_adresse);
   $art->createUtilisateur($uti);
 

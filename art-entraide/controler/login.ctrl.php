@@ -36,13 +36,13 @@ if (!isset($error)) {
 
     //récupération utilisateur connecté
     $user = $art->getUtiliMail($email);
+    $_SESSION['user'] = $user;
 
     $annonces[] = $art->getAnnonce(1);
     $annonces[] = $art->getAnnonce(2);
     $annonces[] = $art->getAnnonce(3);
     $annonces[] = $art->getAnnonce(3);
-    $message = "Vous êtes connecté";
-
+    $message = "Vous êtes connecté"; var_dump($user);
   } else {
     $error[] = "Identifiant ou mot de passe incorrect.";
     $_SESSION['connected'] = false;
@@ -53,7 +53,6 @@ if (!isset($error)) {
 }
 
 $categories = $_SESSION['nomCategories'];
-
 session_write_close();
 
 
@@ -61,11 +60,11 @@ session_write_close();
 $view = new View();
 
 if (!isset($error) && $connected) {
-  $view->assign('annonces', $annonces);
   $view->assign('message', $message);
   $view->assign('connecter', $connected);
   $view->assign('user', $user);
   $view->assign('nomCategories', $categories);
+  $view->assign('annonces', $annonces);
   $view->display("accueil.view.php");
 
 } else {
