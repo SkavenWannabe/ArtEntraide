@@ -113,6 +113,10 @@ body section{
   margin: auto;
 }
 
+body > section {
+	min-height: 69vh;
+}
+
 /*=========== FOOTER ===========*/
 
 body > footer {
