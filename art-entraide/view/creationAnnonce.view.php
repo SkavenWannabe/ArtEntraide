@@ -17,6 +17,7 @@ $user : Utilisateur connecté
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title>Création d'une annonce</title>
     <link rel="stylesheet" href="/view/css/master.css">
+    <link rel="stylesheet" href="/view/css/creationAnnonce.css">
   </head>
 
 
@@ -28,24 +29,41 @@ $user : Utilisateur connecté
       <h2>Créez votre propre annonce</h2>
 
       <form class="creation_annonce" action="creationAnnonce.ctrl.php" method="post">
-        <label for="intitule">Intitulé</label>
-        <input type="text" name="intitule" id="intitule">
+        <section>
+          <div class="">
+            <label for="intitule">Tout d'abord, quel est l'intitulé de votre annonce ?</label>
+            <input type="text" name="intitule" id="intitule" required>
+          </div>
 
-        <label for="categorie">Catégorie</label>
-        <select name="categorie" id="categorie">
-          <?php foreach ($categories as $key => $value) : ?>
-            <option value=""><?= $value ?></option>
-          <?php endforeach; ?>
-        </select>
+          <div class="">
+            <label for="description">Donnez le détail de votre annonce.</label>
+            <textarea name="description" id="description"></textarea>
+          </div>
+        </section>
 
-        <label for="description">Décrivez le service dont vous avez besoin</label>
-        <input type="text" name="description" id="description">
 
-        <label for="lieu">Lieu du service</label>
-        <input type="text" name="lieu" id="lieu" value="<?= $user->getAdresse() ?>">
 
-        <label for="date">Quand avez-vous besoin d'aide ?</label>
-        <input type="date" name="date" id="date">
+        <section>
+          <div class="">
+            <label for="categorie">Quel est la catégorie de votre annonce ?</label>
+            <select name="categorie" id="categorie" required>
+              <?php foreach ($categories as $key => $value) : ?>
+                <option value=""><?= $value ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+
+          <div class="">
+            <label for="lieu">Où se situe le service à effectuer</label>
+            <input type="text" name="lieu" id="lieu" value="<?= $user->getAdresse() ?>">
+          </div>
+
+          <div class="">
+            <label for="date">À quel date ce service aura lieu ?</label>
+            <input type="date" name="date" id="date">
+          </div>
+        </section>
+
 
         <button type="submit" name="publier">Publier l'annonce</button>
       </form>
