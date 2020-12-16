@@ -91,5 +91,13 @@ class Utilisateur{
   function setPassword(string $password) : void{
     $this->password = $password;
   }
+
+  function setCertif(bool $certif) : void{
+    $this->certif = $certif;
+  }
+
+  function setReputation(int $reputation) : void{
+    $this->reputation = $reputation;
+  }
 }
 ?>

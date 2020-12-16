@@ -62,9 +62,10 @@ $view = new View();
 if (!isset($error) && $connected) {
   $view->assign('message', $message);
   $view->assign('connecter', $connected);
-  $view->assign('user', $user);
-  $view->assign('nomCategories', $categories);
   $view->assign('annonces', $annonces);
+  //information nécessaire pour le header
+  $view->assign('nomCategories', $categories);
+  $view->assign('user', $user);
   $view->display("accueil.view.php");
 
 } else {

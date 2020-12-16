@@ -48,6 +48,7 @@ session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
+//information nécessaire pour le header
 $view->assign('nomCategories', $categories);
 $view->assign('user', $user);
 

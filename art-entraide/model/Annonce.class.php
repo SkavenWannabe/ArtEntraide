@@ -112,6 +112,10 @@ class Annonce{
   function setEstActive(bool $eActive) : void{
     $this->est_active = $eActive;
   }
+
+  function setEstDemande(bool $eDemande) : void{
+    $this->est_demande = $eDemande;
+  }
 }
 
 ?>

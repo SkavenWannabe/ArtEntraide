@@ -27,6 +27,7 @@ $nomCategorie = $categorie->getNom();
 
 //recuperation du user si il existe
 $user = $_SESSION['user'];
+$categories = $_SESSION['nomCategories'];
 
 session_write_close();
 
@@ -38,6 +39,8 @@ $view = new View();
 $view->assign('annonce', $annonce);
 $view->assign('nomAuteur',$nomAuteur);
 $view->assign('nomCategorie',$nomCategorie);
+//information nécessaire pour le header
+$view->assign('nomCategorie',$nomCategories);
 $view->assign('user', $user);
 
 $view->display("annonce.view.php");

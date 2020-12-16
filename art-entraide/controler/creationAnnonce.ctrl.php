@@ -77,11 +77,12 @@ session_write_close();
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 if (!isset($error)){
-  $view->assign('nomCategories', $categories);
   $view->assign('nomCategorie', $nomCategorie);
-  $view->assign('connecter', $connected);
   $view->assign('annonce', $annonce);
   $view->assign('nomAuteur',$nomAuteur);
+  $view->assign('connecter', $connected);
+  //information nécessaire pour le header
+  $view->assign('nomCategories', $categories);
   $view->assign('user', $user);
   $view->display("annonce.view.php");
 

@@ -91,6 +91,7 @@ if (!isset($error)) {
   $view->assign('connecter', $connected);
   $view->assign('annonces', $annonces);
   $view->assign('message', $message);
+  //information nécessaire pour le header
   $view->assign('user', $user);
   $view->assign('nomCategories', $categories);
   $view->display("accueil.view.php");

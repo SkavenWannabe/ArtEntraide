@@ -171,13 +171,17 @@ class DAO{
     $email = $utilisateur->getEmail();
     $adresse = $utilisateur->getAdresse();
     $password = $utilisateur->getPassword();
+    $certif = $utilisateur->getCertif();
+    $reputation = $utilisateur->getReputation();
 
     try{
       $sql="UPDATE utilisateur
             SET nom = '$nom',
                 email = '$email',
                 adresse = '$adresse',
-                password = '$password'
+                password = '$password',
+                certif = '$certif',
+                reputation = '$reputation'
             WHERE id = '$id'";
 
       $stmt = $this->db->prepare($sql);
@@ -242,13 +246,17 @@ class DAO{
     $date_service = $annonce->getDateService(); // /!\ verification nom dans la BDD
     //$id_createur = $annonce->getIdCreateur();
     //$id_categorie = $annonce->getIdCategorie();
+    $est_active = $annonce->getEstActive(); // /!\ verification nom dans la BDD
+    $est_demande = $annonce->getEstDemande(); // /!\ verification nom dans la BDD
 
     try{
       $sql="UPDATE annonce
             SET nom = '$nom',
                 description= '$description',
                 adresse = '$adresse',
-                date_service = $date_service
+                date_service = '$date_service',
+                est_demande = '$est_demande',
+                est_active = '$est_active'
             WHERE id = '$id'";
 
       $stmt = $this->db->prepare($sql);
