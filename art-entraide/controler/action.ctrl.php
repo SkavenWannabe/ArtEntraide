@@ -1,5 +1,5 @@
 <?php
-// ============ Controleur qui gère la listes des annonces ============ //
+// ============ Controleur qui gère différentes petites actions ============ //
 
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
@@ -7,21 +7,17 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-echo "liste annonces ctrl";
+if ($_POST['action'] != '') {
+  $action = $_POST['action'];
+}else{
+  $action = '';
+}
+
+echo "action : " .$action;
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
-//vérification utilisateur connecté
-$connected = $_SESSION['connected'];
 $art = new DAO();
-$last = $art->getLastIdAnnonce();
-$min = $art->getFirstIdAnnonce();
-
-$i = 0;
-while($last > $min && $i < 10) {
-    $annonces[] = $art->getAnnonce($last);
-    $last--; $i++;
-}
 
 $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
@@ -30,13 +26,19 @@ session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
-
 //information nécessaire pour le header
-$view->assign('annonces', $annonces);
-//information nécessaire pour le header
-$view->assign('user', $user);
 $view->assign('nomCategories', $categories);
-$view->display("listeAnnonces.view.php");
+$view->assign('user', $user);
 
+switch ($action) {
+  case 'repondre':
+    $view->display("reponseAnnonce.view.php");
+    break;
+  case 'proposerEchange':
+    $view->display("proposerEchange.view.php");
+    break;
+  default:
+    break;
+}
 
 ?>

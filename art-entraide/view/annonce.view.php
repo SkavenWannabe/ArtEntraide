@@ -4,7 +4,7 @@ $nomAuteur = nom de l'auteur de l'annonce
 $nomCategorie = nom de la catégorie de l'annonce
  -->
  <?php
- 
+
   if(!isset($nomAuteur)){
     $nomAuteur = "nom de l'auteur introuvable";
   }
@@ -43,9 +43,9 @@ $nomCategorie = nom de la catégorie de l'annonce
         </div>
       </section>
 
-      <form class="" action="--- Controleur adapté ---" method="post">
-        <button type="button" name="action" value="repondre">Répondre à l'annonce</button>
-        <button type="button" name="action" value="proposerEchange">Proposer un échange de sevice</button>
+      <form class="" action="action.ctrl.php" method="post">
+        <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
+        <button type="submit" name="action" value="proposerEchange">Proposer un échange de sevice</button>
       </form>
     </section>
 

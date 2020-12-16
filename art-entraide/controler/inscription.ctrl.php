@@ -63,15 +63,19 @@ if(!isset($error)){
   $uti = new Utilisateur($id,$nom,$prenom,$email,$passwd,$p_adresse);
   $art->createUtilisateur($uti);
 
-  //Sstockage information de connexion
+  //Stockage information de connexion
   $_SESSION['connected'] = true;
-  $_SESSION['user'] = $nom;
+  $user = $art->getUtiliMail($email);
+  $_SESSION['user'] = $user;
 
-  $annonces[] = $art->getAnnonce(1);
-  $annonces[] = $art->getAnnonce(2);
-  $annonces[] = $art->getAnnonce(3);
-  $annonces[] = $art->getAnnonce(3);
-  $message = "Vous êtes compte est créer";
+  //Nécessaire à l'affichage des annonces une foi le compte créer
+  $last = $art->getLastIdAnnonce();
+  for ($i=0; $i < 4 ; $i++) {
+      $annonces[] = $art->getAnnonce($last);
+      $last--;
+  }
+
+  $message = "Votre compte est créer";
 
 } else {
   $_SESSION['connected'] = false;
@@ -79,7 +83,6 @@ if(!isset($error)){
   $user = NULL;
 }
 
-$user = $_SESSION['user'];
 $connected = $_SESSION['connected'];
 $categories = $_SESSION['nomCategories'];
 

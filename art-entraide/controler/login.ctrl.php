@@ -38,10 +38,13 @@ if (!isset($error)) {
     $user = $art->getUtiliMail($email);
     $_SESSION['user'] = $user;
 
-    $annonces[] = $art->getAnnonce(1);
-    $annonces[] = $art->getAnnonce(2);
-    $annonces[] = $art->getAnnonce(3);
-    $annonces[] = $art->getAnnonce(3);
+    //Nécessaire à l'affichage des annonces une foi connecté
+    $last = $art->getLastIdAnnonce();
+    for ($i=0; $i < 4 ; $i++) {
+        $annonces[] = $art->getAnnonce($last);
+        $last--;
+    }
+
     $message = "Vous êtes connecté"; //var_dump($user);
   } else {
     $error[] = "Identifiant ou mot de passe incorrect.";

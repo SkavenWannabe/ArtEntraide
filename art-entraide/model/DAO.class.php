@@ -83,6 +83,13 @@ class DAO{
     return $return[0];
   }
 
+  function getFirstIdAnnonce() : int{
+    $req = "SELECT MIN(id) FROM annonce";
+    $stmt = $this->db->query($req);
+    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
+    return $return[0];
+  }
+
   function getAnnonce(int $id) : Annonce{
     $req = "SELECT * FROM annonce WHERE id='$id'";
     $sth = $this->db->query($req);

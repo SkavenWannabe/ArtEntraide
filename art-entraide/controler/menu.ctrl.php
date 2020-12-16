@@ -13,7 +13,7 @@ if ($_POST['etat'] != '') {
   $etat = '';
 }
 
-echo $etat;
+echo "etat : " .$etat;
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
@@ -74,6 +74,8 @@ switch ($etat) {
       //$view->display("profil.view.php");
       break;
   default:
+    $view->assign('annonces', $annonces);
+    $view->display("accueil.view.php");
     break;
 }
 

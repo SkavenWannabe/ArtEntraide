@@ -17,11 +17,13 @@ if(!isset($_SESSION['connected'])){
   $_SESSION['user'] = NULL;
 }
 
-echo " session : " . $_SESSION['connected']; //var_dump($user);
-$annonces[] = $art->getAnnonce(1);
-$annonces[] = $art->getAnnonce(2);
-$annonces[] = $art->getAnnonce(3);
-$annonces[] = $art->getAnnonce(4);
+echo " session : " . $_SESSION['connected'];
+
+$last = $art->getLastIdAnnonce();
+for ($i=0; $i < 4 ; $i++) {
+    $annonces[] = $art->getAnnonce($last);
+    $last--;
+}
 
 //récupération de l'annonce
 $allCategories = $art->getAllCategorie();
@@ -39,8 +41,9 @@ session_write_close();
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 $view->assign('annonces', $annonces);
-$view->assign('nomCategories', $categories);
+//information nécessaire pour le header
 $view->assign('user', $user);
+$view->assign('nomCategories', $categories);
 
 //->transmition des 2 annonces a la page d'accueil
 $view->display("accueil.view.php");
