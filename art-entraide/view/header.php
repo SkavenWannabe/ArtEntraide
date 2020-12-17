@@ -1,11 +1,7 @@
 <?php
 
   if (!isset($categories)){
-    $categories = [ "erreur",
-                    "les",
-                    "catégories",
-                    "sont",
-                    "introuvables"];
+    $categories = [ "Catégories introuvables"];
   }
 // cause erreur à rajouter dans le else
 // <img src="<?= $user->getImage() >" alt="Photo de profil">

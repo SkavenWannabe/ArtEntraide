@@ -10,7 +10,7 @@ $user : objet utilsateur connecté, NULL si non connecté
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title>L'art de l'entraide</title>
     <link rel="stylesheet" href="/view/css/master.css">
-    <link rel="stylesheet" href="/view/css/accueil.css">
+    <link rel="stylesheet" href="/view/css/annonce.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   </head>
 

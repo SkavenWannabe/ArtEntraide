@@ -1,0 +1,11 @@
+body > section > form {
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+
+body > section > form input {
+  flex-grow: 1;
+}
