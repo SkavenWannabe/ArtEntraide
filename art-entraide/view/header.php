@@ -38,6 +38,12 @@
     </nav>
   </div>
 
+  <nav class="ariane">
+    <ul>
+      <li><a href="/controler/start.ctrl.php">Accueil</a></li>
+    </ul>
+  </nav>
+
   <?php if (isset($error) && count($error) != 0) : ?>
     <output class="error">
       <p>Une erreur est survenue : </p>

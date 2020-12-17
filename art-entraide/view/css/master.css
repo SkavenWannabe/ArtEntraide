@@ -65,7 +65,7 @@ nav {
   flex-grow: 1;
 }
 
-nav ul {
+header > div > nav ul {
 	margin: 0;
 	padding: 0;
 	text-align: right;
@@ -73,26 +73,45 @@ nav ul {
   margin-right: 10px;
 }
 
-nav ul li {
+header > div > nav ul li {
 	display: inline-block;
 	position: relative;
 	margin: 5px;
 }
 
-nav ul li:first-child {
+header > div > nav ul li:first-child {
 	flex-grow: 1;
 	margin-left: 20px;
 }
 
-nav ul form {
+header > div > nav ul form {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-end;
 }
 
-nav ul li input[type=search] {
+header > nav ul li {
   width: 100%;
+}
+
+nav.ariane {
+	background-color: #DDDDDD;
+}
+
+nav.ariane ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav.ariane ul li {
+	padding-left: 16px;
+}
+
+nav.ariane ul li:before {
+  content: ">";
+  padding-right: 8px;
 }
 
 .error {
