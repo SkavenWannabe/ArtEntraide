@@ -8,6 +8,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+h2 {
+	font-size: 1.2em;
+}
+
 body {
   font-family: sans-serif;
   margin: 0;
@@ -114,7 +118,7 @@ body section{
 }
 
 body > section {
-	min-height: 69vh;
+	min-height: 72vh;
 }
 
 /*=========== FOOTER ===========*/
