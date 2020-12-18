@@ -69,11 +69,7 @@ if(!isset($error)){
   $_SESSION['user'] = $user;
 
   //Nécessaire à l'affichage des annonces une foi le compte créer
-  $last = $art->getLastIdAnnonce();
-  for ($i=0; $i < 4 ; $i++) {
-      $annonces[] = $art->getAnnonce($last);
-      $last--;
-  }
+  $annonces = $art->getAnnonceAccueil();
 
   $message = "Votre compte est créer";
 

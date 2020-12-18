@@ -19,11 +19,7 @@ if(!isset($_SESSION['connected'])){
 
 echo " session : " . $_SESSION['connected'];
 
-$last = $art->getLastIdAnnonce();
-for ($i=0; $i < 4 ; $i++) {
-    $annonces[] = $art->getAnnonce($last);
-    $last--;
-}
+$annonces = $art->getAnnonceAccueil();
 
 //récupération de l'annonce
 $allCategories = $art->getAllCategorie();

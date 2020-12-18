@@ -18,7 +18,7 @@ $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
 
 $i = 0;
-while($last > $min && $i < 10) {
+while($last >= $min && $i < 10) {
     $annonces[] = $art->getAnnonce($last);
     $last--; $i++;
 }
