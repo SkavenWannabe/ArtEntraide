@@ -129,6 +129,9 @@ class DAO{
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
     return $return[0];
+    //$data = $sth->fetchAll(PDO::FETCH_ASSOC)[0];
+    //$cat = new Categorie($data['id'],$data['nom']);
+    //return $cat;
   }
 
   function getAllCategorie(){

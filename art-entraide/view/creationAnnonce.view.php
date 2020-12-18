@@ -48,7 +48,7 @@ $user : Utilisateur connecté
             <label for="categorie">Quel est la catégorie de votre annonce ?</label>
             <select name="categorie" id="categorie" required>
               <?php foreach ($nomCategories as $key => $value) : ?>
-                <option value=""><?= $value ?></option>
+                <option value="<?= $value ?>"><?= $value ?></option>
               <?php endforeach; ?>
             </select>
           </div>

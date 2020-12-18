@@ -40,7 +40,7 @@ $view->assign('annonce', $annonce);
 $view->assign('nomAuteur',$nomAuteur);
 $view->assign('nomCategorie',$nomCategorie);
 //information nécessaire pour le header
-$view->assign('nomCategorie',$nomCategories);
+$view->assign('nomCategories', $categories);
 $view->assign('user', $user);
 
 $view->display("annonce.view.php");

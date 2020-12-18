@@ -16,7 +16,6 @@ if ($_POST['intitule'] != '') {
 
 // --- recuperation de la categorie --- //
 $nomCategorie = $_POST['categorie'];
-$nomCategorie = 'Location'; // en attendant que se soit correctement fait côté IHM
 
 // --- recuperation de la description --- //
 if ($_POST['description'] != '') {
@@ -33,13 +32,17 @@ if ($_POST['lieu'] != '') {
 }
 
 // --- récupération date de création --- //
-$today = date("m.d.y");
+$today = date("y.m.d");
 
 // --- recuperation de la date d'execution de l'annonce --- //
 if ($_POST['date'] != '') {
   $dateService = $_POST['date'];
-  if($dateService < $today){
-    $error[] = "la date ne peu pas être antérieur";
+
+  $dateTimestamp1 = strtotime($dateService);
+  $dateTimestamp2 = strtotime($today);
+
+  if($dateTimestamp1 < $dateTimestamp2){
+    $error[] = "la date ne peut pas être antérieure";
   }
 } else {
   $error[] = "La date doit être non nul";
@@ -87,6 +90,12 @@ if (!isset($error)){
   $view->display("annonce.view.php");
 
 } else {
+  if(isset($nom)){
+    $view->assign('intitule',$nom);
+  }
+  if(isset($description)){
+    $view->assign('description',$description);
+  }
   $view->assign('error',$error);
   $view->assign('user', $user);
   $view->assign('nomCategories', $categories);
