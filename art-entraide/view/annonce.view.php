@@ -18,7 +18,7 @@ $nomCategorie = nom de la catégorie de l'annonce
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
-    <title><?= $titre ?></title>
+    <title><?= $annonce->getNom() ?></title>
     <link rel="stylesheet" href="/view/css/master.css">
   </head>
 

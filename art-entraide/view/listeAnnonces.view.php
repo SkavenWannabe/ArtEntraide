@@ -10,7 +10,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
-    <title><?= $titre ?></title>
+    <title>Rechercher une annonce</title>
     <link rel="stylesheet" href="/view/css/master.css">
     <link rel="stylesheet" href="/view/css/listeAnnonces.css">
     <link rel="stylesheet" href="/view/css/annonce.css">
