@@ -28,15 +28,16 @@ $user : Utilisateur connecté
 
       <h2>Créez votre propre annonce</h2>
 
+      <p>Champs obligatoires <em>*</em></p>
       <form class="creation_annonce" action="creationAnnonce.ctrl.php" method="post">
         <section>
           <div class="">
-            <label for="intitule">Tout d'abord, quel est l'intitulé de votre annonce ?</label>
+            <label for="intitule">Tout d'abord, quel est l'intitulé de votre annonce ? <em>*</em></label>
             <input type="text" name="intitule" id="intitule" required>
           </div>
 
           <div class="">
-            <label for="description">Donnez le détail de votre annonce.</label>
+            <label for="description">Donnez le détail de votre annonce. <em>*</em></label>
             <textarea name="description" id="description"></textarea>
           </div>
         </section>
@@ -45,7 +46,7 @@ $user : Utilisateur connecté
 
         <section>
           <div class="">
-            <label for="categorie">Quel est la catégorie de votre annonce ?</label>
+            <label for="categorie">Quel est la catégorie de votre annonce ? <em>*</em></label>
             <select name="categorie" id="categorie" required>
               <?php foreach ($nomCategories as $key => $value) : ?>
                 <option value="<?= $value ?>"><?= $value ?></option>
