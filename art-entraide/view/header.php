@@ -21,6 +21,7 @@
           <li><input type="search" placeholder="Rechercher une annonce" name="" value=""></li>
           <li>
               <select name="categorie">
+                <option value="none" selected>Toutes catégories</option>
                 <?php foreach ($nomCategories as $value) : ?>
                   <option value="<?= $value ?>"><?= $value ?></option>
                 <?php endforeach; ?>
