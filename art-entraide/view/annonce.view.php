@@ -32,7 +32,7 @@ $nomCategorie = nom de la catégorie de l'annonce
 
       <section>
         <div>
-          <p>Catégorie : <?= $nomCategorie ?></p>
+          <p>Catégorie : <?= $annonce->getCategorie()->getNom() ?></p>
           <p>Date du service : <?= $annonce->getDateService() ?></p>
           <p>Lieu du service : <?= $annonce->getAdresse() ?></p>
         </div>
