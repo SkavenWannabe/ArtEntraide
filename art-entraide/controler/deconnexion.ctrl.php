@@ -11,14 +11,6 @@ include_once(__DIR__."/../model/DAO.class.php");
 // ==== PARTIE USAGE DU MODELE ==== //
 
 session_start();
-$art = new DAO();
-
-//Nécessaire à l'affichage des annonces une foi déconnécté
-$last = $art->getLastIdAnnonce();
-for ($i=0; $i < 4 ; $i++) {
-    $annonces[] = $art->getAnnonce($last);
-    $last--;
-}
 
 $categories = $_SESSION['nomCategories'];
 $_SESSION['user'] = NULL;
@@ -28,9 +20,5 @@ session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 
-$view = new View();
-
-$view->assign('nomCategories', $categories);
-$view->assign('user', $user);
-$view->display("accueil.view.php");
+include_once(__DIR__."/start.ctrl.php");
 ?>
