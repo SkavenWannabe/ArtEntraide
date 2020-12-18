@@ -6,9 +6,9 @@
 
 <section>
   <section>
-    <a href="/view/description.view.php">Qui sommes-nous ?</a>
-    <a href="/view/contact.view.php">Nous contacter</a>
-    <a href="/view/FAQ.view.php">F.A.Q</a>
+    <a href="/controler/pagesinfos.ctrl.php?page=description">Qui sommes-nous ?</a>
+    <a href="/controler/pagesinfos.ctrl.php?page=contact">Nous contacter</a>
+    <a href="/controler/pagesinfos.ctrl.php?page=FAQ">F.A.Q</a>
     <a href="#">Mentions légales</a>
     <a href="#">Politique de confitendialité</a>
   </section>
