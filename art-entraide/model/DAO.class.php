@@ -32,6 +32,7 @@ class DAO{
   }
 
   // --- Getteur --- //
+  // Getteur pour les utilisateurs
   function getLastIdUti() : int{
     $req = "SELECT MAX(id) FROM utilisateur";
     $stmt = $this->db->query($req);
@@ -74,8 +75,15 @@ class DAO{
     }
   }
 
+  function getIdCreateur(int $id) : int{
+    $req = "SELECT id_createur FROM annonce where id = '$id'";
+    $stmt = $this->db->query($req);
+    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
+    return $return[0];
+  }
 
 
+  // Getteur pour les Annonces
   function getLastIdAnnonce() : int{
     $req = "SELECT MAX(id) FROM annonce";
     $stmt = $this->db->query($req);
@@ -145,7 +153,7 @@ class DAO{
     return $annonce;
   }
 
-
+  // Getteur pour les categories
   function getCategorie(int $id) : Categorie{
     $req = "SELECT * FROM categorie WHERE id = '$id'";
     $sth = $this->db->query($req);
@@ -168,6 +176,28 @@ class DAO{
     $sth = $this->db->query($req);
     $result = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Categorie');
     return $result;
+  }
+
+  // Getteur pour les messages
+  function getLastIdMes() : int{
+    $req = "SELECT MAX(id) FROM message";
+    $stmt = $this->db->query($req);
+    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
+    return $return[0];
+  }
+
+  function getIdMessage(int $id_annonce) : int {
+    $req = "SELECT id_message FROM reponse WHERE id = '$id_annonce'";
+    $sth = $this->db->query($req);
+    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
+    return $result[0];
+  }
+
+  function getMessage(int $id){
+    $req = "SELECT * FROM message WHERE id = '$id'";
+    $sth = $this->db->query($req);
+    $result = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Message');
+    return $result[0];
   }
 
   // --- Utilitaire pour les Utilisateur --- //
@@ -316,7 +346,42 @@ class DAO{
     $this->db->exec($sql);
   }
 
+  function createMessage(Message $message, Reponse $reponse) {
+    // Creation du message en base
+    $sqlM = "INSERT INTO Message (id,contenue,date_message,id_author)
+            values (:id,:contenue,:date_message,:id_author)";
 
+    $stmtM = $this->db->prepare($sqlM);
+
+    $id = $message->getid();
+    $contenue = $message->getContenue();
+    $date_message = $message->getDateMessage();
+    $id_author = $message->getIdAuteur();
+
+    $stmtM->BindParam(':id',$id);
+    $stmtM->BindParam(':contenue',$contenue);
+    $stmtM->BindParam(':date_message',$date_message);
+    $stmtM->BindParam(':id_author',$id_author);
+
+    $stmtM->execute();
+
+
+    // Creation de la reponse en base
+    $sqlR = "INSERT INTO Reponse (id_annonce,id_repondeur,id_message)
+            values (:id_annonce,:id_repondeur,:id_message)";
+
+    $stmtR = $this->db->prepare($sqlR);
+
+    $id_annonce = $reponse->getIdAnnonce();
+    $id_repondeur = $reponse->getIdRepondeur();
+    $id_message = $reponse->getIdMessage();
+
+    $stmtR->BindParam(':id_annonce',$id_annonce);
+    $stmtR->BindParam(':id_repondeur',$id_repondeur);
+    $stmtR->BindParam(':id_message',$id_message);
+
+    $stmtR->execute();
+  }
 }
 
 ?>
