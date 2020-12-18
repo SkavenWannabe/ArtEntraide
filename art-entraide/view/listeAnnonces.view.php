@@ -42,7 +42,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
         </select>
         <select name="categorie">
           <option value="0" disabled selected>Catégorie</option>
-          <?php foreach ($categories as $value) : ?>
+          <?php foreach ($nomCategories as $value) : ?>
             <option value="<?= $value ?>"><?= $value ?></option>
           <?php endforeach; ?>
         </select>
