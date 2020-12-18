@@ -70,8 +70,8 @@ switch ($etat) {
       $view->display("creationAnnonce.view.php");
       break;
   case 'profil':
-      //$view->assign('user', $user);
-      //$view->display("profil.view.php");
+      $view->assign('user', $user);
+      $view->display("profil.view.php");
       break;
   default:
     $view->assign('annonces', $annonces);
