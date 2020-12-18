@@ -41,3 +41,8 @@ form.creation_annonce > section:nth-child(2) {
 form.creation_annonce > section:nth-child(2) > div {
   width: 45%;
 }
+
+em {
+  font-weight: normal;
+  color: red;
+}
