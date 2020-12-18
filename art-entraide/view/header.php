@@ -57,7 +57,7 @@
     </output>
   <?php endif; ?>
   <?php if (isset($message) && $message != "") : ?>
-    <output>
+    <output class="message">
       <?= $message ?>
     </output>
   <?php endif; ?>
