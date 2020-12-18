@@ -7,12 +7,20 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-echo "liste annonces ctrl";
+if (isset($_GET['motcle']) and ($_GET['motcle'] != '')) {
+  $motcle = $_GET['motcle'];
+}
+
+if (isset($_GET['categorie']) and ($_GET['categorie'] != '') and ($_GET['categorie'] != '0')) {
+  $categorie = $_GET['categorie'];
+}
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 //vérification utilisateur connecté
 $connected = $_SESSION['connected'];
+
+// Get annonces
 $art = new DAO();
 $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
@@ -22,6 +30,30 @@ while($last >= $min && $i < 10) {
     $annonces[] = $art->getAnnonce($last);
     $last--; $i++;
 }
+
+// Filtrage annonces
+foreach ($annonces as $currentAnnonce){
+
+  if (isset($motcle)){
+    $nomOK = (strpos($currentAnnonce->getNom(),$motcle) !== false);
+  } else {
+    $nomOK = true;
+  }
+
+  if (isset($categorie)){
+    $categorieOK = ($currentAnnonce->getCategorie()->getNom() == $categorie);
+  } else {
+    $categorieOK = true;
+  }
+
+  if ($nomOK and $categorieOK) {
+    $annoncesFiltrees[] = $currentAnnonce;
+  }
+}
+
+$annonces = $annoncesFiltrees;
+
+
 
 $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
