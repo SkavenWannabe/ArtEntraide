@@ -34,6 +34,13 @@
       </section>
 
 
+      <footer>
+        <form class="" action="creationMessage.ctrl.php" method="post">
+          <input type="text" name="contenu" placeholder="Votre message ici" required>
+          <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
+          <button type="submit">Envoyer</button>
+        </form>
+      </footer>
     </section>
 
 
