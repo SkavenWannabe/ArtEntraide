@@ -43,9 +43,9 @@ $nomCategorie = nom de la catégorie de l'annonce
         </div>
       </section>
 
-      <form class="" action="action.ctrl.php" method="post">
+      <form class="" action="action.ctrl.php" method="get">
         <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
-        <button type="submit" name="action" value="proposerEchange">Proposer un échange de sevice</button>
+        <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
       </form>
     </section>
 
