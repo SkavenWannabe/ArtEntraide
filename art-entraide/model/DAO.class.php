@@ -115,6 +115,35 @@ class DAO{
     return $annonce;
   }
 
+  function getAnnonceAccueil(){
+    $req = "SELECT * FROM annonce LIMIT 4";
+    $sth = $this->db->query($req);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+
+    foreach ($datas as $data) {
+     if ($data['date_service'] === NULL) {
+        $data['date_service'] = '';
+      }
+      if ($data['description'] === NULL) {
+        $data['description'] = '';
+      }
+      if ($data['adresse'] === NULL) {
+        $data['adresse'] = '';
+      }
+
+      $idCat = $data['id_categorie'];
+      $req2 = "SELECT * FROM categorie WHERE id='$idCat'";
+      $sth2 = $this->db->query($req2);
+      $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
+      //var_dump($data);
+      $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+                               $data['est_demande'],$data['date_creation'],$data['date_service'],
+                               $data['id_createur'],$categorie);
+    }
+
+    return $annonce;
+  }
 
 
   function getCategorie(int $id) : Categorie{
