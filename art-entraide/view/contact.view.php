@@ -26,7 +26,7 @@
         <input type="text" name="sujet" id="sujet">
 
         <label for="mail">Adresse mail</label>
-        <input type="email" name="prenom" id="prenom">
+        <input type="email" name="mail" id="mail">
 
         <label for="corp">Question</label>
         <input type="text" name="corp" id="corp">
