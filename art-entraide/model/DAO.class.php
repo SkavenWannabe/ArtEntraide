@@ -6,6 +6,8 @@
 require_once(__DIR__."/Utilisateur.class.php");
 require_once(__DIR__."/Annonce.class.php");
 require_once(__DIR__."/Categorie.class.php");
+require_once(__DIR__."/Reponse.class.php");
+require_once(__DIR__."/Message.class.php");
 
 require_once("/home/synntix/db.php");
 //require_once(__DIR__."/Reponse.class.php");
@@ -75,6 +77,7 @@ class DAO{
     }
   }
 
+  // a vérifier si vraiment nécéssaire
   function getIdCreateur(int $id) : int{
     $req = "SELECT id_createur FROM annonce where id = '$id'";
     $stmt = $this->db->query($req);
@@ -186,11 +189,12 @@ class DAO{
     return $return[0];
   }
 
-  function getIdMessage(int $id_annonce) : int {
-    $req = "SELECT id_message FROM reponse WHERE id = '$id_annonce'";
-    $sth = $this->db->query($req);
-    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
-    return $result[0];
+  function getAllIdMessage(int $id_annonce, int $id_repondeur) {
+    $req = "SELECT id_message FROM reponse WHERE id_annonce = '$id_annonce'
+                                             AND id_repondeur = '$id_repondeur'";
+    $stmt = $this->db->query($req);
+    $result = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
+    return $result;
   }
 
   function getMessage(int $id){

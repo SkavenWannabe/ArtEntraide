@@ -28,20 +28,39 @@ $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
 
 if(!isset($error)){
-  $id_message = $art->getLastIdMes();
+  //Création du nouveau message
+  $id_message = $art->getLastIdMes() +1;
   $id_author = $user->getId();
-  $id_repondeur = $art->getIdCreateur($id_annonce);
+  //$id_repondeur = $art->getIdCreateur($id_annonce);
 
+//  $id_annonce = 4; $id_author = 2; // a supprimer, facilite les tests
   $message = new Message($id_message, $contenu, $today, $id_author);
-  $reponse = new Reponse($id_annonce, $id_repondeur, $id_message);
+//var_dump($message);
+  $reponse = new Reponse($id_annonce, $id_author, $id_message);
+//var_dump($reponse);
   $art->createMessage($message, $reponse);
 
+  //Recuperation de tout les messages échangées
+  $theAnnonce = $art->getAnnonce($id_annonce);
+
+  // création de $messages contenant la liste de message correspondant à l'annonce
+  $listIdMessage = $art->getAllIdMessage($id_annonce,$id_author);
+  foreach ($listIdMessage as $value) {
+    $messages[] = $art->getMessage($value);
+  }
+
+  $id_createur = $theAnnonce->getIdCreateur();
+  $createur = $art->getUtilisateur($id_createur);
+  $nomDestinataire = $createur->getNom();
 }
 
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
+$view->assign('annonce', $theAnnonce);
+$view->assign('nomDestinataire',$nomDestinataire);
+$view->assign('messages',$messages);
 //information nécessaire pour le header
 $view->assign('nomCategories', $categories);
 $view->assign('user', $user);

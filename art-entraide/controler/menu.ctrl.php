@@ -23,10 +23,7 @@ if (!isset($_SESSION['connected'])){
 }
 
 if($_SESSION['connected']){
-  $annonces[] = $art->getAnnonce(1);
-  $annonces[] = $art->getAnnonce(2);
-  $annonces[] = $art->getAnnonce(3);
-  $annonces[] = $art->getAnnonce(3);
+  $annonces = $art->getAnnonceAccueil();
 
 } else {
   $_SESSION['user'] = NULL;
