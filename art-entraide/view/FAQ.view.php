@@ -19,7 +19,7 @@
         <h2></h2>
         <p>
           Un problème ? Nous sommes là pour y répondre !<br>
-          Votre question a peut-être été déjà vite répondue, bisous.<br>
+          Votre question a peut-être été déjà répondue.<br>
           Sinon n'hésitez pas à nous contacter via la page "Nous contacter" en pied de page.
         </p>
       </article>
@@ -30,6 +30,9 @@
           <dt>Q : Comment créer une annonce ?<dt>
           <dd>R : Il faut dans un premier temps se connecter puis cliquer sur "Créer une annonce" en haut de la page</dd>
           <br>
+
+          <dt>Q : Comment se déconnecter ?</dt>
+          <dd>R : Pour vous deconnecter, rendez vous sur votre profile (bouton en haut à droite) puis cliquer sur "se deconnecter"</dd>
         </div>
       </article>
     </section>
