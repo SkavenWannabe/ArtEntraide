@@ -352,23 +352,22 @@ class DAO{
 
   function createMessage(Message $message, Reponse $reponse) {
     // Creation du message en base
-    $sqlM = "INSERT INTO Message (id,contenue,date_message,id_author)
-            values (:id,:contenue,:date_message,:id_author)";
+    $sql = "INSERT INTO Message (id,contenue,date_message,id_auteur)
+            values (:id,:contenue,:date_message,:id_auteur)";
 
-    $stmtM = $this->db->prepare($sqlM);
+    $stmt = $this->db->prepare($sql);
 
-    $id = $message->getid();
+    $id = $message->getId();
     $contenue = $message->getContenue();
     $date_message = $message->getDateMessage();
-    $id_author = $message->getIdAuteur();
+    $id_auteur = $message->getIdAuteur();
 
-    $stmtM->BindParam(':id',$id);
-    $stmtM->BindParam(':contenue',$contenue);
-    $stmtM->BindParam(':date_message',$date_message);
-    $stmtM->BindParam(':id_author',$id_author);
+    $stmt->BindParam(':id',$id);
+    $stmt->BindParam(':contenue',$contenue);
+    $stmt->BindParam(':date_message',$date_message);
+    $stmt->BindParam(':id_auteur',$id_auteur);
 
-    $stmtM->execute();
-
+    $stmt->execute();
 
     // Creation de la reponse en base
     $sqlR = "INSERT INTO Reponse (id_annonce,id_repondeur,id_message)

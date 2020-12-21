@@ -33,7 +33,7 @@ if(!isset($error)){
   $id_author = $user->getId();
   //$id_repondeur = $art->getIdCreateur($id_annonce);
 
-//  $id_annonce = 4; $id_author = 2; // a supprimer, facilite les tests
+  //$id_annonce = 4; $id_author = 2; // a supprimer, facilite les tests
   $message = new Message($id_message, $contenu, $today, $id_author);
 //var_dump($message);
   $reponse = new Reponse($id_annonce, $id_author, $id_message);

@@ -27,7 +27,7 @@ if($user == NULL){
   $theAnnonce = $art->getAnnonce($idAnnonce);
 
   $idUser = $user->getId();
-  $idAnnonce = 4; $idUser = 2; // a supprimer, facilite les tests
+  //$idAnnonce = 4; $idUser = 2; // a supprimer, facilite les tests
   // création de $messages contenant la liste de message correspondant à l'annonce
   $idMessage = $art->getAllIdMessage($idAnnonce,$idUser);
   foreach ($idMessage as $value) {
