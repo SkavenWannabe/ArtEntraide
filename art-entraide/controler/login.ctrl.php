@@ -41,7 +41,8 @@ if (!isset($error)) {
     //Nécessaire à l'affichage des annonces une foi connecté
     $annonces = $art->getAnnonceAccueil();
 
-    $message = "Vous êtes connecté"; //var_dump($user);
+    $message = "Vous êtes connecté";
+    
   } else {
     $error[] = "Identifiant ou mot de passe incorrect.";
     $_SESSION['connected'] = false;

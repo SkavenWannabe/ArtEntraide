@@ -42,6 +42,7 @@ class DAO{
     return $return[0];
   }
 
+  //recuperer un utilisateur en fonction de son indice
   function getUtilisateur(int $id) : Utilisateur{
     $req = "SELECT * FROM utilisateur WHERE id='$id'";
     $sth = $this->db->query($req);
@@ -54,6 +55,7 @@ class DAO{
     return $utilisateur;
   }
 
+  //recuperer un utilisateur en fonction de son adresse mail
   function getUtiliMail(string $email) : Utilisateur{
     $req = "SELECT * FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
@@ -66,6 +68,8 @@ class DAO{
     return $utilisateur;
   }
 
+  //recuperer le mot de passe d'un utilisateur donné
+  // - permet de vérifier/autorisé la connexion
   function getPass(string $email) : string{
     $req = "SELECT password FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
@@ -101,6 +105,7 @@ class DAO{
     return $return[0];
   }
 
+  //recuperation d'une annonce avec un id particulier
   function getAnnonce(int $id) : Annonce{
     $req = "SELECT * FROM annonce WHERE id='$id'";
     $sth = $this->db->query($req);
@@ -126,12 +131,13 @@ class DAO{
     return $annonce;
   }
 
+  //recuperation des annonces affiché à l'accueil
   function getAnnonceAccueil(){
-    $req = "SELECT * FROM annonce LIMIT 4";
+    $req = "SELECT * FROM annonce where est_active is true LIMIT 4";
     $sth = $this->db->query($req);
     $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-
+    //set les valeurs qui peuvent être NULL
     foreach ($datas as $data) {
      if ($data['date_service'] === NULL) {
         $data['date_service'] = '';
@@ -143,11 +149,12 @@ class DAO{
         $data['adresse'] = '';
       }
 
+      //récupération de la catégorie de l'annonce
       $idCat = $data['id_categorie'];
       $req2 = "SELECT * FROM categorie WHERE id='$idCat'";
       $sth2 = $this->db->query($req2);
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
-      //var_dump($data);
+
       $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                                $data['est_demande'],$data['date_creation'],$data['date_service'],
                                $data['id_createur'],$categorie);
@@ -155,6 +162,77 @@ class DAO{
 
     return $annonce;
   }
+
+  //recupère une liste d'annonce en fonction d'une categorie - permet de trier les annonces
+  function getAnnonceCategorie(string $nomCat){
+    $req = "SELECT * FROM annonce, categorie where annonce.est_active is true
+                                               AND annonce.id_categorie = categorie.id
+                                               AND categorie.nom = '$nomCat'";
+
+    $sth = $this->db->query($req);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    //set les valeurs qui peuvent être NULL
+    foreach ($datas as $data) {
+     if ($data['date_service'] === NULL) {
+        $data['date_service'] = '';
+      }
+      if ($data['description'] === NULL) {
+        $data['description'] = '';
+      }
+      if ($data['adresse'] === NULL) {
+        $data['adresse'] = '';
+      }
+
+      //récupération de la catégorie de l'annonce
+      $idCat = $data['id_categorie'];
+      $req2 = "SELECT * FROM categorie WHERE id='$idCat'";
+      $sth2 = $this->db->query($req2);
+      $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
+
+      $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+                               $data['est_demande'],$data['date_creation'],$data['date_service'],
+                               $data['id_createur'],$categorie);
+    }
+
+    return $annonce;
+  }
+
+  //pour l'utilisateur en cours, lui permet de voir ses annonces encore active
+  function getSesAnnonce(Utilisateur $utilisateur){
+    $id_crea = $utilisateur->getId();
+    $req = "SELECT * FROM annonce where est_active is true
+                                    AND id_createur = '$id_crea'";
+    $sth = $this->db->query($req);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    //set les valeurs qui peuvent être NULL
+    foreach ($datas as $data) {
+     if ($data['date_service'] === NULL) {
+        $data['date_service'] = '';
+      }
+      if ($data['description'] === NULL) {
+        $data['description'] = '';
+      }
+      if ($data['adresse'] === NULL) {
+        $data['adresse'] = '';
+      }
+
+      //récupération de la catégorie de l'annonce
+      $idCat = $data['id_categorie'];
+      $req2 = "SELECT * FROM categorie WHERE id='$idCat'";
+      $sth2 = $this->db->query($req2);
+      $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
+
+      $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+                               $data['est_demande'],$data['date_creation'],$data['date_service'],
+                               $data['id_createur'],$categorie);
+    }
+
+    return $annonce;
+  }
+
+
 
   // Getteur pour les categories
   function getCategorie(int $id) : Categorie{
@@ -169,11 +247,9 @@ class DAO{
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie");
     return $return[0];
-    //$data = $sth->fetchAll(PDO::FETCH_ASSOC)[0];
-    //$cat = new Categorie($data['id'],$data['nom']);
-    //return $cat;
   }
 
+  //permet de recuperer toute les catégories existantes - l'utilisateur peut alors triés suivant ses préférence
   function getAllCategorie(){
     $req = "SELECT * FROM categorie";
     $sth = $this->db->query($req);
@@ -189,6 +265,7 @@ class DAO{
     return $return[0];
   }
 
+  //permet de récupérer une liste de tout les indices des messages échangé entre 2 utilisateur pour une annonce
   function getAllIdMessage(int $id_annonce, int $id_repondeur) {
     $req = "SELECT id_message FROM reponse WHERE id_annonce = '$id_annonce'
                                              AND id_repondeur = '$id_repondeur'";
@@ -197,6 +274,7 @@ class DAO{
     return $result;
   }
 
+  //permet de récupérer le contenue d'un message
   function getMessage(int $id){
     $req = "SELECT * FROM message WHERE id = '$id'";
     $sth = $this->db->query($req);
@@ -229,11 +307,6 @@ class DAO{
     $stmt->BindParam(':adresse',$adresse);
 
     $stmt->execute();
-    /*
-    $req = "SELECT * FROM Utilisateur where email = '$email'";
-    $sth = $this->db->query($req);
-    $id = $sth->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Utilisateur');
-    var_dump($id);*/
   }
 
   // Mise à jour d'un Utilisateur
@@ -275,8 +348,8 @@ class DAO{
     $this->db->exec($sql);
   }
 
-  // --- Utilitaire pour les Annonces --- //
 
+  // --- Utilitaire pour les Annonces --- //
   // Sauvegarde d'une annonce dans la base de données
   // $annonce : l'annonce à sauvegarder
   function createAnnonce(Annonce $annonce) {
@@ -312,13 +385,12 @@ class DAO{
   // $annonce : l'annonce à mettre à jour
   function updateAnnonce(Annonce $annonce) {
     $id = $annonce->getId();
+
     $nom = $annonce->getNom();
     $description = $annonce->getDescription();
     $adresse = $annonce->getAdresse();
-    //$date_creation = $annonce->getDateCreation();
     $date_service = $annonce->getDateService(); // /!\ verification nom dans la BDD
-    //$id_createur = $annonce->getIdCreateur();
-    //$id_categorie = $annonce->getIdCategorie();
+    $id_categorie = $annonce->getCategorie()->getId();
     $est_active = $annonce->getEstActive(); // /!\ verification nom dans la BDD
     $est_demande = $annonce->getEstDemande(); // /!\ verification nom dans la BDD
 
@@ -328,6 +400,7 @@ class DAO{
                 description= '$description',
                 adresse = '$adresse',
                 date_service = '$date_service',
+                id_categorie = '$id_categorie',
                 est_demande = '$est_demande',
                 est_active = '$est_active'
             WHERE id = '$id'";
@@ -350,6 +423,7 @@ class DAO{
     $this->db->exec($sql);
   }
 
+  // --- Utilitaire pour les Messages --- //
   function createMessage(Message $message, Reponse $reponse) {
     // Creation du message en base
     $sql = "INSERT INTO Message (id,contenue,date_message,id_auteur)

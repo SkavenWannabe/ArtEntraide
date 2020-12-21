@@ -17,17 +17,17 @@ if(!isset($_SESSION['connected'])){
   $_SESSION['user'] = NULL;
 }
 
-echo " session : " . $_SESSION['connected'];
-
+//récupération des annonces affiché sur la page d'accueil
 $annonces = $art->getAnnonceAccueil();
 
-//récupération de l'annonce
+//recupérations en base de toute les catégories existantes
 $allCategories = $art->getAllCategorie();
 //récupération du nom de chaque catégorie
 foreach ($allCategories as $value){
     $categories[] = $value->getNom();
 }
 
+//information de session
 $user = $_SESSION['user'];
 $_SESSION['nomCategories'] = $categories;
 

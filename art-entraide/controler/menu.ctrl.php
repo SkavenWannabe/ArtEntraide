@@ -14,6 +14,10 @@ if ($_POST['etat'] != '') {
 }
 
 echo "etat : " .$etat;
+
+// recuperation de la categorie == none si non selectionner
+$selectCat = $_POST['categorie'];
+
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
@@ -22,22 +26,16 @@ if (!isset($_SESSION['connected'])){
   $_SESSION['connected'] = false;
 }
 
-if($_SESSION['connected']){
-  $annonces = $art->getAnnonceAccueil();
 
+if ($selectCat != "none"){
+  //echo "pas select";
 } else {
-  $_SESSION['user'] = NULL;
+  //echo " cat select = " .$selectCat;
 
-  //récupération de l'annonce
-  $allCategories = $art->getAllCategorie();
-  //récupération du nom de chaque catégorie
-  foreach ($allCategories as $value){
-      $categories[] = $value->getNom();
-  }
-
-  $_SESSION['nomCategories'] = $categories;
 }
 
+
+$annonces = $art->getAnnonceAccueil();
 $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
 
