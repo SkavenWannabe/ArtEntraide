@@ -30,6 +30,9 @@
           <dt>Q : Comment créer une annonce ?<dt>
           <dd>R : Il faut dans un premier temps se connecter puis cliquer sur "Créer une annonce" en haut de la page</dd>
           <br>
+
+          <dt>Q : Comment me déconnecter ?</dt>
+          <dd>R : Pour vous deconnecter, rendez vous dans votre profil (en haut a droite) puis cliquer sur "Se déconnecter"</dd>
         </div>
       </article>
     </section>
