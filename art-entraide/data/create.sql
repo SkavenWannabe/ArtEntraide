@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Annonce (
 CREATE TABLE IF NOT EXISTS Message (
   id SERIAL PRIMARY KEY,
   contenue VARCHAR NOT NULL,
-  date_message TIMESTAMP NOT NULL,
+  date_message DATE NOT NULL,
   id_auteur INTEGER NOT NULL,
 
   FOREIGN KEY(id_auteur) REFERENCES Utilisateur(id)

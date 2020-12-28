@@ -1,5 +1,5 @@
 <?php
-// ============ Controleur qui gère les bouttons du menu ============ //
+// ============ Controleur qui permet de modifier une annonce ============ //
 
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
@@ -7,6 +7,8 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
+$idAnnonce = $_POST['idAnnonce'];
+
 // --- recuperation de l'intitule --- //
 if ($_POST['intitule'] != '') {
   $nom = $_POST['intitule'];
@@ -31,9 +33,6 @@ if ($_POST['lieu'] != '') {
   $lieu = "";
 }
 
-// --- récupération date de création --- //
-$today = date("y.m.d");
-
 // --- recuperation de la date d'execution de l'annonce --- //
 if ($_POST['date'] != '') {
   $dateService = $_POST['date'];
@@ -51,55 +50,52 @@ if ($_POST['date'] != '') {
 // --- recuperation du type de l'annonce --- //
 $est_demande = true; //a recup en post après
 
-// ==== PARTIE USAGE DU MODELE ==== //
 
+// ==== PARTIE USAGE DU MODELE ==== //
 session_start();
-$user = $_SESSION['user']; //var_dump($user);
+$art = new DAO();
 
 if(!isset($error)){
-  $art = new DAO();
+  $annonce = $art->getAnnonce($idAnnonce);
 
-  $idCreateur = $user->getId();
-  $nomAuteur = $user->getNom();   //récupération du nom de l'auteur
+  $annonce->setNom($nom);
+  $annonce->setDescription($description);
+  $annonce->setAdresse($lieu);
+  $annonce->setDateService($dateService);
+  if($annonce->getCategorie()->getNom !== $nomCategorie){
+    $annonce->setCategorie($art->getCategorieNom($nomCategorie));
+  }
 
-  $categorie = $art->getCategorieNom($nomCategorie);
+  $art->updateAnnonce($annonce);
 
-  // création d'une annonce
-  $idAnnonce = $art->getLastIdAnnonce() + 1;
-  $annonce = new Annonce($idAnnonce, $nom, $description, $lieu, $est_demande, $today, $dateService, $idCreateur, $categorie);
-  $art->createAnnonce($annonce);
-
-  //$annonce = $art->getAnnonce((int)$idAnnonce);
-  //var_dump($annonce);
+  $message = "Annonce bien mise à jour";
 }
-$connected = $_SESSION['connected'];
+
+$user = $_SESSION['user'];
+$nomAuteur = $user->getNom();
 $categories = $_SESSION['nomCategories'];
 
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
-
 //information nécessaire pour le header
-$view->assign('user', $user);
 $view->assign('nomCategories', $categories);
+$view->assign('user', $user);
 
-if (!isset($error)){
+if(!isset($error)){
   $view->assign('nomCategorie', $nomCategorie);
   $view->assign('annonce', $annonce);
   $view->assign('nomAuteur',$nomAuteur);
-  $view->assign('connecter', $connected);
+
+  $view->assign('message',$message);
 
   $view->display("annonce.view.php");
 
 } else {
-  if(isset($nom)){
-    $view->assign('intitule',$nom);
-  }
-  if(isset($description)){
-    $view->assign('description',$description);
-  }
   $view->assign('error',$error);
-  $view->display("creationAnnonce.view.php");
+  $view->display("modifAnnonce.view.php");
 }
+
+
 ?>

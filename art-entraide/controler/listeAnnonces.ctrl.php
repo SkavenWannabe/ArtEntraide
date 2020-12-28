@@ -25,12 +25,13 @@ $art = new DAO();
 $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
 
+//recuperation temporaire, futur recupération en fonction d'un nombre de page
 $i = 0;
 while($last >= $min && $i < 10) {
     $annonces[] = $art->getAnnonce($last);
     $last--; $i++;
 }
-
+/*
 // Filtrage annonces
 foreach ($annonces as $currentAnnonce){
 
@@ -52,7 +53,11 @@ foreach ($annonces as $currentAnnonce){
 }
 
 $annonces = $annoncesFiltrees;
+*/
 
+if(isset($categorie) && $categorie !== '0' && $categorie !== ''){
+  $annonces = $art->getAnnonceCategorie($categorie);
+}
 
 
 $user = $_SESSION['user'];
@@ -69,6 +74,5 @@ $view->assign('annonces', $annonces);
 $view->assign('user', $user);
 $view->assign('nomCategories', $categories);
 $view->display("listeAnnonces.view.php");
-
 
 ?>

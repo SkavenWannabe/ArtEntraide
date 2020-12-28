@@ -54,11 +54,13 @@ $categories = $_SESSION['nomCategories'];
 if(!isset($error)){
   $art = new DAO();
 
+  //modification au niveau de la classe du compte utilisateur
   $user->setNom($nom);
   $user->setEmail($email);
   $user->setPassword($passwd);
   $user->setAdresse($p_adresse);
 
+  //modification en base du compte
   $art->updateUtilisateur($user);
 
 }
@@ -76,6 +78,7 @@ $view->assign('user', $user);
 if(!isset($error)){
   $view->display("profil.view.php");
 }else{
-  $view->display("modif_compte.view.php");
+  $view->assign('error',$error);
+  $view->display("modifCompte.view.php");
 }
 ?>

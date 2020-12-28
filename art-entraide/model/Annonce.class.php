@@ -109,6 +109,10 @@ class Annonce{
     $this->date_service = $dService;
   }
 
+  function setCategorie(Categorie $cat){
+    $this->categorie = $cat;
+  }
+
   function setEstActive(bool $eActive) : void{
     $this->est_active = $eActive;
   }

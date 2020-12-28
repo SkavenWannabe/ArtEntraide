@@ -43,7 +43,7 @@ $nomCategorie = nom de la catégorie de l'annonce
         </div>
       </section>
 
-      <form class="" action="action.ctrl.php" method="get">
+      <form class="" action="reponseAnnonce.ctrl.php" method="get">
         <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
         <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
       </form>
