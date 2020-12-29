@@ -1,0 +1,13 @@
+body > section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+
+body > section > div:first-child {
+  flex-grow: 1;
+}
+
+body > section > div:last-child {
+  margin-top: 20px;
+}

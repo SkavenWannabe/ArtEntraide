@@ -80,6 +80,10 @@ class Utilisateur{
     $this->nom = $nom;
   }
 
+  function setPrenom(string $prenom) : void{
+    $this->prenom = $prenom;
+  }
+
   function setEmail(string $email) : void{
     $this->email = $email;
   }

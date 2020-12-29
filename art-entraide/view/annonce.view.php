@@ -20,33 +20,53 @@ $nomCategorie = nom de la catégorie de l'annonce
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title><?= $annonce->getNom() ?></title>
     <link rel="stylesheet" href="/view/css/master.css">
+    <link rel="stylesheet" href="/view/css/detailAnnonce.css">
   </head>
 
   <body>
     <?php include_once(__DIR__."/../view/header.php"); ?>
 
     <section>
-      <header>
-        <h2>Annonce de <?= $nomAuteur ?> : <?= $annonce->getNom() ?></h2>
-      </header>
+      <div>
+        <header>
+          <h2>Annonce de <?= $nomAuteur ?> : <?= $annonce->getNom() ?></h2>
+        </header>
 
-      <section>
-        <div>
-          <p>Catégorie : <?= $annonce->getCategorie()->getNom() ?></p>
-          <p>Date du service : <?= $annonce->getDateService() ?></p>
-          <p>Lieu du service : <?= $annonce->getAdresse() ?></p>
-        </div>
+        <section>
+          <div>
+            <p>Catégorie : <?= $annonce->getCategorie()->getNom() ?></p>
+            <p>Date du service : <?= $annonce->getDateService() ?></p>
+            <p>Lieu du service : <?= $annonce->getAdresse() ?></p>
+          </div>
 
-        <div>
-          <h3>Description de l'annonce</h3>
-          <p><?= $annonce->getDescription() ?></p>
-        </div>
-      </section>
+          <div>
+            <h3>Description de l'annonce</h3>
+            <p><?= $annonce->getDescription() ?></p>
+          </div>
+        </section>
 
-      <form class="" action="reponseAnnonce.ctrl.php" method="get">
-        <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
-        <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
-      </form>
+        <form class="" action="reponseAnnonce.ctrl.php" method="get">
+          <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
+          <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
+        </form>
+      </div>
+
+      <div>
+        <?php if ($annonce->getIdCreateur() == $user->getId()): ?>
+          <form action="actionModif.ctrl.php" method="post">
+            <button type="submit" name="action" value="modifAnnonce">Modifier l'annonce</button>
+            <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
+          </form>
+
+          <form action="supprimerAnnonce.ctrl.php" method="get">
+            <button class="actionCritique" type="submit">Supprimer l'annonce</button>
+            <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
+          </form>
+        <?php endif; ?>
+
+
+      </div>
+
     </section>
 
     <?php include_once(__DIR__."/../view/footer.php"); ?>
