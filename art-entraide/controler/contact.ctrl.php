@@ -59,13 +59,13 @@ if (!isset($error)) {
   $view->assign('message', $message);
   //information nécessaire pour le header
   $view->assign('user', $user);
-  $view->assign('nomCategories', $categories);
+  $view->assign('nomCategories', $nomCategories);
   $view->display("accueil.view.php");
 }
 else{
   $view->assign('error',$error);
   $view->assign('user', $user);
-  $view->assign('nomCategories', $categories);
+  $view->assign('nomCategories', $nomCategories);
   $view->display("contact.view.php");
 }
 
