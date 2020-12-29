@@ -1,6 +1,6 @@
 <?php
-// ============ Controleur qui gère la vue contact ============ //
 
+// ============ Controleur qui gère la vue contact ============ //
 
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
@@ -10,9 +10,7 @@ include_once(__DIR__."/../model/DAO.class.php");
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 
 // Récupérer le nom de la vue à afficher en GET
-if (isset($_GET['page'])) {
-  $page = $_GET['page'];
-}
+
 
 // --- recuperation du nom --- //
 if ($_POST['sujet'] != '') {
@@ -23,20 +21,21 @@ if ($_POST['sujet'] != '') {
 
 // --- recuperation du prenom --- //
 if ($_POST['mail'] != '') {
-  $prenom = $_POST['mail'];
+  $mail = $_POST['mail'];
 }else{
   $error[] = "Vous devez mettre votre adresse mail";
 }
 
 // --- recuperation de l'adresse email --- //
 if ($_POST['corp'] != '') {
-  $email = $_POST['corp'];
+  $corp = $_POST['corp'];
 }else{
   $error[] = "Vous devez mettre un message";
 }
 
 // Ouvrir la session
 session_start();
+$art = new DAO();
 // Récupérer les infos nécessaires au header (user et catégories)
 $user = $_SESSION['user'];
 $nomCategories = $_SESSION['nomCategories'];
@@ -63,9 +62,11 @@ if (!isset($error)) {
   $view->assign('nomCategories', $categories);
   $view->display("accueil.view.php");
 }
-}else{
+else{
   $view->assign('error',$error);
   $view->assign('user', $user);
   $view->assign('nomCategories', $categories);
   $view->display("contact.view.php");
 }
+
+?>
