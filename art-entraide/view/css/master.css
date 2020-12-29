@@ -47,6 +47,19 @@ button:not(.boutonCategorie):hover {
 	/* transform: translateY(-0.25em); */
 }
 
+button.actionCritique {
+	color: #e53935;
+	border: solid 2px #e53935CC;
+}
+
+button.actionCritique:hover {
+	box-shadow: inset 6.5em 0 0 0 #e53935;
+	color: white;
+	background: #e53935;
+	border-color: #e53935;
+	/* transform: translateY(-0.25em); */
+}
+
 /*=========== HEADER ===========*/
 
 body > header > div {

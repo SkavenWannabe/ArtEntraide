@@ -1,0 +1,9 @@
+body > section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+
+body > section > div:first-child {
+  flex-grow: 1;
+}
