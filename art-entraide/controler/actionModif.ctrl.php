@@ -11,7 +11,6 @@ if ($_POST['action'] == '') {
   $action = 'error';
 }
 
-
 if ($_POST['action'] == 'modifCompte') {
   $action = 'modifCompte';
 }
@@ -20,20 +19,30 @@ if ($_POST['action'] == 'modifAnnonce') {
   $action = 'modifAnnonce';
 }
 
+if ($_POST['idAnnonce'] != '') {
+  $idAnnonce = $_POST['idAnnonce'];
+} else {
+  $idAnnonce = -1;
+}
+
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
 //recuperation information de la session
 
+if ($idAnnonce != -1) {
+  $annonce = $art->getAnnonce($idAnnonce);
+}
+
 $user = $_SESSION['user'];
-$categories = $_SESSION['nomCategories'];
+$nomCategories = $_SESSION['nomCategories'];
 
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 //information nécessaire pour le header
-$view->assign('nomCategories', $categories);
+$view->assign('nomCategories', $nomCategories);
 $view->assign('user', $user);
 
 switch ($action) {
@@ -41,6 +50,7 @@ switch ($action) {
     $view->display("modifCompte.view.php");
     break;
   case 'modifAnnonce':
+    $view->assign('annonce', $annonce);
     $view->display("modifAnnonce.view.php");
     break;
   default:

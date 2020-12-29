@@ -64,6 +64,8 @@ $user : Utilisateur connecté
 
 
         <button type="submit" name="publier">Modifier l'annonce</button>
+        <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
+
       </form>
     </section>
 
