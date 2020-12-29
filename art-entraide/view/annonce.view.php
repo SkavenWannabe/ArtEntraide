@@ -53,15 +53,9 @@ $nomCategorie = nom de la catégorie de l'annonce
 
       <div>
         <?php if ($annonce->getIdCreateur() == $user->getId()): ?>
-          <form action="modifAnnonce.html" method="post">
+          <form action="modifAnnonce.ctrl.php" method="post">
             <button type="submit">Modifier l'annonce</button>
-            <!-- Peut être passer l'annonce entière ? (Si c'est possible) -->
             <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
-            <input type="hidden" name="intitule" value="<?= $annonce->getNom() ?>">
-            <input type="hidden" name="categorie" value="<?= $annonce->getCategorie()->getNom() ?>">
-            <input type="hidden" name="description" value="<? $annonce->getDescription() ?>">
-            <input type="hidden" name="lieu" value="<? $annonce->getAdresse() ?>">
-            <input type="hidden" name="date" value="<? $annonce->getDateService() ?>">
           </form>
 
           <form action="supprimerAnnonce.html" method="get">
