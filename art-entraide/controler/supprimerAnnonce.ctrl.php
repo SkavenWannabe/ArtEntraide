@@ -7,14 +7,14 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-$annonceId = $_GET['annonceId'];
+$idAnnonce = $_GET['idAnnonce'];
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
 
 //action pour supprimer une annonce
-$annonce = $art->getAnnonce($annonceId);
+$annonce = $art->getAnnonce($idAnnonce);
 $art->deleteAnnonce($annonce);
 $message = "Cette annonce a bien été supprimé.";
 
@@ -35,6 +35,6 @@ $view->assign('user', $user);
 
 $view->assign('annonces', $annonces);
 
-//$view->display("sesAnnonces.view.php");
+$view->display("accueil.view.php");
 
 ?>

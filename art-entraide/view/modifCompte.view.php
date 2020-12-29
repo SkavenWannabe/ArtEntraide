@@ -15,7 +15,7 @@
     <section>
       <h2>Modifier votre compte</h2>
 
-      <form class="inscription" action="/controler/inscription.ctrl.php" method="post">
+      <form class="inscription" action="modifCompte.ctrl.php" method="post">
         <label for="nom">Nom</label>
         <input type="text" name="nom" id="nom" value="<?= $user->getNom() ?>">
 

@@ -15,6 +15,13 @@ if ($_POST['nom'] != '') {
   $error[] = "Le nom doit être non nul";
 }
 
+// --- recuperation du nom --- //
+if ($_POST['prenom'] != '') {
+  $prenom = $_POST['prenom'];
+}else{
+  $error[] = "Le prenom doit être non nul";
+}
+
 // --- recuperation de l'adresse email --- //
 if ($_POST['email'] != '') {
   $email = $_POST['email'];
@@ -56,6 +63,7 @@ if(!isset($error)){
 
   //modification au niveau de la classe du compte utilisateur
   $user->setNom($nom);
+  $user->setPrenom($prenom);
   $user->setEmail($email);
   $user->setPassword($passwd);
   $user->setAdresse($p_adresse);

@@ -1,5 +1,5 @@
 <?php
-// ============ Controleur qui permet de supprimer son compte ============ //
+// ========= Controleur qui permet de gerer les actions du profil ========== //
 
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
@@ -7,23 +7,26 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
+if ($_POST['action'] == '') {
+  $action = 'error';
+}
+
+
+if ($_POST['action'] == 'modifCompte') {
+  $action = 'modifCompte';
+}
+
+if ($_POST['action'] == 'modifAnnonce') {
+  $action = 'modifAnnonce';
+}
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
-
 //recuperation information de la session
+
 $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
-
-//action pour supprimer un compte
-$id = $user->getId();
-$art->deleteUtilisateur($id);
-$message = "Votre compte a bien été supprimé.";
-
-//recupération annonces affiché à l'accueil
-$user = NULL;
-$annonces = $art->getAnnonceAccueil();
 
 session_write_close();
 
@@ -33,9 +36,16 @@ $view = new View();
 $view->assign('nomCategories', $categories);
 $view->assign('user', $user);
 
-$view->assign('annonces', $annonces);
-$view->assign('message', $message);
-
-$view->display("accueil.view.php");
+switch ($action) {
+  case 'modifCompte':
+    $view->display("modifCompte.view.php");
+    break;
+  case 'modifAnnonce':
+    $view->display("modifAnnonce.view.php");
+    break;
+  default:
+    break;
+}
+//$view->display("sesAnnonces.view.php");
 
 ?>

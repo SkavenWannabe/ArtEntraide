@@ -39,8 +39,8 @@ $user
       </div>
 
       <div class="">
-        <form action="modifCompte.ctrl.php" method="post">
-          <button type="submit" name="supprimerCompte">Modifier le compte</button>
+        <form action="actionModif.ctrl.php" method="post">
+          <button type="submit" name="action" value="modifCompte">Modifier le compte</button>
         </form>
 
         <form action="supprimerCompte.ctrl.php" method="get"> <!-- TODO : popup -->

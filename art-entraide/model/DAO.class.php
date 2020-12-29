@@ -204,7 +204,7 @@ class DAO{
     $req = "SELECT * FROM annonce where est_active is true
                                     AND id_createur = '$id_crea'";
     $sth = $this->db->query($req);
-    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC); var_dump($datas);
 
     //set les valeurs qui peuvent être NULL
     foreach ($datas as $data) {
@@ -311,23 +311,21 @@ class DAO{
 
   // Mise à jour d'un Utilisateur
   // $utilisateur : l'utilisateur à mettre à jour
-  function updateUtilisateur(Utiliteur $utilisateur) {
+  function updateUtilisateur(Utilisateur $utilisateur) {
     $id = $utilisateur->getId();
     $nom = $utilisateur->getNom();
+    $prenom = $utilisateur->getPrenom();
     $email = $utilisateur->getEmail();
     $adresse = $utilisateur->getAdresse();
     $password = $utilisateur->getPassword();
-    $certif = $utilisateur->getCertif();
-    $reputation = $utilisateur->getReputation();
 
     try{
       $sql="UPDATE utilisateur
             SET nom = '$nom',
+                prenom = '$prenom',
                 email = '$email',
                 adresse = '$adresse',
                 password = '$password',
-                certif = '$certif',
-                reputation = '$reputation'
             WHERE id = '$id'";
 
       $stmt = $this->db->prepare($sql);
@@ -341,10 +339,23 @@ class DAO{
 
   // Suppression d'un Utilisateur
   // $utilisateur : l'utilisateur à supprimer
-  function deleteUtilisateur(Utilisateur $utilisateur) {
-    $id = $utilisateur->getId();
+  function deleteUtilisateur(int $id) {
+    $req = "SELECT * from message WHERE id_auteur='$id'";
+    $sth = $this->db->query($req);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($datas as $data) {
+      $id_message = $data['id'];
+      $sql = "DELETE from reponse WHERE id_message='$id_message'";
+      $this->db->exec($sql);
+    }
+
+    $sql = "DELETE from message WHERE id_auteur='$id'";
+    $this->db->exec($sql);
+
+    $sql = "DELETE from annonce WHERE id_createur='$id'";
+    $this->db->exec($sql);
+
     $sql = "DELETE from utilisateur WHERE id='$id'";
-    //$this->lastQuery = $sql;
     $this->db->exec($sql);
   }
 
@@ -418,8 +429,20 @@ class DAO{
   // $annonce : l'annonce à supprimer
   function deleteAnnonce(Annonce $annonce) {
     $id = $annonce->getId();
+
+    $req = "SELECT * from reponse WHERE id_annonce='$id'";
+    $sth = $this->db->query($req);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($datas as $data) {
+      $id_message = $data['id_message'];
+      $sql = "DELETE from message WHERE id='$id_message'";
+      $this->db->exec($sql);
+    }
+
+    $sql = "DELETE from reponse WHERE id_annonce='$id'";
+    $this->db->exec($sql);
+
     $sql = "DELETE from annonce WHERE id='$id'";
-    //$this->lastQuery = $sql;
     $this->db->exec($sql);
   }
 

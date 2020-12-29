@@ -18,6 +18,7 @@ $categories = $_SESSION['nomCategories'];
 
 //recuperation des annonces créer pas l'utilisateur courant
 $annonces = $art->getSesAnnonce($user);
+var_dump($annonces);
 
 session_write_close();
 
