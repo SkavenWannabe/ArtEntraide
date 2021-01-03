@@ -45,16 +45,19 @@ $nomCategorie = nom de la catégorie de l'annonce
           </div>
         </section>
 
-        <form class="" action="reponseAnnonce.ctrl.php" method="get">
-          <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
-          <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
-        </form>
+        <?php if (!isset($user) || $annonce->getIdCreateur() != $user->getId()): ?>
+          <form class="" action="reponseAnnonce.ctrl.php" method="get">
+            <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
+            <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
+          </form>
+        <?php endif; ?>
+
       </div>
 
       <div>
-        <?php if ($annonce->getIdCreateur() == $user->getId()): ?>
-          <form action="actionModif.ctrl.php" method="post">
-            <button type="submit" name="action" value="modifAnnonce">Modifier l'annonce</button>
+        <?php if (isset($user) && $annonce->getIdCreateur() == $user->getId()): ?>
+          <form action="modifAnnonce.ctrl.php" method="post">
+            <button type="submit">Modifier l'annonce</button>
             <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
           </form>
 
