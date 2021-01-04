@@ -31,8 +31,9 @@ while($last >= $min && $i < 10) {
     $annonces[] = $art->getAnnonce($last);
     $last--; $i++;
 }
+
 /*
-// Filtrage annonces
+// Filtrage annonces #1
 foreach ($annonces as $currentAnnonce){
 
   if (isset($motcle)){
@@ -55,10 +56,17 @@ foreach ($annonces as $currentAnnonce){
 $annonces = $annoncesFiltrees;
 */
 
+// Filtrage annonces #2
 if(isset($categorie) && $categorie !== '0' && $categorie !== ''){
   $annonces = $art->getAnnonceCategorie($categorie);
 }
 
+/*
+// Filtrage annonces #3
+if (isset($motcle) or isset($categorie) or isset($ville) or isset($rayon)){
+  $annonces = $art->getAnnonceRecherche($motcle, $categorie, $ville, $rayon);
+}
+*/
 
 $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
