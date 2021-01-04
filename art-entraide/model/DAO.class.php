@@ -198,6 +198,56 @@ class DAO{
     return $annonce;
   }
 
+//recupère une liste d'annonce correspondant aux critères de recherche (ignore le rayon pour l'instant)
+  //Si vous ne voulez pas trier selon un des critères, passez NULL en parametre
+  function getAnnonceRecherche(string $motcle, string $nomCat, string $ville, int $rayonKm){
+
+    //Préparation de la requête
+    $req = "SELECT * FROM annonce, categorie where annonce.est_active is true
+                                               AND annonce.id_categorie = categorie.id";
+
+    if (!is_null($motcle)){
+      $req .= " AND LOWER(annonce.nom) like LOWER('%$motcle%')";
+    }
+
+    if (!is_null($nomCat)){
+      $req .= " AND categorie.nom = '$nomCat'";
+    }
+
+    if (!is_null($ville)){
+      $req .= " AND annonce.ville = '$ville'";
+    }
+
+    //Requête
+    $sth = $this->db->query($req);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    //set les valeurs qui peuvent être NULL
+    foreach ($datas as $data) {
+     if ($data['date_service'] === NULL) {
+        $data['date_service'] = '';
+      }
+      if ($data['description'] === NULL) {
+        $data['description'] = '';
+      }
+      if ($data['adresse'] === NULL) {
+        $data['adresse'] = '';
+      }
+
+      //récupération de la catégorie de l'annonce
+      $idCat = $data['id_categorie'];
+      $req2 = "SELECT * FROM categorie WHERE id='$idCat'";
+      $sth2 = $this->db->query($req2);
+      $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
+
+      $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+                               $data['est_demande'],$data['date_creation'],$data['date_service'],
+                               $data['id_createur'],$categorie);
+    }
+
+    return $annonce;
+  }
+  
   //pour l'utilisateur en cours, lui permet de voir ses annonces encore active
   function getSesAnnonce(Utilisateur $utilisateur){
     $id_crea = $utilisateur->getId();
