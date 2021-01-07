@@ -131,6 +131,8 @@ non fonctionnel :
 
   - [ ]  vérification lors de suppression (compte + annonce)
 
+  - [ ]  ajout bouton annuler lors de modification
+  
  - header :
 
  - [ ]  recherche annonce (renvoie pas au bon endroit)
@@ -184,7 +186,7 @@ non fonctionnel :
 
  \- modification annonce
 
-  - [ ]  passer par un deuxième ctrl pour éviter l'affichage des erreurs
+  - [x]  passer par un deuxième ctrl pour éviter l'affichage des erreurs
 
  \- description annonce :
 
