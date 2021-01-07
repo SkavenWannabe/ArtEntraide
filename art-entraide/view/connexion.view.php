@@ -10,7 +10,7 @@ $user : Utilisateur connecté
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="774283535077-6qgj97q5b1ngrcs6p4ig79ppslr67rv0.apps.googleusercontent.com">
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
       function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
       console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -18,7 +18,15 @@ $user : Utilisateur connecté
       console.log('Image URL: ' + profile.getImageUrl());
       console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
       }
-    </script>
+
+      function signOut() {
+        var michel = gapi.auth2.init({client_id: '774283535077-6qgj97q5b1ngrcs6p4ig79ppslr67rv0.apps.googleusercontent.com'});
+        var auth2 = michel.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+    </script>-->
 
     <title>Connexion</title>
     <link rel="stylesheet" href="/view/css/master.css">
@@ -49,6 +57,10 @@ $user : Utilisateur connecté
 
       <div>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+        <!--<a href="#" onclick="signOut();">Sign out</a>-->
+
+
       </div>
 
       </section>
