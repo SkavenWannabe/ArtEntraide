@@ -123,90 +123,90 @@ id_message clé étrangère de Message
 non fonctionnel :
  - global :
 
-  - []  mettre la police en gris plutôt que noir
+  - [ ]  mettre la police en gris plutôt que noir
 
-  - []  fond en blanc cassé plutôt que blanc
+  - [ ]  fond en blanc cassé plutôt que blanc
 
-  - []  page trop grande !
+  - [ ]  page trop grande !
 
-  - []  vérification lors de suppression (compte + annonce)
+  - [ ]  vérification lors de suppression (compte + annonce)
 
  - header :
 
- - []  recherche annonce (renvoie pas au bon endroit)
+ - [ ]  recherche annonce (renvoie pas au bon endroit)
 
-  - []  gestion de la liste catégorie (transfo en bouton / utiliter ?)
+  - [ ] gestion de la liste catégorie (transfo en bouton / utiliter ?)
 
-  - []  bar de recherche en plus long
+  - [ ]  bar de recherche en plus long
 
-  - []  fil d’Ariane
+  - [ ]  fil d’Ariane
 
  - page accueil :
 
-  - []  titre annonce souligner, mettre le lien pour cliquer
+  - [ ]  titre annonce souligner, mettre le lien pour cliquer
 
-  - []  clique sur catégorie sous une annonce - recherche ou non ?
+  - [ ]  clique sur catégorie sous une annonce - recherche ou non ?
 
 - footer :
 
-  - []  page mention légal + politique de confidentialité
+  - [ ]  page mention légal + politique de confidentialité
 
-  - []  refaire design (aligner + rajout barre)
+  - [ ]  refaire design (aligner + rajout barre)
 
-  - []  haut de page - mettre une image
+  - [ ]  haut de page - mettre une image
 
-  - []  fb + insta mettre image + savoir a quoi on renvoi
+  - [ ]  fb + insta mettre image + savoir a quoi on renvoi
 
  - nous contacter
 
-  - []  changer le texte !
+  - [ ]  changer le texte !
 
  - connexion :
 
-  - []  connexion avec google
+  - [ ]  connexion avec google
 
-  - []  bouton "ici" renvoie page accueil
+  - [ ]  bouton "ici" renvoie page accueil
    plutôt création de compte
 
  \- création compte :
 
-  - []  faire rédaction de la page
+  - [ ]  faire rédaction de la page
 
-  - []  password pas passwd
+  - [ ]  password pas passwd
 
  \- création annonce
 
-  - []  changer font détails + block texte pas aligné
+  - [ ]  changer font détails + block texte pas aligné
 
-  - []  date a rendre non obligatoire
+  - [ ]  date a rendre non obligatoire
 
-  - []  catégorie mise a vide ou sur autre
+  - [ ]  catégorie mise a vide ou sur autre
 
  \- modification annonce
 
-  - []  passer par un deuxième ctrl pour éviter l'affichage des erreurs
+  - [ ]  passer par un deuxième ctrl pour éviter l'affichage des erreurs
 
  \- description annonce :
 
-  - []  refaire design
+  - [ ]  refaire design
 
-  - []  ajout bouton signalez (renvoi éventuellement vers contactez nous)
+  - [ ]  ajout bouton signalez (renvoi éventuellement vers contactez nous)
 
  \- voir plus d'annonce
 
-  - []  la recherche à vérifier / changer
+  - [ ]  la recherche à vérifier / changer
 
-  - []  + gestion affichage pr bcp annonce, gestion de page ?
+  - [ ]  + gestion affichage pr bcp annonce, gestion de page ?
 
  \- voir ses annonce
 
-  - []  mettre un petit mot quand il n'y a pas d'annonce
+  - [ ]  mettre un petit mot quand il n'y a pas d'annonce
 
  \- conversation
 
-  - []  design a changer
+  - [ ]  design a changer
 
-  - []  paragraphe au lieu d'une ligne
+  - [ ]  paragraphe au lieu d'une ligne
 
  \- voir réponses à faire
 
