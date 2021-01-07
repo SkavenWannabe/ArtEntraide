@@ -132,7 +132,7 @@ non fonctionnel :
   - [ ]  vérification lors de suppression (compte + annonce)
 
   - [ ]  ajout bouton annuler lors de modification
-  
+
  - header :
 
  - [ ]  recherche annonce (renvoie pas au bon endroit)
@@ -180,7 +180,7 @@ non fonctionnel :
 
   - [ ]  changer font détails + block texte pas aligné
 
-  - [ ]  date a rendre non obligatoire
+  - [x]  date a rendre non obligatoire
 
   - [ ]  catégorie mise a vide ou sur autre
 
