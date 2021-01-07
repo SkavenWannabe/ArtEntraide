@@ -45,7 +45,7 @@ if ($_POST['date'] != '') {
     $error[] = "la date ne peut pas être antérieure";
   }
 } else {
-  $error[] = "La date doit être non nul";
+  $dateService = "";
 }
 
 // --- recuperation du type de l'annonce --- //
