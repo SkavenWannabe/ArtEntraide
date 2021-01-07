@@ -129,7 +129,7 @@ non fonctionnel :
 
   - [x]  page trop grande !
 
-  - [ ]  vérification lors de suppression (compte + annonce)
+  - [x]  vérification lors de suppression (compte + annonce)
 
   - [ ]  ajout bouton annuler lors de modification
 

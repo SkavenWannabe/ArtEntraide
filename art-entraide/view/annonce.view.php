@@ -62,7 +62,7 @@ $nomCategorie = nom de la catégorie de l'annonce
             <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
           </form>
 
-          <form action="supprimerAnnonce.ctrl.php" method="get">
+          <form action="supprimerAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment supprimer votre annonce ?\n Cette action est irréversible.');>
             <button class="actionCritique" type="submit">Supprimer l'annonce</button>
             <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
           </form>

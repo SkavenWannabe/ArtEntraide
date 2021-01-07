@@ -44,7 +44,7 @@ $user
           <button type="submit" name="action" value="modifCompte">Modifier le compte</button>
         </form>
 
-        <form action="supprimerCompte.ctrl.php" method="get"> <!-- TODO : popup -->
+        <form action="supprimerCompte.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment supprimer votre compte ?\n Cette action est irréversible.');">
           <button class="actionCritique" type="submit" name="supprimerCompte">Supprimer le compte</button>
         </form>
       </div>
