@@ -8,7 +8,7 @@ $user : Utilisateur connecté
     <meta charset="utf-8">
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="774283535077-6qgj97q5b1ngrcs6p4ig79ppslr67rv0.apps.googleusercontent.com">
     <title>Connexion</title>
     <link rel="stylesheet" href="/view/css/master.css">
     <link rel="stylesheet" href="/view/css/connexion.css">
