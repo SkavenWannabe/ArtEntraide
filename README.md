@@ -202,13 +202,13 @@ non fonctionnel :
 
  \- voir ses annonce
 
-  - [ ]  mettre un petit mot quand il n'y a pas d'annonce
+  - [x]  mettre un petit mot quand il n'y a pas d'annonce
 
  \- conversation
 
-  - [ ]  design a changer
+  - [x]  design a changer
 
-  - [ ]  paragraphe au lieu d'une ligne
+  - [x]  paragraphe au lieu d'une ligne
 
  \- voir réponses à faire
 
