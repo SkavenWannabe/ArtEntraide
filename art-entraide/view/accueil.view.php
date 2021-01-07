@@ -26,7 +26,7 @@ $user : objet utilsateur connecté, NULL si non connecté
         <?php foreach ($annonces as $key => $value) : ?>
           <article class="annonce">
             <header>
-              <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
+              <img src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
               <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"><?= $value->getNom() ?></a></h2>
             </header>
             <p><?= $value->getDescription() ?></p>
