@@ -1,7 +1,7 @@
 <footer>
   <header>
     <p>L'art de l'entraide</p>
-    <a href="#">Haut de page</a>
+    <a href="#"><img src="/view/design/Up-Arrow.svg" alt="">Haut de page</a>
   </header>
 
 <section>

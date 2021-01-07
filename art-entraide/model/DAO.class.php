@@ -9,7 +9,7 @@ require_once(__DIR__."/Categorie.class.php");
 require_once(__DIR__."/Reponse.class.php");
 require_once(__DIR__."/Message.class.php");
 
-require_once("/home/synntix/db.php");
+// require_once("/home/synntix/db.php");
 //require_once(__DIR__."/Reponse.class.php");
 
 // ===== CLASSE ===== //
@@ -21,7 +21,7 @@ class DAO{
   private PDO $db;
 
   // Le type, le chemin et le nom de la base de donnée
-  private string $database = 'pgsql:host=localhost;port=5432;dbname=projets3;user=projets3;password='.dbpasswd;
+  private string $database = 'pgsql:host=192.168.2.112;port=5432;dbname=projets3;user=projets3;password=maleveS3';
 
   // --- Constructeur --- //
 

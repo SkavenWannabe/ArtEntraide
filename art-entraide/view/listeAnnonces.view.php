@@ -14,6 +14,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
     <link rel="stylesheet" href="/view/css/master.css">
     <link rel="stylesheet" href="/view/css/listeAnnonces.css">
     <link rel="stylesheet" href="/view/css/annonce.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -65,7 +66,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
             <article class="annonce">
               <header>
                 <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
-                <h2><?= $value->getNom() ?></h2>
+                <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"><?= $value->getNom() ?></a></h2>
               </header>
               <p><?= $value->getDescription() ?></p>
               <p class="date"><?= $value->getDateService() ?></p>
@@ -73,7 +74,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
                 <button type="submit" name="idAnnonce" value="<?= $value->getId() ?>">Voir le détail</button>
               </form>
               <form class="" action="listeAnnonces.ctrl.php" method="get">
-                <button class="boutonCategorie" type="submit" name="idCategorie" value="<?= $value->getCategorie()->getId() ?>"><?= $value->getCategorie()->getNom() ?><?php /*$value->getIdCategorie() */ ?></button>
+                <button class="boutonCategorie" type="submit" name="categorie" value="<?= $value->getCategorie()->getNom() ?>"><?= $value->getCategorie()->getNom() ?></button>
               </form>
             </article>
           <?php endforeach; ?>

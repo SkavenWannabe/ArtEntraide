@@ -7,6 +7,7 @@ $user : Utilisateur connecté
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="774283535077-6qgj97q5b1ngrcs6p4ig79ppslr67rv0.apps.googleusercontent.com">

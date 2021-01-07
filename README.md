@@ -123,11 +123,11 @@ id_message clé étrangère de Message
 non fonctionnel :
  - global :
 
-  - [ ]  mettre la police en gris plutôt que noir
+  - [x]  mettre la police en gris plutôt que noir
 
-  - [ ]  fond en blanc cassé plutôt que blanc
+  - [x]  fond en blanc cassé plutôt que blanc
 
-  - [ ]  page trop grande !
+  - [x]  page trop grande !
 
   - [ ]  vérification lors de suppression (compte + annonce)
 
@@ -139,15 +139,15 @@ non fonctionnel :
 
   - [ ] gestion de la liste catégorie (transfo en bouton / utiliter ?)
 
-  - [ ]  bar de recherche en plus long
+  - [x]  bar de recherche en plus long
 
-  - [ ]  fil d’Ariane
+  - [x]  fil d’Ariane
 
  - page accueil :
 
-  - [ ]  titre annonce souligner, mettre le lien pour cliquer
+  - [x]  titre annonce souligner, mettre le lien pour cliquer
 
-  - [ ]  clique sur catégorie sous une annonce - recherche ou non ?
+  - [x]  clique sur catégorie sous une annonce - recherche ou non ?
 
 - footer :
 
@@ -155,7 +155,7 @@ non fonctionnel :
 
   - [ ]  refaire design (aligner + rajout barre)
 
-  - [ ]  haut de page - mettre une image
+  - [x]  haut de page - mettre une image
 
   - [ ]  fb + insta mettre image + savoir a quoi on renvoi
 

@@ -42,6 +42,51 @@
   <nav class="ariane">
     <ul>
       <li><a href="/controler/start.ctrl.php">Accueil</a></li>
+      <?php switch ($vue): ?>
+<?php case "annonce.view.php": ?>
+        <li><?= $annonce->getNom() ?></li>
+        <?php break; ?>
+<?php case "connexion.view.php": ?>
+        <li>Connexion</li>
+        <?php break; ?>
+<?php case "contact.view.php": ?>
+        <li>Connexion</li>
+        <?php break; ?>
+<?php case "conversation.view.php": ?>
+        <li><a href="annonce.ctrl.php?idAnnonce=<?= $annonce->getId() ?>"><?= $annonce->getNom() ?></a></li>
+        <li>Conversation avec <?= $nomDestinataire ?></li>
+        <?php break; ?>
+<?php case "creationAnnonce.view.php": ?>
+        <li>Création d'une annonce</li>
+        <?php break; ?>
+<?php case "creationAnnonce.view.php": ?>
+        <li>Qui sommes nous</li>
+        <?php break; ?>
+<?php case "FAQ.view.php": ?>
+        <li>FAQ</li>
+        <?php break; ?>
+<?php case "inscription.view.php": ?>
+        <li>Inscription</li>
+        <?php break; ?>
+<?php case "listeAnnonces.view.php": ?>
+        <li>Recherche d'une annonce</li>
+        <?php break; ?>
+<?php case "modifAnnonce.view.php": ?>
+        <li><a href="annonce.ctrl.php?idAnnonce=<?= $annonce->getId() ?>"><?= $annonce->getNom() ?></a></li>
+        <li>Modification de <?= $annonce->getNom() ?></li>
+        <?php break; ?>
+<?php case "modifCompte.view.php": ?>
+        <li>Profil</li>
+        <li>Modification de mon profil</li>
+        <?php break; ?>
+<?php case "profil.view.php": ?>
+        <li>Profil</li>
+        <?php break; ?>
+<?php case "sesAnnonces.view.php": ?>
+        <li>Profil</li>
+        <li>Voir ses annonces</li>
+      <?php endswitch; ?>
+
     </ul>
   </nav>
 

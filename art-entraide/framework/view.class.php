@@ -33,6 +33,7 @@ class View {
       // La notation $$ dédigne une variable de le nom est dans une autre variable
       $$key = $value;
     }
+    $vue = $filename;
 
     // Inclusion de la vue
     // Comme cette inclusion est dans la portée de la méthode show alors
