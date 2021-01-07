@@ -56,8 +56,8 @@ $nomCategorie = nom de la catégorie de l'annonce
 
       <div>
         <?php if (isset($user) && $annonce->getIdCreateur() == $user->getId()): ?>
-          <form action="modifAnnonce.ctrl.php" method="post">
-            <button type="submit">Modifier l'annonce</button>
+          <form action="actionModif.ctrl.php" method="post">
+            <button type="submit" name="action" value="modifAnnonce">Modifier l'annonce</button>
             <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
           </form>
 

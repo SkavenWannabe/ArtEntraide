@@ -106,7 +106,7 @@ class DAO{
   }
 
   //recuperation d'une annonce avec un id particulier
-  function getAnnonce(int $id) : Annonce{
+  function getAnnonce(int $id){
     $req = "SELECT * FROM annonce WHERE id='$id'";
     $sth = $this->db->query($req);
     $data = $sth->fetchAll(PDO::FETCH_ASSOC)[0];
@@ -126,8 +126,9 @@ class DAO{
     $sth2 = $this->db->query($req2);
     $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
     //var_dump($data);
-    $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'], $data['est_demande'],$data['date_creation'],$data['date_service'],$data['id_createur'],$categorie);
-
+    $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+                             $data['est_demande'],$data['date_creation'],$data['date_service'],
+                             $data['id_createur'],$categorie);
     return $annonce;
   }
 
@@ -247,7 +248,7 @@ class DAO{
 
     return $annonce;
   }
-  
+
   //pour l'utilisateur en cours, lui permet de voir ses annonces encore active
   function getSesAnnonce(Utilisateur $utilisateur){
     $id_crea = $utilisateur->getId();
