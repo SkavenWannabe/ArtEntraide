@@ -33,6 +33,11 @@ button {
 	cursor: pointer;
 }
 
+textarea {
+	font-family: 'Roboto Slab', serif;
+	font-size: 1em;
+}
+
 button:not(.boutonCategorie) {
 	background-color: none;
 	font-size: 1.05em;
