@@ -22,23 +22,23 @@
       </div>
 
       <form class="inscription" action="/controler/inscription.ctrl.php" method="post">
-        <label for="nom">Nom</label>
-        <input type="text" name="nom" id="nom">
+        <label for="nom">Nom <em>*</em></label>
+        <input type="text" name="nom" id="nom" required>
 
-        <label for="prenom">Prénom</label>
-        <input type="text" name="prenom" id="prenom">
+        <label for="prenom">Prénom <em>*</em></label>
+        <input type="text" name="prenom" id="prenom" required>
 
         <label for="p_adresse">Adresse postale</label>
         <input type="text" name="p_adresse" id="p_adresse">
 
-        <label for="email">Adresse email</label>
-        <input type="email" name="email" id="email">
+        <label for="email">Adresse email <em>*</em></label>
+        <input type="email" name="email" id="email" required>
 
-        <label for="passwd">Mot de passe</label>
-        <input type="password" name="passwd" id="passwd">
+        <label for="passwd">Mot de passe <em>*</em></label>
+        <input type="password" name="passwd" id="passwd" required>
 
-        <label for="passwd">Confirmation du mot de passe</label>
-        <input type="password" name="passwdverif" id="passwdverif">
+        <label for="passwd">Confirmation du mot de passe <em>*</em></label>
+        <input type="password" name="passwdverif" id="passwdverif" required>
 
         <button type="submit" name="valider">Valider</button>
       </form>
