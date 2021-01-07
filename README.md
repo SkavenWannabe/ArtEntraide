@@ -121,11 +121,11 @@ id_message clé étrangère de Message
 
 ### Reste à faire :
 non fonctionnel :
- - global :
-  []  mettre la police en gris plutôt que noir
-  []  fond en blanc cassé plutôt que blanc
-  []  page trop grande !
-  []  vérification lors de suppression (compte + annonce)
+ - global : //
+  []  mettre la police en gris plutôt que noir//
+  []  fond en blanc cassé plutôt que blanc//
+  []  page trop grande !//
+  []  vérification lors de suppression (compte + annonce)//
  - header :
   []  recherche annonce (renvoie pas au bon endroit)
   []  gestion de la liste catégorie (transfo en bouton / utiliter ?)
