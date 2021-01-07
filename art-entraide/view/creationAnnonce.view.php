@@ -38,7 +38,7 @@ $user : Utilisateur connecté
 
           <div class="">
             <label for="description">Donnez le détail de votre annonce. <em>*</em></label>
-            <textarea name="description" id="description"></textarea>
+            <textarea name="description" id="description" required></textarea>
           </div>
         </section>
 

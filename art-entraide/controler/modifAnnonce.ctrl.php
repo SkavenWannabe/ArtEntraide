@@ -33,6 +33,8 @@ if ($_POST['lieu'] != '') {
   $lieu = "";
 }
 
+$today = date("y.m.d");
+
 // --- recuperation de la date d'execution de l'annonce --- //
 if ($_POST['date'] != '') {
   $dateService = $_POST['date'];
@@ -44,7 +46,7 @@ if ($_POST['date'] != '') {
     $error[] = "la date ne peut pas être antérieure";
   }
 } else {
-  $error[] = "La date doit être non nul";
+  $dateService = "";
 }
 
 // --- recuperation du type de l'annonce --- //
@@ -73,14 +75,14 @@ if(!isset($error)){
 
 $user = $_SESSION['user'];
 $nomAuteur = $user->getNom();
-$categories = $_SESSION['nomCategories'];
+$nomCategories = $_SESSION['nomCategories'];
 
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 //information nécessaire pour le header
-$view->assign('nomCategories', $categories);
+$view->assign('nomCategories', $nomCategories);
 $view->assign('user', $user);
 
 if(!isset($error)){

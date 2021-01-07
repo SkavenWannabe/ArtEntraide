@@ -1,5 +1,5 @@
 <?php
-// ============ Controleur qui gère une annonce ============ //
+// ============ Controleur qui gère la modification d'un compte ============ //
 
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
@@ -33,17 +33,17 @@ if ($_POST['email'] != '') {
 if ($_POST['passwd'] != '') {
   $passwd = $_POST['passwd'];
 }else{
-  $error[] = "Le passwd doit être non nul";
+  $error[] = "Le password doit être non nul";
 }
 
 if ($_POST['passwdverif'] != '') {
   $passwdverif = $_POST['passwdverif'];
 }else{
-  $error[] = "La verification du passwd doit être non nul";
+  $error[] = "La verification du password doit être non nul";
 }
 
 if ($passwd !== $passwdverif) {
-  $error[] = "Le passwd doit être le même";
+  $error[] = "Le password doit être le même";
 }
 
 //recuperation de l'adresse
