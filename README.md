@@ -174,7 +174,7 @@ non fonctionnel :
 
   - [ ]  faire rédaction de la page
 
-  - [ ]  password pas passwd
+  - [x]  password pas passwd
 
  \- création annonce
 
@@ -212,4 +212,6 @@ non fonctionnel :
 
  \- voir réponses à faire
 
- \- suppression compte ne fonctionne pas
+ \- suppression compte
+
+  - [x] ne fonctionne pas

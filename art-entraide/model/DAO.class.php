@@ -403,8 +403,17 @@ class DAO{
     $sql = "DELETE from message WHERE id_auteur='$id'";
     $this->db->exec($sql);
 
-    $sql = "DELETE from annonce WHERE id_createur='$id'";
-    $this->db->exec($sql);
+    $req = "SELECT * from annonce WHERE id_createur='$id'";
+    $sth = $this->db->query($req);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($datas as $data) {
+      $id_annonce = $data['id'];
+      $annonce = $this->getAnnonce($id_annonce);
+      $this->deleteAnnonce($annonce);
+    }
+
+    //$sql = "DELETE from annonce WHERE id_createur='$id'";
+    //$this->db->exec($sql);
 
     $sql = "DELETE from utilisateur WHERE id='$id'";
     $this->db->exec($sql);
