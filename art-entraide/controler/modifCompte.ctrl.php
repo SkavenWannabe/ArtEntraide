@@ -1,5 +1,5 @@
 <?php
-// ============ Controleur qui gère une annonce ============ //
+// ============ Controleur qui gère la modification d'un compte ============ //
 
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");

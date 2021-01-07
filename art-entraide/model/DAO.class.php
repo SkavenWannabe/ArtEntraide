@@ -426,7 +426,11 @@ class DAO{
     $adresse = $annonce->getAdresse();
     $est_demande = $annonce->getEstDemande();
     $date_creation = $annonce->getDateCreation();
-    $date_service = $annonce->getDateService();
+    if($date_service == ""){
+      $date_service = NULL;
+    } else {
+      $date_service = $annonce->getDateService();
+    }
     $id_createur = $annonce->getIdCreateur();
     $id_categorie = $annonce->getCategorie()->getId();
 

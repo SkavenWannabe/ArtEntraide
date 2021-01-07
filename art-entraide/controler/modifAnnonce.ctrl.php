@@ -33,6 +33,8 @@ if ($_POST['lieu'] != '') {
   $lieu = "";
 }
 
+$today = date("y.m.d");
+
 // --- recuperation de la date d'execution de l'annonce --- //
 if ($_POST['date'] != '') {
   $dateService = $_POST['date'];
