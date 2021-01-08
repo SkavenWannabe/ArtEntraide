@@ -9,24 +9,27 @@ $user : Utilisateur connecté
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="774283535077-6qgj97q5b1ngrcs6p4ig79ppslr67rv0.apps.googleusercontent.com">
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
+
+
+
       function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      console.log('Name: ' + profile.getName());
-      console.log('Image URL: ' + profile.getImageUrl());
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
       }
 
       function signOut() {
-        var michel = gapi.auth2.init({client_id: '774283535077-6qgj97q5b1ngrcs6p4ig79ppslr67rv0.apps.googleusercontent.com'});
-        var auth2 = michel.getAuthInstance();
+        var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
           console.log('User signed out.');
         });
       }
+
     </script>-->
 
     <title>Connexion</title>
@@ -61,8 +64,6 @@ $user : Utilisateur connecté
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
         <!--<a href="#" onclick="signOut();">Sign out</a>-->
-
-
       </div>
 
       </section>
