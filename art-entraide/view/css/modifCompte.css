@@ -4,3 +4,10 @@ body > section form {
   flex-direction: column;
   width: 20%;
 }
+
+body > section form div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

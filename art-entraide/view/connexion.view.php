@@ -43,7 +43,8 @@ $user : Utilisateur connecté
     <section>
       <header>
         <h2>Connectez vous à votre compte</h2>
-        <p>Pas encore de compte ? Créez en un <a href="/controler/menu.ctrl.php">ici</a></p> <!--//TODO: lien-->
+        <p>Pas encore de compte ? Créez en un <a href="/controler/menu.ctrl.php?etat=creation">ici</a>
+        </form>
       </header>
 
       <section>
