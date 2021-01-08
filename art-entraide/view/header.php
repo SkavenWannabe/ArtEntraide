@@ -15,18 +15,22 @@
     </a>
       <!-- <h1>L'art de l'entraide</h1> -->
     <!-- </div> -->
-    <nav>
+    <nav class="headerbar">
       <ul>
-        <form class="" action="menu.ctrl.php" method="post">
-          <li><input type="search" placeholder="Rechercher une annonce" name="" value=""></li>
+        <form class="" action="listeAnnonces.ctrl.php" method="get">
+          <li><input type="search" placeholder="Rechercher une annonce" name="motcle" value=""></li>
+        </form>
           <li>
-              <select name="categorie">
-                <option value="none" selected>Toutes catégories</option>
-                <?php foreach ($nomCategories as $value) : ?>
-                  <option value="<?= $value ?>"><?= $value ?></option>
-                <?php endforeach; ?>
-              </select>
+              <div class="dropdown">
+                <button onclick="categorieDropDown()" class="dropbtn">Catégories</button>
+                <div id="catDd" class="dropdown-content">
+                  <?php foreach ($nomCategories as $nom) :?>
+                    <a href="listeAnnonces.ctrl.php?categorie=<?=$nom?>"><?=$nom?></a>
+                  <?php endforeach; ?>
+                </div>
+              </div>
           </li>
+        <form class="" action="menu.ctrl.php" method="get">
           <?php if ($user == NULL): ?>
             <li><button type="submit" name="etat" value="connexion">Se connecter</button></li>
             <li><button type="submit" name="etat" value="creation">Créer un compte</button></li>
@@ -76,14 +80,14 @@
         <li>Modification de <?= $annonce->getNom() ?></li>
         <?php break; ?>
 <?php case "modifCompte.view.php": ?>
-        <li>Profil</li>
+        <li><a href="/controler/menu.ctrl.php?etat=profil">Profil</a></li>
         <li>Modification de mon profil</li>
         <?php break; ?>
 <?php case "profil.view.php": ?>
         <li>Profil</li>
         <?php break; ?>
 <?php case "sesAnnonces.view.php": ?>
-        <li>Profil</li>
+        <li><a href="/controler/menu.ctrl.php?etat=profil">Profil</a></li>
         <li>Voir ses annonces</li>
       <?php endswitch; ?>
 
@@ -108,3 +112,25 @@
     </output>
   <?php endif; ?>
 </header>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function categorieDropDown() {
+  document.getElementById("catDd").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>

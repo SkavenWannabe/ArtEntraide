@@ -131,13 +131,13 @@ non fonctionnel :
 
   - [x]  vérification lors de suppression (compte + annonce)
 
-  - [ ]  ajout bouton annuler lors de modification
+  - [x]  ajout bouton annuler lors de modification
 
  - header :
 
- - [ ]  recherche annonce (renvoie pas au bon endroit)
+ - [x]  recherche annonce (renvoie pas au bon endroit)
 
-  - [ ] gestion de la liste catégorie (transfo en bouton / utiliter ?)
+  - [x] gestion de la liste catégorie (transfo en bouton / utiliter ?)
 
   - [x]  bar de recherche en plus long
 
@@ -151,13 +151,13 @@ non fonctionnel :
 
 - footer :
 
-  - [ ]  page mention légal + politique de confidentialité
+  - [X]  page mention légal + politique de confidentialité
 
   - [ ]  refaire design (aligner + rajout barre)
 
   - [x]  haut de page - mettre une image
 
-  - [ ]  fb + insta mettre image + savoir a quoi on renvoi
+  - [X]  fb + insta mettre image + savoir a quoi on renvoi
 
  - nous contacter
 
@@ -167,7 +167,7 @@ non fonctionnel :
 
   - [ ]  connexion avec google
 
-  - [ ]  bouton "ici" renvoie page accueil
+  - [x]  bouton "ici" renvoie page accueil
    plutôt création de compte
 
  \- création compte :
@@ -178,7 +178,7 @@ non fonctionnel :
 
  \- création annonce
 
-  - [ ]  changer font détails + block texte pas aligné
+  - [x]  changer font détails + block texte pas aligné
 
   - [x]  date a rendre non obligatoire
 
@@ -192,7 +192,7 @@ non fonctionnel :
 
   - [ ]  refaire design
 
-  - [ ]  ajout bouton signalez (renvoi éventuellement vers contactez nous)
+  - [X]  ajout bouton signalez (renvoi éventuellement vers contactez nous)
 
  \- voir plus d'annonce
 

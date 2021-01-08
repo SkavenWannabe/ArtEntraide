@@ -64,7 +64,10 @@ $user : Utilisateur connecté
         </section>
 
 
-        <button type="submit" name="publier">Modifier l'annonce</button>
+        <div class="confirmation">
+          <a href="/controler/menu.ctrl.php?etat=profil">Annuler</a>
+          <button type="submit" name="valider">Valider</button>
+        </div>
         <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
 
       </form>
