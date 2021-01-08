@@ -42,7 +42,11 @@ if (!isset($error)) {
     $annonces = $art->getAnnonceAccueil();
 
     $message = "Vous êtes connecté";
-    
+
+    if ($user.getCertif()){
+      $utilisateurs = $art.getAllUsr();
+    }
+
   } else {
     $error[] = "Identifiant ou mot de passe incorrect.";
     $_SESSION['connected'] = false;
@@ -68,7 +72,14 @@ if (!isset($error) && $connected) {
   $view->assign('user', $user);
   $view->display("accueil.view.php");
 
-} else {
+}
+elseif (condition) {
+  $view->assign('message', $message);
+  $view->assign('user', $user);
+  $view->assign('utilisateurs', $utilisateurs);
+  $view->display("certif.view.php");
+}
+else {
   $view->assign('error',$error);
   $view->assign('user', $user);
   $view->assign('nomCategories', $categories);
