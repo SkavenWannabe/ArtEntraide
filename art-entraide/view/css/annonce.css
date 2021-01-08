@@ -29,7 +29,7 @@ article.annonce h2 {
   text-decoration: underline;
 }
 
-article.annonce footer form button {
+article.annonce > form button:first-child {
   margin: 0;
   position: absolute;
   left: 50%;
@@ -37,7 +37,7 @@ article.annonce footer form button {
   transform: translate(-50%, -50%);
 }
 
-article.annonce form:last-child button {
+article.annonce > form:last-child button {
   position: absolute;
   bottom: -15px;
   font-size: 1.1em;
@@ -52,7 +52,7 @@ article.annonce form:last-child button {
 	font-weight: 600;
 }
 
-article.annonce form:last-child button:hover {
+article.annonce > form:last-child button:hover {
 	font-size: 1.2em;
 }
 
