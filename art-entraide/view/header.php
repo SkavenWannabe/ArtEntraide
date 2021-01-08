@@ -20,12 +20,14 @@
         <form class="" action="listeAnnonces.ctrl.php" method="get">
           <li><input type="search" placeholder="Rechercher une annonce" name="motcle" value=""></li>
           <li>
-              <select name="categorie">
-                <option value="none" selected>Toutes catégories</option>
-                <?php foreach ($nomCategories as $value) : ?>
-                  <option value="<?= $value ?>"><?= $value ?></option>
-                <?php endforeach; ?>
-              </select>
+              <div class="dropdown">
+                <button onclick="categorieDropDown()" class="dropbtn">Dropdown</button>
+                <div id="catDd" class="dropdown-content">
+                  <?php foreach ($nomCategorie as $nom) :?>
+                    <a href="listeAnnonces.ctrl.php?categorie=<?=$nom?>"><?=$nom?></a>
+                  <?php endforeach; ?>
+                </div>
+              </div>
           </li>
         </form>
         <form class="" action="menu.ctrl.php" method="get">
@@ -110,3 +112,25 @@
     </output>
   <?php endif; ?>
 </header>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function categorieDropDown() {
+  document.getElementById("catDd").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
