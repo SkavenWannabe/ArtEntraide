@@ -192,7 +192,7 @@ non fonctionnel :
 
   - [ ]  refaire design
 
-  - [ ]  ajout bouton signalez (renvoi éventuellement vers contactez nous)
+  - [X]  ajout bouton signalez (renvoi éventuellement vers contactez nous)
 
  \- voir plus d'annonce
 

@@ -45,18 +45,33 @@ button:not(.boutonCategorie) {
 	margin: 0.2em;
 	padding: 0.7em;
 	border-radius: 10px;
-	border: solid 2px var(--accent-color-violet);
-	color: var(--accent-color-violet);
 	font-weight: 600;
 	transition: 0.25s;
 }
 
-button:not(.boutonCategorie):hover {
+button:not(.boutonCategorie):not(.report) {
+	border: solid 2px var(--accent-color-violet);
+	color: var(--accent-color-violet);
+}
+
+button:not(.boutonCategorie):not(.report):hover {
 	box-shadow: inset 6.5em 0 0 0 var(--accent-color-violet);
 	color: white;
 	background: var(--accent-color-violet);
 	border-color: var(--accent-color-violet);
 	/* transform: translateY(-0.25em); */
+}
+
+button.report{
+	border: solid 2px FireBrick;
+	color: FireBrick;
+}
+
+button.report:hover {
+	box-shadow: inset 6.5em 0 0 0 red FireBrick;
+	color: white;
+	background: FireBrick;
+	border-color: FireBrick;
 }
 
 button.actionCritique {
