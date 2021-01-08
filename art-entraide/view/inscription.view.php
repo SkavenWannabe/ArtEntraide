@@ -23,24 +23,24 @@
 
       <form class="inscription" action="/controler/inscription.ctrl.php" method="post">
         <label for="nom">Nom <em>*</em></label>
-        <input type="text" name="nom" id="nom" required>
+        <input type="text" name="nom" id="nom" placeholder="Lagaffe" required>
 
         <label for="prenom">Prénom <em>*</em></label>
-        <input type="text" name="prenom" id="prenom" required>
+        <input type="text" name="prenom" id="prenom" placeholder="Gaston" required>
 
         <label for="p_adresse">Adresse postale</label>
-        <input type="text" name="p_adresse" id="p_adresse">
+        <input type="text" name="p_adresse" id="p_adresse" placeholder="27 rue des Exemples">
 
         <label for="email">Adresse email <em>*</em></label>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" placeholder="g.lagaffe@editions-dupuis.be" required>
 
         <label for="passwd">Mot de passe <em>*</em></label>
-        <input type="password" name="passwd" id="passwd" required>
+        <input type="password" name="passwd" id="passwd" placeholder="••••••" required>
 
         <label for="passwd">Confirmation du mot de passe <em>*</em></label>
-        <input type="password" name="passwdverif" id="passwdverif" required>
+        <input type="password" name="passwdverif" id="passwdverif" placeholder="••••••" required>
 
-        <button type="submit" name="valider">Valider</button>
+        <button type="submit" name="valider">Créer un compte</button>
       </form>
     </section>
 

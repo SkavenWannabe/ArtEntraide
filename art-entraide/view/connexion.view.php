@@ -41,10 +41,10 @@ $user : Utilisateur connecté
         <div class="">
           <form class="login" action="login.ctrl.php" method="post">
             <label for="pseudo">Adresse mail</label>
-            <input type="text" name="pseudo" id="pseudo" required>
+            <input type="text" name="pseudo" id="pseudo" placeholder="g.lagaffe@editions-dupuis.be" required>
 
             <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="password" id="password" placeholder="•••••••••••" required>
 
             <button type="submit" name="connexion">Connexion</button>
           </form>
