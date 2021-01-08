@@ -34,6 +34,14 @@ class DAO{
   }
 
   // --- Getteur --- //
+  //Getteur pour tout les utilisateurs
+  function getAllUsr() : array(){
+    $req = "SELECT * FROM utilisateur";
+    $stmt = $this->db->query($req);
+    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
+    return $return[0];
+  }
+
   // Getteur pour les utilisateurs
   function getLastIdUti() : int{
     $req = "SELECT MAX(id) FROM utilisateur";
