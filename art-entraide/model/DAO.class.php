@@ -59,7 +59,7 @@ class DAO{
       $data['adresse'] = '';
     }
 
-    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],$data['email'],$data['password'],$data['adresse']);
+    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],$data['email'],$data['password'],$data['adresse'], $data['certif']);
     return $utilisateur;
   }
 
@@ -72,7 +72,7 @@ class DAO{
       $data['adresse'] = '';
     }
 
-    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],$data['email'],$data['password'],$data['adresse']);
+    $utilisateur = new Utilisateur($data['id'],$data['nom'],$data['prenom'],$data['email'],$data['password'],$data['adresse'], $data['certif']);
     return $utilisateur;
   }
 
@@ -440,8 +440,8 @@ class DAO{
   // Sauvegarde d'un utilisateur dans la base de données
   // $utilisateur : l'utilisateur à sauvegarder
   function createUtilisateur(Utilisateur $utilisateur) {
-    $sql = "INSERT INTO Utilisateur (id,nom,prenom,email,password,adresse)
-            values (:id,:nom,:prenom,:email,:password,:adresse)";
+    $sql = "INSERT INTO Utilisateur (id,nom,prenom,email,password,adresse,certif)
+            values (:id,:nom,:prenom,:email,:password,:adresse,:certif)";
 
     $stmt = $this->db->prepare($sql);
 
@@ -451,6 +451,7 @@ class DAO{
     $adresse = $utilisateur->getAdresse();
     $email = $utilisateur->getEmail();
     $password = $utilisateur->getPassword();
+    $certif = $utilisateur->getCertif();
 
     $stmt->BindParam(':id',$id);
     $stmt->BindParam(':nom',$nom);
@@ -458,6 +459,7 @@ class DAO{
     $stmt->BindParam(':email',$email);
     $stmt->BindParam(':password',$password);
     $stmt->BindParam(':adresse',$adresse);
+    $stmt->BindParam(':asresse',$certif);
 
     $stmt->execute();
   }
@@ -471,6 +473,7 @@ class DAO{
     $email = $utilisateur->getEmail();
     $adresse = $utilisateur->getAdresse();
     $password = $utilisateur->getPassword();
+    $certif = $utilisateur->getCertif();
 
     try{
       $sql="UPDATE utilisateur
@@ -479,6 +482,7 @@ class DAO{
                 email = '$email',
                 adresse = '$adresse',
                 password = '$password',
+                certif = '$certif',
             WHERE id = '$id'";
 
       $stmt = $this->db->prepare($sql);

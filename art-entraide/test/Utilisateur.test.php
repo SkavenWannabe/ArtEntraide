@@ -7,7 +7,7 @@ require_once(__DIR__.'/../model/Utilisateur.class.php');
 try {
   // ===== création utilisateur ===== //
   print("Création d'un utilisateur : ");
-  $utilisateur = new Utilisateur(1, "4ever", "michel", TRUE, "michel.4ever@gmail.com", "2night", "bloqué dans les années 80");
+  $utilisateur = new Utilisateur(1, "4ever", "michel", "michel.4ever@gmail.com", "2night", "bloqué dans les années 80");
   print("OK\n");
 
   // ===== Test des attributs ===== //
@@ -63,11 +63,20 @@ try {
   }
 
   // --- Test certif --- //
-  $value = $utilisateur->getEmail();
-  $expected = TRUE;
+  $value = $utilisateur->getCertif();
+  $expected = false;
   if ($value != $expected) {
-    throw new Exception("Email incorrectt : $value, attendu $expected\n");
+    throw new Exception("certif incorrectt : $value, attendu $expected\n");
   }
+
+  $utilisateur->setCertif(true);
+
+  $value = $utilisateur->getCertif();
+  $expected = true;
+  if ($value != $expected) {
+    throw new Exception("certif incorrectt : $value, attendu $expected\n");
+  }
+
 
   print("OK\n");
 

@@ -44,8 +44,15 @@ if (!isset($error)) {
     $message = "Vous êtes connecté";
 
     if ($user->getCertif()){
+      print("Certif : True\n");
       $utilisateurs = $art->getAllUsr();
     }
+    else {
+      print("Cert : False\n");
+    }
+
+    print($user->getPrenom());
+    print($user->getNom());
 
   } else {
     $error[] = "Identifiant ou mot de passe incorrect.";
