@@ -25,7 +25,7 @@ $user
           <button type="submit">Voir ses annonces</button>
         </form>
 
-        <form action="controlerAdapte.ctrl.php" method="post"> <!-- TODO : changer controler -->
+        <form action="voirSesReponses.ctrl.php" method="post"> <!-- TODO : changer controler -->
           <button type="submit">Voir réponses</button>
         </form>
 
