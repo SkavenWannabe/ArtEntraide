@@ -24,7 +24,7 @@
               <div class="dropdown">
                 <button onclick="categorieDropDown()" class="dropbtn">Dropdown</button>
                 <div id="catDd" class="dropdown-content">
-                  <?php foreach ($nomCategorie as $nom) :?>
+                  <?php foreach ($nomCategories as $nom) :?>
                     <a href="listeAnnonces.ctrl.php?categorie=<?=$nom?>"><?=$nom?></a>
                   <?php endforeach; ?>
                 </div>
