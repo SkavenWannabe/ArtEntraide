@@ -5,6 +5,7 @@
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title>Nous contacter</title>
     <link rel="stylesheet" href="/view/css/master.css">
+    <link rel="stylesheet" href="/view/css/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   </head>
 
@@ -16,23 +17,23 @@
 
 
     <section>
-      <h1>Comment nous contactez ?</h1>
+      <h1>Comment nous contacter ?</h1>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Vous avez un problème à signaler, une amélioration à proposer, des critiques à exprimer, de l'aide à demander ? Écrivez-nous !<br>
+        Remplissez le formulaire ci-dessous, expliquez la situation, et nous vous répondrons par email dès que possible.
       </p>
-
       <form class="Contact" action="contact.ctrl.php" method="post">
-        <label for="sujet">Sujet</label>
-        <input type="text" name="sujet" id="sujet"><br>
+        <label for="sujet">Objet de votre message :</label><br>
+        <input type="text" name="sujet" id="sujet" size="40" placeholder="J'ai un problème..."><br>
 
-        <label for="mail">Adresse mail</label>
-        <input type="email" name="mail" id="mail"><br>
+        <label for="email">Votre adresse email :</label><br>
+        <input type="email" name="email" id="email" size="40"  placeholder="alice.smith@exemple.com"><br>
 
-        <label for="corp">Question</label><br>
-        <textarea name="question" rows="8" cols="80"></textarea><br>
+        <label for="msg">Votre message :</label><br>
+        <textarea name="message" rows="8" cols="80" id="msg" placeholder="Voici la situation ..."></textarea><br>
 
         <button type="submit" name="envoyer">Envoyer</button>
-
+      </form>
     </section>
 
     <?php include_once(__DIR__."/footer.php"); ?>

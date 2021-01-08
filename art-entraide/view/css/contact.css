@@ -1,0 +1,29 @@
+body > section {
+  width: 85%;
+}
+
+body > section > section {
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+body > section form {
+  width: 50%
+}
+
+section form label {
+  display: inline-block;
+  margin-top: 1em;
+}
+
+body > section form textarea {
+  font-family: sans-serif;
+  padding: 0.5em;
+}
+
+body > section form button {
+  margin-top: 15px !important;
+}
