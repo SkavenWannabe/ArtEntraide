@@ -23,13 +23,13 @@
 
       <form class="Contact" action="contact.ctrl.php" method="post">
         <label for="sujet">Sujet</label>
-        <input type="text" name="sujet" id="sujet">
+        <input type="text" name="sujet" id="sujet"><br>
 
         <label for="mail">Adresse mail</label>
-        <input type="email" name="mail" id="mail">
+        <input type="email" name="mail" id="mail"><br>
 
-        <label for="corp">Question</label>
-        <input type="text" name="corp" id="corp">
+        <label for="corp">Question</label><br>
+        <textarea name="question" rows="8" cols="80"></textarea><br>
 
         <button type="submit" name="envoyer">Envoyer</button>
 
