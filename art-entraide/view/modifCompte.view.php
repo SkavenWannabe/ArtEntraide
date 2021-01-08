@@ -34,7 +34,10 @@
         <label for="passwd">Confirmation du mot de passe <em>*</em></label>
         <input type="password" name="passwdverif" id="passwdverif" required>
 
-        <button type="submit" name="valider">Valider</button>
+        <div class="">
+          <a href="/controler/menu.ctrl.php?etat=profil">Annuler</a>
+          <button type="submit" name="valider">Valider</button>
+        </div>
       </form>
     </section>
 

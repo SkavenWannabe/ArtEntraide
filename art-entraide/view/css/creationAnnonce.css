@@ -42,3 +42,16 @@ form.creation_annonce > section:nth-child(2) {
 form.creation_annonce > section:nth-child(2) > div {
   width: 45%;
 }
+
+/* ==== Modif annonce ====*/
+form div.confirmation {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+form div.confirmation * {
+  width: 200px;
+}

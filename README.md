@@ -131,7 +131,7 @@ non fonctionnel :
 
   - [x]  vérification lors de suppression (compte + annonce)
 
-  - [ ]  ajout bouton annuler lors de modification
+  - [x]  ajout bouton annuler lors de modification
 
  - header :
 
