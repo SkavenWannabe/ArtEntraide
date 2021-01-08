@@ -9,8 +9,8 @@
     <a href="/controler/pagesinfos.ctrl.php?page=description">Qui sommes-nous ?</a>
     <a href="/controler/pagesinfos.ctrl.php?page=contact">Nous contacter</a>
     <a href="/controler/pagesinfos.ctrl.php?page=FAQ">F.A.Q</a>
-    <a href="#">Mentions légales</a>
-    <a href="#">Politique de confitendialité</a>
+    <a href="/controler/pagesinfos.ctrl.php?page=legal">Mentions légales</a>
+    <a href="/controler/pagesinfos.ctrl.php?page=confidentialite">Politique de confitendialité</a>
   </section>
 
   <section>
