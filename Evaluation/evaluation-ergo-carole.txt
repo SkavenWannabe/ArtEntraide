@@ -3,11 +3,18 @@
 --- Remarque :
 
 Acceuil trop petit
+augmenter un peu
+
 filtrage sur le header ; doublons, rajouter localisation
 filtrage bouton rechercher
 logo retour à l'acceuil ; acceuil au hover
+a rajouter
+
 navigation ; pas mal
 fond clair ; pas ouf => dark thème ?
+à voir, pas sur
+flat design
+
 Retour arrière relou
 Confirmation de supression
 corrcteur orthographique
