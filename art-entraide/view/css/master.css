@@ -294,3 +294,6 @@ body > footer > section > section:first-child {
 body > footer > section > section:last-child {
   text-align: right;
 }
+body > footer .icon {
+	text-decoration: none;
+}
