@@ -13,8 +13,6 @@ if ($_POST['etat'] != '') {
   $etat = '';
 }
 
-echo "etat : " .$etat;
-
 // recuperation de la categorie == none si non selectionner
 $selectCat = $_POST['categorie'];
 

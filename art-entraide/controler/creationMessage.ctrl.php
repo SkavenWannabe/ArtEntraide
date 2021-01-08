@@ -18,8 +18,13 @@ if ($_POST['contenu'] != ''){
 
 $today = date("y.m.d");
 
-// ==== PARTIE USAGE DU MODELE ==== //
+if ($_POST['id_repondeur'] != ''){
+  $id_repondeur = $_POST['contenu'];
+}else{
+  $id_repondeur = -1;
+}
 
+// ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
 
@@ -31,13 +36,15 @@ if(!isset($error)){
   //Création du nouveau message
   $id_message = $art->getLastIdMes() +1;
   $id_author = $user->getId();
-  //$id_repondeur = $art->getIdCreateur($id_annonce);
 
-  //$id_annonce = 4; $id_author = 2; // a supprimer, facilite les tests
   $message = new Message($id_message, $contenu, $today, $id_author);
-//var_dump($message);
-  $reponse = new Reponse($id_annonce, $id_author, $id_message);
-//var_dump($reponse);
+
+  if($id_repondeur == -1){
+    $reponse = new Reponse($id_annonce, $id_author, $id_message);
+  } else {
+    $reponse = new Reponse($id_annonce, $id_repondeur, $id_message);
+  }
+
   $art->createMessage($message, $reponse);
 
   //Recuperation de tout les messages échangées
