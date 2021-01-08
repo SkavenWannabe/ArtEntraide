@@ -30,4 +30,6 @@ $view->assign('nomCategories', $categories);
 $view->assign('user', $user);
 $view->assign('listeMessage',$listeMessage);
 
+$view->display('listeReponses.view.php');
+
 ?>

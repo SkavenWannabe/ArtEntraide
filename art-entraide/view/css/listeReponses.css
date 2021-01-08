@@ -1,10 +1,10 @@
-section.section_annonces > div {
+section.section_reponses > div {
   display: flex;
   flex-wrap: wrap;
 	margin: 0px 20%;
 }
 
-article.annonce {
+article.reponse {
   position: relative;
   border: solid 2px var(--accent-color-vert);
   border-radius: 15px;
@@ -14,22 +14,11 @@ article.annonce {
   flex: 1 0 40%;
 }
 
-article.annonce > header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-article.annonce > header > img {
-  width: 40px;
-  margin-right: 20px;
-}
-
-article.annonce h2 {
+article.reponse h2 {
   text-decoration: underline;
 }
 
-article.annonce footer form button {
+article.reponse > form button {
   margin: 0;
   position: absolute;
   left: 50%;
@@ -37,7 +26,7 @@ article.annonce footer form button {
   transform: translate(-50%, -50%);
 }
 
-article.annonce form:last-child button {
+article.reponse > form:last-child button {
   position: absolute;
   bottom: -15px;
   font-size: 1.1em;
@@ -52,11 +41,11 @@ article.annonce form:last-child button {
 	font-weight: 600;
 }
 
-article.annonce form:last-child button:hover {
+article.reponse > form:last-child button:hover {
 	font-size: 1.2em;
 }
 
-article.annonce > p.date {
+article.reponse > p.date {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -68,20 +57,20 @@ article.annonce > p.date {
 	color: white;
 }
 
-section.section_annonces > form {
+section.section_reponses > form {
 	margin: 20px 0px;
 	position: relative;
 	height: 1em;
 }
 
-section.section_annonces > form > button {
+section.section_reponses > form > button {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 600px){
-  section.section_annonces > div {
+  section.section_reponses > div {
     margin: 0px 0%;
   }
 }
