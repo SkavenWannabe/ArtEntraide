@@ -1,0 +1,58 @@
+===== Evaluation ergo =====
+
+--- Remarque :
+Pas de suite aux liens donc je sais pas comment ça s'enchaine
+Il reste des idées écrites pas changé en phrase comme quand on s'inscrit, il y a écrit sur la gauche de manière random "raison 1, raison 2, raison 3" sans qu'on puisse interagir avec
+Quand on créer un compte il y a écrit tt en haut a gauche de la page, "etat creation" de maniere tres moche.
+Le site est sobre et forcement un peu vide de mon point de vu, vu que les pages ne s'ouvre pas sur les recherches ce qui je suppose est logique vu qu'il n'y a pas de base de donnée
+Juste en dessous du titre il y a un onglet "acceuil" pour nous dire qu'on est sur l'acceuil mais il ne semble pas avoir d'autre onglet possible quoi qu'on fasse donc est il bien utile?
+Quand on a créé notre compte ça écrit "votre compte est créer" c'est surement du chipotage mais c'est créé pas créer et perso je trouve ça plus logique qu'on nous dise "a été créé"
+Quand on créer notre annonce il y a écrit "quel est la catégorie de votre annonce" c'est "Quelle"
+La rubrique "nous contacter" invoque Satan en latin
+Le rectangle des question a poser est tres petit
+Le backforward doit etre spam pour marcher
+Pas de politique de confidentialité
+Pas de mention légales
+Quand on supprime son compte, le message de suppression reste même après refresh
+
+Sinon vraiment super idée et le site
+-- Bug
+Pas de bug vu
+
+
+--- Bastien & scapin :
+
+Guidage :
+  incitation - 8/10
+  Groupement/distinction - 9/10
+  Freedback immédiat - ?/10
+  Lisibilité - 8/10 (acceuil/fond blanc)
+
+Contrôle explicité :
+  7/10
+
+Gestion des erreurs :
+  protection - ?/10
+  Qualité des messages - 8/10
+  Corriger - ?/10
+
+Charge de travail :
+  Limiter le nombre d'étapes - 8/10
+  Densité informationnelle - ?/10
+
+Sigifiance des codes et dénominations :
+  Codage - ?/10
+  Vocabulaire - ?/10
+
+Homogénéité/Cohérence :
+  Stabilité - 7/10
+  Terminologie constante - 9/10
+  Prise de décision -
+
+Compatibilité :
+  Accord entre les caractéristiques de l'utilisateur et la tâche - 8/10
+  Accord entre l'organisation des sorties, des entrées et les dialogue - ?/10
+
+Adaptabilité :
+  Flexibilité - 2/10
+  Expérience utilisateur - 6/10

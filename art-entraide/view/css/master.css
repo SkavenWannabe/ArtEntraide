@@ -21,14 +21,21 @@ body {
   font-family: sans-serif;
   margin: 0;
 	font-family: 'Open Sans', sans-serif;
+	color: #212121;
+	background-color: #F5F5F5;
 }
 
 a {
-  color: #6c6c6c;
+  color: #212121;
 }
 
 button {
 	cursor: pointer;
+}
+
+textarea {
+	font-family: 'Roboto Slab', serif;
+	font-size: 1em;
 }
 
 button:not(.boutonCategorie) {
@@ -97,9 +104,13 @@ header > div > nav ul li {
 	margin: 5px;
 }
 
-header > div > nav ul li:first-child {
+header > div > nav ul li:first-of-type {
 	flex-grow: 1;
 	margin-left: 20px;
+}
+
+header > div > nav ul li:first-of-type input{
+	width: 80%;
 }
 
 header > div > nav ul form {
@@ -109,15 +120,12 @@ header > div > nav ul form {
 	justify-content: flex-end;
 }
 
-header > nav ul li {
-  width: 100%;
-}
-
 nav.ariane {
 	background-color: #DDDDDD;
 }
 
 nav.ariane ul {
+	display: flex;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
@@ -157,19 +165,16 @@ nav.ariane ul li:before {
 	padding: 10px;
 }
 
-body section{
-  width: 95%;
-  margin: auto;
-}
-
 body > section {
 	min-height: 72vh;
+	width: 95%;
+  margin: auto;
 }
 
 /*=========== FOOTER ===========*/
 
 body > footer {
-  padding: 0px 15px;
+  padding: 0px 50px;
   background-color: #DDDDDD;
 }
 
@@ -184,6 +189,14 @@ body > footer > header p {
   margin: 5px 0px;
   flex: 1 0 9.375em;
 }
+
+body > footer > header a {
+	display: flex;
+	align-items: flex-end;
+}
+
+body > footer > header a img {
+	width: 21px;
 
 body > footer > section {
   display: flex;

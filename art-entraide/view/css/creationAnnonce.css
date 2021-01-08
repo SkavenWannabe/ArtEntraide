@@ -32,6 +32,7 @@ form.creation_annonce textarea {
 
 form.creation_annonce > section:nth-child(2) {
   width: 80%;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

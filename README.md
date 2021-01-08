@@ -123,13 +123,13 @@ id_message clé étrangère de Message
 non fonctionnel :
  - global :
 
-  - [ ]  mettre la police en gris plutôt que noir
+  - [x]  mettre la police en gris plutôt que noir
 
-  - [ ]  fond en blanc cassé plutôt que blanc
+  - [x]  fond en blanc cassé plutôt que blanc
 
-  - [ ]  page trop grande !
+  - [x]  page trop grande !
 
-  - [ ]  vérification lors de suppression (compte + annonce)
+  - [x]  vérification lors de suppression (compte + annonce)
 
   - [ ]  ajout bouton annuler lors de modification
 
@@ -139,15 +139,15 @@ non fonctionnel :
 
   - [ ] gestion de la liste catégorie (transfo en bouton / utiliter ?)
 
-  - [ ]  bar de recherche en plus long
+  - [x]  bar de recherche en plus long
 
-  - [ ]  fil d’Ariane
+  - [x]  fil d’Ariane
 
  - page accueil :
 
-  - [ ]  titre annonce souligner, mettre le lien pour cliquer
+  - [x]  titre annonce souligner, mettre le lien pour cliquer
 
-  - [ ]  clique sur catégorie sous une annonce - recherche ou non ?
+  - [x]  clique sur catégorie sous une annonce - recherche ou non ?
 
 - footer :
 
@@ -155,7 +155,7 @@ non fonctionnel :
 
   - [ ]  refaire design (aligner + rajout barre)
 
-  - [ ]  haut de page - mettre une image
+  - [x]  haut de page - mettre une image
 
   - [ ]  fb + insta mettre image + savoir a quoi on renvoi
 
@@ -174,7 +174,7 @@ non fonctionnel :
 
   - [ ]  faire rédaction de la page
 
-  - [ ]  password pas passwd
+  - [x]  password pas passwd
 
  \- création annonce
 
@@ -202,14 +202,16 @@ non fonctionnel :
 
  \- voir ses annonce
 
-  - [ ]  mettre un petit mot quand il n'y a pas d'annonce
+  - [x]  mettre un petit mot quand il n'y a pas d'annonce
 
  \- conversation
 
-  - [ ]  design a changer
+  - [x]  design a changer
 
-  - [ ]  paragraphe au lieu d'une ligne
+  - [x]  paragraphe au lieu d'une ligne
 
  \- voir réponses à faire
 
- \- suppression compte ne fonctionne pas
+ \- suppression compte
+
+  - [x] ne fonctionne pas

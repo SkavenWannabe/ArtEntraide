@@ -26,6 +26,8 @@ $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
 
 //recuperation temporaire, futur recupération en fonction d'un nombre de page
+// a tester avec getPageRef($page, $pageSize);
+// mettre $pageSize en $_SESSION['pageSize'] + recuperation $page dans la vue
 $i = 0;
 while($last >= $min && $i < 10) {
     $annonces[] = $art->getAnnonce($last);

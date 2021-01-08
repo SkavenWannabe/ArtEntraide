@@ -21,6 +21,7 @@ $nomCategorie = nom de la catégorie de l'annonce
     <title><?= $annonce->getNom() ?></title>
     <link rel="stylesheet" href="/view/css/master.css">
     <link rel="stylesheet" href="/view/css/detailAnnonce.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -61,7 +62,7 @@ $nomCategorie = nom de la catégorie de l'annonce
             <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
           </form>
 
-          <form action="supprimerAnnonce.ctrl.php" method="get">
+          <form action="supprimerAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment supprimer votre annonce ?\n Cette action est irréversible.');>
             <button class="actionCritique" type="submit">Supprimer l'annonce</button>
             <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
           </form>

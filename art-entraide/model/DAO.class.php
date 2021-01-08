@@ -134,7 +134,7 @@ class DAO{
 
   //recuperation des annonces affiché à l'accueil
   function getAnnonceAccueil(){
-    $req = "SELECT * FROM annonce where est_active is true LIMIT 4";
+    $req = "SELECT * FROM annonce where est_active is true ORDER BY id DESC LIMIT 4";
     $sth = $this->db->query($req);
     $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -162,6 +162,21 @@ class DAO{
     }
 
     return $annonce;
+  }
+
+  function getPageRef(int $page, int $pageSize){
+    $return = array();
+    $ind = ($page -1) * $pageSize;
+    $max = $this->getLastIdAnnonce();
+
+    $req = "SELECT * FROM annonce";
+    $stmt = $this->db->query($req)->fetchAll();
+
+    for($i = $ind; $i < $ind+$pageSize && $i < $max; $i++){
+      $return[] = $stmt[$i][0];
+    }
+
+    return $return;
   }
 
   //recupère une liste d'annonce en fonction d'une categorie - permet de trier les annonces
@@ -403,8 +418,17 @@ class DAO{
     $sql = "DELETE from message WHERE id_auteur='$id'";
     $this->db->exec($sql);
 
-    $sql = "DELETE from annonce WHERE id_createur='$id'";
-    $this->db->exec($sql);
+    $req = "SELECT * from annonce WHERE id_createur='$id'";
+    $sth = $this->db->query($req);
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($datas as $data) {
+      $id_annonce = $data['id'];
+      $annonce = $this->getAnnonce($id_annonce);
+      $this->deleteAnnonce($annonce);
+    }
+
+    //$sql = "DELETE from annonce WHERE id_createur='$id'";
+    //$this->db->exec($sql);
 
     $sql = "DELETE from utilisateur WHERE id='$id'";
     $this->db->exec($sql);

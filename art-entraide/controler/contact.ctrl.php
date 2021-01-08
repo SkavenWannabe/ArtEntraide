@@ -42,7 +42,7 @@ $nomCategories = $_SESSION['nomCategories'];
 
 if (!isset($error)) {
   $annonces = $art->getAnnonceAccueil();
-  $message = "Votre message à bien été pris en compte";
+  $message = "Votre message a bien été pris en compte";
 }
 
 // Fermer la session
