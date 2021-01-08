@@ -19,6 +19,7 @@
       <ul>
         <form class="" action="listeAnnonces.ctrl.php" method="get">
           <li><input type="search" placeholder="Rechercher une annonce" name="motcle" value=""></li>
+        </form>
           <li>
               <div class="dropdown">
                 <button onclick="categorieDropDown()" class="dropbtn">Dropdown</button>
@@ -29,7 +30,6 @@
                 </div>
               </div>
           </li>
-        </form>
         <form class="" action="menu.ctrl.php" method="get">
           <?php if ($user == NULL): ?>
             <li><button type="submit" name="etat" value="connexion">Se connecter</button></li>
