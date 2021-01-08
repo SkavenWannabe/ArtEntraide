@@ -1,6 +1,7 @@
 ===== Evaluation ergo =====
 
 --- Remarque :
+
 Pas de suite aux liens donc je sais pas comment ça s'enchaine
 Il reste des idées écrites pas changé en phrase comme quand on s'inscrit, il y a écrit sur la gauche de manière random "raison 1, raison 2, raison 3" sans qu'on puisse interagir avec
 Quand on créer un compte il y a écrit tt en haut a gauche de la page, "etat creation" de maniere tres moche.
