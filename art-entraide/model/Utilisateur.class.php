@@ -28,8 +28,8 @@ class Utilisateur{
     $this->nom = $nom;
     $this->prenom = $prenom;
 
-//    $this->reputation = 0;
-//    $this->certif = false;
+    $this->reputation = 0;
+    $this->certif = false;
 
     $this->email = $email;
     $this->password = $password;

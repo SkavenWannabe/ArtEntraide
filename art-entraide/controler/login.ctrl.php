@@ -43,8 +43,8 @@ if (!isset($error)) {
 
     $message = "Vous êtes connecté";
 
-    if ($user.getCertif()){
-      $utilisateurs = $art.getAllUsr();
+    if ($user->getCertif()){
+      $utilisateurs = $art->getAllUsr();
     }
 
   } else {
@@ -64,20 +64,21 @@ session_write_close();
 $view = new View();
 
 if (!isset($error) && $connected) {
-  $view->assign('message', $message);
-  $view->assign('connecter', $connected);
-  $view->assign('annonces', $annonces);
-  //information nécessaire pour le header
-  $view->assign('nomCategories', $categories);
-  $view->assign('user', $user);
-  $view->display("accueil.view.php");
-
-}
-elseif (condition) {
-  $view->assign('message', $message);
-  $view->assign('user', $user);
-  $view->assign('utilisateurs', $utilisateurs);
-  $view->display("certif.view.php");
+  if ($user->getCertif()) {
+    $view->assign('message', $message);
+    $view->assign('user', $user);
+    $view->assign('utilisateurs', $utilisateurs);
+    $view->display("certif.view.php");
+  }
+  else {
+    $view->assign('message', $message);
+    $view->assign('connecter', $connected);
+    $view->assign('annonces', $annonces);
+    //information nécessaire pour le header
+    $view->assign('nomCategories', $categories);
+    $view->assign('user', $user);
+    $view->display("accueil.view.php");
+  }
 }
 else {
   $view->assign('error',$error);
