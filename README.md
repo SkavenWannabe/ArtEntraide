@@ -137,7 +137,7 @@ non fonctionnel :
 
  - [x]  recherche annonce (renvoie pas au bon endroit)
 
-  - [ ] gestion de la liste catégorie (transfo en bouton / utiliter ?)
+  - [x] gestion de la liste catégorie (transfo en bouton / utiliter ?)
 
   - [x]  bar de recherche en plus long
 
