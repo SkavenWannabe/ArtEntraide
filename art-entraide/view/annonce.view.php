@@ -51,6 +51,11 @@ $nomCategorie = nom de la catégorie de l'annonce
             <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
             <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
           </form>
+
+          <form class="" action="/controler/pagesinfos.ctrl.php" method="get">
+            <button class="report" type="submit" name="action" value="repondre">Signaler</button>
+            <input type="hidden" name="page" value="contact">
+          </form>
         <?php endif; ?>
 
       </div>
