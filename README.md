@@ -135,7 +135,7 @@ non fonctionnel :
 
  - header :
 
- - [ ]  recherche annonce (renvoie pas au bon endroit)
+ - [x]  recherche annonce (renvoie pas au bon endroit)
 
   - [ ] gestion de la liste catégorie (transfo en bouton / utiliter ?)
 
@@ -167,7 +167,7 @@ non fonctionnel :
 
   - [ ]  connexion avec google
 
-  - [ ]  bouton "ici" renvoie page accueil
+  - [x]  bouton "ici" renvoie page accueil
    plutôt création de compte
 
  \- création compte :
@@ -178,7 +178,7 @@ non fonctionnel :
 
  \- création annonce
 
-  - [ ]  changer font détails + block texte pas aligné
+  - [x]  changer font détails + block texte pas aligné
 
   - [x]  date a rendre non obligatoire
 
