@@ -13,7 +13,8 @@ if ($_GET['etat'] != '') {
   $etat = '';
 }
 
-echo "etat : " .$etat;
+// recuperation de la categorie == none si non selectionner
+$selectCat = $_POST['categorie'];
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();

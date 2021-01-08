@@ -15,14 +15,14 @@
     </a>
       <!-- <h1>L'art de l'entraide</h1> -->
     <!-- </div> -->
-    <nav>
+    <nav class="headerbar">
       <ul>
         <form class="" action="listeAnnonces.ctrl.php" method="get">
           <li><input type="search" placeholder="Rechercher une annonce" name="motcle" value=""></li>
         </form>
           <li>
               <div class="dropdown">
-                <button onclick="categorieDropDown()" class="dropbtn">Dropdown</button>
+                <button onclick="categorieDropDown()" class="dropbtn">Catégories</button>
                 <div id="catDd" class="dropdown-content">
                   <?php foreach ($nomCategories as $nom) :?>
                     <a href="listeAnnonces.ctrl.php?categorie=<?=$nom?>"><?=$nom?></a>
