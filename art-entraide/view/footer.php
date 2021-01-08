@@ -17,7 +17,7 @@
     <h3>Suivez nous</h3>
 
     <a class="icon" href="https://twitter.com/">
-     <img alt="Twitter" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Famysmartalpha.files.wordpress.com%2F2013%2F03%2Ftwitter_logo_volt.png&f=1&nofb=1"
+     <img alt="Twitter" src="/view/design/Réseaux sociaux logos/Twitter_Logo_Blue.svg"
      width="35" height="30">
    </a>
 
@@ -27,7 +27,7 @@
    </a>
 
     <a class="icon" href="https://www.instagram.com/">
-     <img alt="Instagram" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe7%2FInstagram_logo_2016.svg%2F1200px-Instagram_logo_2016.svg.png&f=1&nofb=1"
+     <img alt="Instagram" src="/view/design/Réseaux sociaux logos/f_logo_RGB-Blue_1024.png"
      width="30" height="30">
    </a>
 
