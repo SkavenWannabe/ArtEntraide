@@ -7,16 +7,13 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-if ($_POST['etat'] != '') {
-  $etat = $_POST['etat'];
+if ($_GET['etat'] != '') {
+  $etat = $_GET['etat'];
 }else{
   $etat = '';
 }
 
 echo "etat : " .$etat;
-
-// recuperation de la categorie == none si non selectionner
-$selectCat = $_POST['categorie'];
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
@@ -24,14 +21,6 @@ $art = new DAO();
 
 if (!isset($_SESSION['connected'])){
   $_SESSION['connected'] = false;
-}
-
-
-if ($selectCat != "none"){
-  //echo "pas select";
-} else {
-  //echo " cat select = " .$selectCat;
-
 }
 
 

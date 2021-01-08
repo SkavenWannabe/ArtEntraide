@@ -91,6 +91,8 @@ nav {
 }
 
 header > div > nav ul {
+	display: flex;
+	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
 	text-align: right;
@@ -104,20 +106,27 @@ header > div > nav ul li {
 	margin: 5px;
 }
 
-header > div > nav ul li:first-of-type {
+header > div > nav ul form {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: row;
+	align-items: center;
+}
+
+/* Search bar */
+header > div > nav ul form:first-of-type {
 	flex-grow: 1;
 	margin-left: 20px;
 }
 
-header > div > nav ul li:first-of-type input{
-	width: 80%;
+header > div > nav ul li:first-of-type, header > div > nav ul li:first-of-type input {
+	width: 85%;
 }
 
-header > div > nav ul form {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: flex-end;
+/* Bouton créer un compte */
+header > div > nav ul form:last-of-type li:last-of-type button {
+	min-width: 160px;
 }
 
 nav.ariane {

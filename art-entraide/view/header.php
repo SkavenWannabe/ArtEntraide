@@ -17,8 +17,8 @@
     <!-- </div> -->
     <nav>
       <ul>
-        <form class="" action="menu.ctrl.php" method="post">
-          <li><input type="search" placeholder="Rechercher une annonce" name="" value=""></li>
+        <form class="" action="listeAnnonces.ctrl.php" method="get">
+          <li><input type="search" placeholder="Rechercher une annonce" name="motcle" value=""></li>
           <li>
               <select name="categorie">
                 <option value="none" selected>Toutes catégories</option>
@@ -27,6 +27,8 @@
                 <?php endforeach; ?>
               </select>
           </li>
+        </form>
+        <form class="" action="menu.ctrl.php" method="get">
           <?php if ($user == NULL): ?>
             <li><button type="submit" name="etat" value="connexion">Se connecter</button></li>
             <li><button type="submit" name="etat" value="creation">Créer un compte</button></li>
@@ -76,14 +78,14 @@
         <li>Modification de <?= $annonce->getNom() ?></li>
         <?php break; ?>
 <?php case "modifCompte.view.php": ?>
-        <li>Profil</li>
+        <li><a href="/controler/menu.ctrl.php?etat=profil">Profil</a></li>
         <li>Modification de mon profil</li>
         <?php break; ?>
 <?php case "profil.view.php": ?>
         <li>Profil</li>
         <?php break; ?>
 <?php case "sesAnnonces.view.php": ?>
-        <li>Profil</li>
+        <li><a href="/controler/menu.ctrl.php?etat=profil">Profil</a></li>
         <li>Voir ses annonces</li>
       <?php endswitch; ?>
 
