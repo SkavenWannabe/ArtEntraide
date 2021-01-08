@@ -151,13 +151,13 @@ non fonctionnel :
 
 - footer :
 
-  - [ ]  page mention légal + politique de confidentialité
+  - [X]  page mention légal + politique de confidentialité
 
   - [ ]  refaire design (aligner + rajout barre)
 
   - [x]  haut de page - mettre une image
 
-  - [ ]  fb + insta mettre image + savoir a quoi on renvoi
+  - [X]  fb + insta mettre image + savoir a quoi on renvoi
 
  - nous contacter
 
