@@ -88,6 +88,7 @@ body > header {
 
 nav {
   flex-grow: 1;
+	padding: 0.6em 5%;
 }
 
 header > div > nav ul {
