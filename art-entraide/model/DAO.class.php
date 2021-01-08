@@ -35,7 +35,7 @@ class DAO{
 
   // --- Getteur --- //
   //Getteur pour tout les utilisateurs
-  function getAllUsr() : array(){
+  function getAllUsr() {
     $req = "SELECT * FROM utilisateur";
     $stmt = $this->db->query($req);
     $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
