@@ -66,9 +66,19 @@ class DAO{
   //Getteur pour tout les utilisateurs
   function getAllUsr() {
     $req = "SELECT * FROM utilisateur";
-    $stmt = $this->db->query($req);
-    $return = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $return;
+    $sth = $this->db->query($req);
+
+    $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    //set les valeurs qui peuvent être NULL
+    foreach ($datas as $data) {
+      if ($data['adresse'] === NULL) {
+        $data['adresse'] = '';
+      }
+      $utilisateurs[] = new Utilisateur($data['id'],$data['nom'],$data['prenom'],$data['email'],$data['password'],$data['adresse'], $data['certif']);
+
+    }
+    return $utilisateurs;
   }
 
   // Getteur du dernier id d'utilisateur
@@ -518,7 +528,11 @@ class DAO{
     $email = $utilisateur->getEmail();
     $adresse = $utilisateur->getAdresse();
     $password = $utilisateur->getPassword();
-    $certif = $utilisateur->getCertif();
+    $certif = $utilisateur->getCertif();//oui il renvoie 1 donc true donc c'est bon
+
+    if (!$certif) {
+      $certif = 0;
+    }
 
     try{
       $sql="UPDATE utilisateur
@@ -527,12 +541,12 @@ class DAO{
                 email = '$email',
                 adresse = '$adresse',
                 password = '$password',
-                certif = '$certif',
+                certif = '$certif'
             WHERE id = '$id'";
 
       $stmt = $this->db->prepare($sql);
       $stmt->execute();
-      echo $stmt->rowCount() . " records UPDATED successfully";
+      //echo $stmt->rowCount() . " records UPDATED successfully";
 
     }catch(PDOException $e){
       echo $sql ."<br>" . $e->getMessage();

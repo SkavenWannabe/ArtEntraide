@@ -33,12 +33,28 @@ $utilisateurs = array de tout les utilisateurs
                 else {
                   print("Non");
                 }
-              ?>
+              ?><br>
               Prenom : <?= $value->getPrenom()?><br>
               Nom : <?= $value->getNom()?><br>
               Email : <?= $value->getEmail()?><br>
               Adresse : <?= $value->getAdresse()?><br>
             </p>
+
+            <?php if ($value->getCertif()): ?>
+              <form class="" action="/controler/certif.ctrl.php" method="post" onsubmit="return confirm('Voulez vous vraiment enlever la certification de cette utilisateur ?');">
+                <button class="actionCritique" type="submit" name="action" value="suppCertif">Enlever certification</button>
+                <input type="hidden" name="idUsr" value="<?=$value->getId() ?>">
+              </form>
+            <?php endif; ?>
+
+            <?php if (!($value->getCertif())): ?>
+            <form class="" action="/controler/certif.ctrl.php" method="post" onsubmit="return confirm('Voulez vous vraiment certifier cette utilisateur ?');">
+              <button type="submit" name="action" value="addCertif">Certifier</button>
+              <input type="hidden" name="idUsr" value="<?=$value->getId() ?>">
+            </form>
+            <?php endif; ?>
+
+
           </article>
         <?php endforeach;?>
       </div>

@@ -43,7 +43,6 @@ if (!isset($error)) {
       $user = $art->getCertifMail($email);
 
       $utilisateurs = $art->getAllUsr();
-      var_dump($utilisateurs);
     }
 
     //Nécessaire à l'affichage des annonces une foi connecté
