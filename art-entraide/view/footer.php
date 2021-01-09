@@ -37,15 +37,15 @@
       <h3>Suivez nous</h3>
       <div class="reseaux">
         <a class="icon" href="https://twitter.com/">
-          <img alt="Twitter" src="/view/design/Réseaux sociaux logos/Twitter_Logo_Blue.svg"
+          <img alt="Twitter" src="/view/design/Reseaux-sociaux-logos/Twitter_Logo_Blue.svg"
            width="35" height="30">
         </a>
         <a class="icon" href="https://www.facebook.com/">
-         <img alt="Facebook" src="/view/design/Réseaux sociaux logos/f_logo_RGB-Blue_1024.png"
+         <img alt="Facebook" src="/view/design/Reseaux-sociaux-logos/facebook.png"
          width="30" height="30">
         </a>
         <a class="icon" href="https://www.instagram.com/">
-         <img alt="Instagram" src="/view/design/Réseaux sociaux logos/external-content.duckduckgo.com.png"
+         <img alt="Instagram" src="/view/design/Reseaux-sociaux-logos/instagram.png"
          width="30" height="30">
         </a>
       </div>
