@@ -413,7 +413,6 @@ class DAO{
 
     //recuperation de tout les messages sur ses annonces
     $annonce = $this->getSesAnnonce($utilisateur);
-
     foreach ($annonce as $value) {
       $idA = $value->getId();
 
@@ -441,6 +440,7 @@ class DAO{
         $inter[3] = $auteur->getNom();
         $inter[4] = $idA;
         $inter[5] = $idR;
+        $inter[6] = $auteur->getNom();
 
         $return[] = $inter;
       }
@@ -469,12 +469,15 @@ class DAO{
 
         $auteur = $this->getUtilisateur($message->getIdAuteur());
 
+        $auteurAnnonce = $this->getUtilisateur($an->getIdCreateur())->getNom();
+
         $inter[0] = $an;
         $inter[1] = $message;
         $inter[2] = $auteur->getPrenom();
         $inter[3] = $auteur->getNom();
         $inter[4] = $idA;
         $inter[5] = $idU;
+        $inter[6] = $auteurAnnonce;
 
         $return[] = $inter;
       }
@@ -554,8 +557,7 @@ class DAO{
       $stmt->BindParam(':password',$password);
       $stmt->BindParam(':adresse',$adresse);
       $stmt->BindParam(':certif',$certif);
-      
-var_dump($stmt);
+
       $stmt->execute();
       //echo $stmt->rowCount() . " records UPDATED successfully";
 

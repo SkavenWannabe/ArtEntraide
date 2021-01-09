@@ -19,7 +19,6 @@ $categories = $_SESSION['nomCategories'];
 // pour chaque annonce + pour chaque utilisateur ayant répondu
 //    liste[nomAnnonce][message]
 $listeMessage = $art->getSesDiscussion($user);
-//var_dump($listeMessage);
 
 session_write_close();
 

@@ -21,7 +21,7 @@
 
     <section>
 
-      <h2>Conversation avec <?= $nomDestinataire ?> pour l'annonce <?= $annonce->getNom() ?></h2>
+      <h2>Conversation avec <?= $nomDestinataire ?> - annonce :  <?= $annonce->getNom() ?></h2>
 
 
       <section class="section_messages">

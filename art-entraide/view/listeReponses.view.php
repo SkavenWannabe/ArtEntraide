@@ -20,11 +20,11 @@
         <?php foreach ($listeMessage as $message): ?>
           <article class="reponse">
             <header>
-              <h2><?= $message[0]->getNom() ?></h2> <!--Nom de l'annonce-->
-              <h3><?= $message[2] ?> <?= $message[3] ?></h3> <!--Prénom Nom du mec-->
+              <h3>Annonce de <?= $message[6] ?> : <?= $message[0]->getNom() ?></h3>
+              <p><b>Description :</b> <?= mb_substr($message[0]->getDescription(),0,100,"utf-8")?> <?php if(strlen($message[0]->getDescription()) > 100){ echo"...";}  ?></p></br>
             </header>
 
-            <p><?= $message[1]->getContenue() ?></p> <!-- Actual message -->
+            <p><b><?= $message[2] ?> <?= $message[3] ?> </b>: <?= $message[1]->getContenue() ?></p> <!--Prénom Nom du mec + contenu-->
 
             <footer>
               <form class="" action="reponseAnnonce.ctrl.php" method="get">
@@ -40,7 +40,7 @@
                     <button type="submit" name="action" value="repondre">Valider</button>
                   </form>
                 <?php else: ?>
-                  <button type="submit">Déjà Valider</button>
+                  <button>Déjà Valider</button>
                 <?php endif; ?>
               <?php endif; ?>
             </footer>
