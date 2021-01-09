@@ -31,7 +31,9 @@ $user
 
         <p>Nom : <?= $user->getNom() ?> <?= $user->getPrenom() ?></p>
         <p>Adresse mail : <?= $user->getEmail() ?></p>
-        <p>Adresse postale : <?= $user->getAdresse() ?></p>
+        <?php if (!($user instanceof Certificateur)): ?>
+          <p>Adresse postale : <?= $user->getAdresse() ?></p>
+        <?php endif; ?>
 
         <form action="deconnexion.ctrl.php" method="get">
           <button type="submit" name="deconnexion">Se déconnecter</button>
