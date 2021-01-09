@@ -38,7 +38,7 @@ if(!isset($error)){
   $id_author = $user->getId();
 
   $message = new Message($id_message, $contenu, $today, $id_author);
-  
+
   if($id_repondeur == -1){
     $reponse = new Reponse($id_annonce, $id_author, $id_message);
   } else {
@@ -80,6 +80,7 @@ $view = new View();
 $view->assign('annonce', $theAnnonce);
 $view->assign('nomDestinataire',$nomDestinataire);
 $view->assign('messages',$messages);
+
 //information nécessaire pour le header
 $view->assign('nomCategories', $categories);
 $view->assign('user', $user);

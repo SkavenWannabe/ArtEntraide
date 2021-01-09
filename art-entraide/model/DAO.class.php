@@ -323,8 +323,7 @@ class DAO{
   //pour l'utilisateur en cours, lui permet de voir ses annonces encore active
   function getSesAnnonce(Utilisateur $utilisateur){
     $id_crea = $utilisateur->getId();
-    $req = "SELECT * FROM annonce where est_active is true
-                                    AND id_createur = '$id_crea'
+    $req = "SELECT * FROM annonce where id_createur = '$id_crea'
                                     ORDER BY id DESC";
     $sth = $this->db->query($req);
     $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -436,7 +435,7 @@ class DAO{
         $message = $stm->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Message')[0];
 
         $auteur = $this->getUtilisateur($message->getIdAuteur());
-        $inter[0] = $value->getNom();
+        $inter[0] = $value;
         $inter[1] = $message;
         $inter[2] = $auteur->getPrenom();
         $inter[3] = $auteur->getNom();
@@ -470,7 +469,7 @@ class DAO{
 
         $auteur = $this->getUtilisateur($message->getIdAuteur());
 
-        $inter[0] = $an->getNom();
+        $inter[0] = $an;
         $inter[1] = $message;
         $inter[2] = $auteur->getPrenom();
         $inter[3] = $auteur->getNom();
@@ -525,29 +524,37 @@ class DAO{
   // Mise à jour d'un Utilisateur
   // $utilisateur : l'utilisateur à mettre à jour
   function updateUtilisateur(Utilisateur $utilisateur) {
-    $id = $utilisateur->getId();
-    $nom = $utilisateur->getNom();
-    $prenom = $utilisateur->getPrenom();
-    $email = $utilisateur->getEmail();
-    $adresse = $utilisateur->getAdresse();
-    $password = $utilisateur->getPassword();
-    $certif = $utilisateur->getCertif();
-
-    if (!$certif) {
-      $certif = 0;
-    }
-
     try{
       $sql="UPDATE utilisateur
-            SET nom = '$nom',
-                prenom = '$prenom',
-                email = '$email',
-                adresse = '$adresse',
-                password = '$password',
-                certif = '$certif'
-            WHERE id = '$id'";
+            SET nom = :nom,
+                prenom = :prenom,
+                email = :email,
+                adresse = :adresse,
+                password = :password,
+                certif = :certif
+            WHERE id = :id";
 
       $stmt = $this->db->prepare($sql);
+
+      $id = $utilisateur->getId();
+      $nom = $utilisateur->getNom();
+      $prenom = $utilisateur->getPrenom();
+      $email = $utilisateur->getEmail();
+      $adresse = $utilisateur->getAdresse();
+      $password = $utilisateur->getPassword();
+      $certif = $utilisateur->getCertif();
+
+      if (!$certif) {
+        $certif = 0;
+      }
+
+      $stmt->BindParam(':id',$id);
+      $stmt->BindParam(':nom',$nom);
+      $stmt->BindParam(':prenom',$prenom);
+      $stmt->BindParam(':email',$email);
+      $stmt->BindParam(':password',$password);
+      $stmt->BindParam(':adresse',$adresse);
+
       $stmt->execute();
       //echo $stmt->rowCount() . " records UPDATED successfully";
 
@@ -627,32 +634,44 @@ class DAO{
   // Mise à jour d'une annonce
   // $annonce : l'annonce à mettre à jour
   function updateAnnonce(Annonce $annonce) {
-    $id = $annonce->getId();
-
-    $nom = $annonce->getNom();
-    $description = $annonce->getDescription();
-    $adresse = $annonce->getAdresse();
-    $date_service = $annonce->getDateService();
-    $id_categorie = $annonce->getCategorie()->getId();
-    $est_active = $annonce->getEstActive();
-    $est_demande = $annonce->getEstDemande();
-
-    if (!$est_active) {
-      $est_active = 0;
-    }
-
     try{
-      $sql="UPDATE annonce
-            SET nom = '$nom',
-                description= '$description',
-                adresse = '$adresse',
-                date_service = '$date_service',
-                id_categorie = '$id_categorie',
-                est_demande = '$est_demande',
-                est_active = $est_active
-            WHERE id = '$id'";
+      $sql = "UPDATE annonce
+              SET nom = :nom,
+                  description = :description,
+                  adresse = :adresse,
+                  date_service = :date_service,
+                  id_categorie = :id_categorie,
+                  est_active = :est_active,
+                  est_demande = :est_demande
+              where id = :id";
 
-      $stmt = $this->db->prepare($sql); var_dump($stmt);
+      $stmt = $this->db->prepare($sql);
+
+      $id = $annonce->getId();
+      $nom = $annonce->getNom();
+      $description = $annonce->getDescription();
+      $adresse = $annonce->getAdresse();
+      $date_service = $annonce->getDateService();
+      if($date_service == ""){
+        $date_service = NULL;
+      }
+      $id_categorie = $annonce->getCategorie()->getId();
+      $est_active = $annonce->getEstActive();
+      if(!$est_active){
+        $est_active = '0';
+      }
+      $est_demande = $annonce->getEstDemande();
+
+
+      $stmt->BindParam(':id',$id);
+      $stmt->BindParam(':nom',$nom);
+      $stmt->BindParam(':description',$description);
+      $stmt->BindParam(':adresse',$adresse);
+      $stmt->BindParam(':date_service',$date_service);
+      $stmt->BindParam(':id_categorie',$id_categorie);
+      $stmt->BindParam(':est_demande',$est_demande);
+      $stmt->BindParam(':est_active',$est_active);
+
       $stmt->execute();
       echo $stmt->rowCount() . " records UPDATED successfully";
 

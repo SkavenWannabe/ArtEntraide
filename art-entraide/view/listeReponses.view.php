@@ -20,7 +20,7 @@
         <?php foreach ($listeMessage as $message): ?>
           <article class="reponse">
             <header>
-              <h2><?= $message[0] ?></h2> <!--Nom de l'annonce-->
+              <h2><?= $message[0]->getNom() ?></h2> <!--Nom de l'annonce-->
               <h3><?= $message[2] ?> <?= $message[3] ?></h3> <!--Prénom Nom du mec-->
             </header>
 
@@ -32,12 +32,16 @@
                 <input type="hidden" name="idUser" value="<?= $message[5] ?>">
                 <button type="submit" name="action" value="repondre">Répondre</button>
               </form>
-              <?php if($message[5] != $user->getId()): ?>
-                <form class="" action="validAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment validez cette annonce ?')">
-                  <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
-                  <input type="hidden" name="idUser" value="<?= $message[5] ?>">
-                  <button type="submit" name="action" value="repondre">Valider</button>
-                </form>
+              <?php if($message[0]->getIdCreateur() == $user->getId()): ?>
+                <?php if($message[0]->getEstActive()): ?>
+                  <form class="" action="validAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment validez cette annonce ?')">
+                    <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
+                    <input type="hidden" name="idUser" value="<?= $message[5] ?>">
+                    <button type="submit" name="action" value="repondre">Valider</button>
+                  </form>
+                <?php else: ?>
+                  <p>Déjà valider</p>
+                <?php endif; ?>
               <?php endif; ?>
             </footer>
 

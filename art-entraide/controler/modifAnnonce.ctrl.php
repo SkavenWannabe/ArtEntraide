@@ -64,7 +64,7 @@ if(!isset($error)){
   $annonce->setDescription($description);
   $annonce->setAdresse($lieu);
   $annonce->setDateService($dateService);
-  if($annonce->getCategorie()->getNom !== $nomCategorie){
+  if($annonce->getCategorie()->getNom() !== $nomCategorie){
     $annonce->setCategorie($art->getCategorieNom($nomCategorie));
   }
 

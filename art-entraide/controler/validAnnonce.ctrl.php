@@ -31,6 +31,7 @@ $annonce = $art->getAnnonce($id_annonce);
 // mise a jour de l'annonce
 $annonce->setEstActive(false);
 $art->updateAnnonce($annonce);
+
 var_dump($annonce);
 
 
