@@ -41,6 +41,7 @@ if ($idUsr != -1) {
 $utilisateurs = $art->getAllUsr();
 
 $user = $_SESSION['user'];
+$categories = $_SESSION['nomCategories'];
 
 session_write_close();
 
@@ -48,6 +49,7 @@ session_write_close();
 $view = new View();
 
 $view->assign('user', $user);
+$view->assign('nomCategories', $categories);
 $view->assign('utilisateurs', $utilisateurs);
 $view->display("certif.view.php");
 

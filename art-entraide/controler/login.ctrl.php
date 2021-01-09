@@ -41,7 +41,8 @@ if (!isset($error)) {
     }
     if ($art->ifCertif($email)){
       $user = $art->getCertifMail($email);
-
+      $_SESSION['user'] = $user;
+      
       $utilisateurs = $art->getAllUsr();
     }
 
