@@ -50,11 +50,14 @@
 <?php case "annonce.view.php": ?>
         <li><?= $annonce->getNom() ?></li>
         <?php break; ?>
+<?php case "confidentialite.view.php": ?>
+        <li>Politique de confidentialité</li>
+        <?php break; ?>
 <?php case "connexion.view.php": ?>
         <li>Connexion</li>
         <?php break; ?>
 <?php case "contact.view.php": ?>
-        <li>Connexion</li>
+        <li>Contact</li>
         <?php break; ?>
 <?php case "conversation.view.php": ?>
         <li><a href="annonce.ctrl.php?idAnnonce=<?= $annonce->getId() ?>"><?= $annonce->getNom() ?></a></li>
@@ -63,7 +66,7 @@
 <?php case "creationAnnonce.view.php": ?>
         <li>Création d'une annonce</li>
         <?php break; ?>
-<?php case "creationAnnonce.view.php": ?>
+<?php case "description.view.php": ?>
         <li>Qui sommes nous</li>
         <?php break; ?>
 <?php case "FAQ.view.php": ?>
@@ -71,6 +74,9 @@
         <?php break; ?>
 <?php case "inscription.view.php": ?>
         <li>Inscription</li>
+        <?php break; ?>
+<?php case "legal.view.php": ?>
+        <li>Mentions Légales</li>
         <?php break; ?>
 <?php case "listeAnnonces.view.php": ?>
         <li>Recherche d'une annonce</li>
