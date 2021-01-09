@@ -9,6 +9,9 @@ INSERT INTO Utilisateur VALUES(DEFAULT, 'tu.plante@yahoo.fr', '', '', '', '', TR
 INSERT INTO Utilisateur VALUES(DEFAULT, 'tu.plante@yahoo.fr', 'aussi', '', '', '', TRUE, 101);
 INSERT INTO Utilisateur VALUES(DEFAULT, 'celine.michel@yahoo.fr', 'celine.michel', 'Michel', 'Celine', NULL, DEFAULT, DEFAULT);
 
+INSERT INTO Certificateur VALUES(DEFAULT, 'alexandre@alexandre.alexandre', 'motdepasse', 'alexandre', 'legendre');
+INSERT INTO Certificateur VALUES(DEFAULT, 'marion@yopmail.com', 'bezou', 'marion', 'chauvineau');
+
 INSERT INTO Categorie VALUES(DEFAULT, 'Baby-sitting');
 INSERT INTO Categorie VALUES(DEFAULT, 'Location');
 INSERT INTO Categorie VALUES(DEFAULT, 'Aide aux devoirs');

@@ -23,21 +23,21 @@ $utilisateurs = array de tout les utilisateurs
         <?php foreach ($utilisateurs as $value) : ?>
           <article class="utilisateur">
             <img src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
-            <h2><<?= $value.getPrenom(); $value.getNom(); ?></h2>
+            <h2> <?= $value->getPrenom() ?> <h2>
             <p>
               Certification :
               <?php
-                if ($value.getCertif()) {
+                if ($value->getCertif()) {
                   print("Oui");
                 }
                 else {
                   print("Non");
                 }
               ?>
-              Prenom : <?= $value.getPrenom();?><br>
-              Nom : <?= $value.getNom();?><br>
-              Email : <?= $value.getEmail();?><br>
-              Adresse : <?= $value.getAdresse();?><br>
+              Prenom : <?= $value->getPrenom()?><br>
+              Nom : <?= $value->getNom()?><br>
+              Email : <?= $value->getEmail()?><br>
+              Adresse : <?= $value->getAdresse()?><br>
             </p>
           </article>
         <?php endforeach;?>

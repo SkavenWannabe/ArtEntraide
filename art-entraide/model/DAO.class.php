@@ -34,15 +34,51 @@ class DAO{
   }
 
   // --- Getteur --- //
+  //recuperer un utilisateur en fonction de son adresse mail
+  function getCertifMail(string $email) : Certificateur{
+    $req = "SELECT * FROM certificateur WHERE email='$email'";
+    $sth = $this->db->query($req);
+    $data = $sth->fetchAll(PDO::FETCH_ASSOC)[0];
+
+    $utilisateur = new Utilisateur($data['id'],$data['email'],$data['password'],$data['nom'],$data['prenom']);
+    return $utilisateur;
+  }
+
+  // verifie si il y a un certificateur associé a l'adresse mail
+  function ifCertif(string $email){
+    $req = "SELECT * FROM certificateur WHERE email='$email'";
+    $sth = $this->db->query($req);
+    $data = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+
+    if ($return[0] === NULL) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  // verifie si il y a un utilisateur associé a l'adresse mail
+  function ifUsr(string $email){
+    $req = "SELECT * FROM utilisateur WHERE email='$email'";
+    $sth = $this->db->query($req);
+    $data = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+
+    if ($return[0] === NULL) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   //Getteur pour tout les utilisateurs
   function getAllUsr() {
     $req = "SELECT * FROM utilisateur";
     $stmt = $this->db->query($req);
-    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
-    return $return[0];
+    $return = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $return;
   }
 
-  // Getteur pour les utilisateurs
+  // Getteur du dernier id d'utilisateur
   function getLastIdUti() : int{
     $req = "SELECT MAX(id) FROM utilisateur";
     $stmt = $this->db->query($req);
@@ -83,7 +119,14 @@ class DAO{
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
     if ($return[0] === NULL) {
-      return '';
+      $req = "SELECT password FROM certificateur WHERE email='$email'";
+      $sth = $this->db->query($req);
+      $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+      if ($return[0] === NULL) {
+        return '';
+      } else {
+        return $return[0];
+      }
     } else {
       return $return[0];
     }

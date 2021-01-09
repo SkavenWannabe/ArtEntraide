@@ -34,25 +34,24 @@ if (!isset($error)) {
   if($verif === $passwd){
     $_SESSION['connected'] = true;
 
-    //récupération utilisateur connecté
-    $user = $art->getUtiliMail($email);
-    $_SESSION['user'] = $user;
+    print($art->ifCertif($email));
+
+    if ($art->ifUsr($email)){
+      //récupération utilisateur connecté
+      $user = $art->getUtiliMail($email);
+      $_SESSION['user'] = $user;
+    }
+    if ($art->ifCertif($email)){
+      $user = $art->getCertifMail($email);
+
+      $utilisateurs = $art->getAllUsr();
+      var_dump($utilisateurs);
+    }
 
     //Nécessaire à l'affichage des annonces une foi connecté
     $annonces = $art->getAnnonceAccueil();
 
     $message = "Vous êtes connecté";
-
-    if ($user->getCertif()){
-      print("Certif : True\n");
-      $utilisateurs = $art->getAllUsr();
-    }
-    else {
-      print("Cert : False\n");
-    }
-
-    print($user->getPrenom());
-    print($user->getNom());
 
   } else {
     $error[] = "Identifiant ou mot de passe incorrect.";
@@ -71,7 +70,7 @@ session_write_close();
 $view = new View();
 
 if (!isset($error) && $connected) {
-  if ($user->getCertif()) {
+  if ($art->ifCertif($email)){ //check si certificateur
     $view->assign('message', $message);
     $view->assign('user', $user);
     $view->assign('utilisateurs', $utilisateurs);

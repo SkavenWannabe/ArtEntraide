@@ -9,6 +9,14 @@ CREATE TABLE IF NOT EXISTS Utilisateur (
   reputation INTEGER NOT NULL DEFAULT 0 CONSTRAINT reputation_intervalle CHECK (reputation>=-100 AND reputation<=100)
 );
 
+CREATE TABLE IF NOT EXISTS Certificateur(
+  id SERIAL PRIMARY KEY,
+  email VARCHAR NOT NULL UNIQUE,
+  password VARCHAR NOT NULL,
+  nom VARCHAR NOT NULL,
+  prenom VARCHAR NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS Categorie (
   id SERIAL PRIMARY KEY,
   nom VARCHAR NOT NULL
