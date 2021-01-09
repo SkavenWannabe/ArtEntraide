@@ -28,8 +28,9 @@
 
             <footer>
               <form class="" action="reponseAnnonce.ctrl.php" method="get">
-                <input type="hidden" name="idAnnonce" value="<?= $message[4] ?>">
-                <button type="submit" name="button">Répondre</button>
+                <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
+                <input type="hidden" name="idUser" value="<?= $message[5] ?>">
+                <button type="submit" name="action" value="repondre">Répondre</button>
               </form>
             </footer>
 

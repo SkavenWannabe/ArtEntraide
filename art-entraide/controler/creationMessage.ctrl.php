@@ -19,7 +19,7 @@ if ($_POST['contenu'] != ''){
 $today = date("y.m.d");
 
 if ($_POST['id_repondeur'] != ''){
-  $id_repondeur = $_POST['contenu'];
+  $id_repondeur = $_POST['id_repondeur'];
 }else{
   $id_repondeur = -1;
 }
@@ -38,7 +38,7 @@ if(!isset($error)){
   $id_author = $user->getId();
 
   $message = new Message($id_message, $contenu, $today, $id_author);
-
+  
   if($id_repondeur == -1){
     $reponse = new Reponse($id_annonce, $id_author, $id_message);
   } else {
@@ -51,14 +51,26 @@ if(!isset($error)){
   $theAnnonce = $art->getAnnonce($id_annonce);
 
   // création de $messages contenant la liste de message correspondant à l'annonce
-  $listIdMessage = $art->getAllIdMessage($id_annonce,$id_author);
-  foreach ($listIdMessage as $value) {
-    $messages[] = $art->getMessage($value);
+  if($id_repondeur == -1){
+    $listIdMessage = $art->getAllIdMessage($id_annonce,$id_author);
+    foreach ($listIdMessage as $value) {
+      $messages[] = $art->getMessage($value);
+    }
+
+    $id_createur = $theAnnonce->getIdCreateur();
+    $createur = $art->getUtilisateur($id_createur);
+    $nomDestinataire = $createur->getNom();
+
+  } else{
+    $listIdMessage = $art->getAllIdMessage($id_annonce,$id_repondeur);
+    foreach ($listIdMessage as $value) {
+      $messages[] = $art->getMessage($value);
+    }
+
+    $createur = $art->getUtilisateur($id_repondeur);
+    $nomDestinataire = $createur->getNom();
   }
 
-  $id_createur = $theAnnonce->getIdCreateur();
-  $createur = $art->getUtilisateur($id_createur);
-  $nomDestinataire = $createur->getNom();
 }
 
 session_write_close();

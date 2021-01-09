@@ -13,6 +13,10 @@ if ($_GET['annonceId'] != ''){
   $idAnnonce = $_GET['annonceId'];
 }
 
+if ($_GET['idUser'] != ''){
+  $idUser = $_GET['idUser'];
+}
+
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 $art = new DAO();
@@ -26,7 +30,13 @@ if($user == NULL){
 } else {
   $theAnnonce = $art->getAnnonce($idAnnonce);
 
-  $idUser = $user->getId();
+  if($idUser == ''){
+    $idUser = $user->getId();
+    $id_repondeur = '';
+  }else{
+    $id_repondeur = $idUser;
+  }
+
   //$idAnnonce = 4; $idUser = 2; // a supprimer, facilite les tests
   // création de $messages contenant la liste de message correspondant à l'annonce
   $idMessage = $art->getAllIdMessage($idAnnonce,$idUser);
@@ -49,6 +59,7 @@ $view->assign('user', $user);
 
 switch ($action) {
   case 'repondre':
+    $view->assign('id_repondeur',$id_repondeur);
     $view->assign('annonce', $theAnnonce);
     $view->assign('nomDestinataire',$nomDestinataire);
     $view->assign('messages',$messages);
