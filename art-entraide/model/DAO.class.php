@@ -478,8 +478,8 @@ class DAO{
   // Sauvegarde d'un utilisateur dans la base de données
   // $utilisateur : l'utilisateur à sauvegarder
   function createUtilisateur(Utilisateur $utilisateur) {
-    $sql = "INSERT INTO Utilisateur (id,nom,prenom,email,password,adresse,certif)
-            values (:id,:nom,:prenom,:email,:password,:adresse,:certif)";
+    $sql = "INSERT INTO Utilisateur (id,nom,prenom,email,password,adresse)
+            values (:id,:nom,:prenom,:email,:password,:adresse)";
 
     $stmt = $this->db->prepare($sql);
 
@@ -489,7 +489,7 @@ class DAO{
     $adresse = $utilisateur->getAdresse();
     $email = $utilisateur->getEmail();
     $password = $utilisateur->getPassword();
-    $certif = $utilisateur->getCertif();
+
 
     $stmt->BindParam(':id',$id);
     $stmt->BindParam(':nom',$nom);
@@ -497,7 +497,6 @@ class DAO{
     $stmt->BindParam(':email',$email);
     $stmt->BindParam(':password',$password);
     $stmt->BindParam(':adresse',$adresse);
-    $stmt->BindParam(':asresse',$certif);
 
     $stmt->execute();
   }
