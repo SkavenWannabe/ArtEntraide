@@ -543,7 +543,6 @@ class DAO{
       $adresse = $utilisateur->getAdresse();
       $password = $utilisateur->getPassword();
       $certif = $utilisateur->getCertif();
-
       if (!$certif) {
         $certif = 0;
       }
@@ -554,7 +553,9 @@ class DAO{
       $stmt->BindParam(':email',$email);
       $stmt->BindParam(':password',$password);
       $stmt->BindParam(':adresse',$adresse);
-
+      $stmt->BindParam(':certif',$certif);
+      
+var_dump($stmt);
       $stmt->execute();
       //echo $stmt->rowCount() . " records UPDATED successfully";
 
@@ -599,8 +600,8 @@ class DAO{
   // Sauvegarde d'une annonce dans la base de données
   // $annonce : l'annonce à sauvegarder
   function createAnnonce(Annonce $annonce) {
-    $sql = "INSERT INTO Annonce (id,nom,description,adresse,est_demande,date_creation,date_service,id_createur,id_categorie)
-            values (:id,:nom,:description,:adresse,:est_demande,:date_creation,:date_service,:id_createur,:id_categorie)";
+    $sql = "INSERT INTO Annonce (id,nom,description,adresse,est_demande,est_active,date_creation,date_service,id_createur,id_categorie)
+            values (:id,:nom,:description,:adresse,:est_demande,:est_active,:date_creation,:date_service,:id_createur,:id_categorie)";
 
     $stmt = $this->db->prepare($sql);
 
@@ -609,11 +610,11 @@ class DAO{
     $description = $annonce->getDescription();
     $adresse = $annonce->getAdresse();
     $est_demande = $annonce->getEstDemande();
+    $est_active = $annonce->getEstActive();
     $date_creation = $annonce->getDateCreation();
+    $date_service = $annonce->getDateService();
     if($date_service == ""){
       $date_service = NULL;
-    } else {
-      $date_service = $annonce->getDateService();
     }
     $id_createur = $annonce->getIdCreateur();
     $id_categorie = $annonce->getCategorie()->getId();
@@ -622,12 +623,13 @@ class DAO{
     $stmt->BindParam(':nom',$nom);
     $stmt->BindParam(':description',$description);
     $stmt->BindParam(':adresse',$adresse);
+    $stmt->BindParam(':est_active',$est_active);
     $stmt->BindParam(':est_demande',$est_demande);
     $stmt->BindParam(':date_creation',$date_creation);
     $stmt->BindParam(':date_service',$date_service);
     $stmt->BindParam(':id_createur',$id_createur);
     $stmt->BindParam(':id_categorie',$id_categorie);
-
+var_dump($stmt);
     $stmt->execute();
   }
 

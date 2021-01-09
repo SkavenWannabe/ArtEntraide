@@ -49,8 +49,8 @@ if ($_POST['date'] != '') {
 }
 
 // --- recuperation du type de l'annonce --- //
-$est_demande = true; //a recup en post après
-
+$est_demande = true;
+$est_active = true;
 // ==== PARTIE USAGE DU MODELE ==== //
 
 session_start();
@@ -66,7 +66,7 @@ if(!isset($error)){
 
   // création d'une annonce
   $idAnnonce = $art->getLastIdAnnonce() + 1;
-  $annonce = new Annonce($idAnnonce, $nom, $description, $lieu, $est_demande, $today, $dateService, $idCreateur, $categorie);
+  $annonce = new Annonce($idAnnonce, $nom, $description, $lieu, $est_demande, $est_active, $today, $dateService, $idCreateur, $categorie);
   $art->createAnnonce($annonce);
 
   //$annonce = $art->getAnnonce((int)$idAnnonce);

@@ -67,7 +67,7 @@ if(!isset($error)){
   $user->setEmail($email);
   $user->setPassword($passwd);
   $user->setAdresse($p_adresse);
-
+var_dump($user);
   //modification en base du compte
   $art->updateUtilisateur($user);
 
@@ -80,7 +80,7 @@ session_write_close();
 
 $view = new View();
 
-$view->assign('nomCategorie',$nomCategorie);
+$view->assign('nomCategorie',$categories);
 $view->assign('user', $user);
 
 if(!isset($error)){
