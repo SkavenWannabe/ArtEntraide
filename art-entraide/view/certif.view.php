@@ -41,6 +41,8 @@ $utilisateurs = array de tout les utilisateurs
             </p>
           </article>
         <?php endforeach;?>
+      </div>
+    </section>
 
     <?php include_once(__DIR__."/footer.php"); ?>
   </body>

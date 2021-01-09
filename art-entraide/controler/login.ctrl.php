@@ -34,8 +34,6 @@ if (!isset($error)) {
   if($verif === $passwd){
     $_SESSION['connected'] = true;
 
-    print($art->ifCertif($email));
-
     if ($art->ifUsr($email)){
       //récupération utilisateur connecté
       $user = $art->getUtiliMail($email);

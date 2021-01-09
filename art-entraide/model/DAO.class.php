@@ -8,6 +8,7 @@ require_once(__DIR__."/Annonce.class.php");
 require_once(__DIR__."/Categorie.class.php");
 require_once(__DIR__."/Reponse.class.php");
 require_once(__DIR__."/Message.class.php");
+require_once(__DIR__."/Certificateur.class.php");
 
 require_once("/home/synntix/db.php");
 //require_once(__DIR__."/Reponse.class.php");
@@ -40,34 +41,26 @@ class DAO{
     $sth = $this->db->query($req);
     $data = $sth->fetchAll(PDO::FETCH_ASSOC)[0];
 
-    $utilisateur = new Utilisateur($data['id'],$data['email'],$data['password'],$data['nom'],$data['prenom']);
-    return $utilisateur;
+    $certificateur = new Certificateur($data['id'],$data['email'],$data['password'],$data['nom'],$data['prenom']);
+    return $certificateur;
   }
 
   // verifie si il y a un certificateur associé a l'adresse mail
   function ifCertif(string $email){
     $req = "SELECT * FROM certificateur WHERE email='$email'";
     $sth = $this->db->query($req);
-    $data = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
 
-    if ($return[0] === NULL) {
-      return false;
-    } else {
-      return true;
-    }
+    return !empty($return);
   }
 
   // verifie si il y a un utilisateur associé a l'adresse mail
   function ifUsr(string $email){
     $req = "SELECT * FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
-    $data = $sth->fetchAll(PDO::FETCH_COLUMN,0);
+    $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
 
-    if ($return[0] === NULL) {
-      return false;
-    } else {
-      return true;
-    }
+    return !empty($return);
   }
 
   //Getteur pour tout les utilisateurs
@@ -118,13 +111,15 @@ class DAO{
     $req = "SELECT password FROM utilisateur WHERE email='$email'";
     $sth = $this->db->query($req);
     $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
-    if ($return[0] === NULL) {
+
+    if (empty($return)) {
       $req = "SELECT password FROM certificateur WHERE email='$email'";
       $sth = $this->db->query($req);
       $return = $sth->fetchAll(PDO::FETCH_COLUMN,0);
-      if ($return[0] === NULL) {
+
+      if (empty($return)) {
         return '';
-      } else {
+      }else {
         return $return[0];
       }
     } else {
