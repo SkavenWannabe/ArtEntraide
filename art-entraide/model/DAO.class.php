@@ -411,23 +411,25 @@ class DAO{
 
     //recuperation de tout les messages sur ses annonces
     $annonce = $this->getSesAnnonce($utilisateur);
+    var_dump($annonce);
     foreach ($annonce as $value) {
       $idA = $value->getId();
 
       //recuperation des différentes personnes ayant répondu à cette annonce
       $req = "SELECT id_repondeur FROM reponse where id_annonce = '$idA' group by id_annonce,id_repondeur";
       $sth = $this->db->query($req);
-      $id_repondeur = $sth->fetchAll();
+      $id_repondeur = $sth->fetchAll()[0];
 
+      var_dump($id_repondeur);
       foreach($id_repondeur as $idR){
         //récupération de l'id du dernier message d'une personne ayant répondu à une annonce
         $req = "SELECT max(id_message) FROM reponse
                 where id_annonce = '$idA' and id_repondeur = '$idR' Group by id_annonce";
         $stm = $this->db->query($req);
-        $id_message = $stm->fetchAll()[0];
+        $id_message = $stm->fetchAll()[0][0];
 
         //récupération du message correspondant à l'id
-        $req = "SELECT * FROM message where id_message = '$id_message'";
+        $req = "SELECT * FROM message where id = '$id_message'";
         $stm = $this->db->query($req);
         $message = $stm->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Message')[0];
 
@@ -436,6 +438,9 @@ class DAO{
         $inter[] = $message;
         $inter[] = $auteur->getPrenom();
         $inter[] = $auteur->getNom();
+        $inter[] = $idA;
+        $inter[] = $idR;
+
         $return[] = $inter;
       }
 
@@ -466,6 +471,9 @@ class DAO{
         $inter[] = $message;
         $inter[] = $auteur->getPrenom();
         $inter[] = $auteur->getNom();
+        $inter[] = $idA;
+        $inter[] = $idU;
+
         $return[] = $inter;
       }
     }

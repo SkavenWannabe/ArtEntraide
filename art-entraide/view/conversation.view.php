@@ -41,6 +41,7 @@
         <form class="" action="creationMessage.ctrl.php" method="post">
           <textarea type="text" name="contenu" placeholder="Votre message ici" required></textarea>
           <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
+          <input type="hidden" name="id_repondeur" value="<?= $id_repondeur ?>">
           <button type="submit">Envoyer</button>
         </form>
       </footer>
