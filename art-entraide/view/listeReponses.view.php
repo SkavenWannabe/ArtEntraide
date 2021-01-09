@@ -21,7 +21,7 @@
           <article class="reponse">
             <header>
               <h3>Annonce de <?= $message[6] ?> : <?= $message[0]->getNom() ?></h3>
-              <p><b>Description :</b> <?= mb_substr($message[0]->getDescription(),0,100,"utf-8")?> <?php if(strlen($message[0]->getDescription()) > 100){ echo"...";}  ?></p></br>
+              <p><b>Description :</b> <?= substr($message[0]->getDescription(),0,100)?> <?php if(strlen($message[0]->getDescription()) > 100){ echo"...";}  ?></p></br>
             </header>
 
             <p><b><?= $message[2] ?> <?= $message[3] ?> </b>: <?= $message[1]->getContenue() ?></p> <!--Prénom Nom du mec + contenu-->
