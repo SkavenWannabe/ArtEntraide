@@ -20,15 +20,15 @@ if ($_POST['sujet'] != '') {
 }
 
 // --- recuperation du prenom --- //
-if ($_POST['mail'] != '') {
-  $mail = $_POST['mail'];
+if ($_POST['email'] != '') {
+  $mail = $_POST['email'];
 }else{
   $error[] = "Vous devez mettre votre adresse mail";
 }
 
 // --- recuperation de l'adresse email --- //
-if ($_POST['corp'] != '') {
-  $corp = $_POST['corp'];
+if ($_POST['message'] != '') {
+  $corp = $_POST['message'];
 }else{
   $error[] = "Vous devez mettre un message";
 }
