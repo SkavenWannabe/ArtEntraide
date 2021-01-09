@@ -40,7 +40,7 @@
                     <button type="submit" name="action" value="repondre">Valider</button>
                   </form>
                 <?php else: ?>
-                  <p>Déjà valider</p>
+                  <button type="submit">Déjà Valider</button>
                 <?php endif; ?>
               <?php endif; ?>
             </footer>

@@ -183,8 +183,8 @@ class DAO{
     $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
     //var_dump($data);
     $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
-                             $data['est_demande'],$data['date_creation'],$data['date_service'],
-                             $data['id_createur'],$categorie);
+                             $data['est_demande'],$data['est_active'],$data['date_creation'],
+                             $data['date_service'],$data['id_createur'],$categorie);
     return $annonce;
   }
 
@@ -213,8 +213,8 @@ class DAO{
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
       $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
-                               $data['est_demande'],$data['date_creation'],$data['date_service'],
-                               $data['id_createur'],$categorie);
+                               $data['est_demande'],$data['est_active'],$data['date_creation'],
+                               $data['date_service'],$data['id_createur'],$categorie);
     }
 
     return $annonce;
@@ -263,8 +263,8 @@ class DAO{
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
       $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
-                               $data['est_demande'],$data['date_creation'],$data['date_service'],
-                               $data['id_createur'],$categorie);
+                               $data['est_demande'],$data['est_active'],$data['date_creation'],
+                               $data['date_service'],$data['id_createur'],$categorie);
     }
 
     return $annonce;
@@ -313,8 +313,8 @@ class DAO{
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
       $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
-                               $data['est_demande'],$data['date_creation'],$data['date_service'],
-                               $data['id_createur'],$categorie);
+                               $data['est_demande'],$data['est_active'],$data['date_creation'],
+                               $data['date_service'],$data['id_createur'],$categorie);
     }
 
     return $annonce;
@@ -347,8 +347,8 @@ class DAO{
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
       $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
-                               $data['est_demande'],$data['date_creation'],$data['date_service'],
-                               $data['id_createur'],$categorie);
+                               $data['est_demande'],$data['est_active'],$data['date_creation'],
+                               $data['date_service'],$data['id_createur'],$categorie);
     }
 
     return $annonce;
