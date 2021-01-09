@@ -37,7 +37,7 @@
       <h3>Suivez nous</h3>
       <div class="reseaux">
         <a class="icon" href="https://twitter.com/">
-          <img alt="Twitter" src="/view/design/Reseaux-sociaux-logos/Twitter_Logo_Blue.svg"
+          <img alt="Twitter" src="/view/design/Reseaux-sociaux-logos/twitter.png"
            width="35" height="30">
         </a>
         <a class="icon" href="https://www.facebook.com/">
