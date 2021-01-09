@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
-    <title>FAQ</title>
+    <title>Conversation</title>
     <link rel="stylesheet" href="/view/css/master.css">
     <link rel="stylesheet" href="/view/css/listeReponses.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
@@ -32,6 +32,13 @@
                 <input type="hidden" name="idUser" value="<?= $message[5] ?>">
                 <button type="submit" name="action" value="repondre">Répondre</button>
               </form>
+              <?php if($message[5] != $user->getId()): ?>
+                <form class="" action="validAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment validez cette annonce ?')">
+                  <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
+                  <input type="hidden" name="idUser" value="<?= $message[5] ?>">
+                  <button type="submit" name="action" value="repondre">Valider</button>
+                </form>
+              <?php endif; ?>
             </footer>
 
           </article>

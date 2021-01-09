@@ -211,6 +211,7 @@ non fonctionnel :
   - [x]  paragraphe au lieu d'une ligne
 
  \- voir réponses à faire
+  - [x] discutions
 
  \- suppression compte
 

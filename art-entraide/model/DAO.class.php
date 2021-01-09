@@ -324,7 +324,8 @@ class DAO{
   function getSesAnnonce(Utilisateur $utilisateur){
     $id_crea = $utilisateur->getId();
     $req = "SELECT * FROM annonce where est_active is true
-                                    AND id_createur = '$id_crea'";
+                                    AND id_createur = '$id_crea'
+                                    ORDER BY id DESC";
     $sth = $this->db->query($req);
     $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -404,7 +405,9 @@ class DAO{
     return $result[0];
   }
 
-
+  //permet de récuperer toute les discutions d'un utilisateur :
+  // discutions à partir des annonces qu'il a créé
+  // discutions lors de ces réponse à un autre utilisateur
   function getSesDiscussion(Utilisateur $utilisateur){
     $inter = array(); // liste intermediaire
     $return = array(); //ensemble des messages à renvoyer
@@ -528,7 +531,7 @@ class DAO{
     $email = $utilisateur->getEmail();
     $adresse = $utilisateur->getAdresse();
     $password = $utilisateur->getPassword();
-    $certif = $utilisateur->getCertif();//oui il renvoie 1 donc true donc c'est bon
+    $certif = $utilisateur->getCertif();
 
     if (!$certif) {
       $certif = 0;
@@ -629,10 +632,14 @@ class DAO{
     $nom = $annonce->getNom();
     $description = $annonce->getDescription();
     $adresse = $annonce->getAdresse();
-    $date_service = $annonce->getDateService(); // /!\ verification nom dans la BDD
+    $date_service = $annonce->getDateService();
     $id_categorie = $annonce->getCategorie()->getId();
-    $est_active = $annonce->getEstActive(); // /!\ verification nom dans la BDD
-    $est_demande = $annonce->getEstDemande(); // /!\ verification nom dans la BDD
+    $est_active = $annonce->getEstActive();
+    $est_demande = $annonce->getEstDemande();
+
+    if (!$est_active) {
+      $est_active = 0;
+    }
 
     try{
       $sql="UPDATE annonce
@@ -642,10 +649,10 @@ class DAO{
                 date_service = '$date_service',
                 id_categorie = '$id_categorie',
                 est_demande = '$est_demande',
-                est_active = '$est_active'
+                est_active = $est_active
             WHERE id = '$id'";
 
-      $stmt = $this->db->prepare($sql);
+      $stmt = $this->db->prepare($sql); var_dump($stmt);
       $stmt->execute();
       echo $stmt->rowCount() . " records UPDATED successfully";
 
