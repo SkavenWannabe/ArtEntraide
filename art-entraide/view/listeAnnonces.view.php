@@ -15,9 +15,12 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
     <link rel="stylesheet" href="/view/css/listeAnnonces.css">
     <link rel="stylesheet" href="/view/css/annonce.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js" integrity="sha512-I0VFyPo7hdM7YrEbQ0pvX4bX2904k0+B19u/xBrPrQoMprfcSnIDfGFD8kP52GbAhwtDjkEVhXlQvj8+vkJyew==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
     <?php include_once(__DIR__."/../view/header.php"); ?>
 
     <section>
@@ -80,6 +83,8 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
           <?php endforeach; ?>
         </div>
       </section>
+
+      <script type="text/javascript" src="/view/js/accueil.js"></script>
 
     </section>
 

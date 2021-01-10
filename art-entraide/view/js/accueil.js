@@ -18,15 +18,16 @@
 const section = document.querySelector(".section_annonces > div");
 const annonces = section.children;
 const bouton = document.querySelector(".section_annonces > form > button");
-
 const tl = new TimelineMax();
 
-tl.fromTo(
-  bouton,
-  1.7,
-  { opacity: "0" },
-  { opacity: "1" }
-);
+if (bouton) {
+  tl.fromTo(
+    bouton,
+    1.7,
+    { opacity: "0" },
+    { opacity: "1" }
+  );
+}
 
 
 for (i = 0; i < annonces.length; i++) {
