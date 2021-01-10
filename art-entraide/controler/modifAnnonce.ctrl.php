@@ -95,7 +95,7 @@ if(!isset($error)){
   $view->display("annonce.view.php");
 
 } else {
-  var_dump($idAnnonce);
+  //var_dump($idAnnonce);
   $annonce = $art->getAnnonce($idAnnonce);
   $view->assign('annonce',$annonce);
   $view->assign('error',$error);

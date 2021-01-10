@@ -15,6 +15,14 @@ if (isset($_GET['categorie']) and ($_GET['categorie'] != '') and ($_GET['categor
   $categorie = $_GET['categorie'];
 }
 
+if(isset($_GET['page'])){
+  $page = $_GET['page'];
+} else {
+  $page = 1;
+}
+
+$pageSize = 10; // constante du nombre d'élément afficher par page
+
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 //vérification utilisateur connecté
@@ -25,13 +33,24 @@ $art = new DAO();
 $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
 
-//recuperation temporaire, futur recupération en fonction d'un nombre de page
-// a tester avec getPageRef($page, $pageSize);
-// mettre $pageSize en $_SESSION['pageSize'] + recuperation $page dans la vue
-$i = 0;
-while($last >= $min && $i < 10) {
-    $annonces[] = $art->getAnnonce($last);
-    $last--; $i++;
+//recuperation des annonces en fonction de la page actuelle et du nombre d'élément par page
+$annonces = $art->getPageRef($page,$pageSize);
+
+if(sizeof($annonces) > $pageSize){
+  $nbPages = sizeof($annonces)/$pageSize+1;
+}else{
+  $nbPages=1;
+}
+
+if($page == 1){
+  $pagePrec = $page;
+  $pageSuiv = $page+1;
+}else if($page == $nbPages){
+  $pagePrec = $page-1;
+  $pageSuiv = $page;
+}else{
+  $pagePrec = $page-1;
+  $pageSuiv = $page+1;
 }
 
 /*
@@ -80,6 +99,11 @@ $view = new View();
 
 //information nécessaire pour le header
 $view->assign('annonces', $annonces);
+$view->assign('page', $page);
+$view->assign('nbPages', $nbPages);
+$view->assign('pagePrec', $pagePrec);
+$view->assign('pageSuiv', $pageSuiv);
+
 //information nécessaire pour le header
 $view->assign('user', $user);
 $view->assign('nomCategories', $categories);
