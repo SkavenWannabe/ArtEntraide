@@ -19,7 +19,7 @@
         <h2></h2>
         <p>
           Un problème ? Nous sommes là pour y répondre !<br>
-          Votre question a peut-être été déjà répondue ci-dessous.<br>
+          La réponse à votre question est peut-être déjà ci-dessous.<br>
           Sinon, n'hésitez pas à nous contacter via la page "Nous contacter" en pied de page.
         </p>
       </article>
@@ -28,8 +28,9 @@
         <h2>Questions récurrentes :</h2>
         <div>
           <dt>Q : Comment créer une annonce ?<dt>
-          <dd>R : Il faut dans un premier temps se connecter puis cliquer sur "Créer une annonce" en haut de la page.
-            Si vous n'avez pas encore de compte, il vous faudra en créer un via le bouton en haut à droite.</dd>
+          <dd>R : Il faut dans un premier temps se connecter et pour cela avoir un compte actif. Si ce n'est pas le cas,
+            il faudra en créer un via le bouton en haut à droite. Ensuite, cliquer sur "Créer une annonce" et
+            compléter les champs.</dd>
           <br>
 
           <dt>Q : Comment se déconnecter ?</dt>

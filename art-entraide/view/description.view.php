@@ -27,14 +27,14 @@
         d’apporter un soutien en cette période. Au travers de concerts improvisés, de cours de sport
         ou même de variantes de jeux télévisés (“Questions pour un champion” transformé en “Questions
         pour un balcon”), une certaine fraternité entre voisins a vu le jour. Durant cette période de crise sanitaire,
-        cela prend du sens notamment pour la mutualisation des courses. Prenons l’exemple d’une personne fragile : à la place d’aller
+        cela prend du sens notamment pour la mutualisation des courses. Prenons l’exemple d’une personne fragile : au lieu d’aller
         faire ses courses elle-même et d’être par conséquent en contact avec tous les clients du magasin,
-        elle n’est qu’en contact avec un voisin. Inversement, pour une personne atteinte ou avec
+        elle n’est en contact qu'avec un voisin. De même, pour une personne atteinte ou avec
         des suspicions de Covid-19, cela limite les contacts et par conséquent les risques de transmission.<br>
       </p>
       <p>
         <strong>Notre objectif</strong> est de simplifier l’entraide entre voisins.
-        Pour cela, nous nous devons de simplifier un maximum l'utilisation du site pour convenir le plus possible aux utilisateurs,
+        Pour cela, nous proposons un site le plus simple d'utilisation possible afin de convenir à l'ensemble des utilisateurs potentiels,
         qu'ils soient plus ou moins à l'aise avec l'outil informatique.
       </p>
     </section>

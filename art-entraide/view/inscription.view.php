@@ -13,7 +13,7 @@
 
     <section>
       <div class="">
-        <h1>Inscrivez vous et perpétuez l'art de l'entaide</h1>
+        <h1>Inscrivez vous et perpétuez l'art de l'entraide</h1>
         <ul>
           <li>Raison 1</li>
           <li>Raison 2</li>

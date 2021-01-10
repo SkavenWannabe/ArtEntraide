@@ -19,7 +19,7 @@
     <section>
       <h1>Comment nous contacter ?</h1>
       <p>
-        Vous avez un problème à signaler, une amélioration à proposer, des critiques à exprimer, de l'aide à demander ? Écrivez-nous !<br>
+        Vous avez un problème à signaler, une amélioration à proposer, des remarques, de l'aide à demander ? Écrivez-nous !<br>
         Remplissez le formulaire ci-dessous, expliquez la situation, et nous vous répondrons par email dès que possible.
       </p>
       <form class="Contact" action="contact.ctrl.php" method="post">

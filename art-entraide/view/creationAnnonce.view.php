@@ -34,12 +34,12 @@ $user : Utilisateur connecté
       <form class="creation_annonce" action="creationAnnonce.ctrl.php" method="post">
         <section>
           <div class="">
-            <label for="intitule">Tout d'abord, quel est l'intitulé de votre annonce ? <em>*</em></label>
+            <label for="intitule">Intitulé de votre annonce : <em>*</em></label>
             <input type="text" name="intitule" id="intitule" required>
           </div>
 
           <div class="">
-            <label for="description">Donnez le détail de votre annonce. <em>*</em></label>
+            <label for="description">Détail de votre annonce : <em>*</em></label>
             <textarea name="description" id="description" required></textarea>
           </div>
         </section>
@@ -48,7 +48,7 @@ $user : Utilisateur connecté
 
         <section>
           <div class="">
-            <label for="categorie">Quel est la catégorie de votre annonce ? <em>*</em></label>
+            <label for="categorie">Catégorie de votre annonce : <em>*</em></label>
             <select name="categorie" id="categorie" required>
               <?php foreach ($nomCategories as $key => $value) : ?>
                 <option value="<?= $value ?>"><?= $value ?></option>
@@ -57,12 +57,12 @@ $user : Utilisateur connecté
           </div>
 
           <div class="">
-            <label for="lieu">Où se situe le service à effectuer</label>
+            <label for="lieu">Localisation</label>
             <input type="text" name="lieu" id="lieu" value="<?= $user->getAdresse() ?>">
           </div>
 
           <div class="">
-            <label for="date">À quel date ce service aura lieu ?</label>
+            <label for="date">Date du service :</label>
             <input type="date" name="date" id="date">
           </div>
         </section>

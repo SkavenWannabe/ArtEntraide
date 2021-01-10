@@ -33,7 +33,7 @@ $user : Utilisateur connecté
     <section>
       <header>
         <h2>Connectez vous à votre compte</h2>
-        <p>Pas encore de compte ? Créez en un <a href="/controler/menu.ctrl.php?etat=creation">ici</a>
+        <p>Pas encore de compte ? Créez en un <a href="/controler/menu.ctrl.php?etat=creation">ici</a> ou utilisez votre compte Google</p>
         </form>
       </header>
 
