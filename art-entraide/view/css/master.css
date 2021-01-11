@@ -234,10 +234,18 @@ body > section {
 
 /*=========== FOOTER ===========*/
 
-body > footer {
-  padding: 0px 50px;
+footer {
+  padding: 1em 1em 2em 1em;
   background-color: #DDDDDD;
+
 }
+
+/* Pour changer le footer, j'ai du changer sa structure, après avoir changé sa structure,
+certaines règles CSS sont devenues inutiles, mais je les laissent quand même en commentaires
+au cas-ou
+
+-Lucas
+
 
 body > footer > header {
   display: flex;
@@ -259,13 +267,67 @@ body > footer > header a {
 body > footer > header a img {
 	width: 21px;
 }
+*/
 
-body > footer > section {
+footer a {
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer > section {
   display: flex;
-  justify-content: space-between;
+	flex-direction: column;
+}
+
+footer > section > div.hautdepage {
+	position: absolute;
+	right: 1em;
+}
+
+footer > section > div.hautdepage > a{
+	display: flex;
+	align-items: flex-end;
+}
+
+
+footer > section > div.hautdepage img {
+	width: 21px;
+}
+
+
+footer > section > div.mainfooter {
+	margin: auto;
+	width: 82%;
+
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-evenly;
   align-items: flex-start;
   flex-wrap: wrap;
+
+	padding: 0em 1em 0em 1em;
 }
+
+footer > section > div.mainfooter > div > h3 {
+	border-bottom: 2px solid #212121;
+}
+
+footer > section > div.mainfooter > div > div.text {
+	display: flex;
+	flex-direction: column;
+}
+
+footer > section > div.mainfooter > div > div.reseaux {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/*
 
 body > footer > section > section {
   flex: 1 0 200px;
@@ -282,3 +344,5 @@ body > footer > section > section:last-child {
 body > footer .icon {
 	text-decoration: none;
 }
+
+*/
