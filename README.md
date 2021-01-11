@@ -153,7 +153,7 @@ non fonctionnel :
 
   - [X]  page mention légal + politique de confidentialité
 
-  - [ ]  refaire design (aligner + rajout barre)
+  - [X]  refaire design (aligner + rajout barre)
 
   - [x]  haut de page - mettre une image
 
