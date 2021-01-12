@@ -1,13 +1,47 @@
-body > section {
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+div.mainAnnonce {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 2em;
+}
+
+div.topMessage {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap-reverse;
 }
 
-body > section > div:first-child {
-  flex-grow: 1;
+div.topMessage > h2{
+  font-size: 1em;
+  font-style: italic;
 }
 
-body > section > div:last-child {
-  margin-top: 20px;
+div.titre {
+  display: flex;
+  flex-direction: row;
+	align-items: flex-end;
+  justify-content: space-between;
+
+  width: 100%;
+
+  border-bottom: 3px dashed #212121;
+}
+
+div.titre > h2 {
+  font-size: 2em;
+
+  margin: 0em;
+}
+
+div.optionEtranger {
+
+}
+
+
+div.optionAuteur {
+
 }
