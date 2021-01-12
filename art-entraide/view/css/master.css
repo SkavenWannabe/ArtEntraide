@@ -140,7 +140,7 @@ header > div > nav ul form li:first-of-type, header > div > nav ul form li:first
 
 /* Bouton créer un compte */
 header > div > nav ul form:last-of-type li:last-of-type button {
-	min-width: 160px;
+	min-width: 170px;
 }
 
 nav.ariane {
