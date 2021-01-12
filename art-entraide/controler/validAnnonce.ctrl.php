@@ -8,11 +8,11 @@ include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 if ($_GET['annonceId'] != ''){
-  $id_annonce = $_GET['annonceId'];
+  $id_annonce = htmlentities($_GET['annonceId']);
 }
 
 if ($_GET['idUser'] != ''){
-  $id_repondeur = $_GET['idUser'];
+  $id_repondeur = htmlentities($_GET['idUser']);
 }
 
 

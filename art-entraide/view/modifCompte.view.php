@@ -22,8 +22,10 @@
         <label for="prenom">Prénom <em>*</em></label>
         <input type="text" name="prenom" id="prenom" value="<?= $user->getPrenom() ?>" required>
 
-        <label for="p_adresse">Adresse postale</label>
-        <input type="text" name="p_adresse" id="p_adresse" value="<?= $user->getAdresse() ?>">
+        <?php if ($user instanceof Utilisateur): ?>
+          <label for="p_adresse">Adresse postale</label>
+          <input type="text" name="p_adresse" id="p_adresse" value="<?= $user->getAdresse() ?>">
+        <?php endif; ?>
 
         <label for="email">Adresse email <em>*</em></label>
         <input type="email" name="email" id="email" value="<?= $user->getEmail() ?>" required>

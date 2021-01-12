@@ -9,34 +9,34 @@ include_once(__DIR__."/../model/DAO.class.php");
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 // --- recuperation du nom --- //
 if ($_POST['nom'] != '') {
-  $nom = $_POST['nom'];
+  $nom = htmlentities($_POST['nom']);
 }else{
   $error[] = "Le nom doit être non nul";
 }
 
 // --- recuperation du prenom --- //
 if ($_POST['prenom'] != '') {
-  $prenom = $_POST['prenom'];
+  $prenom = htmlentities($_POST['prenom']);
 }else{
   $error[] = "Le prenom doit être non nul";
 }
 
 // --- recuperation de l'adresse email --- //
 if ($_POST['email'] != '') {
-  $email = $_POST['email'];
+  $email = htmlentities($_POST['email']);
 }else{
   $error[] = "L' email doit être non nul";
 }
 
 // --- recuperation du mot de passe --- //
 if ($_POST['passwd'] != '') {
-  $passwd = $_POST['passwd'];
+  $passwd = htmlentities($_POST['passwd']);
 }else{
   $error[] = "Le passwordd doit être non nul";
 }
 
 if ($_POST['passwdverif'] != '') {
-  $passwdverif = $_POST['passwdverif'];
+  $passwdverif = htmlentities($_POST['passwdverif']);
 }else{
   $error[] = "La verification du password doit être non nul";
 }
@@ -47,7 +47,7 @@ if ($passwd !== $passwdverif) {
 
 //recuperation de l'adresse
 if ($_POST['p_adresse'] != '') {
-  $p_adresse = $_POST['p_adresse'];
+  $p_adresse = htmlentities($_POST['p_adresse']);
 }else{
   $p_adresse = "";
 }

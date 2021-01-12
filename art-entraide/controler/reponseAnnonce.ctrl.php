@@ -7,14 +7,14 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-$action = $_GET['action'];
+$action = htmlentities($_GET['action']);
 
 if ($_GET['annonceId'] != ''){
-  $idAnnonce = $_GET['annonceId'];
+  $idAnnonce = htmlentities($_GET['annonceId']);
 }
 
 if ($_GET['idUser'] != ''){
-  $idUser = $_GET['idUser'];
+  $idUser = htmlentities($_GET['idUser']);
 }
 
 // ==== PARTIE USAGE DU MODELE ==== //
