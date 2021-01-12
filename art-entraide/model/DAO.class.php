@@ -225,7 +225,7 @@ class DAO{
     $ind = ($page -1) * $pageSize;
     $max = $this->getLastIdAnnonce()-1;
 
-    $req = "SELECT * FROM annonce where est_active is true";
+    $req = "SELECT * FROM annonce where est_active is true ORDER BY id DESC";
     $stmt = $this->db->query($req);
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 /*

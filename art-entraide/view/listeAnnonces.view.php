@@ -51,14 +51,6 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
           <?php endforeach; ?>
         </select>
 
-        <!-- Bouton de retour à la page précédente -->
-        <?php if ($page > 1): ?>
-          <button type="submit" name="page" value="<?= $pagePrec ?>">Page Précédente</button>
-        <?php endif; ?>
-        <!-- Bouton pour passer à la page suivante -->
-        <?php if ($page = $nbPages): ?>
-          <button type="submit" name="page" value="<?= $pageSuiv ?>">Page Suivante</button>
-        <?php endif; ?>
         <input type="submit" name="" value="Rechercher">
 
       </form>
@@ -83,6 +75,18 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
           <?php endforeach; ?>
         </div>
       </section>
+
+      <form class="" action="listeAnnonces.ctrl.php" method="get">
+        <!-- Bouton de retour à la page précédente -->
+        <?php if ($page > 1): ?>
+          <button type="submit" name="page" value="<?= $pagePrec ?>">Page Précédente</button>
+        <?php endif; ?>
+        <!-- Bouton pour passer à la page suivante -->
+        <?php if ($page = $nbPages): ?>
+          <button type="submit" name="page" value="<?= $pageSuiv ?>">Page Suivante</button>
+        <?php endif; ?>
+
+      </form>
 
       <script type="text/javascript" src="/view/js/accueil.js"></script>
 
