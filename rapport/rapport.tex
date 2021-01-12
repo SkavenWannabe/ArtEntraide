@@ -49,7 +49,14 @@
 \tableofcontents
 \newpage
 
+%==============================================================================
+%                           CADRAGE DU PROJET
+%==============================================================================
+
 \section{Cadrage du projet}
+
+%---------- description ----------
+
 \subsection{Description du projet}
 En cette période de crise sanitaire, et notamment durant le confinement, nous avons pu observer une
 émergence de la solidarité entre voisins. Au sein d’un immeuble, d’une rue ou bien d’un quartier,
@@ -72,6 +79,7 @@ Les services iront de la garderie aux petits travaux en passant par le dépannag
 même des courses régulières. L’idée est de faire une plateforme participative et diversifiée grâce aux
 compétences individuelles de chaque utilisateur.\\
 
+%---------- Objectifs ----------
 
 \subsection{Objectifs}
 
@@ -98,7 +106,7 @@ Il est donc important de vérifier les utilisateurs.\\
 Nous avons retenu trois critères à vérifier : la fiabilité (réputation), l'identité et les compétences de l'utilisateur.\\
 
 
-
+%---------- Description du contexte ----------
 
 \subsection{Description du contexte}
 
@@ -134,6 +142,8 @@ Art Entraide veut apporter ce moyen.\\
 
 Une description plus poussée des sites est disponible en annexe.\\
 
+%---------- Acteurs du projet ----------
+
 \subsection{Acteurs du projet}
 \subsubsection{Maîtrise d’ouvrage}
 
@@ -154,6 +164,8 @@ besoins, de concevoir et réaliser une solution.\\
 
 Les sous-traitants possibles sont des associations ou des mairies pour vérifier l’identité des utilisateurs
 bénévoles.\\
+
+%---------- Contraintes ----------
 
 \subsection{Contraintes}
 
@@ -240,6 +252,11 @@ aussi une statégie de réduction. Nous poserons des questions à la maîtrise d
 les clients.\\
 
 \newpage
+
+%==============================================
+%         Expression du besoin
+%==============================================
+
 \section{Expression du besoin}
 
 Pour mieux cerner les fonctionnalités et les besoins auxquels nous devons répondre, nous avons créé un diagramme de cas d'utilisation.
@@ -250,6 +267,8 @@ Celui-ci sera explicité dans les prochaines sous-parties.
   \caption{Diagramme des cas d'utilisation}
   \label{fig:DCU}
 \end{figure}
+
+%---------- Besoins fonctionnels ------------
 
 \subsection{Besoins fonctionnels}
 
@@ -298,7 +317,7 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
   \item Récupérer la localisation de l'appareil via la permission du navigateur.
 \end{itemize}
 
-
+%---------- Besoins non fonctionnels ------------
 
 \subsection{Besoins non fonctionnels}
 
@@ -351,6 +370,7 @@ Les informations du site doivent être présentées de la même façon à chacun
 Par exemple, la catégorie d'une annonce, si elle est représentée sur une page par une icône, ou écrite d'une certaine couleur, devra être représentée de la même façon sur toute les autres pages du site.
 
 
+%---------- Fonctions attendu ------------
 
 \subsection{Fonctions attendues}
 
@@ -377,6 +397,11 @@ annonces. Une page permettra de se connecter à son compte et une autre de gére
 personnelles.\\
 
 \newpage
+
+%=============================================
+%                 SOLUTIONS
+%=============================================
+
 \section{Solutions}
 
 \subsection{Spécifications détaillées}
@@ -679,7 +704,32 @@ Toutes les classes du modèle PHP sont en place et les contrôleurs avancent ave
   \label{fig:page-accueil}
 \end{figure}
 
+% ---------- Évaluation ----------
 
+\subsection{Évaluation du site}
+
+Pour pouvoir tester et évaluer notre site, nous l'avons fait tester à des membre de notre familles, à des amis, en bref, à la plus grande diversité de profils de personne. Pour avoir une continuité et stabilité dans l'évaluation, nous nous sommes basé sur les critère ergonomique de Bastien et Scapin pour notre grille d'evaluation. Elle comprend donc : Le guidage, le contrôle explicite, la gestion d'errur, la charge de travail et l'homogeneité. Cependant, en ce qui concerne l'adaptabilité, nous avons decidé de ne pas en tenir rigeur pour garder une simplicité optimale. En ce qui concerne les autres élement nous avons demander aux testeur d'attribuer une note sur dix par categorie.\\
+Cela nous donne une moyenne général de X/10 avec :\\
+\begin{itemize}
+  \item Guidage : X/10
+  \item Contrôle explicite : X/10
+  \item Gestion d'errur : X/10
+  \item Charge de travail : X/10
+  \item Homogeneité : X/10
+\end{itemize}
+
+Nous avons aussi rédigé un petit sénario à suivre lors de l'évauation tel que :
+\begin{enumerate}
+  \item Rechercher une annonce existante en base
+  \item Tenter d'y repondre (ce qui est impossible sans être connecté)
+  \item Crée un compte
+  \item Repondre a l'annonce rechercher plutôt
+  \item Crée une annonce
+  \item La modifier
+  \item Modifier son compte (crée plutôt)
+  \item Supprimer son compte
+  \item Signaler une annonce
+\end{enumerate}
 
 
 \newpage

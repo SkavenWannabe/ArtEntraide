@@ -1,0 +1,15 @@
+======= SÉNARIO ÉVALUATION ERGO =======
+
+Petit senario pour l'évaluation ergonomique par des utilisateurs lambda.
+
+1. Rechercher une annonce existante en base
+2. Tenter d'y repondre
+3. Crée un compte
+4. Repondre a l'annonce rechercher plutôt
+5. Crée une annonce
+6. La modifier
+7. Modifier son compte
+8. Supprimer son compte
+9. Signaler une annonce
+
+Pensez à noter les remarque de chaque étapes
