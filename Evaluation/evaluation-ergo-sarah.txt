@@ -1,0 +1,47 @@
+===== Evaluation ergo =====
+
+-- Profile :
+
+45 ans
+secretaire
+
+-- Remarque :
+
+
+--- Bastien & scapin :
+
+Guidage :
+  incitation - 8/10
+  Groupement/distinction - 10/10
+  Freedback immédiat - 10/10
+  Lisibilité - 10/10
+
+Contrôle explicité :
+  -
+
+Gestion des erreurs :
+  Protection - 10/10
+  Qualité des messages - 10/10
+  Corriger - 10/10
+
+Charge de travail :
+  Limiter le nombre d'étapes - 10/10
+  Densité informationnelle - 10/10
+
+Sigifiance des codes et dénominations :
+  Codage - 10/10
+  Vocabulaire - 10/10
+
+Homogénéité/Cohérence :
+  Stabilité - 10/10
+  Terminologie constante - 10/10
+  Prise de décision -
+
+Compatibilité :
+  Accord entre les caractéristiques de l'utilisateur et la tâche - 10/10
+  Accord entre l'organisation des sorties, des entrées et les dialogue - 10/10
+  -
+
+Adaptabilité :
+  Flexibilité -
+  Expérience utilisateur -

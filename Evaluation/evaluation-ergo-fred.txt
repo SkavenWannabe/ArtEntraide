@@ -1,0 +1,47 @@
+===== Evaluation ergo =====
+
+-- Profile :
+
+50 ans
+ouvrier
+très TRÈS TTRRÈÈSS peu à l'aire evec l'informatique
+
+-- Remarque :
+
+--- Bastien & scapin :
+
+Guidage :
+  incitation - 9/10
+  Groupement/distinction - 8/10
+  Freedback immédiat - 5/10 (il a pas vu)
+  Lisibilité - 10/10
+
+Contrôle explicité :
+  -
+
+Gestion des erreurs :
+  protection - -
+  Qualité des messages - 8/10
+  Corriger - 9/10
+
+Charge de travail :
+  Limiter le nombre d'étapes - 9/10
+  Densité informationnelle - 9/10
+
+Sigifiance des codes et dénominations :
+  Codage - 9/10
+  Vocabulaire - 9/10
+
+Homogénéité/Cohérence :
+  Stabilité - 10/10
+  Terminologie constante - 10/10
+  Prise de décision -
+
+Compatibilité :
+  Accord entre les caractéristiques de l'utilisateur et la tâche -
+  Accord entre l'organisation des sorties, des entrées et les dialogue -
+  -
+
+Adaptabilité :
+  Flexibilité -
+  Expérience utilisateur -
