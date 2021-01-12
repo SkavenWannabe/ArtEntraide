@@ -38,12 +38,12 @@ $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
 
 //recuperation des annonces en fonction de la page actuelle et du nombre d'élément par page
-if($categorie == '' && $motCle == ''){
+if($categorie == '' && $motcle == ''){
   $annonces = $art->getPageRef($page,$pageSize);
 }
 
 // Filtrage annonces #3
-if($categorie != '' || $motCle != ''){
+if($categorie != '' || $motcle != ''){
   $annonces = $art->getAnnonceRecherche($motcle, $categorie,$page,$pageSize);
 }
 
