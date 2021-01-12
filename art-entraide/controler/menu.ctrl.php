@@ -24,7 +24,7 @@ if (!isset($_SESSION['connected'])){
   $_SESSION['connected'] = false;
 }
 
-if($etat == "certificateur"){
+if($etat == "certification"){
   $utilisateurs = $art->getAllUsr();
 }
 
