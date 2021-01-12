@@ -24,6 +24,9 @@ if (!isset($_SESSION['connected'])){
   $_SESSION['connected'] = false;
 }
 
+if($etat == "certificateur"){
+  $utilisateurs = $art->getAllUsr();
+}
 
 $annonces = $art->getAnnonceAccueil();
 $user = $_SESSION['user'];
@@ -57,6 +60,10 @@ switch ($etat) {
   case 'profil':
       $view->assign('user', $user);
       $view->display("profil.view.php");
+      break;
+  case 'certification':
+      $view->assign('utilisateurs', $utilisateurs);
+      $view->display("certif.view.php");
       break;
   default:
     $view->assign('annonces', $annonces);
