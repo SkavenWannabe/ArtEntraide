@@ -65,6 +65,7 @@ if(!isset($error)){
   $categorie = $art->getCategorieNom($nomCategorie);
 
   // création d'une annonce
+  $message = "Votre annonce a bien été créée";
   $idAnnonce = $art->getLastIdAnnonce() + 1;
   $annonce = new Annonce($idAnnonce, $nom, $description, $lieu, $est_demande, $est_active, $today, $dateService, $idCreateur, $categorie);
   $art->createAnnonce($annonce);
@@ -84,6 +85,7 @@ $view->assign('user', $user);
 $view->assign('nomCategories', $categories);
 
 if (!isset($error)){
+  $view->assign('message', $message);
   $view->assign('nomCategorie', $nomCategorie);
   $view->assign('annonce', $annonce);
   $view->assign('nomAuteur',$nomAuteur);
