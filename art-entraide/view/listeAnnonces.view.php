@@ -29,21 +29,6 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
 
       <form class="" action="listeAnnonces.ctrl.php" method="get">
         <input type="text" name="motcle" placeholder="Mots clés">
-        <input list="villes" name="ville" placeholder="Ville">
-        <!-- Liste des villes de france -->
-        <datalist id="villes">
-          <?php foreach ($listeVilles as $value): ?>
-            <option value="<?= $value ?>">
-          <?php endforeach; ?>
-        </datalist>
-        <select name="rayon">
-          <option value="0" disabled selected>Rayon</option>
-            <option value="1">1km</option>
-            <option value="2">2km</option>
-            <option value="5">5km</option>
-            <option value="10">10km</option>
-            <option value="0">Pas de limite</option>
-        </select>
         <select name="categorie">
           <option value="0" disabled selected>Catégorie</option>
           <?php foreach ($nomCategories as $value) : ?>
@@ -61,7 +46,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
             <article class="annonce">
               <header>
                 <img src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
-                <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"><?= $value->getNom() ?></a></h2>
+                <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"> <h2><?= mb_substr($value->getNom(),0,50,"utf-8") ?><?php if(strlen($value->getNom()) > 50){ echo"...";}  ?></a></h2>
               </header>
               <p><?= mb_substr($value->getDescription(),0,100,"utf-8") ?> <?php if(strlen($value->getDescription()) > 100){ echo"...";}  ?></p>
               <p class="date"><?= $value->getDateService() ?></p>
