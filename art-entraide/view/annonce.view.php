@@ -34,19 +34,17 @@ $nomCategorie = nom de la catégorie de l'annonce
         <div class="topMessage">
           <h2>
           <?php if ($annonce->getEstDemande()): ?>
-            <?= $nomAuteur ?> a besoin d'aide le
+            <?= $nomAuteur ?> a besoin d'aide
           <?php else: ?>
             <?= $nomAuteur ?> propose généreusement son aide
           <?php endif; ?>
-            le <?= $annonce->getDateService() ?> a <?= $annonce->getAdresse() ?></h2>
+            le <?= $annonce->getDateService() ?> à <?= $annonce->getAdresse() ?></h2>
         </div>
 
         <div class="titre">
             <h2><?= $annonce->getNom() ?></h2>
 
-            <form class="" action="/controler/listeAnnonces.ctrl.php" method="get">
-              <button class="indicationCategorie" type="submit" name="categorie" value="<?= $nomCatégorie ?>"><?= $nomCatégorie ?></button>
-            </form>
+            <h3><?= $nomCategorie ?></h3>
         </div>
 
         <div class="description">
