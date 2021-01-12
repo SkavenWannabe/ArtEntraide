@@ -54,7 +54,7 @@ $est_active = true;
 // ==== PARTIE USAGE DU MODELE ==== //
 
 session_start();
-$user = $_SESSION['user']; //var_dump($user);
+$user = $_SESSION['user'];
 
 if(!isset($error)){
   $art = new DAO();
@@ -70,7 +70,6 @@ if(!isset($error)){
   $art->createAnnonce($annonce);
 
   //$annonce = $art->getAnnonce((int)$idAnnonce);
-  //var_dump($annonce);
 }
 $connected = $_SESSION['connected'];
 $categories = $_SESSION['nomCategories'];

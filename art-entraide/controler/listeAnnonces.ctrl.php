@@ -38,14 +38,27 @@ $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
 
 //recuperation des annonces en fonction de la page actuelle et du nombre d'élément par page
-$annonces = $art->getPageRef($page,$pageSize);
+if($categorie == '' && $motCle == ''){
+  $annonces = $art->getPageRef($page,$pageSize);
+}
 
-if(sizeof($annonces) > $pageSize){
-  $nbPages = sizeof($annonces)/$pageSize+1;
+// Filtrage annonces #3
+if($categorie != '' || $motCle != ''){
+  $annonces = $art->getAnnonceRecherche($motcle, $categorie,$page,$pageSize);
+}
+
+//recuperation du nombre d'élément
+$nbElement = $art->getNbPage($motcle, $categorie);
+
+//calcul du nombre de page possible
+if($nbElement > $pageSize){
+  $nbPages = round($nbElement/$pageSize)+1;
 }else{
   $nbPages=1;
 }
 
+//calcul nouvelle valeur pour page suivant et precedente
+//possibilité ensuite d'affiché le nombre de page, etc..
 if($page == 1){
   $pagePrec = $page;
   $pageSuiv = $page+1;
@@ -56,42 +69,6 @@ if($page == 1){
   $pagePrec = $page-1;
   $pageSuiv = $page+1;
 }
-
-/*
-// Filtrage annonces #1
-foreach ($annonces as $currentAnnonce){
-
-  if (isset($motcle)){
-    $nomOK = (strpos($currentAnnonce->getNom(),$motcle) !== false);
-  } else {
-    $nomOK = true;
-  }
-
-  if (isset($categorie)){
-    $categorieOK = ($currentAnnonce->getCategorie()->getNom() == $categorie);
-  } else {
-    $categorieOK = true;
-  }
-
-  if ($nomOK and $categorieOK) {
-    $annoncesFiltrees[] = $currentAnnonce;
-  }
-}
-
-$annonces = $annoncesFiltrees;
-*/
-/*
-// Filtrage annonces #2
-if(isset($categorie) && $categorie !== '0' && $categorie !== ''){
-  $annonces = $art->getAnnonceCategorie($categorie);
-}
-*/
-
-// Filtrage annonces #3
-if (isset($motcle) or isset($categorie)){
-  $annonces = $art->getAnnonceRecherche($motcle, $categorie);
-}
-
 
 $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];

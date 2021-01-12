@@ -32,8 +32,6 @@ $annonce = $art->getAnnonce($id_annonce);
 $annonce->setEstActive(false);
 $art->updateAnnonce($annonce);
 
-//var_dump($annonce);
-
 
 //envoie automatique d'un message à l'utilisateur qu'il à choisi
 $id_message = $art->getLastIdMes() +1;

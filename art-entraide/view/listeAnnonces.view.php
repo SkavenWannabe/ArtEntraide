@@ -67,7 +67,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
           <button type="submit" name="page" value="<?= $pagePrec ?>">Page Précédente</button>
         <?php endif; ?>
         <!-- Bouton pour passer à la page suivante -->
-        <?php if ($page = $nbPages): ?>
+        <?php if ($page < $nbPages): ?>
           <button type="submit" name="page" value="<?= $pageSuiv ?>">Page Suivante</button>
         <?php endif; ?>
 
