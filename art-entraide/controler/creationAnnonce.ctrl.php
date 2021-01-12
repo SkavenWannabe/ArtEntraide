@@ -9,24 +9,24 @@ include_once(__DIR__."/../model/DAO.class.php");
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 // --- recuperation de l'intitule --- //
 if ($_POST['intitule'] != '') {
-  $nom = $_POST['intitule'];
+  $nom = htmlentities($_POST['intitule']);
 }else{
   $error[] = "L' intitule doit être non nul";
 }
 
 // --- recuperation de la categorie --- //
-$nomCategorie = $_POST['categorie'];
+$nomCategorie = htmlentities($_POST['categorie']);
 
 // --- recuperation de la description --- //
 if ($_POST['description'] != '') {
-  $description = $_POST['description'];
+  $description = htmlentities($_POST['description']);
 }else{
   $error[] = "La description doit être non nul";
 }
 
 // --- recuperation du lieu d'execution de l'annonce --- //
 if ($_POST['lieu'] != '') {
-  $lieu = $_POST['lieu'];
+  $lieu = htmlentities($_POST['lieu']);
 }else{
   $lieu = "";
 }
@@ -36,7 +36,7 @@ $today = date("y.m.d");
 
 // --- recuperation de la date d'execution de l'annonce --- //
 if ($_POST['date'] != '') {
-  $dateService = $_POST['date'];
+  $dateService = htmlentities($_POST['date']);
 
   $dateTimestamp1 = strtotime($dateService);
   $dateTimestamp2 = strtotime($today);
@@ -72,8 +72,8 @@ if(!isset($error)){
   //$annonce = $art->getAnnonce((int)$idAnnonce);
   //var_dump($annonce);
 }
-$connected = $_SESSION['connected'];
-$categories = $_SESSION['nomCategories'];
+$connected = htmlentities($_SESSION['connected']);
+$categories = htmlentities($_SESSION['nomCategories']);
 
 session_write_close();
 

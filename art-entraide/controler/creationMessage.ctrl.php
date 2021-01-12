@@ -8,10 +8,10 @@ include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 // --- recuperation idAnnonce --- //
-$id_annonce = $_POST['annonceId'];
+$id_annonce = htmlentities($_POST['annonceId']);
 
 if ($_POST['contenu'] != ''){
-  $contenu = $_POST['contenu'];
+  $contenu = htmlentities($_POST['contenu']);
 }else{
   $error = '';
 }
@@ -19,7 +19,7 @@ if ($_POST['contenu'] != ''){
 $today = date("y.m.d");
 
 if ($_POST['id_repondeur'] != ''){
-  $id_repondeur = $_POST['id_repondeur'];
+  $id_repondeur = htmlentities($_POST['id_repondeur']);
 }else{
   $id_repondeur = -1;
 }
@@ -29,8 +29,8 @@ session_start();
 $art = new DAO();
 
 //recuperation du user si il existe
-$user = $_SESSION['user'];
-$categories = $_SESSION['nomCategories'];
+$user = htmlentities($_SESSION['user']);
+$categories = htmlentities($_SESSION['nomCategories']);
 
 if(!isset($error)){
   //Création du nouveau message

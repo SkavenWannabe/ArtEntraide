@@ -10,7 +10,7 @@ include_once(__DIR__."/../model/Categorie.class.php");
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 // --- recuperation du nom --- //
 if ($_POST['nom'] != '') {
-  $nom = $_POST['nom'];
+  $nom = htmlentities($_POST['nom']);
 }else{
   $error[] = "Le nom doit être non nul";
 }

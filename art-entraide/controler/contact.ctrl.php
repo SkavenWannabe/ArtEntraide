@@ -37,8 +37,8 @@ if ($_POST['message'] != '') {
 session_start();
 $art = new DAO();
 // Récupérer les infos nécessaires au header (user et catégories)
-$user = $_SESSION['user'];
-$nomCategories = $_SESSION['nomCategories'];
+$user = htmlentities($_SESSION['user']);
+$nomCategories = htmlentities($_SESSION['nomCategories']);
 
 if (!isset($error)) {
   $annonces = $art->getAnnonceAccueil();

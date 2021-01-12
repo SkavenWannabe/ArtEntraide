@@ -21,7 +21,7 @@ include_once(__DIR__."/../model/DAO.class.php");
 
 // Récupérer le nom de la vue à afficher en GET
 if (isset($_GET['page'])) {
-  $page = $_GET['page'];
+  $page = htmlentities($_GET['page']);
 }
 
 // Ouvrir la session

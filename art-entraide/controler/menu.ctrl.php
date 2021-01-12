@@ -8,13 +8,13 @@ include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 if ($_GET['etat'] != '') {
-  $etat = $_GET['etat'];
+  $etat = htmlentities($_GET['etat']);
 }else{
   $etat = '';
 }
 
 // recuperation de la categorie == none si non selectionner
-$selectCat = $_POST['categorie'];
+$selectCat = htmlentities($_POST['categorie']);
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();

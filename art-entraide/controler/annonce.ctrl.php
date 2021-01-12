@@ -8,7 +8,7 @@ include_once(__DIR__."/../model/DAO.class.php");
 include_once(__DIR__."/../model/Categorie.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-$idAnnonce = $_GET['idAnnonce'];
+$idAnnonce = htmlentities($_GET['idAnnonce']);
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
@@ -26,8 +26,8 @@ $categorie = $annonce->getCategorie();
 $nomCategorie = $categorie->getNom();
 
 //recuperation du user si il existe
-$user = $_SESSION['user'];
-$categories = $_SESSION['nomCategories'];
+$user =htmlentities($_SESSION['user']);
+$categories = htmlentities($_SESSION['nomCategories']);
 
 session_write_close();
 

@@ -11,14 +11,14 @@ include_once(__DIR__."/../model/DAO.class.php");
 //morceau eventuellement a changer suivant les vues et la façons dont est gérer la connexion
 // --- recuperation de l'adresse email --- //
 if ($_POST['pseudo'] != '') {
-  $email = $_POST['pseudo'];
+  $email = htmlentities($_POST['pseudo']);
 }else{
   $error[] = "L' email doit être non nul";
 }
 
 // --- recuperation du mot de passe --- //
 if ($_POST['password'] != '') {
-  $passwd = $_POST['password'];
+  $passwd = htmlentities($_POST['password']);
 }else{
   $error[] = "Le mot de passe doit être non nul";
 }
@@ -42,7 +42,7 @@ if (!isset($error)) {
     if ($art->ifCertif($email)){
       $user = $art->getCertifMail($email);
       $_SESSION['user'] = $user;
-      
+
       $utilisateurs = $art->getAllUsr();
     }
 

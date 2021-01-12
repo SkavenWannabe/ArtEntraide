@@ -8,15 +8,15 @@ include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 if (isset($_GET['motcle']) and ($_GET['motcle'] != '')) {
-  $motcle = $_GET['motcle'];
+  $motcle = htmlentities($_GET['motcle']);
 }
 
 if (isset($_GET['categorie']) and ($_GET['categorie'] != '') and ($_GET['categorie'] != '0')) {
-  $categorie = $_GET['categorie'];
+  $categorie = htmlentities($_GET['categorie']);
 }
 
 if(isset($_GET['page'])){
-  $page = $_GET['page'];
+  $page = htmlentities($_GET['page']);
 } else {
   $page = 1;
 }
@@ -26,7 +26,7 @@ $pageSize = 10; // constante du nombre d'élément afficher par page
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
 //vérification utilisateur connecté
-$connected = $_SESSION['connected'];
+$connected = htmlentities($_SESSION['connected']);
 
 // Get annonces
 $art = new DAO();
@@ -89,8 +89,8 @@ if (isset($motcle) or isset($categorie) or isset($ville) or isset($rayon)){
 }
 */
 
-$user = $_SESSION['user'];
-$categories = $_SESSION['nomCategories'];
+$user = htmlentities($_SESSION['user']);
+$categories = htmlentities($_SESSION['nomCategories']);
 
 session_write_close();
 

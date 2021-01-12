@@ -7,7 +7,7 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
-$idAnnonce = $_GET['idAnnonce'];
+$idAnnonce = htmlentities($_GET['idAnnonce']);
 
 // ==== PARTIE USAGE DU MODELE ==== //
 session_start();
