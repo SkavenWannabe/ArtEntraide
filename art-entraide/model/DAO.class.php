@@ -227,8 +227,8 @@ class DAO{
 
     $req = "SELECT * FROM annonce where est_active is true";
     $stmt = $this->db->query($req);
-    $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+/*
     foreach ($datas as $data) {
      if ($data['date_service'] === NULL) {
         $data['date_service'] = '';
@@ -249,10 +249,30 @@ class DAO{
       $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                                $data['est_demande'],$data['est_active'],$data['date_creation'],
                                $data['date_service'],$data['id_createur'],$categorie);
-    }
+    }*/
 
     for($i = $ind; $i < $ind+$pageSize && $i < $max; $i++){
-      $return[] = $annonce[$i];
+      if ($data[$i]['date_service'] === NULL) {
+         $data[$i]['date_service'] = '';
+       }
+       if ($data[$i]['description'] === NULL) {
+         $data[$i]['description'] = '';
+       }
+       if ($data[$i]['adresse'] === NULL) {
+         $data[$i]['adresse'] = '';
+       }
+
+       //récupération de la catégorie de l'annonce
+       $idCat = $data[$i]['id_categorie'];
+       $req2 = "SELECT * FROM categorie WHERE id='$idCat'";
+       $sth2 = $this->db->query($req2);
+       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
+
+       $annonce[0] = new Annonce($data[$i]['id'],$data[$i]['nom'],$data[$i]['description'],$data[$i]['adresse'],
+                                $data[$i]['est_demande'],$data[$i]['est_active'],$data[$i]['date_creation'],
+                                $data[$i]['date_service'],$data[$i]['id_createur'],$categorie);
+
+      $return[] = $annonce[0];
     }
 
     return $return;
