@@ -38,7 +38,13 @@ $nomCategorie = nom de la catégorie de l'annonce
           <?php else: ?>
             <?= $nomAuteur ?> propose généreusement son aide
           <?php endif; ?>
-            le <?= $annonce->getDateService() ?> à <?= $annonce->getAdresse() ?></h2>
+
+          <?php if (!$annonce->getDateService() == '') : ?>
+            le <?= $annonce->getDateService() ?>
+          <?php endif; ?>
+          <?php if (!$annonce->getAdresse() == '') : ?>
+            à <?= $annonce->getAdresse() ?></h2>
+          <?php endif; ?>
         </div>
 
         <div class="titre">
