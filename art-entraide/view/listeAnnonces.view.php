@@ -60,7 +60,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
           <?php foreach ($annonces as $value) : ?>
             <article class="annonce">
               <header>
-                <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
+                <img src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
                 <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"><?= $value->getNom() ?></a></h2>
               </header>
               <p><?= mb_substr($value->getDescription(),0,100,"utf-8") ?> <?php if(strlen($value->getDescription()) > 100){ echo"...";}  ?></p>
