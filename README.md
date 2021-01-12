@@ -190,7 +190,7 @@ non fonctionnel :
 
  \- description annonce :
 
-  - [ ]  refaire design
+  - [X]  refaire design
 
   - [X]  ajout bouton signalez (renvoi éventuellement vers contactez nous)
 
