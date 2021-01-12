@@ -28,23 +28,35 @@ $nomCategorie = nom de la catégorie de l'annonce
     <?php include_once(__DIR__."/../view/header.php"); ?>
 
     <section>
-      <div>
-        <header>
-          <h2>Annonce de <?= $nomAuteur ?> : <?= $annonce->getNom() ?></h2>
-        </header>
 
-        <section>
-          <div>
-            <p>Catégorie : <?= $annonce->getCategorie()->getNom() ?></p>
-            <p>Date du service : <?= $annonce->getDateService() ?></p>
-            <p>Lieu du service : <?= $annonce->getAdresse() ?></p>
-          </div>
+      <div class="mainAnnonce">
 
-          <div>
-            <h3>Description de l'annonce</h3>
-            <p><?= $annonce->getDescription() ?></p>
-          </div>
-        </section>
+        <div class="topMessage">
+          <h2>
+          <?php if ($annonce->getEstDemande()): ?>
+            <?= $nomAuteur ?> a besoin d'aide le
+          <?php else: ?>
+            <?= $nomAuteur ?> propose généreusement son aide
+          <?php endif; ?>
+            le <?= $annonce->getDateService() ?> a <?= $annonce->getAdresse() ?></h2>
+        </div>
+
+        <div class="titre">
+            <h2><?= $annonce->getNom() ?></h2>
+
+            <form class="" action="/controler/listeAnnonces.ctrl.php" method="get">
+              <button class="indicationCategorie" type="submit" name="categorie" value="<?= $nomCatégorie ?>"><?= $nomCatégorie ?></button>
+            </form>
+        </div>
+
+        <div class="description">
+          <p><?= $annonce->getDescription() ?></p>
+        </div>
+
+      </div>
+
+      <div class="optionEtranger">
+
 
         <?php if (!isset($user) || $annonce->getIdCreateur() != $user->getId()): ?>
           <form class="" action="reponseAnnonce.ctrl.php" method="get">
@@ -60,7 +72,7 @@ $nomCategorie = nom de la catégorie de l'annonce
 
       </div>
 
-      <div>
+      <div class="optionAuteur">
         <?php if (isset($user) && $annonce->getIdCreateur() == $user->getId()): ?>
           <form action="actionModif.ctrl.php" method="post">
             <button type="submit" name="action" value="modifAnnonce">Modifier l'annonce</button>
@@ -72,8 +84,6 @@ $nomCategorie = nom de la catégorie de l'annonce
             <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
           </form>
         <?php endif; ?>
-
-
       </div>
 
     </section>
