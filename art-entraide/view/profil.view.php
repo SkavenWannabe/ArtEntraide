@@ -21,13 +21,16 @@ $user
 
         <h2>Votre profil</h2>
 
-        <form action="voirSesAnnonces.ctrl.php" method="get">
-          <button type="submit">Voir ses annonces</button>
-        </form>
+        <?php if ($user instanceof Utilisateur): ?>
+          <form action="voirSesAnnonces.ctrl.php" method="get">
+            <button type="submit">Voir ses annonces</button>
+          </form>
 
-        <form action="voirSesReponses.ctrl.php" method="post"> <!-- TODO : changer controler -->
-          <button type="submit">Voir réponses</button>
-        </form>
+          <form action="voirSesReponses.ctrl.php" method="post"> <!-- TODO : changer controler -->
+            <button type="submit">Voir réponses</button>
+          </form>
+        <?php endif; ?>
+
 
         <p>Nom : <?= $user->getNom() ?> <?= $user->getPrenom() ?></p>
         <p>Adresse mail : <?= $user->getEmail() ?></p>

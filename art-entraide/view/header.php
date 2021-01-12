@@ -35,7 +35,11 @@
             <li><button type="submit" name="etat" value="connexion">Se connecter</button></li>
             <li><button type="submit" name="etat" value="creation">Créer un compte</button></li>
           <?php else: ?>
-            <li><button type="submit" name="etat" value="creationAnnonce">Créer une annonce</button></li>
+            <?php if ($user instanceof Certificateur): ?>
+              <li><button type="submit" name="etat" value="certification">Certifier</button></li>
+            <?php else: ?>
+              <li><button type="submit" name="etat" value="creationAnnonce">Créer une annonce</button></li>
+            <?php endif; ?>
             <li><button type="submit" name="etat" value="profil"><?= $user->getNom() ?></button></li>
           <?php endif; ?>
         </form>
