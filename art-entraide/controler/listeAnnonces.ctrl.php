@@ -89,8 +89,8 @@ if (isset($motcle) or isset($categorie) or isset($ville) or isset($rayon)){
 }
 */
 
-$user = htmlentities($_SESSION['user']);
-$categories = htmlentities($_SESSION['nomCategories']);
+$user = $_SESSION['user'];
+$categories = $_SESSION['nomCategories'];
 
 session_write_close();
 

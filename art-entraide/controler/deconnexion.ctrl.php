@@ -12,7 +12,7 @@ include_once(__DIR__."/../model/DAO.class.php");
 
 session_start();
 
-$categories = htmlentities($_SESSION['nomCategories']);
+$categories = $_SESSION['nomCategories'];
 $_SESSION['user'] = NULL;
 $_SESSION['connected'] = false;
 

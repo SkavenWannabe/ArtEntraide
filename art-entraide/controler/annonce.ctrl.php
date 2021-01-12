@@ -26,8 +26,8 @@ $categorie = $annonce->getCategorie();
 $nomCategorie = $categorie->getNom();
 
 //recuperation du user si il existe
-$user =htmlentities($_SESSION['user']);
-$categories = htmlentities($_SESSION['nomCategories']);
+$user = $_SESSION['user'];
+$categories = $_SESSION['nomCategories'];
 
 session_write_close();
 

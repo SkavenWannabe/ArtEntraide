@@ -29,8 +29,8 @@ session_start();
 $art = new DAO();
 
 //recuperation du user si il existe
-$user = htmlentities($_SESSION['user']);
-$categories = htmlentities($_SESSION['nomCategories']);
+$user = $_SESSION['user'];
+$categories = $_SESSION['nomCategories'];
 
 if(!isset($error)){
   //Création du nouveau message

@@ -79,8 +79,8 @@ if(!isset($error)){
   $user = NULL;
 }
 
-$connected = htmlentities($_SESSION['connected']);
-$categories = htmlentities($_SESSION['nomCategories']);
+$connected = $_SESSION['connected'];
+$categories = $_SESSION['nomCategories'];
 
 session_write_close();
 

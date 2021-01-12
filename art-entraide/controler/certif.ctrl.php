@@ -40,8 +40,8 @@ if ($idUsr != -1) {
 
 $utilisateurs = $art->getAllUsr();
 
-$user = htmlentities($_SESSION['user']);
-$categories = htmlentities($_SESSION['nomCategories']);
+$user = $_SESSION['user'];
+$categories = $_SESSION['nomCategories'];
 
 session_write_close();
 

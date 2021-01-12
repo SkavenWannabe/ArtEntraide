@@ -34,8 +34,8 @@ if ($idAnnonce != -1) {
   $annonce = $art->getAnnonce($idAnnonce);
 }
 
-$user = htmlentities($_SESSION['user']);
-$nomCategories = htmlentities($_SESSION['nomCategories']);
+$user = $_SESSION['user'];
+$nomCategories = $_SESSION['nomCategories'];
 
 session_write_close();
 
