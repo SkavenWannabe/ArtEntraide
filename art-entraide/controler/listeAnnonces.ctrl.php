@@ -9,10 +9,14 @@ include_once(__DIR__."/../model/DAO.class.php");
 // ==== PARTIE RECUPERATION DES DONNEES ==== //
 if (isset($_GET['motcle']) and ($_GET['motcle'] != '')) {
   $motcle = htmlentities($_GET['motcle']);
+}else{
+  $motcle = '';
 }
 
 if (isset($_GET['categorie']) and ($_GET['categorie'] != '') and ($_GET['categorie'] != '0')) {
   $categorie = htmlentities($_GET['categorie']);
+} else {
+  $categorie = '';
 }
 
 if(isset($_GET['page'])){
@@ -76,18 +80,18 @@ foreach ($annonces as $currentAnnonce){
 
 $annonces = $annoncesFiltrees;
 */
-
+/*
 // Filtrage annonces #2
 if(isset($categorie) && $categorie !== '0' && $categorie !== ''){
   $annonces = $art->getAnnonceCategorie($categorie);
 }
-
-/*
-// Filtrage annonces #3
-if (isset($motcle) or isset($categorie) or isset($ville) or isset($rayon)){
-  $annonces = $art->getAnnonceRecherche($motcle, $categorie, $ville, $rayon);
-}
 */
+
+// Filtrage annonces #3
+if (isset($motcle) or isset($categorie)){
+  $annonces = $art->getAnnonceRecherche($motcle, $categorie);
+}
+
 
 $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];

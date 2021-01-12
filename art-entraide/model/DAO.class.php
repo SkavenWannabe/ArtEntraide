@@ -317,7 +317,7 @@ class DAO{
 
 //recupère une liste d'annonce correspondant aux critères de recherche (ignore le rayon pour l'instant)
   //Si vous ne voulez pas trier selon un des critères, passez NULL en parametre
-  function getAnnonceRecherche(string $motcle, string $nomCat, string $ville, int $rayonKm){
+  function getAnnonceRecherche(string $motcle, string $nomCat){
 
     //Préparation de la requête
     $req = "SELECT annonce.id,annonce.nom,annonce.description,annonce.adresse,annonce.est_demande,
@@ -325,17 +325,15 @@ class DAO{
                    FROM annonce, categorie where annonce.est_active is true
                                                AND annonce.id_categorie = categorie.id";
 
-    if (!is_null($motcle)){
-      $req .= " AND LOWER(annonce.nom) like LOWER('%$motcle%')";
+    if ($motcle != ''){
+      $req .= " AND LOWER(annonce.description) like LOWER('%$motcle%')";
     }
 
-    if (!is_null($nomCat)){
+    if ($nomCat != ''){
       $req .= " AND categorie.nom = '$nomCat'";
     }
 
-    if (!is_null($ville)){
-      $req .= " AND annonce.ville = '$ville'";
-    }
+    $req .= " ORDER BY annonce.id DESC";
 
     //Requête
     $sth = $this->db->query($req);
