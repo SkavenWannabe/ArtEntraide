@@ -53,36 +53,40 @@ $nomCategorie = nom de la catégorie de l'annonce
 
       </div>
 
-      <div class="optionEtranger">
+
+      <?php if ($user instanceof Utilisateur): ?>
+        <div class="optionEtranger">
 
 
-        <?php if (!isset($user) || $annonce->getIdCreateur() != $user->getId()): ?>
-          <form class="" action="reponseAnnonce.ctrl.php" method="get">
-            <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
-            <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
-          </form>
+          <?php if (!isset($user) || $annonce->getIdCreateur() != $user->getId()): ?>
+            <form class="" action="reponseAnnonce.ctrl.php" method="get">
+              <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
+              <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
+            </form>
 
-          <form class="" action="/controler/pagesinfos.ctrl.php" method="get">
-            <button class="actionCritique" type="submit" name="action" value="repondre">Signaler</button>
-            <input type="hidden" name="page" value="contact">
-          </form>
-        <?php endif; ?>
+            <form class="" action="/controler/pagesinfos.ctrl.php" method="get">
+              <button class="actionCritique" type="submit" name="action" value="repondre">Signaler</button>
+              <input type="hidden" name="page" value="contact">
+            </form>
+          <?php endif; ?>
 
-      </div>
+        </div>
 
-      <div class="optionAuteur">
-        <?php if (isset($user) && $annonce->getIdCreateur() == $user->getId()): ?>
-          <form action="actionModif.ctrl.php" method="post">
-            <button type="submit" name="action" value="modifAnnonce">Modifier l'annonce</button>
-            <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
-          </form>
+        <div class="optionAuteur">
+          <?php if (isset($user) && $annonce->getIdCreateur() == $user->getId()): ?>
+            <form action="actionModif.ctrl.php" method="post">
+              <button type="submit" name="action" value="modifAnnonce">Modifier l'annonce</button>
+              <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
+            </form>
 
-          <form action="supprimerAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment supprimer votre annonce ?\n Cette action est irréversible.');">
-            <button class="actionCritique" type="submit">Supprimer l'annonce</button>
-            <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
-          </form>
-        <?php endif; ?>
-      </div>
+            <form action="supprimerAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment supprimer votre annonce ?\n Cette action est irréversible.');">
+              <button class="actionCritique" type="submit">Supprimer l'annonce</button>
+              <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">
+            </form>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
+
 
     </section>
 
