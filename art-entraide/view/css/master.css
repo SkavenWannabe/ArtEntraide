@@ -72,6 +72,18 @@ button.actionCritique:hover {
 	/* transform: translateY(-0.25em); */
 }
 
+button.indicationCategorie {
+  color: var(--accent-color-vert);
+	border: solid 2px var(--accent-color-vert);
+}
+
+button.indicationCategorie:hover {
+  box-shadow: inset 6.5em 0 0 0 var(--accent-color-vert);
+  color: white;
+  background: var(--accent-color-vert);
+  border-color: var(--accent-color-vert);
+}
+
 /*=========== HEADER ===========*/
 
 body > header > div {
