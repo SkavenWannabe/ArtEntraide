@@ -704,9 +704,12 @@ dynamiques avec du HTML/CSS grâce à un serveur Web NginX.\\
 \subsection{Annonces}
 
 La fonctionnalité principale du service, à savoir la gestion d'annonces, est opérationnelle.\\
-Une page 'Rechercher une annonce' affiche les annonces, récupérées dynamiquement depuis la base de données, sous forme d'aperçus (titre, catégorie, début de description) ; elle permet également de les filtrer par catégorie. Chaque aperçu permet d'accéder aux détails de l'annonce.\\
+Une page "Rechercher une annonce" affiche les annonces, récupérées dynamiquement depuis la base de données, sous forme d'aperçus (titre, catégorie, début de description) ; elle permet également de les filtrer par catégorie, ou de rechercher par mots-clés (pour l'instant assez sommaire). Chaque aperçu permet d'accéder aux détails de l'annonce.\\
 Si l'utilisateur est connecté, il peut créer une annonce, consulter celles qu'il a créées, les modifier ou les supprimer.
 
+\subsection{Messages}
+
+Les utilisateurs peuvent interagir via le système de messages. Un utilisateur intéressé par une annonce peut y répondre, ce qui crée un fil de discussion lié à cette annonce et à son auteur, pour permettre aux deux parties de se mettre d'accord. Chaque utilisateur, via son profil, a accès à toutes ses conversations, que ce soit pour ses propres annonces ou pour celles auxquelles il a répondu. Enfin, si l'auteur d'une annonce juge que l'accord est conclu après une réponse, il peut la marquer comme "Validée", ce qui retire l'annonce des pages de recherche et envoie un message automatique à son interlocuteur.
 
 % ----------Compte ----------
 
