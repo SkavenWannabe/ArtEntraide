@@ -17,7 +17,7 @@ INSERT INTO Utilisateur VALUES(DEFAULT, 'francis.brunet-manquat@iut2.univ-grenob
 INSERT INTO Utilisateur VALUES(DEFAULT, 'raphel.bleuse@iut2.univ-grenoble-alpes.fr', 'ens', 'Raphaël', 'Bleuse', 'Grenoble', TRUE, 0);
 
 INSERT INTO Certificateur VALUES(DEFAULT, 'ens@iut2.univ-grenoble-alpes.fr', 'ens', 'Certificateur', 'Certificateur');
-INSERT INTO Certificateur VALUES(DEFAULT, 'vealem@yopmail.com', 'bacher-bézou', 'Vealem', 'Vealem');
+INSERT INTO Certificateur VALUES(DEFAULT, 'vealem@etu.univ-grenoble-alpes.fr', 'vealem', 'Vealem', 'team');
 
 INSERT INTO Categorie VALUES(DEFAULT, 'Baby-sitting');
 INSERT INTO Categorie VALUES(DEFAULT, 'Location');
