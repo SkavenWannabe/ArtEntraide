@@ -71,7 +71,7 @@ if(!isset($error)){
   //Nécessaire à l'affichage des annonces une foi le compte créer
   $annonces = $art->getAnnonceAccueil();
 
-  $message = "Votre compte est créer";
+  $message = "Votre compte a été créé";
 
 } else {
   $_SESSION['connected'] = false;
