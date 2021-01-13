@@ -704,8 +704,13 @@ dynamiques avec du HTML/CSS grâce à un serveur Web NginX.\\
 \subsection{Annonces}
 
 La fonctionnalité principale du service, à savoir la gestion d'annonces, est opérationnelle.\\
-Une page "Rechercher une annonce" affiche les annonces, récupérées dynamiquement depuis la base de données, sous forme d'aperçus (titre, catégorie, début de description) ; elle permet également de les filtrer par catégorie, ou de rechercher par mots-clés (pour l'instant assez sommaire). Chaque aperçu permet d'accéder aux détails de l'annonce.\\
-Si l'utilisateur est connecté, il peut créer une annonce, consulter celles qu'il a créées, les modifier ou les supprimer.
+
+Les utilisateurs connectés peuvent créer une annonce depuis le bouton "Créer une annonce" accessible n'importe où sur le site ; on leur demande alors de rentrer les informations relatives à leur annonce (titre, description, etc...) et leur annonce est enregistrée dans la base de donnée. Ces utilisateurs peuvent ensuite accéder aux annonces qu'ils ont déja créées depuis la page de leur profil.\\
+
+Une page "Rechercher une annonce" affiche les annonces, récupérées dynamiquement depuis la base de données, sous forme d'aperçus (titre, catégorie, début de description) ; elle permet également de les filtrer par catégorie, ou de rechercher par mots-clés (pour l'instant assez sommaire).\\
+
+Chaque aperçu d'annonce permet d'accéder à une page présentant plus en détails l'annonce en question.\\
+Depuis cette page, le créateur de l'annonce peut la modifier ou la supprimer ; les autres utilisateurs peuvent répondre à l'annonce (voir section "Messages") ou la signaler si elle est inapropriée.\\
 
 \subsection{Messages}
 
