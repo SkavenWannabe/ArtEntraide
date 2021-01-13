@@ -17,9 +17,9 @@
       <h1>Une erreur est survenue</h1>
       <img src="/view/design/robot-casse.jpg" alt="Robot cassé">
       <p>
-        Nous sommes désolé, une erreur est survenue.<br>
-        Nous vous inviton, si l'erreur se reproduit, de nous la decrire dans l'onglet "<a href="/controler/pagesinfos.ctrl.php?page=contact">Nous contacter</a>".<br>
-        Sinon retournez à la page d'<a href="/controler/start.ctrl.php">accueil</a>.
+        Nous sommes désolés, une erreur est survenue.<br>
+        Nous vous invitons, si l'erreur se reproduit, à nous la décrire dans l'onglet "<a href="/controler/pagesinfos.ctrl.php?page=contact">Nous contacter</a>".<br>
+        Sinon, retournez à la page d'<a href="/controler/start.ctrl.php">accueil</a>.
       </p>
     </section>
 
