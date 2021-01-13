@@ -23,7 +23,7 @@ const tl = new TimelineMax();
 if (bouton) {
   tl.fromTo(
     bouton,
-    1.7,
+    1,
     { opacity: "0" },
     { opacity: "1" }
   );
@@ -34,18 +34,18 @@ for (i = 0; i < annonces.length; i++) {
 
   tl.fromTo(
     annonces[i],
-    1.7,
+    1,
     { y: "-50px" },
     { y: "0%", ease: Expo.easeInOut },
-    "-=1.65"
+    "-=0.97"
   );
 
 
   tl.fromTo(
     annonces[i],
-    1.7,
+    1,
     { opacity: "0" },
     { opacity: "1", ease: Circ.easeInOut },
-    "-=1.65"
+    "-=0.97"
   );
 }

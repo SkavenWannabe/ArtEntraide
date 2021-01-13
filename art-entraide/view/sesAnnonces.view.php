@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js" integrity="sha512-I0VFyPo7hdM7YrEbQ0pvX4bX2904k0+B19u/xBrPrQoMprfcSnIDfGFD8kP52GbAhwtDjkEVhXlQvj8+vkJyew==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
     <?php include_once(__DIR__."/header.php"); ?>
 
     <section class="section_annonces">
@@ -40,6 +42,8 @@
         <?php endif; ?>
       </div>
     </section>
+
+    <script type="text/javascript" src="/view/js/accueil.js"></script>
 
     <?php include_once(__DIR__."/footer.php"); ?>
   </body>
