@@ -639,12 +639,11 @@ class DAO{
   // Suppression d'un Utilisateur
   // $utilisateur : l'utilisateur à supprimer
   function deleteUtilisateur(int $id) {
-    $req = "SELECT * from message WHERE id_auteur='$id'";
+    $req = "SELECT id from message WHERE id_auteur='$id'";
     $sth = $this->db->query($req);
     $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
     foreach ($datas as $data) {
-      $id_message = $data['id'];
-      $sql = "DELETE from reponse WHERE id_message='$id_message'";
+      $sql = "DELETE from reponse WHERE id_message='".$data['id']."'";
       $this->db->exec($sql);
     }
 
@@ -685,7 +684,7 @@ class DAO{
     if($date_service == ""){
       $date_service = NULL;
     }
-    $id_createur = $annonce->getIdCreateur();
+    $id_createur = $annonce->getCreateur()->getId();
     $id_categorie = $annonce->getCategorie()->getId();
 
     $stmt->BindParam(':id',$id);
