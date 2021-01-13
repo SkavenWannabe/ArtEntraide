@@ -137,15 +137,6 @@ class DAO{
     }
   }
 
-  // a vérifier si vraiment nécéssaire
-  function getIdCreateur(int $id) : int{
-    $req = "SELECT id_createur FROM annonce where id = '$id'";
-    $stmt = $this->db->query($req);
-    $return = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
-    return $return[0];
-  }
-
-
   // Getteur pour les Annonces
   function getLastIdAnnonce() : int{
     $req = "SELECT MAX(id) FROM annonce";
@@ -182,12 +173,13 @@ class DAO{
     $sth2 = $this->db->query($req2);
     $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
+    $utilisateur = $this->getUtilisateur($data['id_createur']);
+
     $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                              $data['est_demande'],$data['est_active'],$data['date_creation'],
-                             $data['date_service'],$data['id_createur'],$categorie);
-    $result[0] = $annonce;
-    $result[1] = $this->annonceEstCertif($data['date_service']);
-    return $result;
+                             $data['date_service'],$utilisateur,$categorie);
+
+    return $annonce;
   }
 
   //recuperation des annonces affiché à l'accueil
@@ -214,15 +206,14 @@ class DAO{
       $sth2 = $this->db->query($req2);
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
-      $annonce[0] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+      $utilisateur = $this->getUtilisateur($data['id_createur']);
+
+      $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                                $data['est_demande'],$data['est_active'],$data['date_creation'],
-                               $data['date_service'],$data['id_createur'],$categorie);
-      $inter[0] = $annonce[0];
-      $inter[1] = $this->annonceEstCertif($data['date_service']);
-      $result[] = $inter;
+                               $data['date_service'],$utilisateur,$categorie);
     }
 
-    return $result;
+    return $annonce;
   }
 
   function getPageRef(int $page, int $pageSize){
@@ -251,16 +242,15 @@ class DAO{
        $sth2 = $this->db->query($req2);
        $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
-       $annonce[0] = new Annonce($data[$i]['id'],$data[$i]['nom'],$data[$i]['description'],$data[$i]['adresse'],
-                                $data[$i]['est_demande'],$data[$i]['est_active'],$data[$i]['date_creation'],
-                                $data[$i]['date_service'],$data[$i]['id_createur'],$categorie);
+       $utilisateur = $this->getUtilisateur($data[$i]['id_createur']);
 
-       $inter[0] = $annonce[0];
-       $inter[1] = $this->annonceEstCertif($data[$i]['date_service']);
-       $result[] = $inter;
+       $annonce[] = new Annonce($data[$i]['id'],$data[$i]['nom'],$data[$i]['description'],$data[$i]['adresse'],
+                                $data[$i]['est_demande'],$data[$i]['est_active'],$data[$i]['date_creation'],
+                                $data[$i]['date_service'],$utilisateur,$categorie);
+
     }
 
-    return $result;
+    return $annonce;
   }
 
   //recupère une liste d'annonce en fonction d'une categorie - permet de trier les annonces
@@ -293,15 +283,14 @@ class DAO{
       $sth2 = $this->db->query($req2);
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
-      $annonce[0] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+      $utilisateur = $this->getUtilisateur($data['id_createur']);
+
+      $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                                $data['est_demande'],$data['est_active'],$data['date_creation'],
-                               $data['date_service'],$data['id_createur'],$categorie);
-      $inter[0] = $annonce[0];
-      $inter[1] = $this->annonceEstCertif($data['date_service']);
-      $result[] = $inter;
+                               $data['date_service'],$utilisateur,$categorie);
     }
 
-    return $result;
+    return $annonce;
   }
 
 //recupère une liste d'annonce correspondant aux critères de recherche (ignore le rayon pour l'instant)
@@ -349,15 +338,15 @@ class DAO{
       $sth2 = $this->db->query($req2);
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
-      $annonce[0] = new Annonce($data[$i]['id'],$data[$i]['nom'],$data[$i]['description'],$data[$i]['adresse'],
+      $utilisateur = $this->getUtilisateur($data[$i]['id_createur']);
+
+      $annonce[] = new Annonce($data[$i]['id'],$data[$i]['nom'],$data[$i]['description'],$data[$i]['adresse'],
                                $data[$i]['est_demande'],$data[$i]['est_active'],$data[$i]['date_creation'],
-                               $data[$i]['date_service'],$data[$i]['id_createur'],$categorie);
-      $inter[0] = $annonce[0];
-      $inter[1] = $this->annonceEstCertif($data[$i]['date_service']);
-      $result[] = $inter;
+                               $data[$i]['date_service'],$utilisateur,$categorie);
+
     }
 
-    return $result;
+    return $annonce;
   }
 
   function getNbPage(string $motcle, string $nomCat){
@@ -413,9 +402,11 @@ class DAO{
       $sth2 = $this->db->query($req2);
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
+      $utilisateur = $this->getUtilisateur($data['id_createur']);
+
       $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                                $data['est_demande'],$data['est_active'],$data['date_creation'],
-                               $data['date_service'],$data['id_createur'],$categorie);
+                               $data['date_service'],$utilisateur,$categorie);
     }
 
     return $annonce;
@@ -522,8 +513,8 @@ class DAO{
 
     foreach ($id_annonce as $idA) {
       //récupération de l'id du dernier message de sa reponse à une annonce
-      $an = $this->getAnnonce($idA)[0];
-      if($idU != $an->getIdCreateur()){
+      $an = $this->getAnnonce($idA);
+      if($idU != $an->getCreateur()->getId()){
         $req = "SELECT max(id_message) FROM reponse
                 where id_annonce = '$idA' and id_repondeur = '$idU' Group by id_annonce";
         $stm = $this->db->query($req);
@@ -536,7 +527,7 @@ class DAO{
 
         $auteur = $this->getUtilisateur($message->getIdAuteur());
 
-        $auteurAnnonce = $this->getUtilisateur($an->getIdCreateur())->getNom();
+        $auteurAnnonce = $an->getCreateur()->getNom();
 
         $inter[0] = $an;
         $inter[1] = $message;
@@ -552,15 +543,6 @@ class DAO{
 
     return $return;
   }
-
-
-  function annonceEstCertif(int $id_createur){
-    $utilisateur = $this->getUtilisateur($id_createur);
-    return $utilisateur->getCertif();
-  }
-
-
-
 
 
 

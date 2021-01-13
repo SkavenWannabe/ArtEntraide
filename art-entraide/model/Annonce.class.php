@@ -21,7 +21,7 @@ class Annonce{
   private string $date_creation;
   private string $date_service;
 
-  private int $id_createur;
+  private Utilisateur $createur;
   private Categorie $categorie;
 
   // --- Constructeur --- //
@@ -34,7 +34,7 @@ class Annonce{
                         bool $est_active = True,
                         string $date_creation='01/01/1970',
                         string $date_service='01/01/1970',
-                        int $id_createur=0,
+                        Utilisateur $createur=NULL,
                         Categorie $categorie=NULL
                       ){
     $this->id = $id;
@@ -48,7 +48,7 @@ class Annonce{
     $this->date_creation = $date_creation;
     $this->date_service = $date_service;
 
-    $this->id_createur = $id_createur;
+    $this->createur = $createur;
     $this->categorie = $categorie;
   }
 
@@ -85,8 +85,8 @@ class Annonce{
     return $this->date_service;
   }
 
-  function getIdCreateur() : int{
-    return $this->id_createur;
+  function getCreateur() : Utilisateur{
+    return $this->createur;
   }
 
   function getCategorie() : Categorie{

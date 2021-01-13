@@ -44,9 +44,7 @@ if($user == NULL){
     $messages[] = $art->getMessage($value);
   }
 
-  $idCreateur = $theAnnonce->getIdCreateur();
-  $createur = $art->getUtilisateur($idCreateur);
-  $nomDestinataire = $createur->getNom();
+  $nomDestinataire = $theAnnonce->getCreateur()->getNom();
 }
 
 session_write_close();

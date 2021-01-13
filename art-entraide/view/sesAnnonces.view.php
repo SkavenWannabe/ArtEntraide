@@ -25,19 +25,23 @@
           <?php foreach ($annonces as $key => $value) : ?>
             <article class="annonce">
               <header>
-                <img src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
+                <div class="">
+                  <img class="pp" src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
+                  <?php if ($value->getCreateur()->getCertif()): ?>
+                    <img class="certif" src="/view/design/certif-icon.svg" alt="">
+                  <?php endif; ?>
+                </div>
                 <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"><?= mb_substr($value->getNom(),0,50,"utf-8") ?><?php if(strlen($value->getNom()) > 50){ echo"...";}  ?></a></h2>
               </header>
-              <p><?= mb_substr($value->getDescription(),0,100,"utf-8") ?><?php if(strlen($value->getDescription()) > 100){ echo"...";}  ?></p> <!--Permet de brider les message à 100 caractères-->
+              <p><?= mb_substr($value->getDescription(),0,100,"utf-8") ?> <?php if(strlen($value->getDescription()) > 100){ echo"...";}  ?></p>
               <p class="date"><?= $value->getDateService() ?></p>
               <form class="" action="annonce.ctrl.php" method="get">
                 <button type="submit" name="idAnnonce" value="<?= $value->getId() ?>">Voir le détail</button>
               </form>
               <form class="" action="listeAnnonces.ctrl.php" method="get">
-                <button class="boutonCategorie" type="submit" name="idCategorie" value="<?= $value->getCategorie()->getId() ?>"><?= $value->getCategorie()->getNom() ?><?php /*$value->getIdCategorie() */ ?></button>
+                <button class="boutonCategorie" type="submit" name="categorie" value="<?= $value->getCategorie()->getNom() ?>"><?= $value->getCategorie()->getNom() ?></button>
               </form>
             </article>
-
           <?php endforeach; ?>
         <?php endif; ?>
       </div>

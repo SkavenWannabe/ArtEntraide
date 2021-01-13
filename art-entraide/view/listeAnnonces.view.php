@@ -42,11 +42,16 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
 
       <section class="section_annonces">
         <div class="">
-          <?php foreach ($annonces as $value) : ?>
+          <?php foreach ($annonces as $key => $value) : ?>
             <article class="annonce">
               <header>
-                <img src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
-                <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"> <h2><?= mb_substr($value->getNom(),0,50,"utf-8") ?><?php if(strlen($value->getNom()) > 50){ echo"...";}  ?></a></h2>
+                <div class="">
+                  <img class="pp" src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
+                  <?php if ($value->getCreateur()->getCertif()): ?>
+                    <img class="certif" src="/view/design/certif-icon.svg" alt="">
+                  <?php endif; ?>
+                </div>
+                <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"><?= mb_substr($value->getNom(),0,50,"utf-8") ?><?php if(strlen($value->getNom()) > 50){ echo"...";}  ?></a></h2>
               </header>
               <p><?= mb_substr($value->getDescription(),0,100,"utf-8") ?> <?php if(strlen($value->getDescription()) > 100){ echo"...";}  ?></p>
               <p class="date"><?= $value->getDateService() ?></p>

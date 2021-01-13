@@ -26,7 +26,12 @@ $user : objet utilsateur connecté, NULL si non connecté
         <?php foreach ($annonces as $key => $value) : ?>
           <article class="annonce">
             <header>
-              <img src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
+              <div class="">
+                <img class="pp" src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
+                <?php if ($value->getCreateur()->getCertif()): ?>
+                  <img class="certif" src="/view/design/certif-icon.svg" alt="">
+                <?php endif; ?>
+              </div>
               <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"><?= mb_substr($value->getNom(),0,50,"utf-8") ?><?php if(strlen($value->getNom()) > 50){ echo"...";}  ?></a></h2>
             </header>
             <p><?= mb_substr($value->getDescription(),0,100,"utf-8") ?> <?php if(strlen($value->getDescription()) > 100){ echo"...";}  ?></p>

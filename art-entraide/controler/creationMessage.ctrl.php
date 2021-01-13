@@ -57,9 +57,7 @@ if(!isset($error)){
       $messages[] = $art->getMessage($value);
     }
 
-    $id_createur = $theAnnonce->getIdCreateur();
-    $createur = $art->getUtilisateur($id_createur);
-    $nomDestinataire = $createur->getNom();
+    $nomDestinataire = $theAnnonce->getCreateur()->getNom();
 
   } else{
     $listIdMessage = $art->getAllIdMessage($id_annonce,$id_repondeur);

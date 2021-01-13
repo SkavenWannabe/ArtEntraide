@@ -34,7 +34,11 @@ $nomCategorie = nom de la catégorie de l'annonce
         <div class="topMessage">
           <h2>
           <?php if ($annonce->getEstDemande()): ?>
-            <?= $nomAuteur ?> a besoin d'aide
+            <?= $nomAuteur ?>
+            <?php if ($annonce->getCreateur()->getCertif()): ?>
+              <img class="certif" src="/view/design/certif-icon.svg" alt="">
+            <?php endif; ?>
+             a besoin d'aide
           <?php else: ?>
             <?= $nomAuteur ?> propose généreusement son aide
           <?php endif; ?>
@@ -64,7 +68,7 @@ $nomCategorie = nom de la catégorie de l'annonce
         <div class="optionEtranger">
 
 
-          <?php if (!isset($user) || $annonce->getIdCreateur() != $user->getId()): ?>
+          <?php if (!isset($user) || $annonce->getCreateur()->getId() != $user->getId()): ?>
             <form class="" action="reponseAnnonce.ctrl.php" method="get">
               <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
               <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
@@ -79,7 +83,7 @@ $nomCategorie = nom de la catégorie de l'annonce
         </div>
 
         <div class="optionAuteur">
-          <?php if (isset($user) && $annonce->getIdCreateur() == $user->getId()): ?>
+          <?php if (isset($user) && $annonce->getCreateur()->getId() == $user->getId()): ?>
             <form action="actionModif.ctrl.php" method="post">
               <button type="submit" name="action" value="modifAnnonce">Modifier l'annonce</button>
               <input type="hidden" name="idAnnonce" value="<?= $annonce->getId() ?>">

@@ -20,9 +20,20 @@ article.annonce > header {
   justify-content: flex-start;
 }
 
-article.annonce > header > img {
+img.pp {
   width: 40px;
   margin-right: 20px;
+}
+
+img.certif {
+  position: absolute;
+  width: 20px;
+  top: 0px;
+  right: 0px;
+}
+
+article.annonce > header > div {
+  position: relative;
 }
 
 article.annonce h2 {

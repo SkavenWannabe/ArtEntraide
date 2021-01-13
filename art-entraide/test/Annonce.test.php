@@ -55,7 +55,7 @@ try {
   }
 
   // --- Test idCreateur --- //
-  $value = $annonce->getIdCreateur();
+  $value = $annonce->getCreateur()->getId();
   $expected = 1;
   if($value != $expected){
     throw new Exception("id_createur incorrecte : $value, attendue $expected");

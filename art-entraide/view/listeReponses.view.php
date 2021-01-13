@@ -32,7 +32,7 @@
                 <input type="hidden" name="idUser" value="<?= $message[5] ?>">
                 <button type="submit" name="action" value="repondre">Répondre</button>
               </form>
-              <?php if($message[0]->getIdCreateur() == $user->getId()): ?>
+              <?php if($message[0]->getCreateur()->getId() == $user->getId()): ?>
                 <?php if($message[0]->getEstActive()): ?>
                   <form class="" action="validAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment validez cette annonce ?')">
                     <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
@@ -40,7 +40,7 @@
                     <button type="submit" name="action" value="repondre">Valider</button>
                   </form>
                 <?php else: ?>
-                  <button>Déjà Valider</button>
+                  <button>Déjà Validé</button>
                 <?php endif; ?>
               <?php endif; ?>
             </footer>

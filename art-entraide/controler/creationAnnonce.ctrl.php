@@ -59,7 +59,6 @@ $user = $_SESSION['user'];
 if(!isset($error)){
   $art = new DAO();
 
-  $idCreateur = $user->getId();
   $nomAuteur = $user->getNom();   //récupération du nom de l'auteur
 
   $categorie = $art->getCategorieNom($nomCategorie);
@@ -67,7 +66,7 @@ if(!isset($error)){
   // création d'une annonce
   $message = "Votre annonce a bien été créée";
   $idAnnonce = $art->getLastIdAnnonce() + 1;
-  $annonce = new Annonce($idAnnonce, $nom, $description, $lieu, $est_demande, $est_active, $today, $dateService, $idCreateur, $categorie);
+  $annonce = new Annonce($idAnnonce, $nom, $description, $lieu, $est_demande, $est_active, $today, $dateService, $user, $categorie);
   $art->createAnnonce($annonce);
 
   //$annonce = $art->getAnnonce((int)$idAnnonce);
