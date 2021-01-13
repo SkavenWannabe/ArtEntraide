@@ -698,20 +698,6 @@ avec base de données sont fonctionnels. Nous avons donc un programme PHP qui va
 données du modèle dans une base de données PostgreSQL pour produire un affichage de pages
 dynamiques avec du HTML/CSS grâce à un serveur Web NginX.\\
 
-Côté vues, l'en-tête, le pied de page ainsi que la page d'accueil sont réalisés en
-HTML/CSS avec un début d'adaptation aux formats mobiles (\underline{\hyperref[fig:page-accueil]{visuel ci-dessous}}). Des maquettes sont faites pour les autres pages.
-
-La structuration de la base de données est terminée, il reste à mettre en place les contrôles
-assurant la cohérence des données en base.
-
-Toutes les classes du modèle PHP sont en place et les contrôleurs avancent avec les vues.
-
-\begin{figure}[H]
-  \includegraphics[width=\linewidth]{images/page-accueil.png}
-  \caption{Page d'accueil du site.}
-  \label{fig:page-accueil}
-\end{figure}
-
 % ----------Compte ----------
 
 \subsection{Compte}
@@ -735,6 +721,7 @@ Le système de réputation étant secondaire n'a été implanté que partiellent
 Actuellement, les deux types de compte existant sont les comptes utilisateurs et les comptes certificateurs. Les comptes utilisateurs sont créés via la page d'inscription et correspondent à un utilisateur lambda, mais les comptes certificateurs sont gérer par une autorité de certification des utilisateurs tels qu'une mairie ou une association.
 Les comptes certificateurs, eux, sont créés directement en base de donnée pour l'instant. Cette pratique peut poser des problèmes tels qu'une mauvaise saisie ou une erreur via le langage SQL. C'est pour cela que, à terme nous ferons un compte "administrateur" avec la possibilité de créer des comptes certificateurs et des outils de modération tel que le bannissement temporaire ou permanant de membres.
 Si l'affluence du site devient importante nous devrons créer des comptes modérateurs pour sanctionner des abus d'annonce ou de membre.\\
+
 Nous avons donc contacté une mairie pour savoir si elle était intéressée et nous avons reçu une réponse plutôt positive. Ils sont prêts à accepter de certifier l'identité des utilisateurs à conditions que nous soyons capables de prouver que notre site est apte à contenir des informations sensibles et respecte la RGPD. Pour l'instant notre site n'étant pas assez abouti, ils n'ont pas voulu s'investir sur le plan humain et financier.
 
 % ---------- Localisation ----------
@@ -746,7 +733,7 @@ et catégorie, mais ne peut actuellement spécifier une zone géographique.
 
 % ---------- secutite ----------
 \subsection{Sécurité}
-Nôtre site étant en phase de prototype, la sécurité n'est pas maximale.  Notamment au niveau de la gestion de mot de passe qui est, pour l'instant, entrée en clair dans la base de donnée. L'une des solutions est de hacher les mot de passe avant chaque acces en base (pour les entrer ou les comparer) pour que même si il y a une fuite de sécurité, l'impact soit limité. Cependant, pour maintenir l'intégrité du site, certains faille on été corrigé comme les injections de code ou encore le protocole qui à été passé en https.
+Notre site étant en phase de prototype, la sécurité n'est pas maximale. Notamment au niveau de la gestion de mot de passe qui est, pour l'instant, entrée en clair dans la base de donnée. L'une des solutions est de hacher les mots de passe avant chaque accès en base (pour les entrer ou les comparer) pour que même s'il y a une fuite de sécurité, l'impact soit limité. Cependant, pour maintenir l'intégrité du site, certaines failles ont été corrigées comme les injections de code ou encore le protocole qui a été passé en http.
 
 % ---------- Guidage ----------
 \subsection{Guidage}
@@ -803,6 +790,8 @@ Les identifiant des comptes utilisateurs sont pour le login "prenom.nom@iut2.uni
 Nous avons aussi créé un compte certificateur unique avec pour login "ens@iut2.univ-grenoble-alpes.fr" et comme mot de passe ens.\\
 
 Cependant, cela n'empêche en rien de test la création de compte, d'annonce ou quelques fonctionnalités que ce soit.
+
+Le lien du site : https://art-entraide.ddns.net:8080
 
 
 \newpage
