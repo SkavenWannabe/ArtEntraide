@@ -14,10 +14,10 @@
     <section>
       <div class="">
         <h1>Inscrivez vous et perpétuez l'art de l'entraide</h1>
+        <h2>Cela vous permettera de :</h2>
         <ul>
-          <li>Raison 1</li>
-          <li>Raison 2</li>
-          <li>Raison 3</li>
+          <li>Crée des annonces</li>
+          <li>Repondre à des annonces</li>
         </ul>
       </div>
 
