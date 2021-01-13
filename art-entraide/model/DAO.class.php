@@ -185,7 +185,9 @@ class DAO{
     $annonce = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                              $data['est_demande'],$data['est_active'],$data['date_creation'],
                              $data['date_service'],$data['id_createur'],$categorie);
-    return $annonce;
+    $result[0] = $annonce;
+    $result[1] = $this->annonceEstCertif($data['date_service']);
+    return $result;
   }
 
   //recuperation des annonces affiché à l'accueil
@@ -212,12 +214,15 @@ class DAO{
       $sth2 = $this->db->query($req2);
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
-      $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+      $annonce[0] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                                $data['est_demande'],$data['est_active'],$data['date_creation'],
                                $data['date_service'],$data['id_createur'],$categorie);
+      $inter[0] = $annonce[0];
+      $inter[1] = $this->annonceEstCertif($data['date_service']);
+      $result[] = $inter;
     }
 
-    return $annonce;
+    return $result;
   }
 
   function getPageRef(int $page, int $pageSize){
@@ -250,10 +255,12 @@ class DAO{
                                 $data[$i]['est_demande'],$data[$i]['est_active'],$data[$i]['date_creation'],
                                 $data[$i]['date_service'],$data[$i]['id_createur'],$categorie);
 
-      $return[] = $annonce[0];
+       $inter[0] = $annonce[0];
+       $inter[1] = $this->annonceEstCertif($data[$i]['date_service']);
+       $result[] = $inter;
     }
 
-    return $return;
+    return $result;
   }
 
   //recupère une liste d'annonce en fonction d'une categorie - permet de trier les annonces
@@ -286,11 +293,15 @@ class DAO{
       $sth2 = $this->db->query($req2);
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
-      $annonce[] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
+      $annonce[0] = new Annonce($data['id'],$data['nom'],$data['description'],$data['adresse'],
                                $data['est_demande'],$data['est_active'],$data['date_creation'],
                                $data['date_service'],$data['id_createur'],$categorie);
+      $inter[0] = $annonce[0];
+      $inter[1] = $this->annonceEstCertif($data['date_service']);
+      $result[] = $inter;
     }
-    return $annonce;
+
+    return $result;
   }
 
 //recupère une liste d'annonce correspondant aux critères de recherche (ignore le rayon pour l'instant)
@@ -338,12 +349,15 @@ class DAO{
       $sth2 = $this->db->query($req2);
       $categorie = $sth2->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Categorie")[0];
 
-      $annonce[] = new Annonce($data[$i]['id'],$data[$i]['nom'],$data[$i]['description'],$data[$i]['adresse'],
+      $annonce[0] = new Annonce($data[$i]['id'],$data[$i]['nom'],$data[$i]['description'],$data[$i]['adresse'],
                                $data[$i]['est_demande'],$data[$i]['est_active'],$data[$i]['date_creation'],
                                $data[$i]['date_service'],$data[$i]['id_createur'],$categorie);
+      $inter[0] = $annonce[0];
+      $inter[1] = $this->annonceEstCertif($data[$i]['date_service']);
+      $result[] = $inter;
     }
 
-    return $annonce;
+    return $result;
   }
 
   function getNbPage(string $motcle, string $nomCat){
@@ -508,7 +522,7 @@ class DAO{
 
     foreach ($id_annonce as $idA) {
       //récupération de l'id du dernier message de sa reponse à une annonce
-      $an = $this->getAnnonce($idA);
+      $an = $this->getAnnonce($idA)[0];
       if($idU != $an->getIdCreateur()){
         $req = "SELECT max(id_message) FROM reponse
                 where id_annonce = '$idA' and id_repondeur = '$idU' Group by id_annonce";
@@ -540,7 +554,10 @@ class DAO{
   }
 
 
-
+  function annonceEstCertif(int $id_createur){
+    $utilisateur = $this->getUtilisateur($id_createur);
+    return $utilisateur->getCertif();
+  }
 
 
 
