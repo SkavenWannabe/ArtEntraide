@@ -32,7 +32,7 @@
         <input type="text" name="p_adresse" id="p_adresse" placeholder="27 rue des Exemples">
 
         <label for="email">Adresse email <em>*</em></label>
-        <input type="email" name="email" id="email" placeholder="g.lagaffe@editions-dupuis.be" required>
+        <input type="email" name="email" id="email" placeholder="gaston.lagaffe@editions-dupuis.be" required>
 
         <label for="passwd">Mot de passe <em>*</em></label>
         <input type="password" name="passwd" id="passwd" placeholder="••••••" required>
