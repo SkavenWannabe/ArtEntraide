@@ -28,6 +28,7 @@
     <div>
       <h3>Informations légales</h3>
       <div class="text">
+        <a href="/controler/pagesinfos.ctrl.php?page=cgu">Condition général d'utilisation</a>
         <a href="/controler/pagesinfos.ctrl.php?page=legal">Mentions légales</a>
         <a href="/controler/pagesinfos.ctrl.php?page=confidentialite">Politique de confidentialité</a>
       </div>

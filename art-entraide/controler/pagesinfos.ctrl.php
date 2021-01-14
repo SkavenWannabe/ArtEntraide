@@ -57,5 +57,8 @@ switch ($page) {
   case 'confidentialite':
     $view->display("confidentialite.view.php");
     break;
+  case 'cgu':
+    $view->display("cgu.view.php");
+    break;
 }
 ?>
