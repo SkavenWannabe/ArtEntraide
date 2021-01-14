@@ -40,7 +40,7 @@
             <?php else: ?>
               <li><button type="submit" name="etat" value="creationAnnonce">Créer une annonce</button></li>
             <?php endif; ?>
-            <li><button type="submit" name="etat" value="profil"><?= $user->getNom() ?></button></li>
+            <li><button type="submit" name="etat" value="profil"><?= $user->getPrenom() ?></button></li>
           <?php endif; ?>
         </form>
       </ul>
