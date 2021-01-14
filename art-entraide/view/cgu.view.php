@@ -145,8 +145,10 @@
       <br>
 
       <h2>ARTICLE 16 – COORDONNÉES</h2>
-      
+
       Les questions concernant les Conditions Générales d’Utilisation devraient nous être envoyées à vealem@etu.univ-grenoble-alpes.fr.
+      <br>
+      ----
     </section>
 
     <?php include_once(__DIR__."/footer.php"); ?>
