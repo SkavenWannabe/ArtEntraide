@@ -32,16 +32,16 @@ if ($_POST['lieu'] != '') {
 }
 
 // --- récupération date de création --- //
-$today = date("y.m.d");
+$today = date("Y-m-d");
 
 // --- recuperation de la date d'execution de l'annonce --- //
 if ($_POST['date'] != '') {
   $dateService = htmlentities($_POST['date']);
 
-  $dateTimestamp1 = strtotime($dateService);
-  $dateTimestamp2 = strtotime($today);
-
-  if($dateTimestamp1 < $dateTimestamp2){
+  $dateTimestamp1 = new DateTime($dateService);
+  $tempNow = new DateTime();
+  
+  if($dateTimestamp1 < $tempNow){
     $error[] = "la date ne peut pas être antérieure";
   }
 } else {

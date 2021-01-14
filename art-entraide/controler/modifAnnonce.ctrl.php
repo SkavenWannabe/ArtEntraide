@@ -39,10 +39,10 @@ $today = date("y.m.d");
 if ($_POST['date'] != '') {
   $dateService = htmlentities($_POST['date']);
 
-  $dateTimestamp1 = strtotime($dateService);
-  $dateTimestamp2 = strtotime($today);
+  $dateTimestamp1 = new DateTime($dateService);
+  $tempNow = new DateTime();
 
-  if($dateTimestamp1 < $dateTimestamp2){
+  if($dateTimestamp1 < $tempNow){
     $error[] = "la date ne peut pas être antérieure";
   }
 } else {
