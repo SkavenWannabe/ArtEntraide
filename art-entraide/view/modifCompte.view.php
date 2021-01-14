@@ -16,11 +16,12 @@
       <h2>Modifier votre compte</h2>
 
       <form class="inscription" action="modifCompte.ctrl.php" method="post">
-        <label for="nom">Nom <em>*</em></label>
-        <input type="text" name="nom" id="nom" value="<?= $user->getNom() ?>" required>
 
         <label for="prenom">Prénom <em>*</em></label>
         <input type="text" name="prenom" id="prenom" value="<?= $user->getPrenom() ?>" required>
+
+        <label for="nom">Nom <em>*</em></label>
+        <input type="text" name="nom" id="nom" value="<?= $user->getNom() ?>" required>
 
         <?php if ($user instanceof Utilisateur): ?>
           <label for="p_adresse">Adresse postale</label>
