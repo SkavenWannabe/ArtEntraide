@@ -14,6 +14,7 @@
 
     <section>
       <h2>Modifier votre compte</h2>
+      <p>Champs obligatoire: <em>*</em></p>
 
       <form class="inscription" action="modifCompte.ctrl.php" method="post">
 
@@ -32,6 +33,7 @@
         <input type="email" name="email" id="email" value="<?= $user->getEmail() ?>" required>
 
         <label for="passwd">Mot de passe <em>*</em></label>
+        <label class="notice" for="passwd">(Entrez votre mot de passe actuel <strong>ou</strong> un nouveau)</label>
         <input type="password" name="passwd" id="passwd" required>
 
         <label for="passwd">Confirmation du mot de passe <em>*</em></label>
