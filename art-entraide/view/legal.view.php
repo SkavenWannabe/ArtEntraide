@@ -19,14 +19,15 @@
 
       <h1>Mentions légales</h1>
       <p>
-        L'art de l'entraide
-        2 Place Doyen Gosse
-        38000 Grenoble
-        France
+        L'art de l'entraide <br>
+        2 Place Doyen Gosse <br>
+        38000 Grenoble <br>
+        France <br><br>
 
-        vealem@etu.univ-grenoble-alpes.fr
+        vealem@etu.univ-grenoble-alpes.fr <br>
 
-        Ce site internet est hébergé sur un serveur privé appartenant à l'un des fondateurs.
+        Ce site internet est hébergé sur un serveur privé appartenant à l'un des fondateurs.<br>
+        
       </p>
 
     </section>
