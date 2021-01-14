@@ -20,7 +20,7 @@
 
       ----<br><br>
 
-      VUE D’ENSEMBLE <br>
+      <h2>VUE D’ENSEMBLE</h2>
 
       Ce site web est exploité par L'art de l'entraide. Sur ce site, les termes "nous", "notre" et "nos" font référence à L'art de l'entraide. L'art de l'entraide propose ce site web, y compris toutes les informations, tous les outils et tous les services qui y sont disponibles pour vous, l’utilisateur, sous réserve de votre acceptation de l’ensemble des modalités, conditions, politiques et avis énoncés ici.
       <br>
