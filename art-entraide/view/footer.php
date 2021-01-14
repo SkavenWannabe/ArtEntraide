@@ -21,14 +21,14 @@
       <div class="text">
         <a href="/controler/pagesinfos.ctrl.php?page=description">Qui sommes-nous ?</a>
         <a href="/controler/pagesinfos.ctrl.php?page=contact">Nous contacter</a>
-        <a href="/controler/pagesinfos.ctrl.php?page=FAQ">F.A.Q</a>
+        <a href="/controler/pagesinfos.ctrl.php?page=FAQ">F.A.Q.</a>
       </div>
     </div>
 
     <div>
       <h3>Informations légales</h3>
       <div class="text">
-        <a href="/controler/pagesinfos.ctrl.php?page=cgu">Condition général d'utilisation</a>
+        <a href="/controler/pagesinfos.ctrl.php?page=cgu">Conditions générales d'utilisation</a>
         <a href="/controler/pagesinfos.ctrl.php?page=legal">Mentions légales</a>
         <a href="/controler/pagesinfos.ctrl.php?page=confidentialite">Politique de confidentialité</a>
       </div>

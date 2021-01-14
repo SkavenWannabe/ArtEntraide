@@ -40,6 +40,7 @@ if ($_POST['date'] != '') {
 
   $dateTimestamp1 = new DateTime($dateService);
   $tempNow = new DateTime();
+  $tempNow->setTime(00,00);
   
   if($dateTimestamp1 < $tempNow){
     $error[] = "la date ne peut pas être antérieure";
