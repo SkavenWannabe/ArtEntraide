@@ -34,8 +34,14 @@ div.titre {
 
 div.titre > h2 {
   font-size: 2em;
+  word-wrap: break-word;
+  white-space: normal;
 
   margin: 0em;
+}
+
+div.description p {
+  word-wrap: break-word;
 }
 
 img.certif {
