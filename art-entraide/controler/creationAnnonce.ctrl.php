@@ -93,12 +93,9 @@ if (!isset($error)){
   $view->display("annonce.view.php");
 
 } else {
-  if(isset($nom)){
-    $view->assign('intitule',$nom);
-  }
-  if(isset($description)){
-    $view->assign('description',$description);
-  }
+  $view->assign('intitule',$nom);
+  $view->assign('description',$description);
+
   $view->assign('error',$error);
   $view->display("creationAnnonce.view.php");
 }

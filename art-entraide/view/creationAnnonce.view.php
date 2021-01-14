@@ -35,12 +35,12 @@ $user : Utilisateur connecté
         <section>
           <div class="">
             <label for="intitule">Intitulé de votre annonce : <em>*</em></label>
-            <input type="text" name="intitule" id="intitule" required>
+            <input type="text" name="intitule" id="intitule" required <?php if(isset($intitule)): ?> value="<?= $intitule?>" <?php endif; ?>>
           </div>
 
           <div class="">
             <label for="description">Détail de votre annonce : <em>*</em></label>
-            <textarea name="description" id="description" required></textarea>
+            <textarea name="description" id="description" required><?php if(isset($description)): ?> <?= $description?> <?php endif; ?></textarea>
           </div>
         </section>
 
