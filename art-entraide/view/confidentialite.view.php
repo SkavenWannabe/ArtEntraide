@@ -16,13 +16,86 @@
 
 
     <section>
-    
+
       <h1>Politique de confidentialité</h1>
       <p>
 
-      Les données personelles des utilisateurs sont stockées sur le serveur privé des fondateurs. Malheureusement, les concepteurs du site ne sont pas des experts en sécurité informatique, des brèches de sécurité peuvent donc exister.<br>
+        DÉCLARATION DE CONFIDENTIALITÉ <br><br>
 
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        ----<br><br>
+
+        ARTICLE 1 – RENSEIGNEMENTS PERSONNELS RECUEILLIS<br>
+
+        Lorsque vous créez votre compte, nous recueillons les renseignements personnels que vous nous fournissez, tels que votre nom, votre adresse et votre adresse e-mail.<br>
+
+        Lorsque vous naviguez sur notre site, nous recevons également automatiquement l’adresse de protocole Internet (adresse IP) de votre ordinateur, qui nous permet d’obtenir plus de détails au sujet du navigateur et du système d’exploitation que vous utilisez.<br>
+
+
+        ARTICLE 2 - CONSENTEMENT<br>
+
+        Comment obtenez-vous mon consentement?<br>
+
+        Lorsque vous nous fournissez vos renseignements personnels pour la création de votre compte, nous présumons que vous consentez à ce que nous recueillions vos renseignements et à ce que nous les utilisions à cette fin uniquement.<br>
+
+
+        Comment puis-je retirer mon consentement?<br>
+
+        Si après nous avoir donné votre consentement, vous changez d’avis et ne consentez plus à ce que nous puissions vous contacter, recueillir vos renseignements ou les divulguer, vous pouvez nous en aviser en nous contactant à vealem@etu.univ-grenoble-alpes.fr, par courrier à: 2 Place Doyen Gosse, Grenoble, 38000, France ou par la rubrique "Nous Contacter" de notre site.<br>
+
+        De plus, en cas de suppression de votre compte, toutes les informations et données liées à votre personne seront automatiquement supprimées de notre base de donnée.<br>
+
+
+        ARTICLE 3 – DIVULGATION<br>
+
+        Nous pouvons divulguer vos renseignements personnels si la loi nous oblige à le faire ou si vous violez nos Conditions Générales d’Utilisation.<br>
+
+
+        ARTICLE 4 – SHOPIFY<br>
+
+        Notre site internet est hébergé sur un serveur privé de l'un de nos fondateurs.<br>
+
+        Vos données sont stockées dans le système de stockage de données et les bases de données de notre serveur privé. Vos données sont conservées sur un serveur sécurisé protégé par un pare-feu.<br>
+
+
+        ARTICLE 5 – SERVICES FOURNIS PAR DES TIERS<br>
+
+        Une fois que vous quittez le site de notre boutique ou que vous êtes redirigé vers le site web ou l’application d’un tiers, vous n’êtes plus régi par la présente Politique de Confidentialité ni par les Conditions Générales de Vente et d’Utilisation de notre site web.<br>
+
+
+        Liens<br>
+
+        Vous pourriez être amené à quitter notre site web en cliquant sur certains liens présents sur notre site. Nous n’assumons aucune responsabilité quant aux pratiques de confidentialité exercées par ces autres sites et vous recommandons de lire attentivement leurs politiques de confidentialité.<br>
+
+
+        ARTICLE 6 – SÉCURITÉ<br>
+
+        Pour protéger vos données personnelles, nous prenons des précautions raisonnables et suivons les meilleures pratiques de l’industrie pour nous assurer qu’elles ne soient pas perdues, détournées, consultées, divulguées, modifiées ou détruites de manière inappropriée.<br>
+
+
+        FICHIERS TÉMOINS (COOKIES)<br>
+
+        Voici une liste de fichiers témoins que nous utilisons. Nous les avons énumérés ici pour que vous ayez la possibilité de choisir si vous souhaitez les autoriser ou non.<br>
+
+        _session_id, identificateur unique de session, permet à Shopify de stocker les informations relatives à votre session (référent, page de renvoi, etc.).<br>
+
+
+        ARTICLE 7 – ÂGE DE CONSENTEMENT<br>
+
+        En utilisant ce site, vous déclarez que vous avez au moins l’âge de la majorité dans votre État ou province de résidence, et que vous nous avez donné votre consentement pour permettre à toute personne d’âge mineur à votre charge d’utiliser ce site web.<br>
+
+
+        ARTICLE 8 – MODIFICATIONS APPORTÉES À LA PRÉSENTE POLITIQUE DE CONFIDENTIALITÉ<br>
+
+        Nous nous réservons le droit de modifier la présente politique de confidentialité à tout moment, donc veuillez s’il vous plait la consulter fréquemment. Les changements et les clarifications prendront effet immédiatement après leur publication sur le site web. Si nous apportons des changements au contenu de cette politique, nous vous aviserons ici qu’elle a été mise à jour, pour que vous sachiez quels renseignements nous recueillons, la manière dont nous les utilisons, et dans quelles circonstances nous les divulguons, s’il y a lieu de le faire.<br>
+
+
+        QUESTIONS ET COORDONNÉES<br>
+
+        Si vous souhaitez: accéder à, corriger, modifier ou supprimer toute information personnelle que nous avons à votre sujet, déposer une plainte, ou si vous souhaitez simplement avoir plus d’informations, contactez notre agent responsable des normes de confidentialité à vealem@etu.univ-grenoble-alpes.fr ou par courrier à l'adresse ci-dessous:v<br>
+
+        [2 Place Doyen Gosse, Grenoble, 38000, France]<br>
+
+        ----
       </p>
 
     </section>
