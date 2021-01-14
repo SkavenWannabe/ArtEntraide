@@ -11,6 +11,7 @@ $utilisateurs = array de tout les utilisateurs
     <meta name="viewport" content=" initial-scale=1, width=device-width "/>
     <title>Certification des utilisateurs</title>
     <link rel="stylesheet" href="/view/css/master.css">
+    <link rel="stylesheet" href="/view/css/certif.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   </head>
 
@@ -22,36 +23,41 @@ $utilisateurs = array de tout les utilisateurs
 
         <?php foreach ($utilisateurs as $value) : ?>
           <article class="utilisateur">
-            <img src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
-            <h2> <?= $value->getPrenom() ?> <h2>
-            <p>
-              Certification :
-              <?php
-                if ($value->getCertif()) {
-                  print("Oui");
-                }
-                else {
-                  print("Non");
-                }
-              ?><br>
-              Prenom : <?= $value->getPrenom()?><br>
-              Nom : <?= $value->getNom()?><br>
-              Email : <?= $value->getEmail()?><br>
-              Adresse : <?= $value->getAdresse()?><br>
-            </p>
+            <header>
+              <div class="">
+                <img class="pp" src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
+                <?php if ($value->getCertif()): ?>
+                  <img class="certif" src="/view/design/certif-icon.svg" alt="">
+                <?php endif; ?>
+              </div>
+              <h2> <?= $value->getPrenom() ?> <h2>
+            </header>
+            <?php if ($value->getCertif()): ?>
+              <p>Certification : Oui</p>
+              <?php else: ?>
+              <p>Certification : Non</p>
+            <?php endif; ?>
+            <p>Prenom : <?= $value->getPrenom()?></p>
+            <p>Nom : <?= $value->getNom()?></p>
+            <p>Email : <?= $value->getEmail()?></p>
+              <p>  Adresse : <?= $value->getAdresse()?></p>
 
             <?php if ($value->getCertif()): ?>
-              <form class="" action="/controler/certif.ctrl.php" method="post" onsubmit="return confirm('Voulez vous vraiment enlever la certification de cette utilisateur ?');">
-                <button class="actionCritique" type="submit" name="action" value="suppCertif">Enlever certification</button>
-                <input type="hidden" name="idUsr" value="<?=$value->getId() ?>">
-              </form>
-            <?php endif; ?>
+              <footer>
+                <form class="" action="/controler/certif.ctrl.php" method="post" onsubmit="return confirm('Voulez vous vraiment enlever la certification de cette utilisateur ?');">
+                  <button class="actionCritique" type="submit" name="action" value="suppCertif">Enlever certification</button>
+                  <input type="hidden" name="idUsr" value="<?=$value->getId() ?>">
+                </form>
+              </footer>
 
-            <?php if (!($value->getCertif())): ?>
-            <form class="" action="/controler/certif.ctrl.php" method="post" onsubmit="return confirm('Voulez vous vraiment certifier cette utilisateur ?');">
-              <button type="submit" name="action" value="addCertif">Certifier</button>
-              <input type="hidden" name="idUsr" value="<?=$value->getId() ?>">
-            </form>
+            <?php else: ?>
+
+              <footer>
+                <form class="" action="/controler/certif.ctrl.php" method="post" onsubmit="return confirm('Voulez vous vraiment certifier cette utilisateur ?');">
+                  <button type="submit" name="action" value="addCertif">Certifier</button>
+                  <input type="hidden" name="idUsr" value="<?=$value->getId() ?>">
+                </form>
+              </footer>
             <?php endif; ?>
 
 
