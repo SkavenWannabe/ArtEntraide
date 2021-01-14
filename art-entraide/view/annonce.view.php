@@ -34,7 +34,7 @@ $nomCategorie = nom de la catégorie de l'annonce
         <div class="topMessage">
           <h2>
           <?php if ($annonce->getEstDemande()): ?>
-            <?= $nomAuteur ?>
+            <strong><?= $nomAuteur ?></strong>
             <?php if ($annonce->getCreateur()->getCertif()): ?>
               <img class="certif" src="/view/design/certif-icon.svg" alt="">
             <?php endif; ?>
@@ -44,10 +44,10 @@ $nomCategorie = nom de la catégorie de l'annonce
           <?php endif; ?>
 
           <?php if (!$annonce->getDateService() == '') : ?>
-            le <?= $annonce->getDateService() ?>
+            le <strong><?= $annonce->getDateService() ?></strong>
           <?php endif; ?>
           <?php if (!$annonce->getAdresse() == '') : ?>
-            à <?= $annonce->getAdresse() ?></h2>
+            à <strong><?= $annonce->getAdresse() ?></strong></h2>
           <?php endif; ?>
         </div>
 
