@@ -1,0 +1,54 @@
+===== Evaluation ergonomique =====
+
+-- Profil du testeur :
+
+(âge 22, métier étudiant, niveau d'études actuellement en 5eme année...)
+pas vraiment d'afinité avec le code
+
+-- Remarques :
+
+
+
+-- Bug détecté :
+Rien remarqué
+
+
+--- Bastien & scapin (voir pdf) :
+
+Guidage :
+  incitation - 8/10
+  Groupement/distinction - 8/10
+  Freedback immédiat - 6/10
+  Lisibilité - 10/10 (acceuil/fond blanc)
+
+Contrôle explicité :
+  9/10
+
+Gestion des erreurs :
+  protection - /10 je ne saurais noter ce point
+  Qualité des messages - 10/10
+  Corriger - 10/10
+
+Charge de travail :
+  Limiter le nombre d'étapes - 10/10
+  Densité informationnelle - 8/10
+
+Sigifiance des codes et dénominations :
+  Codage - 8/10
+  Vocabulaire - 8/10
+
+Homogénéité/Cohérence :
+  Stabilité - 10/10
+  Terminologie constante - 8/10
+  Prise de décision - 8/10
+
+(Optionnel)
+
+Compatibilité :
+  Accord entre les caractéristiques de l'utilisateur et la tâche - /10
+  Accord entre l'organisation des sorties, des entrées et les dialogue - 8/10
+  Ordre du dialogue/presentation/terminologie familier- /10
+
+Adaptabilité :
+  Flexibilité - 6/10
+  Expérience utilisateur - 8/10
