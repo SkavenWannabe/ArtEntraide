@@ -16,7 +16,7 @@
 
 
     <section>
-      <h1>CONDITIONS GÉNÉRALES DE VENTE ET D’UTILISATION</h1>
+      <h1>CONDITIONS GÉNÉRALES D’UTILISATION</h1>
 
       ----<br><br>
 
