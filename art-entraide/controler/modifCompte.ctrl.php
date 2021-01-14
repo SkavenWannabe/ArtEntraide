@@ -77,6 +77,7 @@ if(!isset($error)){
     $art->updateCertif($user);
   }
 
+  $message = "Utilisateur bien mis à jour";
 }
 
 session_write_close();
@@ -90,6 +91,7 @@ $view->assign('nomCategorie',$categories);
 $view->assign('user', $user);
 
 if(!isset($error)){
+  $view->assign('message',$message);
   $view->display("profil.view.php");
 }else{
   $view->assign('error',$error);
