@@ -66,10 +66,16 @@ if(!isset($error)){
   $user->setPrenom($prenom);
   $user->setEmail($email);
   $user->setPassword($passwd);
-  $user->setAdresse($p_adresse);
 
-  //modification en base du compte
-  $art->updateUtilisateur($user);
+  if($user instanceof Utilisateur){
+    $user->setAdresse($p_adresse);
+
+    //modification en base du compte
+    $art->updateUtilisateur($user);
+  }
+  else if($user instanceof Certificateur){
+    $art->updateCertif($user);
+  }
 
 }
 
