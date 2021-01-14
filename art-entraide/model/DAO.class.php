@@ -65,7 +65,7 @@ class DAO{
 
   //Getteur pour tout les utilisateurs
   function getAllUsr() {
-    $req = "SELECT * FROM utilisateur";
+    $req = "SELECT * FROM utilisateur order by nom";
     $sth = $this->db->query($req);
 
     $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
