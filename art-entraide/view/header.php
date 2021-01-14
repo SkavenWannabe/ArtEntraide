@@ -52,7 +52,14 @@
       <li><a href="/controler/start.ctrl.php">Accueil</a></li>
       <?php switch ($vue): ?>
 <?php case "annonce.view.php": ?>
-        <li><?= $annonce->getNom() ?></li>
+        <li><a href="/controler/listeAnnonces.ctrl.php">Recherche d'une annonce</a></li>
+        <li><?= mb_substr($annonce->getNom(),0,70,"utf-8")?> <?php if(strlen($annonce->getNom()) > 70){ echo"...";} ?></li>
+        <?php break; ?>
+<?php case "certif.view.php": ?>
+        <li>Certifier</li>
+        <?php break; ?>
+<?php case "cgu.view.php": ?>
+        <li>Condition générales d'utilisation</li>
         <?php break; ?>
 <?php case "confidentialite.view.php": ?>
         <li>Politique de confidentialité</li>
