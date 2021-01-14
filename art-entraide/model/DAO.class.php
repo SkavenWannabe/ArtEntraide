@@ -303,8 +303,9 @@ class DAO{
     //Préparation de la requête
     $req = "SELECT annonce.id,annonce.nom,annonce.description,annonce.adresse,annonce.est_demande,
                    annonce.est_active,annonce.date_creation,annonce.date_service,annonce.id_createur,annonce.id_categorie
-                   FROM annonce, categorie where annonce.est_active is true
-                                               AND annonce.id_categorie = categorie.id";
+            FROM annonce, categorie 
+            WHERE annonce.est_active = true
+            AND annonce.id_categorie = categorie.id";
 
     if ($motcle != ''){
       $req .= " AND LOWER(annonce.description) like LOWER('%$motcle%')";
