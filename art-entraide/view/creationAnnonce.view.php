@@ -52,7 +52,7 @@ $user : Utilisateur connecté
             <select name="categorie" id="categorie" required>
               <?php foreach ($nomCategories as $key => $value) : ?>
                 
-                  <option value="<?= $value ?>"><?= $value ?></option>
+                <option value="<?= $value ?>"><?= $value ?></option>
                 
               <?php endforeach; ?>
             </select>
