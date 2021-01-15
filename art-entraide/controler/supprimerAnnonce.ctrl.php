@@ -23,7 +23,7 @@ $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
 
 //recuperation des annonces créer pas l'utilisateur courant
-$annonces = $art->getSesAnnonce($user);
+$annonces = $art->getAnnonceAccueil($user);
 
 session_write_close();
 

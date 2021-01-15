@@ -1,0 +1,53 @@
+section.section_utilisateur > div {
+  display: flex;
+  flex-wrap: wrap;
+	margin: 0px 5%;
+}
+
+article.utilisateur {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  border: solid 2px var(--accent-color-vert);
+  border-radius: 15px;
+  margin: 15px;
+  padding: 15px;
+  flex: 1 0 25%;
+}
+
+/* Groupe image de profil + certif */
+article.utilisateur > header > div {
+  position: relative;
+  margin-right: 10px;
+}
+
+article.utilisateur > header {
+  display: flex;
+  flex-direction: row;
+}
+
+img.pp {
+  width: 40px;
+  margin-right: 20px;
+}
+
+img.certif {
+  position: absolute;
+  width: 20px;
+  top: 0px;
+  right: 0px;
+}
+
+article.utilisateur > p {
+  margin: 0px;
+}
+
+article.utilisateur > footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

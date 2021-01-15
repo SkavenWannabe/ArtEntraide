@@ -16,37 +16,42 @@
 
     <section>
       <section class="section_reponses">
+        <?php if (empty($listeMessage)): ?>
+          <h2>Vous n'avez pas encore de discution</h2>
 
-        <?php foreach ($listeMessage as $message): ?>
-          <article class="reponse">
-            <header>
-              <h3>Annonce de <?= $message[6] ?> : <?= $message[0]->getNom() ?></h3>
-              <p><b>Description :</b> <?= mb_substr($message[0]->getDescription(),0,100,"utf-8")?> <?php if(strlen($message[0]->getDescription()) > 100){ echo"...";}  ?></p></br>
-            </header>
+        <?php else: ?>
+          <?php foreach ($listeMessage as $message): ?>
+            <article class="reponse">
+              <header>
+                <h3>Annonce de <?= $message[6] ?> : <?= $message[0]->getNom() ?></h3>
+                <p><b>Description :</b> <?= mb_substr($message[0]->getDescription(),0,100,"utf-8")?> <?php if(strlen($message[0]->getDescription()) > 100){ echo"...";}  ?></p></br>
+              </header>
 
-            <p><b><?= $message[2] ?> <?= $message[3] ?> </b>: <?= $message[1]->getContenue() ?></p> <!--Prénom Nom du mec + contenu-->
+              <p><b><?= $message[2] ?> <?= $message[3] ?> </b>: <?= $message[1]->getContenue() ?></p> <!--Prénom Nom du mec + contenu-->
 
-            <footer>
-              <form class="" action="reponseAnnonce.ctrl.php" method="get">
-                <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
-                <input type="hidden" name="idUser" value="<?= $message[5] ?>">
-                <button type="submit" name="action" value="repondre">Répondre</button>
-              </form>
-              <?php if($message[0]->getCreateur()->getId() == $user->getId()): ?>
-                <?php if($message[0]->getEstActive()): ?>
-                  <form class="" action="validAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment validez cette annonce ?')">
-                    <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
-                    <input type="hidden" name="idUser" value="<?= $message[5] ?>">
-                    <button type="submit" name="action" value="repondre">Valider</button>
-                  </form>
-                <?php else: ?>
-                  <button>Déjà Validé</button>
+              <footer>
+                <form class="" action="reponseAnnonce.ctrl.php" method="get">
+                  <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
+                  <input type="hidden" name="idUser" value="<?= $message[5] ?>">
+                  <button type="submit" name="action" value="repondre">Fil discution</button>
+                </form>
+                <?php if($message[0]->getCreateur()->getId() == $user->getId()): ?>
+                  <?php if($message[0]->getEstActive()): ?>
+                    <form class="" action="validAnnonce.ctrl.php" method="get" onsubmit="return confirm('Voulez vous vraiment validez cette annonce ?')">
+                      <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
+                      <input type="hidden" name="idUser" value="<?= $message[5] ?>">
+                      <button type="submit" name="action" value="repondre">Valider</button>
+                    </form>
+                  <?php else: ?>
+                    <button>Déjà Validé</button>
+                  <?php endif; ?>
                 <?php endif; ?>
-              <?php endif; ?>
-            </footer>
+              </footer>
 
-          </article>
-        <?php endforeach; ?>
+            </article>
+          <?php endforeach; ?>
+          
+        <?php endif; ?>
       </section>
     </section>
 

@@ -65,7 +65,7 @@ class DAO{
 
   //Getteur pour tout les utilisateurs
   function getAllUsr() {
-    $req = "SELECT * FROM utilisateur";
+    $req = "SELECT * FROM utilisateur order by nom";
     $sth = $this->db->query($req);
 
     $datas = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -618,6 +618,7 @@ class DAO{
     }
   }
 
+
   // Suppression d'un Utilisateur
   // $utilisateur : l'utilisateur à supprimer
   function deleteUtilisateur(int $id) {
@@ -643,6 +644,41 @@ class DAO{
 
     $sql = "DELETE from utilisateur WHERE id='$id'";
     $this->db->exec($sql);
+  }
+
+
+  // --- Utilitaire pour les Certifiateur --- //
+  // Mise à jour d'un Utilisateur
+  // $utilisateur : l'utilisateur à mettre à jour
+  function updateCertif(Certificateur $certificateur) {
+    try{
+      $sql="UPDATE certificateur
+            SET email = :email,
+                password = :password,
+                nom = :nom,
+                prenom = :prenom
+            WHERE id = :id";
+
+      $stmt = $this->db->prepare($sql);
+
+      $id = $certificateur->getId();
+      $email = $certificateur->getEmail();
+      $password = $certificateur->getPassword();
+      $nom = $certificateur->getNom();
+      $prenom = $certificateur->getPrenom();
+
+      $stmt->BindParam(':id',$id);
+      $stmt->BindParam(':email',$email);
+      $stmt->BindParam(':password',$password);
+      $stmt->BindParam(':nom',$nom);
+      $stmt->BindParam(':prenom',$prenom);
+
+      $stmt->execute();
+      //echo $stmt->rowCount() . " records UPDATED successfully";
+
+    }catch(PDOException $e){
+      echo $sql ."<br>" . $e->getMessage();
+    }
   }
 
 

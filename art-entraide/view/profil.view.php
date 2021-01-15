@@ -23,7 +23,7 @@ $user
 
         <?php if ($user instanceof Utilisateur): ?>
           <form action="voirSesAnnonces.ctrl.php" method="get">
-            <button type="submit">Voir ses annonces</button>
+            <button type="submit">Voir mes annonces</button>
           </form>
 
           <form action="voirSesReponses.ctrl.php" method="post"> <!-- TODO : changer controler -->

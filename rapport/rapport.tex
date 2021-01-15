@@ -349,7 +349,9 @@ possible, en suivant notamment les critères ergonomiques de Bastien et Scapin.\
 
 Pour faciliter l'utilisation du site aux utilisateurs et éviter qu'ils ne se retrouvent perdus, ils sera important dans le design des pages du site, de s'assurer de bien disposer les informations essentielles au centre et en haut de la page, afin que ce soit la première chose que l'utilisateur voie sans avoir besoin de \textit{scroller}.\\
 
-Il est important que l'utilisateur n'ait pas à se demander ce que l'on attend de lui, dès l'instant où il pose ses yeux sur la page, ce qu'il doit faire est clair.
+Il est important que l'utilisateur n'ait pas à se demander ce que l'on attend de lui, dès l'instant où il pose ses yeux sur la page, ce qu'il doit faire est clair.\\
+
+\textbf{Adaptabilité}\\
 
 Les textes devront être adaptés à l’utilisateur, par exemple si ce dernier a des problèmes de vue.
 
@@ -460,9 +462,11 @@ Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\
   services. Les éléments cliquables auront également des infobulles au survol qui préciseront leur fonction.
   \item Le \textbf{contrôle explicite} : la suppression des offres de service sera protégée par une double
   demande, et la mise en relation sera explicite afin de protéger les utilisateurs.
-  \item La \textbf{prévention des erreurs} : un contrôle local sera mis au niveau de chaque champ pour vérifier que
+  La navigation dans le site sera améliorée grâce à un fil d'Ariane.
+  \item La \textbf{prévention des erreurs} : Pour tous les champs qui s'y prêtent, la saisie se fera par menu déroulant, boutons radio ou cases à cocher plutôt que par champ texte libre pour limiter les risques d'erreur de saisie.
+  \item La \textbf{correction des erreurs} : Un contrôle local sera mis au niveau de chaque champ pour vérifier que
   les données entrées par l'utilisateur sont conformes (format email, tel ...) avec un sticker \textit{check} vert
-  dès que le champ est valide. Pour tous les champs qui s'y prêtent, la saisie se fera par menu déroulant, boutons radio ou cases à cocher plutôt que par champ texte libre pour limiter les risques d'erreur de saisie.
+  dès que le champ est valide. 
   \item La \textbf{gestion des erreurs} : un pop-up sera mis en place pour permettre un guidage des
   utilisateurs en cas d’erreur de saisie et en particulier pour aider les personnes âgées.
   \item La \textbf{charge de travail} : la création des offres se fera avec un formulaire, afin de limiter les étapes
@@ -473,7 +477,8 @@ Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\
   \item La \textbf{cohérence interne} : chaque page sera la plus similaire possible aux autres pour faciliter
   l'apprentissage du site et ne pas se sentir perdu.
   \item La \textbf{flexibilité} : pour faciliter l'utilisation du site, il y aura souvent plusieurs actions possibles
-  pour arriver à faire la même chose.
+  pour arriver à faire la même chose. Par exemple l'utilisateur pourra rechercher une annonce à la fois depuis
+  la page prévue à cet effet, mais aussi depuis n'importe quelle page depuis le bandeau de haut de page.
   \item L'\textbf{adaptabilité} : compte tenu du public visé, nous allons mettre en place un mode spécifique
   pour les personnes malvoyantes, activant une adaptation de taille et contraste de police pour
   une meilleure accessibilité.
@@ -502,7 +507,11 @@ mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant s
 Le design du site se veut le plus simple et épuré possible tout en gardant un bon guidage. Il se
 rapprocherait du flat ou material design.
 
-\pagebreak
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/page-accueil.png}
+  \caption{Page d'accueil}
+  \label{fig:page-accueil}
+\end{figure}
 
 \subsubsection{Conception logicielle}
 \paragraph{MVC}\mbox{} \\
@@ -531,12 +540,12 @@ Les diagrammes de séquence de haut niveau permettent de mieux définir la dynam
 
 \paragraph{Diagramme de classes}\mbox{} \\
 
-Pour faire le lien entre la base de données et les contrôleurs, on utilise plusieurs classes PHP comme définies par le diagramme de classes ci-dessous,
+Pour faire le lien entre la base de données et les contrôleurs, on utilise plusieurs classes comme définies par le diagramme de classes ci-dessous,
 plus la classe DAO qui permet l'accès à la base de données (cette dernière n'apparaît pas pour des questions de visibilité) :\\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
-  \caption{Diagramme de classes PHP}
+  \caption{Diagramme de classes}
   \label{fig:<un-label-court>}
 \end{figure}
 
@@ -1089,6 +1098,11 @@ Carole Pasini, 50 ans, secrétaire et plutôt à l'aise avec l'informatique.\\
 Florian Attias, 19 ans, étudiant en biologie et à l'aise avec l'informatique.\\
 Frederic Loraux, 49 ans, ouvrier et très très peu à l'aise avec l'informatique.\\
 Sarah Loraux, 47 ans, secrétaire et plutôt à l'aise avec l'informatique.\\
+Baptiste Guyard, 22 ans, étudiant.\\
+Audrey Chauvineau, 22 ans, étudiante en nanotechnologie.\\
+Laurent Chauvineau, 50 ans, ingénieur informaticient.\\
+Mary-vonne et Pascal Prely, respectivement ingénieur et retraiter.\\
+Xavier Sirvent, 51 ans, ingénieur informaticient.\\
 
 \begin{center}
    \begin{tabular}{ | l | c | c | c | c | c | c | }
@@ -1096,11 +1110,16 @@ Sarah Loraux, 47 ans, secrétaire et plutôt à l'aise avec l'informatique.\\
      \hline
      Profil & Guidage & \begin{tabular}[c]{@{}l@{}}Contrôle \\ explicite\end{tabular} & \begin{tabular}[c]{@{}l@{}}Gestion \\ des erreurs\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Charge \\ de travail\end{tabular} & \begin{tabular}[c]{@{}l@{}}Signifiance des codes \\ et dénominations\end{tabular} & \begin{tabular}[c]{@{}l@{}}Homogénéité / \\ Cohérence\end{tabular} \\ \hline
 
-     Carole Pasini   & 7,5/10 & 7/10       & 7/10   & 8/10    & 9/10       & 9/10    \\ \hline
-     Florian attias  & 8,3/10 & 7/10       & 8/10   & 8/10    & non évalué & 8/10    \\ \hline
-     Frederic Loraux & 8/10   & non évalué & 9/10   & 9/10    & 9/10       & 10/10   \\ \hline
-     Sarah Loraux    & 9.5/10 & non évalué & 10/10  & 10/10   & 10/10      & 10/10   \\ \hline
-     Total           & 8.3/10 & 7/10       & 8.5/10 & 8.75/10 & 9.3/10     & 9.25/10 \\ \hline
+     Carole Pasini      & 7,5/10 & 7/10       & 7/10   & 8/10    & 9/10       & 9/10    \\ \hline
+     Florian attias     & 8,3/10 & 7/10       & 8/10   & 8/10    & non évalué & 8/10    \\ \hline
+     Frederic Loraux    & 8/10   & non évalué & 9/10   & 9/10    & 9/10       & 10/10   \\ \hline
+     Sarah Loraux       & 9.5/10 & non évalué & 10/10  & 10/10   & 10/10      & 10/10   \\ \hline
+     Baptiste Guyard    & 8/10   & 9/10       & 10/10  & 9/10    & 8/10       & 8.6/10   \\ \hline
+     Audrey Chauvineau  & 7.75/10& 8/10       & 8.3/10 & 9/10    & 9/10       & 9.5/10   \\ \hline
+     Laurent Chauvineau & 10/10  & 10/10      & 9.3/10 & 8.5/10  & 10/10      & 10/10   \\ \hline
+     Mary-vonne Prely   & 9.5/10 & 10/10      & 9/10   & 10/10   & 10/10      & 10/10   \\ \hline
+     Xavier Sirvent     & 9.25/10 & 9/10      & 9/10  & 9.5/10  & 10/10      & 9.6/10   \\ \hline
+     Total              & 8.6/10  & 8.57/10   & 8.84/10 & 9/10  & 9.4/10     & 9.4/10 \\ \hline
 
 
    \end{tabular}

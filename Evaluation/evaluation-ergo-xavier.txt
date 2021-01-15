@@ -1,0 +1,66 @@
+===== Evaluation ergonomique =====
+
+-- Profil du testeur :
+
+51 ans, Software Engineer Senior, BAC + 5
+
+
+-- Remarques :
+
+Site très joli.
+L'animation de l'affichage de la liste des annonces sur la page principale est bien sympa.
+Pas mal de détails sympa, comme l'ombrage sous le header et les petits arrondis sur les boites.
+Le Responsive Design est bien, la page s'adapte bien quand je réduits la largeur.
+J'aurais peut-être fait passer les 3 boutons "Catégories", "Se connecter" et "Créer un compte"
+d'un coup sous le formulaire plutôt que de laisser "Catégories" à droite du formulaire.
+Avec un écran encore plus petit, j'aurias préféré voir les 3 boutons affichés verticalement, mais je chipote.   
+
+-- Bug détecté :
+
+-Quand j'ai testé, le login via un compte google, m'a bien demandé de choisir un compte, mais n'est pas allé plus loin.
+-Quand j'ai rempli une annonce, j'ai mis une date de service au 31/12/9999 et il y a eu un message d'erreur peu clair et
+mon annonce s'est perdue.
+-Dernier que je viens juste de voir, dans la page de création de l'annonce, le label "Détail de votre annonce" et le textarea
+ne sont pas alignés à droite. 
+- Ha non, encore un petit bug: Quand je liste les annonces, page par page, j'arrive sur une page ou il y a le bouton "Page Suivante"
+Mais j'arrive alors sur une page ou il n'y a plus d'annonces et seulement le bouton "Page Précédente"
+ 
+--- Bastien & scapin (voir pdf) :
+
+Guidage :
+  incitation - 9/10
+  Groupement/distinction - 10/10
+  Freedback immédiat - 9/10
+  Lisibilité - 9/10 (acceuil/fond blanc)
+
+Contrôle explicité :
+  9/10
+
+Gestion des erreurs :
+  protection - 10/10
+  Qualité des messages - 8/10
+  Corriger - 9/10
+
+Charge de travail :
+  Limiter le nombre d'étapes - 10/10
+  Densité informationnelle - 9/10
+
+Sigifiance des codes et dénominations :
+  Codage - 10/10
+  Vocabulaire - 10/10
+
+Homogénéité/Cohérence :
+  Stabilité - 9/10
+  Terminologie constante - 10/10
+  Prise de décision - 10/10
+
+(Optionnel)
+
+Compatibilité :
+  Accord entre les caractéristiques de l'utilisateur et la tâche - /10
+  Accord entre l'organisation des sorties, des entrées et les dialogue - 10/10
+  Ordre du dialogue/presentation/terminologie familier- 9/10
+
+Adaptabilité :
+  Flexibilité - 9/10
+  Expérience utilisateur - 9/10

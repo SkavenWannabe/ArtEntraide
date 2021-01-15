@@ -66,11 +66,18 @@ if(!isset($error)){
   $user->setPrenom($prenom);
   $user->setEmail($email);
   $user->setPassword($passwd);
-  $user->setAdresse($p_adresse);
 
-  //modification en base du compte
-  $art->updateUtilisateur($user);
+  if($user instanceof Utilisateur){
+    $user->setAdresse($p_adresse);
 
+    //modification en base du compte
+    $art->updateUtilisateur($user);
+  }
+  else if($user instanceof Certificateur){
+    $art->updateCertif($user);
+  }
+
+  $message = "Utilisateur bien mis à jour";
 }
 
 session_write_close();
@@ -84,6 +91,7 @@ $view->assign('nomCategorie',$categories);
 $view->assign('user', $user);
 
 if(!isset($error)){
+  $view->assign('message',$message);
   $view->display("profil.view.php");
 }else{
   $view->assign('error',$error);

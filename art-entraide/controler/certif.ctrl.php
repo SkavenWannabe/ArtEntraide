@@ -24,33 +24,70 @@ if ($_POST['idUsr'] != '') {
 
 session_start();
 
-$art = new DAO();
+$user = $_SESSION['user'];
+$categories = $_SESSION['nomCategories'];
 
-if ($idUsr != -1) {
-  $user = $art->getUtilisateur($idUsr);
-  if ($action == 'suppCertif') {
-    $user->setCertif(false);
-    $art->updateUtilisateur($user);
+$art = new DAO();
+if ($user != NULL) {
+  if ($art->ifCertif($user->getEmail())) {
+    if ($idUsr != -1) {
+      $userACertif = $art->getUtilisateur($idUsr);
+      if ($action == 'suppCertif') {
+        $userACertif->setCertif(false);
+        $art->updateUtilisateur($userACertif);
+        $message = "La certification à bien été enlever à " . $userACertif->getPrenom() . " " . $userACertif->getNom() . ".";
+      }
+      elseif ($action == 'addCertif') {
+        $userACertif->setCertif(true);
+        $art->updateUtilisateur($userACertif);
+        $message = "La certification à bien été ajouter à " . $userACertif->getPrenom() . " " . $userACertif->getNom() . ".";
+      }
+    }
   }
-  elseif ($action == 'addCertif') {
-    $user->setCertif(true);
-    $art->updateUtilisateur($user);
+  else {
+    $error[] = 'Vous n\'etes pas certificateur, comment avez vous fait pour etre la ?';
+    $annonces = $art->getAnnonceAccueil();
   }
+}
+else{
+  $annonces = $art->getAnnonceAccueil();
 }
 
 $utilisateurs = $art->getAllUsr();
 
-$user = $_SESSION['user'];
-$categories = $_SESSION['nomCategories'];
+
 
 session_write_close();
 
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 
-$view->assign('user', $user);
-$view->assign('nomCategories', $categories);
-$view->assign('utilisateurs', $utilisateurs);
-$view->display("certif.view.php");
+if($user != NULL) {
+  if ($art->ifCertif($user->getEmail())) {
+    $view->assign('error', $error);
+    $view->assign('message', $message);
+    $view->assign('user', $user);
+    $view->assign('nomCategories', $categories);
+    $view->assign('utilisateurs', $utilisateurs);
+    $view->display("certif.view.php");
+  }
+  else{
+    $view->assign('annonces', $annonces);
+    //information nécessaire pour le header
+    $view->assign('user', $user);
+    $view->assign('nomCategories', $categories);
 
+    //->transmition des 2 annonces a la page d'accueil
+    $view->display("accueil.view.php");
+  }
+}
+else{
+  $view->assign('annonces', $annonces);
+  //information nécessaire pour le header
+  $view->assign('user', $user);
+  $view->assign('nomCategories', $categories);
+
+  //->transmition des 2 annonces a la page d'accueil
+  $view->display("accueil.view.php");
+}
 ?>

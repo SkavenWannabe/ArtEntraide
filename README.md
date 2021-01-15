@@ -182,7 +182,7 @@ non fonctionnel :
 
   - [x]  date a rendre non obligatoire
 
-  - [ ]  catégorie mise a vide ou sur autre
+  - [X]  catégorie mise a vide ou sur autre
 
  \- modification annonce
 

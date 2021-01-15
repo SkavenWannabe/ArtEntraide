@@ -32,16 +32,17 @@ if ($_POST['lieu'] != '') {
 }
 
 // --- récupération date de création --- //
-$today = date("y.m.d");
+$today = date("Y-m-d");
 
 // --- recuperation de la date d'execution de l'annonce --- //
 if ($_POST['date'] != '') {
   $dateService = htmlentities($_POST['date']);
 
-  $dateTimestamp1 = strtotime($dateService);
-  $dateTimestamp2 = strtotime($today);
-
-  if($dateTimestamp1 < $dateTimestamp2){
+  $dateTimestamp1 = new DateTime($dateService);
+  $tempNow = new DateTime();
+  $tempNow->setTime(00,00);
+  
+  if($dateTimestamp1 < $tempNow){
     $error[] = "la date ne peut pas être antérieure";
   }
 } else {
@@ -93,12 +94,9 @@ if (!isset($error)){
   $view->display("annonce.view.php");
 
 } else {
-  if(isset($nom)){
-    $view->assign('intitule',$nom);
-  }
-  if(isset($description)){
-    $view->assign('description',$description);
-  }
+  $view->assign('intitule',$nom);
+  $view->assign('description',$description);
+
   $view->assign('error',$error);
   $view->display("creationAnnonce.view.php");
 }

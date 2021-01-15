@@ -44,12 +44,12 @@ $user : Utilisateur connecté
           </div>
           <div class="">
             <label for="intitule">Intitulé de votre annonce : <em>*</em></label>
-            <input type="text" name="intitule" id="intitule" required>
+            <input type="text" name="intitule" id="intitule" required <?php if(isset($intitule)): ?> value="<?= $intitule?>" <?php endif; ?>>
           </div>
 
           <div class="">
             <label for="description">Détail de votre annonce : <em>*</em></label>
-            <textarea name="description" id="description" required></textarea>
+            <textarea name="description" id="description" required><?php if(isset($description)): ?> <?= $description?> <?php endif; ?></textarea>
           </div>
         </section>
 
@@ -60,7 +60,13 @@ $user : Utilisateur connecté
             <label for="categorie">Catégorie de votre annonce : <em>*</em></label>
             <select name="categorie" id="categorie" required>
               <?php foreach ($nomCategories as $key => $value) : ?>
-                <option value="<?= $value ?>"><?= $value ?></option>
+                
+                <?php if($value == "Autre") : ?>
+                  <option value="<?= $value ?>" selected><?= $value ?></option>
+                <?php else : ?>
+                  <option value="<?= $value ?>"><?= $value ?></option>
+                <?php endif; ?>
+
               <?php endforeach; ?>
             </select>
           </div>
