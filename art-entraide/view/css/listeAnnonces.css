@@ -9,3 +9,8 @@ body > section > form {
 body > section > form input {
   flex-grow: 1;
 }
+body > section > form * {
+  font-size: 1em;
+  /* border: 2px solid var(--accent-color-violet);
+  border-radius: 10px; */
+}

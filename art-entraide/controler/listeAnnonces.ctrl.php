@@ -84,12 +84,17 @@ session_write_close();
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 
-//information nécessaire pour le header
+//information nécessaire pour la liste des annonces
 $view->assign('annonces', $annonces);
 $view->assign('page', $page);
 $view->assign('nbPages', $nbPages);
 $view->assign('pagePrec', $pagePrec);
 $view->assign('pageSuiv', $pageSuiv);
+
+// Informations nécessaires pour le feedback des filtres
+$view->assign('categorie', $categorie);
+$view->assign('type', $type);
+$view->assign('motcle', $motcle);
 
 //information nécessaire pour le header
 $view->assign('user', $user);

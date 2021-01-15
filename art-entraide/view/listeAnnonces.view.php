@@ -4,6 +4,11 @@ $user : Utilisateur connecté
 $annonces : liste des annonces trouvées pour cette page (20 annonces par page)
 $page : numéro de la page actuelle (de 1 à x)
 $nbPages : numéro de la dernière page (nombre de pages totales pour cette recherche)
+
+Variables optionnelles pour le feedback des filtres (afficher à l'utilisateur quels filtres sont actifs)
+$categorie : catégorie sélectionnée
+$type : type d'annonce sélectionné (proposition/demande)
+$motcle : mot-clé de recherche
  -->
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -27,24 +32,34 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
 
       <h1>Rechercher une annonce</h1>
 
+      <!-- Formulaire pour les filtres -->
       <form class="" action="listeAnnonces.ctrl.php" method="get">
-        <input type="text" name="motcle" placeholder="Mots clés">
+        <!-- Barre de recherche -->
+        <input type="text" name="motcle" placeholder="Mots clés" value="<?= $motcle ?>">
+        <!-- Menu déroulant des catégories -->
         <select name="categorie">
           <option value="0" disabled selected>Catégorie</option>
           <?php foreach ($nomCategories as $value) : ?>
-            <option value="<?= $value ?>"><?= $value ?></option>
+            <option value="<?= $value ?>"<?= $categorie==$value ? "selected":"" ?>><?= $value ?></option>
           <?php endforeach; ?>
         </select>
+        <!-- Menu déroulant du type (proposition/demande) -->
         <select name="type">
           <option value="0" disabled selected>Type</option>
-          <option value="demande">Demande</option>
-          <option value="offre">Offre</option>
+          <option value="demande"<?= $type=="demande" ? "selected":"" ?>>Demande</option>
+          <option value="proposition"<?= $type=="proposition" ? "selected":"" ?>>Proposition</option>
         </select>
 
-        <input type="submit" name="" value="Rechercher">
+        <!-- Bouton "Rechercher" -->
+        <button type="submit" name="">Rechercher</button>
+
 
       </form>
+      <form class="reset" action="listeAnnonces.ctrl.php" method="get">
+        <button class="actionCritique" type="submit" name="reset-filtres">&cross; Réinitialiser les filtres</button>
+      </form>
 
+<!-- Liste des annonces -->
       <section class="section_annonces">
         <div class="">
           <?php if (empty($annonces)): ?>
@@ -71,7 +86,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
                 <!-- Encadré indiquant le type (proposition/demande) -->
 
                 <form class="" action="listeAnnonces.ctrl.php" method="get">
-                  <button class="boutonType" type="submit" name="type" value="<?= ($value->getEstDemande() ? "demande" : "offre") ?>"><?= ($value->getEstDemande() ? "Demande" : "Proposition") ?></button>
+                  <button class="boutonType" type="submit" name="type" value="<?= ($value->getEstDemande() ? "demande" : "proposition") ?>"><?= ($value->getEstDemande() ? "Demande" : "Proposition") ?></button>
                 </form>
                 <!-- Bouton "Voir le détail" -->
                 <form class="" action="annonce.ctrl.php" method="get">
