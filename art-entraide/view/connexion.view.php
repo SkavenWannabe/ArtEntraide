@@ -33,7 +33,7 @@ $user : Utilisateur connecté
     <section>
       <header>
         <h2>Connectez vous à votre compte</h2>
-        <p>Pas encore de compte ? Créez en un <a href="/controler/menu.ctrl.php?etat=creation">ici</a> ou utilisez votre compte Google</p>
+        <p>Pas encore de compte ? Créez en un <a href="/controler/menu.ctrl.php?etat=creation">ici</a></p>
         </form>
       </header>
 
@@ -49,10 +49,6 @@ $user : Utilisateur connecté
             <button type="submit" name="connexion">Connexion</button>
           </form>
         </div>
-
-      <div>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-      </div>
 
       </section>
 
