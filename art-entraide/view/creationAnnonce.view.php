@@ -8,6 +8,8 @@ $user : Utilisateur connecté
   } else {
     $adresse = "adresse introuvable";
   }
+
+  var_dump($categories);
  ?>
 
 <!DOCTYPE html>
