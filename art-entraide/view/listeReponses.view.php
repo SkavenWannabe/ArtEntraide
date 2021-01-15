@@ -17,7 +17,7 @@
     <section>
       <section class="section_reponses">
         <?php if (empty($listeMessage)): ?>
-          <h2>Vous n'avez pas encore de discution</h2>
+          <h2>Vous n'avez pas encore de discussion.</h2>
 
         <?php else: ?>
           <?php foreach ($listeMessage as $message): ?>
@@ -50,7 +50,7 @@
 
             </article>
           <?php endforeach; ?>
-          
+
         <?php endif; ?>
       </section>
     </section>
