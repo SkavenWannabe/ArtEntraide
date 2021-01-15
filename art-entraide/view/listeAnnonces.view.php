@@ -35,6 +35,11 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
             <option value="<?= $value ?>"><?= $value ?></option>
           <?php endforeach; ?>
         </select>
+        <select name="type">
+          <option value="0" disabled selected>Type</option>
+          <option value="demande">Demande</option>
+          <option value="offre">Offre</option>
+        </select>
 
         <input type="submit" name="" value="Rechercher">
 

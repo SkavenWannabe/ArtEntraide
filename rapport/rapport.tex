@@ -101,7 +101,7 @@ Pour atteindre cet objectif, nous pouvons assurer un guidage sur le site en suiv
 \underline{Des utilisateurs de confiance}\\
 
 Selon les services, on peut avoir besoin d'utilisateurs de confiance.
-Par exemple, pour des travaux de plomberie, il faut quelqu'un capable de réparer et surtout de ne pas empirer les dégâts ; ou encore, pour les personnes âgées, il faut que les personnes qui interviennent au domicile ne soit pas mal intentionnées.
+Par exemple, pour des travaux de plomberie, il faut quelqu'un capable de réparer et surtout de ne pas empirer les dégâts ; ou encore, pour les personnes âgées, il faut que les personnes qui interviennent au domicile ne soient pas mal intentionnées.
 Il est donc important de vérifier les utilisateurs.\\
 Nous avons retenu trois critères à vérifier : la fiabilité (réputation), l'identité et les compétences de l'utilisateur.\\
 
@@ -292,7 +292,7 @@ Pour vérifier la fiabilité des utilisateurs, nous avons pensé à un système 
 
 Pour la vérification de l'identité, les utilisateurs pourraient se faire certifier via un tiers comme une mairie ou une association.\\
 
-Et le moyen pour la vérification des compétences n'est pas encore défini avec exactitude, mais nous envisageons une certification par diplômes (liée aux mairies notamment) et/ou la certification de compétence par les usagers.
+Et le moyen pour la vérification des compétences n'est pas encore défini avec exactitude, n'étant pas une de nos priorités, nous gardons cette fonctionnalité pour un développement futur. Nous envisageons une certification par diplômes (liée aux mairies notamment) et/ou la certification de compétences par les usagers.
 Si X personnes, après avoir bénéficié d'un service de la part d'un certain utilisateur, attestent que cet utilisateur est qualifié, alors la certification peut être donnée.
 Il faut néanmoins faire attention à ne pas certifier quelqu'un qui n'a pas les compétences.\\
 
@@ -317,6 +317,13 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
   \item Récupérer la localisation de l'appareil via la permission du navigateur.
 \end{itemize}
 
+\subsubsection{Prioritisation des besoins}
+
+Certains de ces besoins sont prioritaires.
+La gestion des comptes et des annonces étaient une priorité, car c'est pour ces besoins que l'utilisateur vient sur le site.
+La certification et les types de comptes viennent ensuite, car ce sont eux qui nous démarque de la concurrence.
+La localisation n'étant pas une priorité absolue, par manque de temps pour la développer et la tester, nous avons décidé de la retarder et de solidifier ce qui était déjà en place.
+
 %---------- Besoins non fonctionnels ------------
 
 \subsection{Besoins non fonctionnels}
@@ -325,7 +332,7 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
 
 \textbf{Sécurité}\\
 
-Les données que les utilisateurs nous confient, tels que leur adresse, numéro de téléphone, etc... sont
+Les données que les utilisateurs nous confient, telles que leur adresse, numéro de téléphone, etc... sont
 sensibles : une certaine sécurité doit donc être assurée.\\
 
 Il faudra donc mettre en place un système d'authentification aux comptes mentionnés plus haut.\\
@@ -333,6 +340,11 @@ Il faudra donc mettre en place un système d'authentification aux comptes mentio
 On pourra ou bien se connecter via un système d'authentification programmé par nos soins, ou bien via l'API de login fournie par Google pour permettre aux utilisateurs de se connecter sur le site via leurs comptes Google, ce qui aurait également l'avantage de la simplicité (un grand nombre de personnes utilisent un compte Google).\\
 
 Il faudra aussi s'assurer que la partie logique du site soit stockée côté serveur, et de n'envoyer à la machine de l'utilisateur que les informations auxquelles il est censé avoir accès.\\
+
+\textbf{Maintenabilité}
+
+Pour assurer une maintenabilité facile, nous avons mis en place un MVC.
+
 
 \textbf{Échelle du projet}\\
 
@@ -466,7 +478,7 @@ Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\
   \item La \textbf{prévention des erreurs} : Pour tous les champs qui s'y prêtent, la saisie se fera par menu déroulant, boutons radio ou cases à cocher plutôt que par champ texte libre pour limiter les risques d'erreur de saisie.
   \item La \textbf{correction des erreurs} : Un contrôle local sera mis au niveau de chaque champ pour vérifier que
   les données entrées par l'utilisateur sont conformes (format email, tel ...) avec un sticker \textit{check} vert
-  dès que le champ est valide. 
+  dès que le champ est valide.
   \item La \textbf{gestion des erreurs} : un pop-up sera mis en place pour permettre un guidage des
   utilisateurs en cas d’erreur de saisie et en particulier pour aider les personnes âgées.
   \item La \textbf{charge de travail} : la création des offres se fera avec un formulaire, afin de limiter les étapes
@@ -546,8 +558,11 @@ plus la classe DAO qui permet l'accès à la base de données (cette dernière n
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
   \caption{Diagramme de classes}
-  \label{fig:<un-label-court>}
+  \label{fig:diagramme-classe-php}
 \end{figure}
+
+La classe Utilisateur contient les informations des utilisateurs. Un utilisateur peut crée des annonces, des messages et accéder aux réponses qui le concerne (soit d'une de ses annonces, soit d'une annonce auquel il a répondu).
+Une annonce appartient à une categorie.
 
 Pour la même raison, les \textit{getters} et \textit{setters} n'apparaissent pas, mais il y en a un pour chaque attribut.
 L'attribut \texttt{Date\_creation} sert à indiquer la date de création de l'annonce.
@@ -558,21 +573,35 @@ Par exemple, pour de la garde d'enfants, la plupart du temps cela s'effectue sur
 
 \includegraphics[width=400px]{images/Schema-relationnel-BDD.png}\\\\
 SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
-\textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
-\textbf{Categorie(\underline{id}, nom)}\\\\
-\textbf{Annonce(\underline{id}, nom, description, adresse, date\_creation, date\_service, \#id\_createur, \#id\_categorie)}\\
-id\_createur clé étrangère de Utilisateur.\\
-id\_categorie clé étrangère de Categorie.\\\\
-\textbf{Message(\underline{id}, contenue, date\_message, \#id\_auteur)}\\
-id\_auteur clé étrangère de Utilisateur.\\\\
-\textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
-id\_annonce clé étrangère de Annonce.\\
-id\_repondeur clé étrangère de Utilisateur.\\
-id\_message clé étrangère de Message.\\\\
-\textbf{Certificateur(\underline{id}, email, password, nom, prenom)}\\
 
-Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
+Chaque relation est identifiée par un id.\\
+Une categorie a un nom.\\
+Un utilisateur posséde :
+\begin{itemize}
+    \item Un email et un mot de passe lui servant à s'identifier sur le site.
+    \item Des informations personnelles tel que le nom, prénom, adresse qui serve à reconnaitre un utilisateur.
+    \item Un boolean certif servant à savoir si l'utilisateur est certifié ou non.
+    \item Une réputation qui pour l'instant n'est pas exploiter mais servira à terme à faciliter la confiance entre les utilisateurs.
+\end{itemize}
 
+Un certificateur est un utilisateur qui ne peut pas créer d'annonce et ne posséde pas d'attribut adresse, certif, et reputation.\\
+Une annonce posséde :
+\begin{itemize}
+    \item Un nom et une description qui sert à caractériser la demande de l'utilisateur
+    \item Une adresse et une date de service qui sert à connaitre le lieu du service et la potentielle date désirée.
+    \item Une date de création renseigne sur l'ancienneté d'une annonce.
+    \item un id_createur qui permet de retrouver les informations de l'utilisateur ayant créé l'annonce.
+    \item un id_categorie qui permet de retrouver la catégorie de l'annonce.
+\end{itemize}
+
+Un message posséde :
+\begin{itemize}
+    \item Une chaine de charactères contant ce qu'a écris l'utilisateur.
+    \item Une date servant d'indication.
+    \item Un id_auteur permettant de retrouver les informations de l'utilisateur ayant créé le message.
+\end{itemize}
+
+La relation reponse sert à lier les relations message, annonce et utilisateur.
 
 \subsection{Solutions techniques envisageables}
 
@@ -634,7 +663,7 @@ travers un simple identifiant (l'email) + mot de passe sur HTTPS. Les informatio
 dans une partie spécifique de la base de données. Cette dernière stockera aussi les préférences des utilisateurs. \\
 
 Le tableau ci-dessous résume les possibilités pour chaque catégorie et montre (cases bleues)
-les choix que nous avons fait pour le projet \\
+les choix que nous avons fais pour le projet. \\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/choixTechno.PNG}
@@ -707,7 +736,16 @@ avec base de données sont fonctionnels. Nous avons donc un programme PHP qui va
 données du modèle dans une base de données PostgreSQL pour produire un affichage de pages
 dynamiques avec du HTML/CSS grâce à un serveur Web NginX.\\
 
-
+\begin{tabular}
+  \hline Annonce & fonctionnel
+  \hline Compte & fonctionnel
+  \hline Message & fonctionnel
+  \hline Certification & fonctionnel pour l'identité, non fonctionnel pour les compétences
+  \hline Type de compte & fonctionnel
+  \hline Recherche & fonctionnel par catégorie
+  \hline Authentification Google & non fonctionnel
+  \hline Localisation & non fonctionnel
+\end{tabular}
 % ---------- Annonces ----------
 
 \subsection{Annonces}
@@ -764,7 +802,7 @@ Notre site étant en phase de prototype, la sécurité n'est pas maximale. Notam
 
 % ---------- Guidage ----------
 \subsection{Guidage}
-\subsubsection*{Erreurs}
+\subsubsection{Erreurs}
 Pour améliorer la prévention des erreurs, nous avons mis en place différents mécanismes:
 \begin{itemize}
   \item Un message de confimation en pop-up apparaît lorsque l'utilisateur s'apprête à réaliser une action critique, comme supprimer une annonce/son compte.
@@ -811,7 +849,7 @@ Le détail des notes et profile pour chaque personne se trouve en annexe.
 
 \subsection{Utilisation}
 
-Pour faciliter le test aux enseignants, nous avons créé des comptes avec des éléments pré remplie comme une annonce, quelques réponses, etc...\\
+Pour faciliter le test aux enseignants, nous avons créé des comptes avec des éléments pré remplies comme une annonce, quelques réponses, etc...\\
 
 Les identifiant des comptes utilisateurs sont pour le login "prenom.nom@iut2.univ-grenoble-alpes.fr" et le mot de passe est "ens"
 

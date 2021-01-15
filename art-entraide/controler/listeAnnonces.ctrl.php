@@ -19,6 +19,12 @@ if (isset($_GET['categorie']) and ($_GET['categorie'] != '') and ($_GET['categor
   $categorie = '';
 }
 
+if (isset($_GET['type']) and ($_GET['type'] != '') and ($_GET['type'] != '0')) {
+  $type = htmlentities($_GET['type']);
+} else {
+  $type = '';
+}
+
 if(isset($_GET['page'])){
   $page = htmlentities($_GET['page']);
 } else {
@@ -38,17 +44,17 @@ $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
 
 //recuperation des annonces en fonction de la page actuelle et du nombre d'élément par page
-if($categorie == '' && $motcle == ''){
+if($categorie == '' && $motcle == '' && $type == ''){
   $annonces = $art->getPageRef($page,$pageSize);
 }
 
 // Filtrage annonces #3
-if($categorie != '' || $motcle != ''){
-  $annonces = $art->getAnnonceRecherche($motcle, $categorie,$page,$pageSize);
+if($categorie != '' || $motcle != '' || $type != ''){
+  $annonces = $art->getAnnonceRecherche($motcle, $categorie,$type,$page,$pageSize);
 }
 
 //recuperation du nombre d'élément
-$nbElement = $art->getNbPage($motcle, $categorie);
+$nbElement = $art->getNbPage($motcle,$categorie,$type);
 
 //calcul du nombre de page possible
 if($nbElement > $pageSize){

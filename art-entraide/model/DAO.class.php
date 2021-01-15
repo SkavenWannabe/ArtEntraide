@@ -295,7 +295,7 @@ class DAO{
 
 //recupère une liste d'annonce correspondant aux critères de recherche (ignore le rayon pour l'instant)
   //Si vous ne voulez pas trier selon un des critères, passez NULL en parametre
-  function getAnnonceRecherche(string $motcle, string $nomCat, int $page, int $pageSize){
+  function getAnnonceRecherche(string $motcle, string $nomCat, string $type, int $page, int $pageSize){
     $return = array();
     $ind = ($page -1) * $pageSize;
     $max = $this->getLastIdAnnonce()-1;
@@ -312,6 +312,14 @@ class DAO{
 
     if ($nomCat != ''){
       $req .= " AND categorie.nom = '$nomCat'";
+    }
+
+    if ($type != ''){
+      if(strcmp($type,"demande") == 0){
+        $req .= " AND annonce.est_demande is true";
+      }else{
+        $req .= " AND annonce.est_demande is false";
+      }
     }
 
     $req .= " ORDER BY annonce.id DESC";
@@ -349,7 +357,7 @@ class DAO{
     return $annonce;
   }
 
-  function getNbPage(string $motcle, string $nomCat){
+  function getNbPage(string $motcle, string $type, string $nomCat){
     //Préparation de la requête
     $req = "SELECT annonce.id FROM annonce, categorie where annonce.est_active is true
                               AND annonce.id_categorie = categorie.id";
@@ -360,6 +368,14 @@ class DAO{
 
     if ($nomCat != ''){
       $req .= " AND categorie.nom = '$nomCat'";
+    }
+
+    if ($type != ''){
+      if(strcmp($type,"demande") == 0){
+        $req .= " AND annonce.est_demande is true";
+      }else{
+        $req .= " AND annonce.est_demande is false";
+      }
     }
 
     $req .= " ORDER BY annonce.id DESC";
@@ -699,7 +715,7 @@ class DAO{
     // n'a pas l'air d'apprécier le "false", donc on lui donne un zéro
     $est_demande = ($annonce->getEstDemande() ? true : 0);
     $est_active = ($annonce->getEstActive() ? true : 0);
-    
+
     $date_creation = $annonce->getDateCreation();
     $date_service = $annonce->getDateService();
     if($date_service == ""){
