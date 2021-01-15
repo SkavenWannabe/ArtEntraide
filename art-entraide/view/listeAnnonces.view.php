@@ -55,9 +55,12 @@ $motcle : mot-clé de recherche
 
 
       </form>
-      <form class="reset" action="listeAnnonces.ctrl.php" method="get">
-        <button class="actionCritique" type="submit" name="reset-filtres">&cross; Réinitialiser les filtres</button>
-      </form>
+      <?php if ($type!="" || $categorie!="" || $motcle!=""): ?>
+
+        <form class="reset" action="listeAnnonces.ctrl.php" method="get">
+          <button class="actionCritique" type="submit" name="">&cross; Réinitialiser les filtres</button>
+        </form>
+      <?php endif; ?>
 
 <!-- Liste des annonces -->
       <section class="section_annonces">
