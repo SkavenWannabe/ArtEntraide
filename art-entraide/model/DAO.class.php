@@ -659,8 +659,11 @@ class DAO{
     $nom = $annonce->getNom();
     $description = $annonce->getDescription();
     $adresse = $annonce->getAdresse();
-    $est_demande = $annonce->getEstDemande();
-    $est_active = $annonce->getEstActive();
+    // Bricolage nécessaire pour plaire à la base de donnée, qui
+    // n'a pas l'air d'apprécier le "false", donc on lui donne un zéro
+    $est_demande = ($annonce->getEstDemande() ? true : 0);
+    $est_active = ($annonce->getEstActive() ? true : 0);
+    
     $date_creation = $annonce->getDateCreation();
     $date_service = $annonce->getDateService();
     if($date_service == ""){
@@ -708,11 +711,10 @@ class DAO{
         $date_service = NULL;
       }
       $id_categorie = $annonce->getCategorie()->getId();
-      $est_active = $annonce->getEstActive();
-      if(!$est_active){
-        $est_active = '0';
-      }
-      $est_demande = $annonce->getEstDemande();
+      // Bricolage nécessaire pour plaire à la base de donnée, qui
+      // n'a pas l'air d'apprécier le "false", donc on lui donne un zéro
+      $est_active = ($annonce->getEstActive() ? 1 : 0);
+      $est_demande = ($annonce->getEstDemande() ? 1 : 0);
 
 
       $stmt->BindParam(':id',$id);
