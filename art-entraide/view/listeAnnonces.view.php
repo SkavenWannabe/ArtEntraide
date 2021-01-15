@@ -38,7 +38,7 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
         <select name="type">
           <option value="0" disabled selected>Type</option>
           <option value="demande">Demande</option>
-          <option value="offre">Offre</option>
+          <option value="offre">Proposition</option>
         </select>
 
         <input type="submit" name="" value="Rechercher">
@@ -93,10 +93,13 @@ $nbPages : numéro de la dernière page (nombre de pages totales pour cette rech
         <!-- Bouton de retour à la page précédente -->
         <?php if ($page > 1): ?>
           <button type="submit" name="page" value="<?= $pagePrec ?>">Page Précédente</button>
+          <input type="hidden" name="valAvant" value="<?= $page ?>">
         <?php endif; ?>
         <!-- Bouton pour passer à la page suivante -->
         <?php if ($page < $nbPages): ?>
           <button type="submit" name="page" value="<?= $pageSuiv ?>">Page Suivante</button>
+          <input type="hidden" name="valAvant" value="<?= $page ?>">
+
         <?php endif; ?>
 
       </form>
