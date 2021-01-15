@@ -26,6 +26,15 @@ $user : Utilisateur connecté
       <form class="creation_annonce" action="modifAnnonce.ctrl.php" method="post">
         <section>
           <div class="">
+            <label>Type d'annonce :</label>
+            <fieldset>
+              <input type="radio" id="demande" name="type" value="demande" <?= ($annonce->getEstDemande() ? "checked" : "") ?>>
+              <label for="demande">Je demande un service</label><br>
+              <input type="radio" id="proposition" name="type" value="proposition" <?= ($annonce->getEstDemande() ? "" : "checked") ?>>
+              <label for="proposition">Je propose un service</label>
+            </fieldset>
+          </div>
+          <div class="">
             <label for="intitule">Intitulé de votre annonce :<em>*</em></label>
             <input type="text" name="intitule" id="intitule" value="<?=$annonce->getNom() ?>" required>
           </div>
