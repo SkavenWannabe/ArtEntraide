@@ -117,6 +117,10 @@ $motcle : mot-clé de recherche
         <?php if ($page < $nbPages): ?>
           <button type="submit" name="page" value="<?= $pageSuiv ?>">Page Suivante</button>
           <input type="hidden" name="valAvant" value="<?= $page ?>">
+        <!-- Données de recherche -->
+          <input type="hidden" name="type" value="<?= $type ?>">
+          <input type="hidden" name="motcle" value="<?= $motcle ?>">
+          <input type="hidden" name="categorie" value="<?= $categorie ?>">
 
         <?php endif; ?>
 
