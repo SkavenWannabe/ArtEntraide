@@ -590,15 +590,15 @@ Une annonce posséde :
     \item Un nom et une description qui sert à caractériser la demande de l'utilisateur
     \item Une adresse et une date de service qui sert à connaitre le lieu du service et la potentielle date désirée.
     \item Une date de création renseigne sur l'ancienneté d'une annonce.
-    \item un id_createur qui permet de retrouver les informations de l'utilisateur ayant créé l'annonce.
-    \item un id_categorie qui permet de retrouver la catégorie de l'annonce.
+    \item un id\_createur qui permet de retrouver les informations de l'utilisateur ayant créé l'annonce.
+    \item un id\_categorie qui permet de retrouver la catégorie de l'annonce.
 \end{itemize}
 
 Un message posséde :
 \begin{itemize}
     \item Une chaine de charactères contant ce qu'a écris l'utilisateur.
     \item Une date servant d'indication.
-    \item Un id_auteur permettant de retrouver les informations de l'utilisateur ayant créé le message.
+    \item Un id\_auteur permettant de retrouver les informations de l'utilisateur ayant créé le message.
 \end{itemize}
 
 La relation reponse sert à lier les relations message, annonce et utilisateur.
@@ -736,15 +736,16 @@ avec base de données sont fonctionnels. Nous avons donc un programme PHP qui va
 données du modèle dans une base de données PostgreSQL pour produire un affichage de pages
 dynamiques avec du HTML/CSS grâce à un serveur Web NginX.\\
 
-\begin{tabular}
-  \hline Annonce & fonctionnel
-  \hline Compte & fonctionnel
-  \hline Message & fonctionnel
-  \hline Certification & fonctionnel pour l'identité, non fonctionnel pour les compétences
-  \hline Type de compte & fonctionnel
-  \hline Recherche & fonctionnel par catégorie
-  \hline Authentification Google & non fonctionnel
-  \hline Localisation & non fonctionnel
+\begin{tabular}{|c|c|}
+  \hline Annonce & fonctionnel \\
+  \hline Compte & fonctionnel\\
+  \hline Message & fonctionnel\\
+  \hline Certification & fonctionnel pour l'identité, non fonctionnel pour les compétences\\
+  \hline Type de compte & fonctionnel\\
+  \hline Recherche & fonctionnel par catégorie\\
+  \hline Authentification Google & non fonctionnel\\
+  \hline Localisation & non fonctionnel\\
+  \hline
 \end{tabular}
 % ---------- Annonces ----------
 
