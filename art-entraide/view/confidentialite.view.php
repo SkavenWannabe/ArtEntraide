@@ -48,7 +48,7 @@
         Nous pouvons divulguer vos renseignements personnels si la loi nous oblige à le faire ou si vous violez nos Conditions Générales d’Utilisation.<br>
 
 
-        <h2>ARTICLE 4 – SHOPIFY</h2>
+        <h2>ARTICLE 4 – ART-ENTRAIDE</h2>
 
         Notre site internet est hébergé sur un serveur privé de l'un de nos fondateurs.<br>
 
