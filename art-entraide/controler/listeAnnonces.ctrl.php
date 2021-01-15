@@ -31,6 +31,10 @@ if(isset($_GET['page'])){
   $page = 1;
 }
 
+if(isset($_GET['valAvant'])){
+  $pageAvant = $_GET['valAvant'];
+}
+
 $pageSize = 10; // constante du nombre d'élément afficher par page
 
 // ==== PARTIE USAGE DU MODELE ==== //
@@ -55,12 +59,20 @@ if($categorie != '' || $motcle != '' || $type != ''){
 
 //recuperation du nombre d'élément
 $nbElement = $art->getNbPage($motcle,$categorie,$type);
-
-//calcul du nombre de page possible
-if($nbElement > $pageSize){
-  $nbPages = round($nbElement/$pageSize)+1;
+//calcul du nombre de page
+if(!isset($pageAvant)){
+  if($nbElement > $pageSize){
+    $nbPages = round($nbElement/$pageSize)+1;
+  }else{
+    $nbPages=1;
+  }
+  
 }else{
-  $nbPages=1;
+  if($pageAvant < $page){ //bouton suivant selectionner
+    $nbPages = round($nbElement/$pageSize);
+  }else{ // bouton précédent séléctionner
+    $nbPages = round($nbElement/$pageSize)+1;
+  }
 }
 
 //calcul nouvelle valeur pour page suivant et precedente

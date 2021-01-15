@@ -357,7 +357,7 @@ class DAO{
     return $annonce;
   }
 
-  function getNbPage(string $motcle, string $type, string $nomCat){
+  function getNbPage(string $motcle, string $nomCat, string $type){
     //Préparation de la requête
     $req = "SELECT annonce.id FROM annonce, categorie where annonce.est_active is true
                               AND annonce.id_categorie = categorie.id";

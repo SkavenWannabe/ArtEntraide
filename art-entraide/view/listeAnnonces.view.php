@@ -108,10 +108,13 @@ $motcle : mot-clé de recherche
         <!-- Bouton de retour à la page précédente -->
         <?php if ($page > 1): ?>
           <button type="submit" name="page" value="<?= $pagePrec ?>">Page Précédente</button>
+          <input type="hidden" name="valAvant" value="<?= $page ?>">
         <?php endif; ?>
         <!-- Bouton pour passer à la page suivante -->
         <?php if ($page < $nbPages): ?>
           <button type="submit" name="page" value="<?= $pageSuiv ?>">Page Suivante</button>
+          <input type="hidden" name="valAvant" value="<?= $page ?>">
+
         <?php endif; ?>
 
       </form>
