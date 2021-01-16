@@ -60,7 +60,8 @@ if(!isset($error)){
   $art = new DAO();
   //création d'un utilisateur
   $id = $art->getLastIdUti() +1;
-  $uti = new Utilisateur($id,$nom,$prenom,$email,$passwd,$p_adresse);
+  $passwdHash = password_hash($passwd, PASSWORD_DEFAULT);
+  $uti = new Utilisateur($id,$nom,$prenom,$email,$passwdHash,$p_adresse);
   $art->createUtilisateur($uti);
 
   //Stockage information de connexion

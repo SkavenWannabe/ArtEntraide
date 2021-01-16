@@ -31,7 +31,7 @@ if (!isset($error)) {
   $art = new DAO();
   $verif = $art->getPass($email);
 
-  if($verif === $passwd){
+  if(password_verify($passwd,$verif)){
     $_SESSION['connected'] = true;
 
     if ($art->ifUsr($email)){

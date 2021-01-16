@@ -57,6 +57,7 @@ if ($_POST['p_adresse'] != '') {
 session_start();
 $user = $_SESSION['user'];
 $categories = $_SESSION['nomCategories'];
+$passwdHash = password_hash($passwd, PASSWORD_DEFAULT);
 
 if(!isset($error)){
   $art = new DAO();
@@ -65,7 +66,7 @@ if(!isset($error)){
   $user->setNom($nom);
   $user->setPrenom($prenom);
   $user->setEmail($email);
-  $user->setPassword($passwd);
+  $user->setPassword($passwdHash);
 
   if($user instanceof Utilisateur){
     $user->setAdresse($p_adresse);
