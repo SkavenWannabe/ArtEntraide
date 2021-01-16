@@ -182,7 +182,7 @@ non fonctionnel :
 
   - [x]  date a rendre non obligatoire
 
-  - [ ]  catégorie mise a vide ou sur autre
+  - [X]  catégorie mise a vide ou sur autre
 
  \- modification annonce
 
@@ -198,7 +198,7 @@ non fonctionnel :
 
   - [ ]  la recherche à vérifier / changer
 
-  - [ ]  + gestion affichage pr bcp annonce, gestion de page ?
+  - [X]  + gestion affichage pr bcp annonce, gestion de page ?
 
  \- voir ses annonce
 

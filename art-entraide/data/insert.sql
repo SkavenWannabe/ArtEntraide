@@ -38,7 +38,7 @@ INSERT INTO Annonce VALUES(DEFAULT, 'Cherche voisin pour jogging', 'Je cherche u
 INSERT INTO Annonce VALUES(DEFAULT, 'Cherche soutien scolaire en maths', 'Je recherche un professeur de math particulier pour ma nièce. Elle passe le bac cette année et je manque de temps pour l''aider. Elle se trouve en Bac STI.', 'Grenoble', DEFAULT, DEFAULT, '10/10/2020', '10/05/2021', 10, 3);
 INSERT INTO Annonce VALUES(DEFAULT, 'Cherche guide de montagne', 'je recherche un guide pour faire de la randonnée en raquette.', 'Grenoble', DEFAULT, DEFAULT, '10/10/2020', NULL, 11, 6);
 INSERT INTO Annonce VALUES(DEFAULT, 'Aide déménagement', 'Je change de logement, mais j''ai beaucoup de carton, ceci ne sont pas lourd, mais une pair de bras en plus ne sera pas de refus.', 'Grenoble', DEFAULT, DEFAULT, '10/10/2020', '01/02/2021', 12, 6);
-INSERT INTO Annonce VALUES(DEFAULT, 'Recherche boulanger', 'Je recherche quelqu''un pour m''apprendre à faire du pain.', 'Grenoble', DEFAULT, DEFAULT, '10/10/2020', NULL , 13, 5);
+INSERT INTO Annonce VALUES(DEFAULT, 'Recherche boulanger', 'Je recherche quelqu''un pour m''apprendre à faire du pain.', 'Grenoble', DEFAULT, DEFAULT, '10/10/2020', NULL , 13, 6);
 INSERT INTO Annonce VALUES(DEFAULT, 'Arroser le jardin', 'Je recherche un jardinier, pour que mes fleurs guardent leur beauté le plus longtemps possible.', 'Grenoble', DEFAULT, DEFAULT, '10/10/2020', '29/04/2021', 14, 6);
 
 

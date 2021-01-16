@@ -33,22 +33,26 @@ $nomCategorie = nom de la catégorie de l'annonce
 
         <div class="topMessage">
           <h2>
-          <?php if ($annonce->getEstDemande()): ?>
             <strong><?= $nomAuteur ?></strong>
+            <!-- Mettre l'icone certification si besoin -->
             <?php if ($annonce->getCreateur()->getCertif()): ?>
               <img class="certif" src="/view/design/certif-icon.svg" alt="">
             <?php endif; ?>
-             a besoin d'aide
-          <?php else: ?>
-            <?= $nomAuteur ?> propose généreusement son aide
-          <?php endif; ?>
-
-          <?php if (!$annonce->getDateService() == '') : ?>
-            le <strong><?= $annonce->getDateService() ?></strong>
-          <?php endif; ?>
-          <?php if (!$annonce->getAdresse() == '') : ?>
-            à <strong><?= $annonce->getAdresse() ?></strong></h2>
-          <?php endif; ?>
+            <!-- Phrase différente selon proposition ou demande -->
+            <?php if ($annonce->getEstDemande()): ?>
+               a besoin d'aide
+            <?php else: ?>
+               propose généreusement son aide
+            <?php endif; ?>
+            <!-- Eventuellement date -->
+            <?php if (!$annonce->getDateService() == '') : ?>
+              le <strong><?= $annonce->getDateService() ?></strong>
+            <?php endif; ?>
+            <!-- Eventuellement lieu -->
+            <?php if (!$annonce->getAdresse() == '') : ?>
+              à <strong><?= $annonce->getAdresse() ?></strong>
+            <?php endif; ?>
+          </h2>
         </div>
 
         <div class="titre">

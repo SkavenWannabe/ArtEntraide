@@ -34,6 +34,15 @@ $user : Utilisateur connecté
       <form class="creation_annonce" action="creationAnnonce.ctrl.php" method="post">
         <section>
           <div class="">
+            <label>Type d'annonce :</label>
+            <fieldset>
+              <input type="radio" id="demande" name="type" value="demande" checked>
+              <label for="demande">Je demande un service</label><br>
+              <input type="radio" id="proposition" name="type" value="proposition">
+              <label for="proposition">Je propose un service</label>
+            </fieldset>
+          </div>
+          <div class="">
             <label for="intitule">Intitulé de votre annonce : <em>*</em></label>
             <input type="text" name="intitule" id="intitule" required <?php if(isset($intitule)): ?> value="<?= $intitule?>" <?php endif; ?>>
           </div>
@@ -51,7 +60,13 @@ $user : Utilisateur connecté
             <label for="categorie">Catégorie de votre annonce : <em>*</em></label>
             <select name="categorie" id="categorie" required>
               <?php foreach ($nomCategories as $key => $value) : ?>
-                <option value="<?= $value ?>"><?= $value ?></option>
+                
+                <?php if($value == "Autre") : ?>
+                  <option value="<?= $value ?>" selected><?= $value ?></option>
+                <?php else : ?>
+                  <option value="<?= $value ?>"><?= $value ?></option>
+                <?php endif; ?>
+
               <?php endforeach; ?>
             </select>
           </div>

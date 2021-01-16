@@ -101,7 +101,7 @@ Pour atteindre cet objectif, nous pouvons assurer un guidage sur le site en suiv
 \underline{Des utilisateurs de confiance}\\
 
 Selon les services, on peut avoir besoin d'utilisateurs de confiance.
-Par exemple, pour des travaux de plomberie, il faut quelqu'un capable de réparer et surtout de ne pas empirer les dégâts ; ou encore, pour les personnes âgées, il faut que les personnes qui interviennent au domicile ne soit pas mal intentionnées.
+Par exemple, pour des travaux de plomberie, il faut quelqu'un capable de réparer et surtout de ne pas empirer les dégâts ; ou encore, pour les personnes âgées, il faut que les personnes qui interviennent au domicile ne soient pas mal intentionnées.
 Il est donc important de vérifier les utilisateurs.\\
 Nous avons retenu trois critères à vérifier : la fiabilité (réputation), l'identité et les compétences de l'utilisateur.\\
 
@@ -292,7 +292,7 @@ Pour vérifier la fiabilité des utilisateurs, nous avons pensé à un système 
 
 Pour la vérification de l'identité, les utilisateurs pourraient se faire certifier via un tiers comme une mairie ou une association.\\
 
-Et le moyen pour la vérification des compétences n'est pas encore défini avec exactitude, mais nous envisageons une certification par diplômes (liée aux mairies notamment) et/ou la certification de compétence par les usagers.
+Et le moyen pour la vérification des compétences n'est pas encore défini avec exactitude, n'étant pas une de nos priorités, nous gardons cette fonctionnalité pour un développement futur. Nous envisageons une certification par diplômes (liée aux mairies notamment) et/ou la certification de compétences par les usagers.
 Si X personnes, après avoir bénéficié d'un service de la part d'un certain utilisateur, attestent que cet utilisateur est qualifié, alors la certification peut être donnée.
 Il faut néanmoins faire attention à ne pas certifier quelqu'un qui n'a pas les compétences.\\
 
@@ -317,6 +317,13 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
   \item Récupérer la localisation de l'appareil via la permission du navigateur.
 \end{itemize}
 
+\subsubsection{Prioritisation des besoins}
+
+Certains de ces besoins sont prioritaires.
+La gestion des comptes et des annonces étaient une priorité, car c'est pour ces besoins que l'utilisateur vient sur le site.
+La certification et les types de comptes viennent ensuite, car ce sont eux qui nous démarque de la concurrence.
+La localisation n'étant pas une priorité absolue, par manque de temps pour la développer et la tester, nous avons décidé de la retarder et de solidifier ce qui était déjà en place.
+
 %---------- Besoins non fonctionnels ------------
 
 \subsection{Besoins non fonctionnels}
@@ -325,7 +332,7 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
 
 \textbf{Sécurité}\\
 
-Les données que les utilisateurs nous confient, tels que leur adresse, numéro de téléphone, etc... sont
+Les données que les utilisateurs nous confient, telles que leur adresse, numéro de téléphone, etc... sont
 sensibles : une certaine sécurité doit donc être assurée.\\
 
 Il faudra donc mettre en place un système d'authentification aux comptes mentionnés plus haut.\\
@@ -333,6 +340,11 @@ Il faudra donc mettre en place un système d'authentification aux comptes mentio
 On pourra ou bien se connecter via un système d'authentification programmé par nos soins, ou bien via l'API de login fournie par Google pour permettre aux utilisateurs de se connecter sur le site via leurs comptes Google, ce qui aurait également l'avantage de la simplicité (un grand nombre de personnes utilisent un compte Google).\\
 
 Il faudra aussi s'assurer que la partie logique du site soit stockée côté serveur, et de n'envoyer à la machine de l'utilisateur que les informations auxquelles il est censé avoir accès.\\
+
+\textbf{Maintenabilité}
+
+Pour assurer une maintenabilité facile, nous avons mis en place un MVC.
+
 
 \textbf{Échelle du projet}\\
 
@@ -349,7 +361,9 @@ possible, en suivant notamment les critères ergonomiques de Bastien et Scapin.\
 
 Pour faciliter l'utilisation du site aux utilisateurs et éviter qu'ils ne se retrouvent perdus, ils sera important dans le design des pages du site, de s'assurer de bien disposer les informations essentielles au centre et en haut de la page, afin que ce soit la première chose que l'utilisateur voie sans avoir besoin de \textit{scroller}.\\
 
-Il est important que l'utilisateur n'ait pas à se demander ce que l'on attend de lui, dès l'instant où il pose ses yeux sur la page, ce qu'il doit faire est clair.
+Il est important que l'utilisateur n'ait pas à se demander ce que l'on attend de lui, dès l'instant où il pose ses yeux sur la page, ce qu'il doit faire est clair.\\
+
+\textbf{Adaptabilité}\\
 
 Les textes devront être adaptés à l’utilisateur, par exemple si ce dernier a des problèmes de vue.
 
@@ -460,9 +474,11 @@ Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\
   services. Les éléments cliquables auront également des infobulles au survol qui préciseront leur fonction.
   \item Le \textbf{contrôle explicite} : la suppression des offres de service sera protégée par une double
   demande, et la mise en relation sera explicite afin de protéger les utilisateurs.
-  \item La \textbf{prévention des erreurs} : un contrôle local sera mis au niveau de chaque champ pour vérifier que
+  La navigation dans le site sera améliorée grâce à un fil d'Ariane.
+  \item La \textbf{prévention des erreurs} : Pour tous les champs qui s'y prêtent, la saisie se fera par menu déroulant, boutons radio ou cases à cocher plutôt que par champ texte libre pour limiter les risques d'erreur de saisie.
+  \item La \textbf{correction des erreurs} : Un contrôle local sera mis au niveau de chaque champ pour vérifier que
   les données entrées par l'utilisateur sont conformes (format email, tel ...) avec un sticker \textit{check} vert
-  dès que le champ est valide. Pour tous les champs qui s'y prêtent, la saisie se fera par menu déroulant, boutons radio ou cases à cocher plutôt que par champ texte libre pour limiter les risques d'erreur de saisie.
+  dès que le champ est valide.
   \item La \textbf{gestion des erreurs} : un pop-up sera mis en place pour permettre un guidage des
   utilisateurs en cas d’erreur de saisie et en particulier pour aider les personnes âgées.
   \item La \textbf{charge de travail} : la création des offres se fera avec un formulaire, afin de limiter les étapes
@@ -473,7 +489,8 @@ Les principaux critères ergonomiques auxquels notre IHM va se conformer sont :\
   \item La \textbf{cohérence interne} : chaque page sera la plus similaire possible aux autres pour faciliter
   l'apprentissage du site et ne pas se sentir perdu.
   \item La \textbf{flexibilité} : pour faciliter l'utilisation du site, il y aura souvent plusieurs actions possibles
-  pour arriver à faire la même chose.
+  pour arriver à faire la même chose. Par exemple l'utilisateur pourra rechercher une annonce à la fois depuis
+  la page prévue à cet effet, mais aussi depuis n'importe quelle page depuis le bandeau de haut de page.
   \item L'\textbf{adaptabilité} : compte tenu du public visé, nous allons mettre en place un mode spécifique
   pour les personnes malvoyantes, activant une adaptation de taille et contraste de police pour
   une meilleure accessibilité.
@@ -502,7 +519,11 @@ mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant s
 Le design du site se veut le plus simple et épuré possible tout en gardant un bon guidage. Il se
 rapprocherait du flat ou material design.
 
-\pagebreak
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/page-accueil.png}
+  \caption{Page d'accueil}
+  \label{fig:page-accueil}
+\end{figure}
 
 \subsubsection{Conception logicielle}
 \paragraph{MVC}\mbox{} \\
@@ -537,8 +558,11 @@ plus la classe DAO qui permet l'accès à la base de données (cette dernière n
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
   \caption{Diagramme de classes}
-  \label{fig:<un-label-court>}
+  \label{fig:diagramme-classe-php}
 \end{figure}
+
+La classe Utilisateur contient les informations des utilisateurs. Un utilisateur peut crée des annonces, des messages et accéder aux réponses qui le concerne (soit d'une de ses annonces, soit d'une annonce auquel il a répondu).
+Une annonce appartient à une categorie.
 
 Pour la même raison, les \textit{getters} et \textit{setters} n'apparaissent pas, mais il y en a un pour chaque attribut.
 L'attribut \texttt{Date\_creation} sert à indiquer la date de création de l'annonce.
@@ -549,21 +573,35 @@ Par exemple, pour de la garde d'enfants, la plupart du temps cela s'effectue sur
 
 \includegraphics[width=400px]{images/Schema-relationnel-BDD.png}\\\\
 SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, il est équivalent à un entier qui s'auto-incrémente par défaut à chaque INSERT.\\\\
-\textbf{Utilisateur(\underline{id}, email, password, nom, prenom, adresse, certif, reputation)}\\\\
-\textbf{Categorie(\underline{id}, nom)}\\\\
-\textbf{Annonce(\underline{id}, nom, description, adresse, date\_creation, date\_service, \#id\_createur, \#id\_categorie)}\\
-id\_createur clé étrangère de Utilisateur.\\
-id\_categorie clé étrangère de Categorie.\\\\
-\textbf{Message(\underline{id}, contenue, date\_message, \#id\_auteur)}\\
-id\_auteur clé étrangère de Utilisateur.\\\\
-\textbf{Reponse(\underline{\#id\_annonce, \#id\_repondeur, \#id\_message})}\\
-id\_annonce clé étrangère de Annonce.\\
-id\_repondeur clé étrangère de Utilisateur.\\
-id\_message clé étrangère de Message.\\\\
-\textbf{Certificateur(\underline{id}, email, password, nom, prenom)}\\
 
-Lorsqu'un utilisateur choisit une annonce qu'il a créée, on lui affiche la liste de personnes ayant répondu. Après son choix, il nous reste alors tous les messages entre le créateur de l'annonce et le répondeur.
+Chaque relation est identifiée par un id.\\
+Une categorie a un nom.\\
+Un utilisateur posséde :
+\begin{itemize}
+    \item Un email et un mot de passe lui servant à s'identifier sur le site.
+    \item Des informations personnelles tel que le nom, prénom, adresse qui serve à reconnaitre un utilisateur.
+    \item Un boolean certif servant à savoir si l'utilisateur est certifié ou non.
+    \item Une réputation qui pour l'instant n'est pas exploiter mais servira à terme à faciliter la confiance entre les utilisateurs.
+\end{itemize}
 
+Un certificateur est un utilisateur qui ne peut pas créer d'annonce et ne posséde pas d'attribut adresse, certif, et reputation.\\
+Une annonce posséde :
+\begin{itemize}
+    \item Un nom et une description qui sert à caractériser la demande de l'utilisateur
+    \item Une adresse et une date de service qui sert à connaitre le lieu du service et la potentielle date désirée.
+    \item Une date de création renseigne sur l'ancienneté d'une annonce.
+    \item un id\_createur qui permet de retrouver les informations de l'utilisateur ayant créé l'annonce.
+    \item un id\_categorie qui permet de retrouver la catégorie de l'annonce.
+\end{itemize}
+
+Un message posséde :
+\begin{itemize}
+    \item Une chaine de charactères contant ce qu'a écris l'utilisateur.
+    \item Une date servant d'indication.
+    \item Un id\_auteur permettant de retrouver les informations de l'utilisateur ayant créé le message.
+\end{itemize}
+
+La relation reponse sert à lier les relations message, annonce et utilisateur.
 
 \subsection{Solutions techniques envisageables}
 
@@ -625,7 +663,7 @@ travers un simple identifiant (l'email) + mot de passe sur HTTPS. Les informatio
 dans une partie spécifique de la base de données. Cette dernière stockera aussi les préférences des utilisateurs. \\
 
 Le tableau ci-dessous résume les possibilités pour chaque catégorie et montre (cases bleues)
-les choix que nous avons fait pour le projet \\
+les choix que nous avons fais pour le projet. \\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/choixTechno.PNG}
@@ -698,7 +736,17 @@ avec base de données sont fonctionnels. Nous avons donc un programme PHP qui va
 données du modèle dans une base de données PostgreSQL pour produire un affichage de pages
 dynamiques avec du HTML/CSS grâce à un serveur Web NginX.\\
 
-
+\begin{tabular}{|c|c|}
+  \hline Annonce & fonctionnel \\
+  \hline Compte & fonctionnel\\
+  \hline Message & fonctionnel\\
+  \hline Certification & fonctionnel pour l'identité, non fonctionnel pour les compétences\\
+  \hline Type de compte & fonctionnel\\
+  \hline Recherche & fonctionnel par catégorie\\
+  \hline Authentification Google & non fonctionnel\\
+  \hline Localisation & non fonctionnel\\
+  \hline
+\end{tabular}
 % ---------- Annonces ----------
 
 \subsection{Annonces}
@@ -720,7 +768,7 @@ Les utilisateurs peuvent interagir via le système de messages. Un utilisateur i
 
 \subsection{Compte}
 
-La création de compte est maintenant disponible via une page dédiée \textit{(Capture d'écran en annexe)}. Un avertissement en cas de non-remplissage de certain champs ou de mauvais remplissage (comme un format d'adresse mail invalide) facilite l'utilisation du formulaire.\\
+La création de compte est maintenant disponible via une page dédiée \textit{(Capture d'écran en annexe)}. Un avertissement en cas de non-remplissage de certains champs ou de mauvais remplissage (comme un format d'adresse mail invalide) facilite l'utilisation du formulaire.\\
 Une fois le compte créé et l'utilisateur connecté, il a accès à sa page de profil, d'où il peut consulter ses annonces et ses conversations, modifier ses informations personnelles et supprimer son compte.
 
 
@@ -737,7 +785,7 @@ Le système de réputation, étant secondaire, n'a été implanté que partielle
 
 \subsection{Type de compte}
 
-Actuellement, les deux types de compte existants sont les comptes utilisateurs et les comptes certificateurs. Les comptes utilisateurs sont créés via la page d'inscription et correspondent à un utilisateur standard, alors que les comptes certificateurs sont gérés par une autorité de certification des utilisateurs tels qu'une mairie ou une association, et sont créés directement en base de données pour l'instant. Cette pratique peut poser des problèmes tels qu'une mauvaise saisie ou une erreur de requête SQL. C'est pour cela que, à terme, nous ferons un compte "administrateur" avec la possibilité de créer des comptes certificateurs et des capacités de modération telles que le bannissement temporaire ou permanent de membres.
+Actuellement, les deux types de compte existants sont les comptes utilisateurs et les comptes certificateurs. Les comptes utilisateurs sont créés via la page d'inscription et correspondent à un utilisateur standard, alors que les comptes certificateurs sont gérés par une autorité de certification des utilisateurs telle qu'une mairie ou une association, et sont créés directement en base de données pour l'instant. Cette pratique peut poser des problèmes telle qu'une mauvaise saisie ou une erreur de requête SQL. C'est pour cela que, à terme, nous ferons un compte "administrateur" avec la possibilité de créer des comptes certificateurs et des capacités de modération tel que le bannissement temporaire ou permanent de membres.
 Si l'affluence du site devient importante, nous devrons créer des comptes modérateurs pour gérer les éventuels abus.\\
 
 Nous avons donc contacté une mairie pour savoir si elle était intéressée et nous avons reçu une réponse plutôt positive. Ils sont prêts à accepter de certifier l'identité des utilisateurs à conditions que nous soyons capables de prouver que notre site est apte à contenir des informations sensibles et respecte la RGPD. Pour l'instant, notre site n'étant pas assez abouti, ils n'ont pas voulu s'investir sur le plan humain et financier.
@@ -746,8 +794,8 @@ Nous avons donc contacté une mairie pour savoir si elle était intéressée et 
 \subsection{Recherche par localisation}
 La recherche par localisation avait été identifiée comme un besoin fonctionnel,
 mais ayant une priorité assez basse par rapport aux autres fonctionnalités, nous n'avons
-pas eu le temps de la réaliser. L'utilisateur peut tout de même rechercher des annonces par mot-clé
-et catégorie, mais ne peut actuellement spécifier une zone géographique.
+pas eu le temps de la réaliser. L'utilisateur peut tout de même rechercher des annonces par mot-clé,
+catégorie et type, mais ne peut actuellement spécifier une zone géographique.
 
 % ---------- secutite ----------
 \subsection{Sécurité}
@@ -755,7 +803,7 @@ Avec l'expansion des systèmes informatiques, la sécurité est devenue essentie
 
 % ---------- Guidage ----------
 \subsection{Guidage}
-\subsubsection*{Erreurs}
+\subsubsection{Erreurs}
 Pour améliorer la prévention des erreurs, nous avons mis en place différents mécanismes:
 \begin{itemize}
   \item Un message de confimation en pop-up apparaît lorsque l'utilisateur s'apprête à réaliser une action critique, comme supprimer une annonce/son compte.
@@ -772,43 +820,59 @@ De même pour la gestion des erreurs:
 
 \subsection{Évaluation du site}
 
-Pour pouvoir tester et évaluer notre site, nous l'avons fait tester à des membres de notre famille, à des amis, en bref, à la plus grande diversité de profils de personne. Pour avoir une continuité et stabilité dans l'évaluation, nous nous sommes basées sur les critères ergonomiques de Bastien et Scapin pour notre grille d'évaluation. Elle comprend donc : le guidage, le contrôle explicite, la gestion d'erreur, la charge de travail et l'homogénéité. Cependant, en ce qui concerne l'adaptabilité, nous avons décidé de ne pas en tenir rigueur pour garder une simplicité optimale. Nous n'avons pas non plus tenu rigueur de la compatibilité, car, visant un public de tout horizon, les habitudes et caractéristique de chacun sont aussi nombreuse que varier. Il est donc difficile d'évaluer ce critère. En ce qui concerne les autres éléments, nous avons demandé aux testeurs d'attribuer une note sur dix par catégorie.\\
-Cela nous donne une moyenne générale de 8.52/10 avec :\\
+Pour pouvoir tester et évaluer notre site, nous l'avons fait tester à des membres de notre famille, à des amis, en essayant d'avoir la plus grande diversité de profils possible.
+Pour avoir une évaluation cohérente des différents testeurs, nous nous sommes basés sur les critères ergonomiques de Bastien et Scapin pour notre grille d'évaluation.
+Elle comprend donc : le guidage, le contrôle explicite, la gestion d'erreur, la charge de travail et l'homogénéité.
+Cependant, en ce qui concerne l'adaptabilité, nous avons décidé de ne pas en tenir compte pour garder une simplicité optimale. Nous n'avons pas non plus tenu compte de la compatibilité,
+ car, visant un public de tout horizon, les habitudes et caractéristiques de chacun sont aussi nombreuses que variées. Il est donc difficile d'évaluer ce critère. En ce qui concerne les autres éléments,
+ nous avons demandé aux testeurs d'attribuer une note sur dix par catégorie.\\
+
+Cela nous donne une moyenne générale de 9.0/10 avec :\\
 \begin{itemize}
-  \item Guidage : 8.3/10
-  \item Contrôle explicite : 7/10
-  \item Gestion d'errur : 8.5/10
-  \item Charge de travail : 8.75/10
-  \item Signifiance des codes et dénominations : 9.3/10
-  \item Homogeneité : 9.25/10
+  \item Guidage : 8.78/10
+  \item Contrôle explicite : 8.7/10
+  \item Gestion d'errur : 8.8/10
+  \item Charge de travail : 9.4/10
+  \item Signifiance des codes et dénominations : 9.4/10
+  \item Homogeneité : 9.4/10
 \end{itemize}
 
-Nous avons aussi rédigé un petit scénario à suivre lors de l'évaluation telle que :
+Nous avions aussi rédigé un petit scénario à suivre pour le test du site :
 \begin{enumerate}
   \item Rechercher une annonce existante en base
   \item Tenter d'y repondre (ce qui est impossible sans être connecté)
-  \item Crée un compte
-  \item Répondre a l'annonce rechercher plutôt
-  \item Crée une annonce
+  \item Créer un compte
+  \item Répondre à l'annonce recherchée plutôt
+  \item Créer une annonce
   \item La modifier
-  \item Modifier son compte (crée plutôt)
+  \item Modifier son compte (créé plutôt)
   \item Supprimer son compte
   \item Signaler une annonce
 \end{enumerate}
 
-Le détail des notes et profile pour chaque personne se trouve en annexe.
+Le détail des notes et des profils pour chaque testeur se trouve en annexe.
+
+\paragraph{Bugs détectés non résolus}\mbox{} \\
+Il reste quelques problèmes qui n'ont pas été corigés bien que détectés au vu du temps restant,
+et de leurs conséquences non critiques sur le fonctionnement du site.
+\begin{enumerate}
+  \item Le menu déroulant des catégories est parfois vide mais semble dépendre du navigateur utilisé, il se corrige automatiquement en effectuant un retour arrière et en revenant
+  \item Si le détail de l'annonce est trop conséquent, test réalisé avec un texte de 2 Mo copié dans le champ detail, la page ne répond plus il faut une fermeture/rechargement de l'accueil
+  \item Le formatage du détail d'une annonce n'est pas conservé (les retours à la ligne n'apparaissent pas, contrairement au bloc d'édition de la modification d'annonce)
+  \item Lors de la modification d'une date au clavier si l'utilisateur rentre un numéro de jour au delà de 39 ou de mois au delà de 19 le chiffre des dizaines est pris comme chiffre des unités et le chiffre des unités passe à la catégorie suivante
+\end{enumerate}
 
 % ---------- Utilisation (pour les profs) ----------
 
 \subsection{Utilisation}
 
-Pour faciliter le test aux enseignants, nous avons créé des comptes avec des éléments pré remplie comme une annonce, quelques réponses, etc...\\
+Pour permettre un accès rapide aux enseignants du module, nous leur avons créé un compte personnel avec déjà une annonce et parfois quelques réponses.\\
 
-Les identifiant des comptes utilisateurs sont pour le login "prenom.nom@iut2.univ-grenoble-alpes.fr" et le mot de passe est "ens"
+Les identifiants des comptes utilisateurs sont pour le login "prenom.nom@iut2.univ-grenoble-alpes.fr" et le mot de passe est "ens"
 
-Nous avons aussi créé un compte certificateur unique avec pour login "ens@iut2.univ-grenoble-alpes.fr" et comme mot de passe ens.\\
+Nous avons aussi créé un compte certificateur unique avec pour login "ens@iut2.univ-grenoble-alpes.fr" et comme mot de passe "ens".\\
 
-Cependant, cela n'empêche en rien de test la création de compte, d'annonce ou quelques fonctionnalités que ce soit.
+Cependant, cela n'empêche en rien de tester la création de compte, d'annonce ou autre action quelle qu'elle soit.
 
 Le lien du site : https://art-entraide.ddns.net:8080
 
@@ -1085,15 +1149,16 @@ et la prévisualisation des annonces a été reprise de la page d'accueil pour p
 Toutes les personnes présentées ci-dessous ont donné leur autorisation d'apparaître ici avec les informations associées.
 Les personnes qui ont testé et évalué le site sont :\\
 
-Carole Pasini, 50 ans, secrétaire et plutôt à l'aise avec l'informatique.\\
-Florian Attias, 19 ans, étudiant en biologie et à l'aise avec l'informatique.\\
-Frederic Loraux, 49 ans, ouvrier et très très peu à l'aise avec l'informatique.\\
-Sarah Loraux, 47 ans, secrétaire et plutôt à l'aise avec l'informatique.\\
-Baptiste Guyard, 22 ans, étudiant.\\
-Audrey Chauvineau, 22 ans, étudiante en nanotechnologie.\\
-Laurent Chauvineau, 50 ans, ingénieur informaticient.\\
-Mary-vonne et Pascal Prely, respectivement ingénieur et retraiter.\\
-Xavier Sirvent, 51 ans, ingénieur informaticient.\\
+Carole Pasini, 50 ans, secrétaire, plutôt à l'aise avec l'informatique.\\
+Florian Attias, 19 ans, étudiant L2 en biologie, à l'aise avec l'informatique.\\
+Frederic Loraux, 49 ans, ouvrier, très très peu à l'aise avec l'informatique.\\
+Sarah Loraux, 47 ans, secrétaire, plutôt à l'aise avec l'informatique.\\
+Baptiste Guyard, 22 ans, étudiant en traitement d'image (bac+5).\\
+Audrey Chauvineau, 22 ans, étudiante en nanotechnologie (bac+5).\\
+Laurent Chauvineau, 50 ans, ingénieur informaticien.\\
+Maryvonne et Pascal Prely, respectivement 55 ans et 61 ans, ingénieure assainissement et retraité.\\
+Xavier Sirvent, 51 ans, ingénieur informaticien.\\
+Laure Chanas, 17 ans, Terminale spécialités math - physique chimie.\\
 
 \begin{center}
    \begin{tabular}{ | l | c | c | c | c | c | c | }
@@ -1101,16 +1166,17 @@ Xavier Sirvent, 51 ans, ingénieur informaticient.\\
      \hline
      Profil & Guidage & \begin{tabular}[c]{@{}l@{}}Contrôle \\ explicite\end{tabular} & \begin{tabular}[c]{@{}l@{}}Gestion \\ des erreurs\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Charge \\ de travail\end{tabular} & \begin{tabular}[c]{@{}l@{}}Signifiance des codes \\ et dénominations\end{tabular} & \begin{tabular}[c]{@{}l@{}}Homogénéité / \\ Cohérence\end{tabular} \\ \hline
 
-     Carole Pasini      & 7,5/10 & 7/10       & 7/10   & 8/10    & 9/10       & 9/10    \\ \hline
-     Florian attias     & 8,3/10 & 7/10       & 8/10   & 8/10    & non évalué & 8/10    \\ \hline
-     Frederic Loraux    & 8/10   & non évalué & 9/10   & 9/10    & 9/10       & 10/10   \\ \hline
-     Sarah Loraux       & 9.5/10 & non évalué & 10/10  & 10/10   & 10/10      & 10/10   \\ \hline
-     Baptiste Guyard    & 8/10   & 9/10       & 10/10  & 9/10    & 8/10       & 8.6/10   \\ \hline
-     Audrey Chauvineau  & 7.75/10& 8/10       & 8.3/10 & 9/10    & 9/10       & 9.5/10   \\ \hline
-     Laurent Chauvineau & 10/10  & 10/10      & 9.3/10 & 8.5/10  & 10/10      & 10/10   \\ \hline
-     Mary-vonne Prely   & 9.5/10 & 10/10      & 9/10   & 10/10   & 10/10      & 10/10   \\ \hline
-     Xavier Sirvent     & 9.25/10 & 9/10      & 9/10  & 9.5/10  & 10/10      & 9.6/10   \\ \hline
-     Total              & 8.6/10  & 8.57/10   & 8.84/10 & 9/10  & 9.4/10     & 9.4/10 \\ \hline
+     Carole Pasini      & 7,5/10  & 7/10       & 7/10   & 8/10    & 9/10       & 9/10    \\ \hline
+     Florian attias     & 8,3/10  & 7/10       & 8/10   & 8/10    & non évalué & 8/10    \\ \hline
+     Frederic Loraux    & 8/10    & non évalué & 9/10   & 9/10    & 9/10       & 10/10   \\ \hline
+     Sarah Loraux       & 9.5/10  & non évalué & 10/10  & 10/10   & 10/10      & 10/10   \\ \hline
+     Baptiste Guyard    & 8/10    & 9/10       & 10/10  & 9/10    & 8/10       & 8.6/10   \\ \hline
+     Audrey Chauvineau  & 7.75/10 & 8/10       & 8.3/10 & 9/10    & 9/10       & 9.5/10   \\ \hline
+     Laurent Chauvineau & 10/10   & 10/10      & 9.3/10 & 8.5/10  & 10/10      & 10/10   \\ \hline
+     Maryvonne Prely    & 9.5/10  & 10/10      & 9/10   & 10/10   & 10/10      & 10/10   \\ \hline
+     Xavier Sirvent     & 9.25/10 & 9/10       & 9/10   & 9.5/10  & 10/10      & 9.6/10   \\ \hline
+     Laure Chanas       & 10/10   & 10/10      & 10/10  & 9/10    & 10/10      & 9/10    \\ \hline
+     Total              & 8.78/10 & 8.7/10    & 8.8/10  & 9.4/10  & 9.4/10     & 9.4/10 \\ \hline
 
 
    \end{tabular}

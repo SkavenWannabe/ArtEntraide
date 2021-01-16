@@ -19,10 +19,20 @@ if (isset($_GET['categorie']) and ($_GET['categorie'] != '') and ($_GET['categor
   $categorie = '';
 }
 
+if (isset($_GET['type']) and ($_GET['type'] != '') and ($_GET['type'] != '0')) {
+  $type = htmlentities($_GET['type']);
+} else {
+  $type = '';
+}
+
 if(isset($_GET['page'])){
   $page = htmlentities($_GET['page']);
 } else {
   $page = 1;
+}
+
+if(isset($_GET['valAvant'])){
+  $pageAvant = $_GET['valAvant'];
 }
 
 $pageSize = 10; // constante du nombre d'élément afficher par page
@@ -38,23 +48,31 @@ $last = $art->getLastIdAnnonce();
 $min = $art->getFirstIdAnnonce();
 
 //recuperation des annonces en fonction de la page actuelle et du nombre d'élément par page
-if($categorie == '' && $motcle == ''){
+if($categorie == '' && $motcle == '' && $type == ''){
   $annonces = $art->getPageRef($page,$pageSize);
 }
 
 // Filtrage annonces #3
-if($categorie != '' || $motcle != ''){
-  $annonces = $art->getAnnonceRecherche($motcle, $categorie,$page,$pageSize);
+if($categorie != '' || $motcle != '' || $type != ''){
+  $annonces = $art->getAnnonceRecherche($motcle, $categorie,$type,$page,$pageSize);
 }
 
 //recuperation du nombre d'élément
-$nbElement = $art->getNbPage($motcle, $categorie);
-
-//calcul du nombre de page possible
-if($nbElement > $pageSize){
-  $nbPages = round($nbElement/$pageSize)+1;
+$nbElement = $art->getNbPage($motcle,$categorie,$type);
+//calcul du nombre de page
+if(!isset($pageAvant)){
+  if($nbElement > $pageSize){
+    $nbPages = round($nbElement/$pageSize)+1;
+  }else{
+    $nbPages=1;
+  }
+  
 }else{
-  $nbPages=1;
+  if($pageAvant < $page){ //bouton suivant selectionner
+    $nbPages = round($nbElement/$pageSize);
+  }else{ // bouton précédent séléctionner
+    $nbPages = round($nbElement/$pageSize)+1;
+  }
 }
 
 //calcul nouvelle valeur pour page suivant et precedente
@@ -78,12 +96,17 @@ session_write_close();
 // ==== PARTIE SELECTION DE LA VUE ==== //
 $view = new View();
 
-//information nécessaire pour le header
+//information nécessaire pour la liste des annonces
 $view->assign('annonces', $annonces);
 $view->assign('page', $page);
 $view->assign('nbPages', $nbPages);
 $view->assign('pagePrec', $pagePrec);
 $view->assign('pageSuiv', $pageSuiv);
+
+// Informations nécessaires pour le feedback des filtres
+$view->assign('categorie', $categorie);
+$view->assign('type', $type);
+$view->assign('motcle', $motcle);
 
 //information nécessaire pour le header
 $view->assign('user', $user);

@@ -51,7 +51,7 @@ if ($_POST['date'] != '') {
 }
 
 // --- recuperation du type de l'annonce --- //
-$est_demande = true; //a recup en post après
+$est_demande = (htmlentities($_POST['type']) == "demande"); //a recup en post après
 
 
 // ==== PARTIE USAGE DU MODELE ==== //
@@ -68,6 +68,7 @@ if(!isset($error)){
   if($annonce->getCategorie()->getNom() !== $nomCategorie){
     $annonce->setCategorie($art->getCategorieNom($nomCategorie));
   }
+  $annonce->setEstDemande($est_demande);
 
   $art->updateAnnonce($annonce);
 

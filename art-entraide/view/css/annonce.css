@@ -40,12 +40,31 @@ article.annonce h2 {
   text-decoration: underline;
 }
 
-article.annonce > form button:first-child {
+article.annonce > form button:not(.boutonType) {
   margin: 0;
   position: absolute;
   left: 50%;
   bottom: 1.5em;
   transform: translate(-50%, -50%);
+}
+
+article.annonce > form button.boutonType {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: var(--accent-color-vert);
+  border: solid 2px var(--accent-color-vert);
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 2px;
+	margin: 0;
+	color: white;
+	font-weight: 600;
+  font-size: 1em;
+	transition: 0.25s;
+}
+article.annonce > form button.boutonType:hover {
+  font-size: 1.1em;
 }
 
 article.annonce > form:last-child button {
@@ -67,17 +86,6 @@ article.annonce > form:last-child button:hover {
 	font-size: 1.2em;
 }
 
-article.annonce > p.date {
-	position: absolute;
-	top: 0;
-	right: 0;
-	background-color: var(--accent-color-vert);
-	border-bottom-left-radius: 10px;
-	border-top-right-radius: 10px;
-	padding: 2px;
-	margin: 0;
-	color: white;
-}
 
 section.section_annonces > form {
 	margin: 20px 0px;

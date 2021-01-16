@@ -25,9 +25,17 @@ form.creation_annonce div > input,textarea {
 }
 
 form.creation_annonce textarea {
-  width: 100% !important;
   height: 10em;
-  font-size: 1.1em
+  font-size: 1.1em;
+  resize: vertical;
+}
+
+form select {
+  height: 3em;
+}
+
+form fieldset {
+  margin: 0px;
 }
 
 form.creation_annonce > section:nth-child(2) {

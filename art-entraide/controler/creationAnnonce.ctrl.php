@@ -50,7 +50,7 @@ if ($_POST['date'] != '') {
 }
 
 // --- recuperation du type de l'annonce --- //
-$est_demande = true;
+$est_demande = (htmlentities($_POST['type']) == "demande");
 $est_active = true;
 // ==== PARTIE USAGE DU MODELE ==== //
 
