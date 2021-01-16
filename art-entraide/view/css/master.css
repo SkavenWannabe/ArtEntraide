@@ -51,7 +51,7 @@ button:not(.boutonCategorie):not(.boutonType) {
 	transition: 0.25s;
 }
 
-button:not(.boutonCategorie):not(.boutonType):hover {
+button:not(.boutonCategorie):not(.boutonType):not(.actionCritique):hover {
 	box-shadow: inset 6.5em 0 0 0 var(--accent-color-violet);
 	color: white;
 	background: var(--accent-color-violet);
@@ -60,13 +60,13 @@ button:not(.boutonCategorie):not(.boutonType):hover {
 }
 
 button.actionCritique {
-	color: #e53935;
-	border: solid 2px #e53935CC;
+	color: #e53935 !important;
+	border: solid 2px #e53935CC !important;
 }
 
 button.actionCritique:hover {
 	box-shadow: inset 6.5em 0 0 0 #e53935;
-	color: white;
+	color: white !important;
 	background: #e53935;
 	border-color: #e53935;
 	/* transform: translateY(-0.25em); */
