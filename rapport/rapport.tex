@@ -768,7 +768,7 @@ Les utilisateurs peuvent interagir via le système de messages. Un utilisateur i
 
 \subsection{Compte}
 
-La création de compte est maintenant disponible via une page dédiée \textit{(Capture d'écran en annexe)}. Un avertissement en cas de non-remplissage de certain champs ou de mauvais remplissage (comme un format d'adresse mail invalide) facilite l'utilisation du formulaire.\\
+La création de compte est maintenant disponible via une page dédiée \textit{(Capture d'écran en annexe)}. Un avertissement en cas de non-remplissage de certains champs ou de mauvais remplissage (comme un format d'adresse mail invalide) facilite l'utilisation du formulaire.\\
 Une fois le compte créé et l'utilisateur connecté, il a accès à sa page de profil, d'où il peut consulter ses annonces et ses conversations, modifier ses informations personnelles et supprimer son compte.
 
 
@@ -785,7 +785,7 @@ Le système de réputation, étant secondaire, n'a été implanté que partielle
 
 \subsection{Type de compte}
 
-Actuellement, les deux types de compte existants sont les comptes utilisateurs et les comptes certificateurs. Les comptes utilisateurs sont créés via la page d'inscription et correspondent à un utilisateur standard, alors que les comptes certificateurs sont gérés par une autorité de certification des utilisateurs tels qu'une mairie ou une association, et sont créés directement en base de données pour l'instant. Cette pratique peut poser des problèmes tels qu'une mauvaise saisie ou une erreur de requête SQL. C'est pour cela que, à terme, nous ferons un compte "administrateur" avec la possibilité de créer des comptes certificateurs et des capacités de modération telles que le bannissement temporaire ou permanent de membres.
+Actuellement, les deux types de compte existants sont les comptes utilisateurs et les comptes certificateurs. Les comptes utilisateurs sont créés via la page d'inscription et correspondent à un utilisateur standard, alors que les comptes certificateurs sont gérés par une autorité de certification des utilisateurs telle qu'une mairie ou une association, et sont créés directement en base de données pour l'instant. Cette pratique peut poser des problèmes telle qu'une mauvaise saisie ou une erreur de requête SQL. C'est pour cela que, à terme, nous ferons un compte "administrateur" avec la possibilité de créer des comptes certificateurs et des capacités de modération tel que le bannissement temporaire ou permanent de membres.
 Si l'affluence du site devient importante, nous devrons créer des comptes modérateurs pour gérer les éventuels abus.\\
 
 Nous avons donc contacté une mairie pour savoir si elle était intéressée et nous avons reçu une réponse plutôt positive. Ils sont prêts à accepter de certifier l'identité des utilisateurs à conditions que nous soyons capables de prouver que notre site est apte à contenir des informations sensibles et respecte la RGPD. Pour l'instant, notre site n'étant pas assez abouti, ils n'ont pas voulu s'investir sur le plan humain et financier.
@@ -794,12 +794,12 @@ Nous avons donc contacté une mairie pour savoir si elle était intéressée et 
 \subsection{Recherche par localisation}
 La recherche par localisation avait été identifiée comme un besoin fonctionnel,
 mais ayant une priorité assez basse par rapport aux autres fonctionnalités, nous n'avons
-pas eu le temps de la réaliser. L'utilisateur peut tout de même rechercher des annonces par mot-clé
-et catégorie, mais ne peut actuellement spécifier une zone géographique.
+pas eu le temps de la réaliser. L'utilisateur peut tout de même rechercher des annonces par mot-clé,
+catégorie et type, mais ne peut actuellement spécifier une zone géographique.
 
 % ---------- secutite ----------
 \subsection{Sécurité}
-Notre site étant en phase de prototype, la sécurité n'est pas maximale. Notamment au niveau de la gestion de mot de passe qui est, pour l'instant, entrée en clair dans la base de donnée. L'une des solutions est de hacher les mots de passe avant chaque accès en base (pour les entrer ou les comparer) pour que même s'il y a une fuite de sécurité, l'impact soit limité. Cependant, pour maintenir l'intégrité du site, certaines failles ont été corrigées comme les injections de code ou encore le protocole qui a été passé en http.
+Notre site étant en phase de prototype, la sécurité n'est pas maximale. Notamment au niveau de la gestion de mot de passe qui est, pour l'instant, entré en clair dans la base de donnée. L'une des solutions est de hacher les mots de passe avant chaque accès en base (pour les entrer ou les comparer) pour que même s'il y a une fuite de sécurité, l'impact soit limité. Cependant, pour maintenir l'intégrité du site, certaines failles ont été corrigées comme les injections de code ou encore le protocole qui a été passé en https.
 
 % ---------- Guidage ----------
 \subsection{Guidage}
@@ -820,43 +820,59 @@ De même pour la gestion des erreurs:
 
 \subsection{Évaluation du site}
 
-Pour pouvoir tester et évaluer notre site, nous l'avons fait tester à des membres de notre famille, à des amis, en bref, à la plus grande diversité de profils de personne. Pour avoir une continuité et stabilité dans l'évaluation, nous nous sommes basées sur les critères ergonomiques de Bastien et Scapin pour notre grille d'évaluation. Elle comprend donc : le guidage, le contrôle explicite, la gestion d'erreur, la charge de travail et l'homogénéité. Cependant, en ce qui concerne l'adaptabilité, nous avons décidé de ne pas en tenir rigueur pour garder une simplicité optimale. Nous n'avons pas non plus tenu rigueur de la compatibilité, car, visant un public de tout horizon, les habitudes et caractéristique de chacun sont aussi nombreuse que varier. Il est donc difficile d'évaluer ce critère. En ce qui concerne les autres éléments, nous avons demandé aux testeurs d'attribuer une note sur dix par catégorie.\\
-Cela nous donne une moyenne générale de 8.52/10 avec :\\
+Pour pouvoir tester et évaluer notre site, nous l'avons fait tester à des membres de notre famille, à des amis, en essayant d'avoir la plus grande diversité de profils possible.
+Pour avoir une évaluation cohérente des différents testeurs, nous nous sommes basés sur les critères ergonomiques de Bastien et Scapin pour notre grille d'évaluation.
+Elle comprend donc : le guidage, le contrôle explicite, la gestion d'erreur, la charge de travail et l'homogénéité.
+Cependant, en ce qui concerne l'adaptabilité, nous avons décidé de ne pas en tenir compte pour garder une simplicité optimale. Nous n'avons pas non plus tenu compte de la compatibilité,
+ car, visant un public de tout horizon, les habitudes et caractéristiques de chacun sont aussi nombreuses que variées. Il est donc difficile d'évaluer ce critère. En ce qui concerne les autres éléments,
+ nous avons demandé aux testeurs d'attribuer une note sur dix par catégorie.\\
+
+Cela nous donne une moyenne générale de 9.0/10 avec :\\
 \begin{itemize}
-  \item Guidage : 8.3/10
-  \item Contrôle explicite : 7/10
-  \item Gestion d'errur : 8.5/10
-  \item Charge de travail : 8.75/10
-  \item Signifiance des codes et dénominations : 9.3/10
-  \item Homogeneité : 9.25/10
+  \item Guidage : 8.78/10
+  \item Contrôle explicite : 8.7/10
+  \item Gestion d'errur : 8.8/10
+  \item Charge de travail : 9.4/10
+  \item Signifiance des codes et dénominations : 9.4/10
+  \item Homogeneité : 9.4/10
 \end{itemize}
 
-Nous avons aussi rédigé un petit scénario à suivre lors de l'évaluation telle que :
+Nous avions aussi rédigé un petit scénario à suivre pour le test du site :
 \begin{enumerate}
   \item Rechercher une annonce existante en base
   \item Tenter d'y repondre (ce qui est impossible sans être connecté)
-  \item Crée un compte
-  \item Répondre a l'annonce rechercher plutôt
-  \item Crée une annonce
+  \item Créer un compte
+  \item Répondre à l'annonce recherchée plutôt
+  \item Créer une annonce
   \item La modifier
-  \item Modifier son compte (crée plutôt)
+  \item Modifier son compte (créé plutôt)
   \item Supprimer son compte
   \item Signaler une annonce
 \end{enumerate}
 
-Le détail des notes et profile pour chaque personne se trouve en annexe.
+Le détail des notes et des profils pour chaque testeur se trouve en annexe.
+
+\paragraph{Bugs détectés non résolus}\mbox{} \\
+Il reste quelques problèmes qui n'ont pas été corigés bien que détectés au vu du temps restant,
+et de leurs conséquences non critiques sur le fonctionnement du site.
+\begin{enumerate}
+  \item Le menu déroulant des catégories est parfois vide mais semble dépendre du navigateur utilisé, il se corrige automatiquement en effectuant un retour arrière et en revenant
+  \item Si le détail de l'annonce est trop conséquent, test réalisé avec un texte de 2 Mo copié dans le champ detail, la page ne répond plus il faut une fermeture/rechargement de l'accueil
+  \item Le formatage du détail d'une annonce n'est pas conservé (les retours à la ligne n'apparaissent pas, contrairement au bloc d'édition de la modification d'annonce)
+  \item Lors de la modification d'une date au clavier si l'utilisateur rentre un numéro de jour au delà de 39 ou de mois au delà de 19 le chiffre des dizaines est pris comme chiffre des unités et le chiffre des unités passe à la catégorie suivante
+\end{enumerate}
 
 % ---------- Utilisation (pour les profs) ----------
 
 \subsection{Utilisation}
 
-Pour faciliter le test aux enseignants, nous avons créé des comptes avec des éléments pré remplies comme une annonce, quelques réponses, etc...\\
+Pour permettre un accès rapide aux enseignants du module, nous leur avons créé un compte personnel avec déjà une annonce et parfois quelques réponses.\\
 
-Les identifiant des comptes utilisateurs sont pour le login "prenom.nom@iut2.univ-grenoble-alpes.fr" et le mot de passe est "ens"
+Les identifiants des comptes utilisateurs sont pour le login "prenom.nom@iut2.univ-grenoble-alpes.fr" et le mot de passe est "ens"
 
-Nous avons aussi créé un compte certificateur unique avec pour login "ens@iut2.univ-grenoble-alpes.fr" et comme mot de passe ens.\\
+Nous avons aussi créé un compte certificateur unique avec pour login "ens@iut2.univ-grenoble-alpes.fr" et comme mot de passe "ens".\\
 
-Cependant, cela n'empêche en rien de test la création de compte, d'annonce ou quelques fonctionnalités que ce soit.
+Cependant, cela n'empêche en rien de tester la création de compte, d'annonce ou autre action quelle qu'elle soit.
 
 Le lien du site : https://art-entraide.ddns.net:8080
 
@@ -1133,15 +1149,16 @@ et la prévisualisation des annonces a été reprise de la page d'accueil pour p
 Toutes les personnes présentées ci-dessous ont donné leur autorisation d'apparaître ici avec les informations associées.
 Les personnes qui ont testé et évalué le site sont :\\
 
-Carole Pasini, 50 ans, secrétaire et plutôt à l'aise avec l'informatique.\\
-Florian Attias, 19 ans, étudiant en biologie et à l'aise avec l'informatique.\\
-Frederic Loraux, 49 ans, ouvrier et très très peu à l'aise avec l'informatique.\\
-Sarah Loraux, 47 ans, secrétaire et plutôt à l'aise avec l'informatique.\\
-Baptiste Guyard, 22 ans, étudiant.\\
-Audrey Chauvineau, 22 ans, étudiante en nanotechnologie.\\
-Laurent Chauvineau, 50 ans, ingénieur informaticient.\\
-Mary-vonne et Pascal Prely, respectivement ingénieur et retraiter.\\
-Xavier Sirvent, 51 ans, ingénieur informaticient.\\
+Carole Pasini, 50 ans, secrétaire, plutôt à l'aise avec l'informatique.\\
+Florian Attias, 19 ans, étudiant L2 en biologie, à l'aise avec l'informatique.\\
+Frederic Loraux, 49 ans, ouvrier, très très peu à l'aise avec l'informatique.\\
+Sarah Loraux, 47 ans, secrétaire, plutôt à l'aise avec l'informatique.\\
+Baptiste Guyard, 22 ans, étudiant en traitement d'image (bac+5).\\
+Audrey Chauvineau, 22 ans, étudiante en nanotechnologie (bac+5).\\
+Laurent Chauvineau, 50 ans, ingénieur informaticien.\\
+Maryvonne et Pascal Prely, respectivement 55 ans et 61 ans, ingénieure assainissement et retraité.\\
+Xavier Sirvent, 51 ans, ingénieur informaticien.\\
+Laure Chanas, 17 ans, Terminale spécialités math - physique chimie.\\
 
 \begin{center}
    \begin{tabular}{ | l | c | c | c | c | c | c | }
@@ -1149,16 +1166,17 @@ Xavier Sirvent, 51 ans, ingénieur informaticient.\\
      \hline
      Profil & Guidage & \begin{tabular}[c]{@{}l@{}}Contrôle \\ explicite\end{tabular} & \begin{tabular}[c]{@{}l@{}}Gestion \\ des erreurs\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Charge \\ de travail\end{tabular} & \begin{tabular}[c]{@{}l@{}}Signifiance des codes \\ et dénominations\end{tabular} & \begin{tabular}[c]{@{}l@{}}Homogénéité / \\ Cohérence\end{tabular} \\ \hline
 
-     Carole Pasini      & 7,5/10 & 7/10       & 7/10   & 8/10    & 9/10       & 9/10    \\ \hline
-     Florian attias     & 8,3/10 & 7/10       & 8/10   & 8/10    & non évalué & 8/10    \\ \hline
-     Frederic Loraux    & 8/10   & non évalué & 9/10   & 9/10    & 9/10       & 10/10   \\ \hline
-     Sarah Loraux       & 9.5/10 & non évalué & 10/10  & 10/10   & 10/10      & 10/10   \\ \hline
-     Baptiste Guyard    & 8/10   & 9/10       & 10/10  & 9/10    & 8/10       & 8.6/10   \\ \hline
-     Audrey Chauvineau  & 7.75/10& 8/10       & 8.3/10 & 9/10    & 9/10       & 9.5/10   \\ \hline
-     Laurent Chauvineau & 10/10  & 10/10      & 9.3/10 & 8.5/10  & 10/10      & 10/10   \\ \hline
-     Mary-vonne Prely   & 9.5/10 & 10/10      & 9/10   & 10/10   & 10/10      & 10/10   \\ \hline
-     Xavier Sirvent     & 9.25/10 & 9/10      & 9/10  & 9.5/10  & 10/10      & 9.6/10   \\ \hline
-     Total              & 8.6/10  & 8.57/10   & 8.84/10 & 9/10  & 9.4/10     & 9.4/10 \\ \hline
+     Carole Pasini      & 7,5/10  & 7/10       & 7/10   & 8/10    & 9/10       & 9/10    \\ \hline
+     Florian attias     & 8,3/10  & 7/10       & 8/10   & 8/10    & non évalué & 8/10    \\ \hline
+     Frederic Loraux    & 8/10    & non évalué & 9/10   & 9/10    & 9/10       & 10/10   \\ \hline
+     Sarah Loraux       & 9.5/10  & non évalué & 10/10  & 10/10   & 10/10      & 10/10   \\ \hline
+     Baptiste Guyard    & 8/10    & 9/10       & 10/10  & 9/10    & 8/10       & 8.6/10   \\ \hline
+     Audrey Chauvineau  & 7.75/10 & 8/10       & 8.3/10 & 9/10    & 9/10       & 9.5/10   \\ \hline
+     Laurent Chauvineau & 10/10   & 10/10      & 9.3/10 & 8.5/10  & 10/10      & 10/10   \\ \hline
+     Maryvonne Prely    & 9.5/10  & 10/10      & 9/10   & 10/10   & 10/10      & 10/10   \\ \hline
+     Xavier Sirvent     & 9.25/10 & 9/10       & 9/10   & 9.5/10  & 10/10      & 9.6/10   \\ \hline
+     Laure Chanas       & 10/10   & 10/10      & 10/10  & 9/10    & 10/10      & 9/10    \\ \hline
+     Total              & 8.78/10 & 8.7/10    & 8.8/10  & 9.4/10  & 9.4/10     & 9.4/10 \\ \hline
 
 
    \end{tabular}

@@ -9,13 +9,15 @@
 
 
 -- Bug détecté :
-Liste des annonce : le dernier "page suivante" n'est pas grisé et ammène a une page vide
+Liste des annonce : le dernier "page suivante" n'est pas grisé et ammène a une page vide - resolu
 
 date sur une annonce - mettre 15/01/9999 puis changer le 01 en 13 donnera 12/9999, ou 25 donnera 02/0005 ... il ne devrait pas débordementd'une section sur l'autre
 Creation d'annonce: copier un texte de 2 Mo dans le champ detail tue la page, une fermeture/ rechargement de l'accueil est nécessaire
 Afficher une annonce : le formatage n'est pas gardé (les retours à la ligne n'apparaissent pas contrairement au bloc d'édition de la modification d'annonce)
+
+//resolu
 supprimer une annonce : ramene sur la page ses anonce sans signe disctinctif, même si on était sur la page des annonces avant, devrait ramener à la page d'ou on est parti
-Supprimer uen annonce : le fil d'ariane est cassé, il affiche "> Accueil" au lieu de "> Accueil > Profil > Voir ses annonces" puisque c'est là que l'on est
+Supprimer une annonce : le fil d'ariane est cassé, il affiche "> Accueil" au lieu de "> Accueil > Profil > Voir ses annonces" puisque c'est là que l'on est
 
 --- Bastien & scapin (voir pdf) :
 
@@ -30,15 +32,15 @@ Contrôle explicité :
 
 Gestion des erreurs :
   protection - 10/10
-  Qualité des messages - 8/10 
-  (pas de message d'information lorsque l'on regarde la liste de ses réponses et que l'on en a pas, 
+  Qualité des messages - 8/10
+  (pas de message d'information lorsque l'on regarde la liste de ses réponses et que l'on en a pas,
    pas de rappel des critères de recherche
    pas de message de confirmation après validation d'une modification du compte)
   Corriger - 10/10
 
 Charge de travail :
-  Limiter le nombre d'étapes - 7/10 
-       (retour à l'accueil n'ammène pas sur liste d'annonce, 
+  Limiter le nombre d'étapes - 7/10
+       (retour à l'accueil n'ammène pas sur liste d'annonce,
 	    pas simple de deviner que recherche donne la liste complète si pas de params definis,
 	    annuler une modification d'offre ne retourne pas sur l'offre contrairement à accepter la modification,
 		supprimer une annonce retour vers ses annonces et pas la page précédente - pas visible surtout si on était sur la page annonce avant et non pas ses anonces)
