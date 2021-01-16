@@ -1,20 +1,20 @@
 set datestyle to EUROPEAN;
 
-INSERT INTO Utilisateur VALUES(DEFAULT, 'alexandre.legendre@etu.univ-grenoble-alpes.fr', crypt('foxxyfox', gen_salt('bf')), 'Alexandre', 'Legendre', 'SMH', TRUE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'eliott.sammier@etu.univ-grenoble-alpes.fr', crypt('bigbrain', gen_salt('bf')), 'Eliott', 'Sammier', 'Gière', TRUE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'marion.chauvineau@etu.univ-grenoble-alpes.fr', crypt('dogydogo', gen_salt('bf')), 'Marion', 'Chauvineau', 'Fontanil', TRUE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'elian.loraux@etu.univ-grenoble-alpes.fr', crypt('michel4ever', gen_salt('bf')), 'Elian', 'Loraux', 'Lyon', TRUE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'lucas.lacouture@etu.univ-grenoble-alpes.fr', crypt('1uc42', gen_salt('bf')), 'Lucas', 'Lacouture', 'Saint-Denis', TRUE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'vincenzo.carminati@etu.univ-grenoble-alpes.fr', crypt('tacos', gen_salt('bf')), 'Vincenzo', 'Carminati', 'Pontcharra-Sur-Bréda', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'alexandre.legendre@etu.univ-grenoble-alpes.fr', crypt('foxxyfox', gen_salt('bf')), 'Legendre', 'Alexandre', 'SMH', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'eliott.sammier@etu.univ-grenoble-alpes.fr', crypt('bigbrain', gen_salt('bf')), 'Sammier', 'Eliott', 'Gière', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'marion.chauvineau@etu.univ-grenoble-alpes.fr', crypt('dogydogo', gen_salt('bf')),, 'Chauvineau' 'Marion', 'Fontanil', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'elian.loraux@etu.univ-grenoble-alpes.fr', crypt('michel4ever', gen_salt('bf')), 'Loraux', 'Elian', 'Lyon', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'lucas.lacouture@etu.univ-grenoble-alpes.fr', crypt('1uc42', gen_salt('bf')), 'Lacouture', 'Lucas', 'Saint-Denis', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'vincenzo.carminati@etu.univ-grenoble-alpes.fr', crypt('tacos', gen_salt('bf')), 'Carminati', 'Vincenzo', 'Pontcharra-Sur-Bréda', TRUE, 0);
 
-INSERT INTO Utilisateur VALUES(DEFAULT, 'gaelle.blanco-laine@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Gaëlle', 'Blanco-Lainé', 'Grenoble', TRUE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'sophie.dupuy-chessa@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Sophie', 'Dupuy-Chessa', 'Grenoble', FALSE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'jerome.goulian@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Jérôme', 'Goulian', 'Grenoble', TRUE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'aous.karoui@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Aous', 'Karoui', 'Grenoble', FALSE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'herve.blanchon@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Hervé', 'Blanchon', 'Grenoble', TRUE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'tanguy.giuffrida@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Tanguy', 'Giuffrida', 'Grenoble', FALSE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'francis.brunet-manquat@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Francis', 'Brunet-Manquat', 'Grenoble', FALSE, 0);
-INSERT INTO Utilisateur VALUES(DEFAULT, 'raphael.bleuse@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Raphaël', 'Bleuse', 'Grenoble', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'gaelle.blanco-laine@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Blanco-Lainé', 'Gaëlle', 'Grenoble', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'sophie.dupuy-chessa@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Dupuy-Chessa', 'Sophie', 'Grenoble', FALSE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'jerome.goulian@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Goulian', 'Jérôme', 'Grenoble', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'aous.karoui@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Karoui', 'Aous', 'Grenoble', FALSE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'herve.blanchon@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Blanchon', 'Hervé', 'Grenoble', TRUE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'tanguy.giuffrida@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Giuffrida', 'Tanguy', 'Grenoble', FALSE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'francis.brunet-manquat@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Brunet-Manquat', 'Francis', 'Grenoble', FALSE, 0);
+INSERT INTO Utilisateur VALUES(DEFAULT, 'raphael.bleuse@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Bleuse', 'Raphaël', 'Grenoble', TRUE, 0);
 
 INSERT INTO Certificateur VALUES(DEFAULT, 'ens@iut2.univ-grenoble-alpes.fr', crypt('ens', gen_salt('bf')), 'Certificateur', 'Certificateur');
 INSERT INTO Certificateur VALUES(DEFAULT, 'vealem@etu.univ-grenoble-alpes.fr', crypt('vealem', gen_salt('bf')), 'Vealem', 'team');

@@ -6,61 +6,74 @@ Vos rendus se feront en déposant tous les fichiers pertinents pour chaque itér
 Ce dépôt organisé comme suit :
 ```console
 rendus
-├── docs/
-│   └── README.md
-├── rapport/
-|   ├── images/
-|   |   ├── maquette-accueil.png
-|   |   ├── maquette-recherche.png
-|   |   ├── maquette-criticite.png
-|   |   └── tableau-ergo.png
-|   └── rapport.tex
-├── art-entraide/
-|   ├── controler/
-|   |   └── start.ctrl.php
-|   ├── data/
-|   |   └── create.sql
-|   |   └── drop.sql
-|   |   └── insert.sql
-|   |   └── reset.sql
-|   ├── framework/
-|   |   └── view.class.php
-|   ├── model/
-|   |   ├── DAO.class.php
-|   |   ├── Utilisateur.class.php
-|   |   ├── Categorie.class.php
-|   |   ├── Annonce.class.php
-|   |   ├── Message.class.php
-|   |   └── Reponse.class.php
-|   ├── test/
-|   |   ├── Utilisateur.test.php
-|   |   ├── Categorie.test.php
-|   |   ├── Annonce.test.php
-|   |   ├── Message.test.php
-|   |   └── Reponse.test.php
-|   └── view/
-|       ├── design/
-|       |   ├── design.txt
-|       |   ├── logo.png
-|       |   ├── logo2.png
-|       |   └── style.css
-|       ├── accueil.view.php
-|       ├── creationAnnonce.view.php
-|       ├── footer.php
-|       ├── header.php
-|       └── inscription.view.php
-├── conception/
-|   └── PHP/
-|       ├── DC.png
-|       └── DC.drawio
-|   └── BDD/
-|       ├── bdd.tex
-|       ├── Schema-relationnel-BDD.png
-├── art-entraide/
 ├── .gitattributes
 ├── .gitignore
 ├── .gitlab
 │   └── …
+├── art-entraide/
+|   ├── controler/
+|   |   └── *.ctrl.php
+|   ├── data/
+|   |   ├── create.sql
+|   |   ├── drop.sql
+|   |   ├── insert.sql
+|   |   ├── reset.sql
+|   |   └── trigger.sql
+|   ├── framework/
+|   |   └── view.class.php
+|   ├── model/
+|   |   ├── Annonce.class.php
+|   |   ├── Categorie.class.php
+|   |   ├── Certificateur.class.php
+|   |   ├── DAO.class.php
+|   |   ├── Message.class.php
+|   |   ├── Reponse.class.php
+|   |   └── Utilisateur.class.php
+|   ├── test/
+|   |   ├── Annonce.test.php
+|   |   ├── Categorie.test.php
+|   |   ├── Certificateur.test.php
+|   |   ├── Message.test.php
+|   |   ├── Reponse.test.php
+|   |   └── Utilisateur.test.php
+|   ├── view/
+|   |   ├── css/
+|   |   |   └── *.css
+|   |   ├── design/
+|   |   |   ├── *.png
+|   |   |   ├── *.jpg
+|   |   |   └── *.svg
+|   |   ├── js/
+|   |   |   └── accueil.js
+|   |   └── *.view.php
+|   └── index.php
+├── conception/
+|   ├── BDD/
+|   |   ├── bdd.tex
+|   |   └── Schema-relationnel-BDD.png
+|   ├── PHP/
+|   |   ├── DC.png
+|   |   └── DC.xml
+|   ├── maquette/
+|   |   └── maquette-*.png
+|   ├── DCU
+|   └── DS
+├── docs/
+|   ├── Iteration1-Diapo.pdf
+|   ├── Iteration1-Rapport.pdf
+|   ├── Iteration2-Rapport.pdf
+|   ├── Iteration3-Diapo.pdf
+|   ├── Iteration3-Rapport.pdf
+│   └── README.md
+├── Evaluation/
+|   ├── Critères-ergp.pdf
+|   ├── evaluation-ergo-[prenom].txt
+│   └── senario.txt
+├── rapport/
+|   ├── images/
+|   |   └── *.png
+|   ├── rapport.tex
+│   └── README.md
 └── README.md
 ```
 
@@ -89,7 +102,7 @@ Ce répertoire contient le code de l'application elle-même.
 
 ### Répertoire `conception`
 Ce répertoire contient le matériel le conception, notamment les diagrammes UML par exemple.
-Pour les fichiers `.drawio`, il faut les ouvrir avec [draw.io](https://app.diagrams.net/), e choisissant "Open from device". Un [package Atom](https://atom.io/packages/atom-drawio) permet également de visualiser ces fichiers directement dans l'éditeur.
+Pour les fichiers `.drawio` ou `.xml` (le promat à changer durant le projet mais reste compatible), il faut les ouvrir avec [draw.io](https://app.diagrams.net/), e choisissant "Open from device". Un [package Atom](https://atom.io/packages/atom-drawio) permet également de visualiser ces fichiers directement dans l'éditeur.
 
 - `BDD/` : schéma relationnel de la base de données
 - `PHP/` : diagramme de classes uniquement de modèle
@@ -102,117 +115,13 @@ Lors des rendus, le `rapport.pdf` est copié dans `docs/` pour ne plus être "gi
 
 Voir [le README dédié](https://gricad-gitlab.univ-grenoble-alpes.fr/iut2-info/m3301/2020-s3/team-9/rendus/-/blob/master/rapport/README.md) dans `rapport/` pour la syntaxe LaTeX.
 
-### Schéma base de données
-**Utilisateur(<u>id</u>, nom, prenom, reputation, certif, email, password, adresse)**
+### Acces au site
 
-**Categorie(<u>id</u>, nom)**
+Le lien du site : https://art-entraide.ddns.net:8080
 
-**Annonce(<u>id</u>, nom, description, adresse, date_creation, date_service, #id_createur, #id_categorie)**
-id_createur clé étrangère de Utilisateur
-id_categorie clé étrangère de Categorie
+Les identifiants des comptes utilisateurs sont pour le login "prenom.nom@iut2.univ-grenoble-alpes.fr" et le mot de passe est "ens".
+L'identifiant du comptes certificateur unique a pour login "ens@iut2.univ-grenoble-alpes.fr" et comme mot de passe "ens".
 
-**Message(<u>id</u>, contenue, date_message, #id_auteur)**
-id_auteur clé 2trangère de Utilisateur
+### Machine virtuelle
 
-**Reponse(<u>#id_annonce, #id_repondeur, #id_message</u>)**
-id_annonce clé étrangère de Annonce
-id_repondeur clé étrangère de Utilisateur
-id_message clé étrangère de Message
-
-### Reste à faire :
-non fonctionnel :
- - global :
-
-  - [x]  mettre la police en gris plutôt que noir
-
-  - [x]  fond en blanc cassé plutôt que blanc
-
-  - [x]  page trop grande !
-
-  - [x]  vérification lors de suppression (compte + annonce)
-
-  - [x]  ajout bouton annuler lors de modification
-
- - header :
-
- - [x]  recherche annonce (renvoie pas au bon endroit)
-
-  - [x] gestion de la liste catégorie (transfo en bouton / utiliter ?)
-
-  - [x]  bar de recherche en plus long
-
-  - [x]  fil d’Ariane
-
- - page accueil :
-
-  - [x]  titre annonce souligner, mettre le lien pour cliquer
-
-  - [x]  clique sur catégorie sous une annonce - recherche ou non ?
-
-- footer :
-
-  - [X]  page mention légal + politique de confidentialité
-
-  - [X]  refaire design (aligner + rajout barre)
-
-  - [x]  haut de page - mettre une image
-
-  - [X]  fb + insta mettre image + savoir a quoi on renvoi
-
- - nous contacter
-
-  - [ ]  changer le texte !
-
- - connexion :
-
-  - [ ]  connexion avec google
-
-  - [x]  bouton "ici" renvoie page accueil
-   plutôt création de compte
-
- \- création compte :
-
-  - [ ]  faire rédaction de la page
-
-  - [x]  password pas passwd
-
- \- création annonce
-
-  - [x]  changer font détails + block texte pas aligné
-
-  - [x]  date a rendre non obligatoire
-
-  - [X]  catégorie mise a vide ou sur autre
-
- \- modification annonce
-
-  - [x]  passer par un deuxième ctrl pour éviter l'affichage des erreurs
-
- \- description annonce :
-
-  - [X]  refaire design
-
-  - [X]  ajout bouton signalez (renvoi éventuellement vers contactez nous)
-
- \- voir plus d'annonce
-
-  - [ ]  la recherche à vérifier / changer
-
-  - [X]  + gestion affichage pr bcp annonce, gestion de page ?
-
- \- voir ses annonce
-
-  - [x]  mettre un petit mot quand il n'y a pas d'annonce
-
- \- conversation
-
-  - [x]  design a changer
-
-  - [x]  paragraphe au lieu d'une ligne
-
- \- voir réponses à faire
-  - [x] discutions
-
- \- suppression compte
-
-  - [x] ne fonctionne pas
+### Acces à la base de donnée
