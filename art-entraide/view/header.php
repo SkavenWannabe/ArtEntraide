@@ -129,7 +129,7 @@
     </output>
   <?php endif; ?>
   <output class="banner">
-    Pour vous et pour les autres, pensez à appliquer les geste barrière 
+    En cette période de crise sanitaire, pour vous et pour les autres, portez un masque et appliquez les gestes barrière autant que possible 
   </output>
 </header>
 
