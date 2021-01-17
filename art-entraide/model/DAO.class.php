@@ -514,8 +514,8 @@ class DAO{
         $inter[3] = $auteur->getNom();
         $inter[4] = $idA;
         $inter[5] = $idR;
-        $inter[6] = $auteur->getPrenom();
-        $inter[7] = $auteur->getNom();
+        $inter[6] = $utilisateur->getPrenom();
+        $inter[7] = $utilisateur->getNom();
 
         $return[] = $inter;
       }
