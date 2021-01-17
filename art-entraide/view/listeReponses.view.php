@@ -23,7 +23,7 @@
           <?php foreach ($listeMessage as $message): ?>
             <article class="reponse">
               <header>
-                <h3>Annonce de <?= $message[6] ?> : <?= $message[0]->getNom() ?></h3>
+                <h3>Annonce de <?= $message[6] . ' ' . $message[7] ?> : <?= $message[0]->getNom() ?></h3>
                 <p><b>Description :</b> <?= mb_substr($message[0]->getDescription(),0,100,"utf-8")?> <?php if(strlen($message[0]->getDescription()) > 100){ echo"...";}  ?></p></br>
               </header>
 
@@ -33,7 +33,7 @@
                 <form class="" action="reponseAnnonce.ctrl.php" method="get">
                   <input type="hidden" name="annonceId" value="<?= $message[4] ?>">
                   <input type="hidden" name="idUser" value="<?= $message[5] ?>">
-                  <button type="submit" name="action" value="repondre">Fil discution</button>
+                  <button type="submit" name="action" value="repondre">Voir la discussion</button>
                 </form>
                 <?php if($message[0]->getCreateur()->getId() == $user->getId()): ?>
                   <?php if($message[0]->getEstActive()): ?>
