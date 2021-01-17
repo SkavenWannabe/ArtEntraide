@@ -128,6 +128,9 @@
       <?= $message ?>
     </output>
   <?php endif; ?>
+  <output class="banner">
+    Pour vous et pour les autres, pensez à appliquer les geste barrière 
+  </output>
 </header>
 
 <script>

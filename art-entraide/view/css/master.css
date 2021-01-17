@@ -188,6 +188,14 @@ nav.ariane ul li:before {
 	padding: 10px;
 }
 
+.banner {
+	background-color: #CCCCCC;
+	border: solid 2px #AAAAAA;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 10px;
+}
+
 body > section {
 	min-height: 72vh;
 	width: 95%;
