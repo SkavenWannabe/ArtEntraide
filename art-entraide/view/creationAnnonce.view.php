@@ -48,7 +48,7 @@ $user : Utilisateur connecté
           </div>
 
           <div class="">
-            <label for="description">Détail de votre annonce : <em>*</em></label>
+            <label for="description">Description de votre annonce : <em>*</em></label>
             <textarea name="description" id="description" required><?php if(isset($description)): ?> <?= $description?> <?php endif; ?></textarea>
           </div>
         </section>
@@ -60,7 +60,7 @@ $user : Utilisateur connecté
             <label for="categorie">Catégorie de votre annonce : <em>*</em></label>
             <select name="categorie" id="categorie" required>
               <?php foreach ($nomCategories as $key => $value) : ?>
-                
+
                 <?php if($value == "Autre") : ?>
                   <option value="<?= $value ?>" selected><?= $value ?></option>
                 <?php else : ?>
@@ -72,13 +72,13 @@ $user : Utilisateur connecté
           </div>
 
           <div class="">
-            <label for="lieu">Localisation</label>
-            <input type="text" name="lieu" id="lieu" value="<?= $user->getAdresse() ?>">
+            <label for="lieu" title="Le lieu de votre service, si nécessaire">Localisation</label>
+            <input type="text" name="lieu" id="lieu" value="<?= $user->getAdresse() ?>" title="Le lieu de votre service, si nécessaire">
           </div>
 
           <div class="">
-            <label for="date">Date du service :</label>
-            <input type="date" name="date" id="date">
+            <label for="date" title="La date de votre service, si nécessaire">Date du service :</label>
+            <input type="date" name="date" id="date" title="La date de votre service, si nécessaire">
           </div>
         </section>
 
