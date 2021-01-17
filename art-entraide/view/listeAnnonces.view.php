@@ -110,12 +110,12 @@ $motcle : mot-clé de recherche
       <form class="" action="listeAnnonces.ctrl.php" method="get">
         <!-- Bouton de retour à la page précédente -->
         <?php if ($page > 1): ?>
-          <button type="submit" name="page" value="<?= $pagePrec ?>">Page Précédente</button>
+          <button type="submit" name="page" value="<?= $pagePrec ?>">&larr; Page Précédente</button>
           <input type="hidden" name="valAvant" value="<?= $page ?>">
         <?php endif; ?>
         <!-- Bouton pour passer à la page suivante -->
         <?php if ($page < $nbPages): ?>
-          <button type="submit" name="page" value="<?= $pageSuiv ?>">Page Suivante</button>
+          <button type="submit" name="page" value="<?= $pageSuiv ?>">Page Suivante &rarr;</button>
           <input type="hidden" name="valAvant" value="<?= $page ?>">
         <!-- Données de recherche -->
           <input type="hidden" name="type" value="<?= $type ?>">
