@@ -43,13 +43,13 @@ if($user == NULL){
   foreach ($idMessage as $value) {
     $messages[] = $art->getMessage($value);
   }
-  /*if ($theAnnonce->getCreateur()->getId() == $user.getId()) {
+  if ($theAnnonce->getCreateur()->getId() == $user->getId()) {
     $destinataire =  $art->getUtilisateur($id_repondeur);
     $nomDestinataire = $destinataire->getPrenom() . ' ' . $destinataire->getNom();
   }
-  else {*/
+  else {
     $nomDestinataire = $theAnnonce->getCreateur()->getPrenom() . ' ' . $theAnnonce->getCreateur()->getNom();
-  //}
+  }
 }
 
 session_write_close();
