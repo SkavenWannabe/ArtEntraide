@@ -92,6 +92,10 @@
 <?php case "listeAnnonces.view.php": ?>
         <li>Recherche d'une annonce</li>
         <?php break; ?>
+<?php case "listeReponses.view.php": ?>
+        <li><a href="/controler/menu.ctrl.php?etat=profil">Profil</a></li>
+        <li>Voir réponses</li>
+        <?php break; ?>
 <?php case "modifAnnonce.view.php": ?>
         <li><a href="annonce.ctrl.php?idAnnonce=<?= $annonce->getId() ?>"><?= $annonce->getNom() ?></a></li>
         <li>Modification de <?= $annonce->getNom() ?></li>
@@ -105,7 +109,7 @@
         <?php break; ?>
 <?php case "sesAnnonces.view.php": ?>
         <li><a href="/controler/menu.ctrl.php?etat=profil">Profil</a></li>
-        <li>Voir ses annonces</li>
+        <li>Voir mes annonces</li>
       <?php endswitch; ?>
 
     </ul>
