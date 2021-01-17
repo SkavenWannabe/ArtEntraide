@@ -14,7 +14,7 @@
 
     <section>
       <h2>Modifier votre compte</h2>
-      <p>Champs obligatoire: <em>*</em></p>
+      <p>Champs obligatoires: <em>*</em></p>
 
       <form class="inscription" action="modifCompte.ctrl.php" method="post">
 

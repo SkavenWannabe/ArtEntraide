@@ -36,7 +36,7 @@ $nomCategorie = nom de la catégorie de l'annonce
             <strong><?= $nomAuteur ?></strong>
             <!-- Mettre l'icone certification si besoin -->
             <?php if ($annonce->getCreateur()->getCertif()): ?>
-              <img class="certif" src="/view/design/certif-icon.svg" alt="">
+              <img class="certif" src="/view/design/certif-icon.svg" alt="" title="Cet utilisateur est certifié">
             <?php endif; ?>
             <!-- Phrase différente selon proposition ou demande -->
             <?php if ($annonce->getEstDemande()): ?>
@@ -74,12 +74,12 @@ $nomCategorie = nom de la catégorie de l'annonce
 
           <?php if (!isset($user) || $annonce->getCreateur()->getId() != $user->getId()): ?>
             <form class="" action="reponseAnnonce.ctrl.php" method="get">
-              <button type="submit" name="action" value="repondre">Répondre à l'annonce</button>
+              <button type="submit" name="action" value="repondre" title="Envoyer un message à <?= $nomAuteur ?> pour cette annonce">Répondre à l'annonce</button>
               <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
             </form>
 
             <form class="" action="/controler/pagesinfos.ctrl.php" method="get">
-              <button class="actionCritique" type="submit" name="action" value="repondre">Signaler</button>
+              <button class="actionCritique" type="submit" name="action" value="signaler" title="Signaler un problème avec cette annonce">Signaler</button>
               <input type="hidden" name="page" value="contact">
             </form>
           <?php endif; ?>

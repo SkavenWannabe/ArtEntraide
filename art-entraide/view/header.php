@@ -11,7 +11,7 @@
 <header>
   <div class="">
     <a href="https://<?= $_SERVER['SERVER_NAME'] ?>:8080/">
-      <img src="/view/design/logo2.png" alt="Logo de l'art de l'entraide">
+      <img src="/view/design/logo2.png" alt="Logo de l'Art de l'Entraide" title="Art de l'Entraide - Accueil">
     </a>
       <!-- <h1>L'art de l'entraide</h1> -->
     <!-- </div> -->
@@ -22,7 +22,7 @@
         </form>
           <li>
               <div class="dropdown">
-                <button onclick="categorieDropDown()" class="dropbtn">Catégories</button>
+                <button onclick="categorieDropDown()" class="dropbtn" title="Rechercher par catégorie d'annonces">Catégories</button>
                 <div id="catDd" class="dropdown-content">
                   <?php foreach ($nomCategories as $nom) :?>
                     <a href="listeAnnonces.ctrl.php?categorie=<?=$nom?>"><?=$nom?></a>
@@ -32,15 +32,15 @@
           </li>
         <form class="" action="menu.ctrl.php" method="get">
           <?php if ($user == NULL): ?>
-            <li><button type="submit" name="etat" value="connexion">Se connecter</button></li>
-            <li><button type="submit" name="etat" value="creation">Créer un compte</button></li>
+            <li><button type="submit" name="etat" value="connexion" title="Si vous avez déjà un compte, vous pouvez vous connecter">Se connecter</button></li>
+            <li><button type="submit" name="etat" value="creation" title="Si vou n'avez pas encore de compte, vous pouvez en créer un">Créer un compte</button></li>
           <?php else: ?>
             <?php if ($user instanceof Certificateur): ?>
-              <li><button type="submit" name="etat" value="certification">Certifier</button></li>
+              <li><button type="submit" name="etat" value="certification" title="Certifier d'autres comptes">Certifier</button></li>
             <?php else: ?>
-              <li><button type="submit" name="etat" value="creationAnnonce">Créer une annonce</button></li>
+              <li><button type="submit" name="etat" value="creationAnnonce" title="Proposez ou demandez un service avec une annonce">Créer une annonce</button></li>
             <?php endif; ?>
-            <li><button type="submit" name="etat" value="profil"><?= $user->getPrenom() ?></button></li>
+            <li><button type="submit" name="etat" value="profil" title="Consulter votre profil"><?= $user->getPrenom() ?></button></li>
           <?php endif; ?>
         </form>
       </ul>
@@ -92,6 +92,10 @@
 <?php case "listeAnnonces.view.php": ?>
         <li>Recherche d'une annonce</li>
         <?php break; ?>
+<?php case "listeReponses.view.php": ?>
+        <li><a href="/controler/menu.ctrl.php?etat=profil">Profil</a></li>
+        <li>Voir réponses</li>
+        <?php break; ?>
 <?php case "modifAnnonce.view.php": ?>
         <li><a href="annonce.ctrl.php?idAnnonce=<?= $annonce->getId() ?>"><?= $annonce->getNom() ?></a></li>
         <li>Modification de <?= $annonce->getNom() ?></li>
@@ -105,7 +109,7 @@
         <?php break; ?>
 <?php case "sesAnnonces.view.php": ?>
         <li><a href="/controler/menu.ctrl.php?etat=profil">Profil</a></li>
-        <li>Voir ses annonces</li>
+        <li>Voir mes annonces</li>
       <?php endswitch; ?>
 
     </ul>
@@ -129,7 +133,7 @@
     </output>
   <?php endif; ?>
   <output class="banner">
-    En cette période de crise sanitaire, pour vous et pour les autres, portez un masque et appliquez les gestes barrière autant que possible 
+    En cette période de crise sanitaire, pour vous et pour les autres, portez un masque et appliquez les gestes barrière autant que possible
   </output>
 </header>
 

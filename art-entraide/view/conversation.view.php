@@ -21,7 +21,7 @@
 
     <section>
 
-      <h2>Conversation avec <?= $nomDestinataire ?> - annonce :  <?= $annonce->getNom() ?></h2>
+      <h2>Conversation avec <?= $nomDestinataire ?> pour l'annonce "<i><?= $annonce->getNom() ?></i>"</h2>
 
 
       <section class="section_messages">
@@ -39,10 +39,10 @@
 
       <footer>
         <form class="" action="creationMessage.ctrl.php" method="post">
-          <textarea type="text" name="contenu" placeholder="Votre message ici" required></textarea>
+          <textarea type="text" name="contenu" placeholder="Écrivez votre message ici..." required></textarea>
           <input type="hidden" name="annonceId" value="<?= $annonce->getId() ?>">
           <input type="hidden" name="id_repondeur" value="<?= $id_repondeur ?>">
-          <button type="submit">Envoyer</button>
+          <button type="submit" title="Envoyer le message">Envoyer</button>
         </form>
       </footer>
     </section>
