@@ -10,7 +10,7 @@
 
 <header>
   <div class="">
-    <a href="https://<?= $_SERVER['SERVER_NAME'] ?>:8080/">
+    <a href="https://<?= $_SERVER['SERVER_NAME'] ?>:8080/" title="Accueil">
       <img src="/view/design/logo2.png" alt="Logo de l'art de l'entraide">
     </a>
       <!-- <h1>L'art de l'entraide</h1> -->
@@ -132,6 +132,9 @@
       <?= $message ?>
     </output>
   <?php endif; ?>
+  <output class="banner">
+    En cette période de crise sanitaire, pour vous et pour les autres, portez un masque et appliquez les gestes barrière autant que possible
+  </output>
 </header>
 
 <script>
