@@ -514,7 +514,8 @@ class DAO{
         $inter[3] = $auteur->getNom();
         $inter[4] = $idA;
         $inter[5] = $idR;
-        $inter[6] = $auteur->getNom();
+        $inter[6] = $auteur->getPrenom();
+        $inter[7] = $auteur->getNom();
 
         $return[] = $inter;
       }
@@ -543,7 +544,6 @@ class DAO{
 
         $auteur = $this->getUtilisateur($message->getIdAuteur());
 
-        $auteurAnnonce = $an->getCreateur()->getNom();
 
         $inter[0] = $an;
         $inter[1] = $message;
@@ -551,7 +551,8 @@ class DAO{
         $inter[3] = $auteur->getNom();
         $inter[4] = $idA;
         $inter[5] = $idU;
-        $inter[6] = $auteurAnnonce;
+        $inter[6] = $an->getCreateur()->getPrenom();
+        $inter[7] = $an->getCreateur()->getNom();
 
         $return[] = $inter;
       }

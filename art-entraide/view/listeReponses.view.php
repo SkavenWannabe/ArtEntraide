@@ -23,7 +23,7 @@
           <?php foreach ($listeMessage as $message): ?>
             <article class="reponse">
               <header>
-                <h3>Annonce de <?= $message[6] ?> : <?= $message[0]->getNom() ?></h3>
+                <h3>Annonce de <?= $message[6] . $message[7] ?> : <?= $message[0]->getNom() ?></h3>
                 <p><b>Description :</b> <?= mb_substr($message[0]->getDescription(),0,100,"utf-8")?> <?php if(strlen($message[0]->getDescription()) > 100){ echo"...";}  ?></p></br>
               </header>
 

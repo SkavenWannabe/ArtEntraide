@@ -17,7 +17,7 @@ $art = new DAO();
 $annonce = $art->getAnnonce((int)$idAnnonce);
 
 //récupération du nom de l'auteur
-$nomAuteur = $annonce->getCreateur()->getNom();
+$nomAuteur = $annonce->getCreateur()->getPrenom() . ' ' . $annonce->getCreateur()->getNom();
 
 //récupération du nom de la catégorie
 $categorie = $annonce->getCategorie();
