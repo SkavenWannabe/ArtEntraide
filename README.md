@@ -124,4 +124,77 @@ L'identifiant du comptes certificateur unique a pour login "ens@iut2.univ-grenob
 
 ### Machine virtuelle
 
+Une machine virtuelle VirtualBox est mise à disposition pour tester le code
+Utilisateur: `vealem`
+Mot de passe: `vealem` (le même pour la base de données)
+
+La machine est pourvue d'une base de données PostgreSQL et d'un serveur web NGINX
+Il suffit de lancer le navigateur et de se rendre sur http://localhost pour accéder au site
+Le repository git est cloné dans le homedir de vealem
+Tous les changements faits au code dans ce dossier sont automatiquement effectifs
+
+Lien du fichier de la machine virtuelle: [ici](https://cloud.legendre.tech/s/QWcdENBAYY8cBxJ)
+
 ### Acces à la base de donnée
+
+<details>
+<summary>Utilisation en local</summary>
+
+Utilisation de la base de données pré-remplie (avec les scripts dans `art-entraide/data`)
+
+OU
+
+
+Création d'une base de données PostgreSQL:
+  1.  En tant qu'administrateur: `CREATE EXTENSION pgcrypto;`
+  2.  En étant dans le répertoire `art-entraide/data`: `\i reset.sql`
+
+</details>
+
+<details>
+<summary>Accès à la base de données de production</summary>
+
+Avec PostgreSQL: `psql -d projets3 -U projets3 -h art-entraide.ddns.net -p 23455`
+Mot de passe: `vealemS3`
+
+</details>
+
+### Logiciels nécéssaires à la mise en place du site
+
+ - PostgreSQL
+ - NGINX
+ - php-fpm (>= 7.4)
+
+### Configuration du serveur (NGINX)
+
+```Nginx
+server {
+
+	root PROJECT_ROOT/art-entraide;
+
+	# Add index.php to the list if you are using PHP
+	index index.php;
+
+	error_log /var/log/nginx/error.log;
+
+	server_name localhost 127.0.0.1;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
+	error_page 404 /view/erreur.view.php;
+
+	# pass PHP scripts to FastCGI server
+	#
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+
+		# With php-fpm (or other unix sockets):
+		fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+	}
+
+}
+```
