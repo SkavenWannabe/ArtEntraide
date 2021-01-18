@@ -126,7 +126,7 @@ L'identifiant du comptes certificateur unique a pour login "ens@iut2.univ-grenob
 
 Une machine virtuelle VirtualBox est mise à disposition pour tester le code
 
-La machine est pourvue d'une base de données PostgreSQL et d'un serveur web NGINX, 
+La machine est pourvue d'une base de données PostgreSQL et d'un serveur web NGINX,
 il suffit de lancer le navigateur et de se rendre sur http://localhost pour accéder au site
 
 Le repository git est cloné dans le homedir de vealem
@@ -145,13 +145,16 @@ Mot de passe: `vealem` (le même pour la base de données)
 <details>
 <summary>Utilisation en local</summary>
 
-Utilisation de la base de données pré-remplie (avec les scripts dans `art-entraide/data`)
+ - Utilisation de la base de données pré-remplie (avec les scripts dans `art-entraide/data`)
 
 OU
 
-Création d'une base de données PostgreSQL:
-  1.  En tant qu'administrateur: `CREATE EXTENSION pgcrypto;`
-  2.  En étant dans le répertoire `art-entraide/data`: `\i reset.sql`
+ - Création d'une base de données PostgreSQL:
+    1.  En tant qu'administrateur: `CREATE EXTENSION pgcrypto;`
+    2.  En étant dans le répertoire `art-entraide/data`: `\i reset.sql`
+
+Dans tous les cas: modifier la ligne de connexion à la base de données pour correspondre à la nouvelle
+ dans `art-entraide/model/DAO.class.php`
 
 </details>
 
@@ -168,6 +171,8 @@ Mot de passe: `vealemS3`
  - PostgreSQL
  - NGINX
  - php-fpm (>= 7.4)
+ - php-pgsql (>= 7.4)
+ - php7.4-mbstring
 
 ### Configuration du serveur (NGINX)
 
@@ -205,3 +210,7 @@ server {
 
 }
 ```
+
+### Configuration du serveur (PHP)
+
+Activer les extensions `pgsql`, `pdo_pgsql` et `mbstring` dans `php.ini`
