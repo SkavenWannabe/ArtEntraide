@@ -647,6 +647,9 @@ class DAO{
       $this->db->exec($sql);
     }
 
+    $sql = "DELETE from reponse WHERE id_repondeur='".$id."'";
+    $this->db->exec($sql);
+
     $sql = "DELETE from message WHERE id_auteur='$id'";
     $this->db->exec($sql);
 

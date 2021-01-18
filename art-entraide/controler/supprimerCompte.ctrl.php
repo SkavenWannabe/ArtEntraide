@@ -23,6 +23,7 @@ $message = "Votre compte a bien été supprimé.";
 
 //recupération annonces affiché à l'accueil
 $user = NULL;
+$_SESSION['user'] = NULL;
 $annonces = $art->getAnnonceAccueil();
 
 session_write_close();

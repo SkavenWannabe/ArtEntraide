@@ -32,7 +32,7 @@
         <label for="msg">Votre message :</label><br>
         <textarea name="message" rows="8" cols="80" id="msg" placeholder="Voici la situation ..."></textarea><br>
 
-        <button type="submit" name="envoyer">Envoyer</button>
+        <button type="submit" name="envoyer" title="Envoyer votre message">Envoyer</button>
       </form>
     </section>
 

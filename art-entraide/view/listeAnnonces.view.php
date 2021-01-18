@@ -35,7 +35,7 @@ $motcle : mot-clé de recherche
       <!-- Formulaire pour les filtres -->
       <form class="" action="listeAnnonces.ctrl.php" method="get">
         <!-- Barre de recherche -->
-        <input type="text" name="motcle" placeholder="Mots clés" value="<?= $motcle ?>">
+        <input type="text" name="motcle" placeholder="Mots-clés de recherche..." value="<?= $motcle ?>">
         <!-- Menu déroulant des catégories -->
         <select name="categorie">
           <option value="0" disabled selected>Catégorie</option>
@@ -44,7 +44,7 @@ $motcle : mot-clé de recherche
           <?php endforeach; ?>
         </select>
         <!-- Menu déroulant du type (proposition/demande) -->
-        <select name="type">
+        <select name="type" title="Le type d'annonce recherché (demande ou proposition)">
           <option value="0" disabled selected>Type</option>
           <option value="demande"<?= $type=="demande" ? "selected":"" ?>>Demande</option>
           <option value="proposition"<?= $type=="proposition" ? "selected":"" ?>>Proposition</option>
@@ -76,12 +76,12 @@ $motcle : mot-clé de recherche
                   <div class="user">
                     <img class="pp" src="/view/design/default-user.png<?php /* $value->getUser()->getImageProfil() */ ?>" alt="Photo de profil de l'utilisateur">
                     <?php if ($value->getCreateur()->getCertif()): ?>
-                      <img class="certif" src="/view/design/certif-icon.svg" alt="">
+                      <img class="certif" src="/view/design/certif-icon.svg" alt="" title="Cet utilisateur est certifié">
                     <?php endif; ?>
                   </div>
                   <!-- Titre de l'annonce -->
                   <div class="title">
-                    <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>"><?= mb_substr($value->getNom(),0,50,"utf-8") ?><?php if(strlen($value->getNom()) > 50){ echo"...";}  ?></a></h2>
+                    <h2><a href="annonce.ctrl.php?idAnnonce=<?= $value->getId() ?>" title="Cliquez pour consulter cette annonce"><?= mb_substr($value->getNom(),0,50,"utf-8") ?><?php if(strlen($value->getNom()) > 50){ echo"...";}  ?></a></h2>
                   </div>
                 </header>
                 <!-- Description -->
@@ -89,15 +89,15 @@ $motcle : mot-clé de recherche
                 <!-- Encadré indiquant le type (proposition/demande) -->
 
                 <form class="" action="listeAnnonces.ctrl.php" method="get">
-                  <button class="boutonType" type="submit" name="type" value="<?= ($value->getEstDemande() ? "demande" : "proposition") ?>"><?= ($value->getEstDemande() ? "Demande" : "Proposition") ?></button>
+                  <button class="boutonType" type="submit" name="type" value="<?= ($value->getEstDemande() ? "demande" : "proposition") ?>" title="Cliquez pour voir toutes les annonces du même type"><?= ($value->getEstDemande() ? "Demande" : "Proposition") ?></button>
                 </form>
                 <!-- Bouton "Voir le détail" -->
                 <form class="" action="annonce.ctrl.php" method="get">
-                  <button type="submit" name="idAnnonce" value="<?= $value->getId() ?>">Voir le détail</button>
+                  <button type="submit" name="idAnnonce" value="<?= $value->getId() ?>" title="Consulter les détails de l'annonce">Voir le détail</button>
                 </form>
                 <!-- Bandeau de catégorie en bas -->
                 <form class="" action="listeAnnonces.ctrl.php" method="get">
-                  <button class="boutonCategorie" type="submit" name="categorie" value="<?= $value->getCategorie()->getNom() ?>"><?= $value->getCategorie()->getNom() ?></button>
+                  <button class="boutonCategorie" type="submit" name="categorie" value="<?= $value->getCategorie()->getNom() ?>" title='Cliquez pour voir toutes les annonces dans la catégorie "<?= $value->getCategorie()->getNom() ?>"'><?= $value->getCategorie()->getNom() ?></button>
                 </form>
               </article>
             <?php endforeach; ?>

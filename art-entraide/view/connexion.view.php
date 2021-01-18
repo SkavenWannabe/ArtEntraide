@@ -33,14 +33,14 @@ $user : Utilisateur connecté
     <section>
       <header>
         <h2>Connectez vous à votre compte</h2>
-        <p>Pas encore de compte ? Créez en un <a href="/controler/menu.ctrl.php?etat=creation">ici</a></p>
+        <p>Pas encore de compte ? <a href="/controler/menu.ctrl.php?etat=creation">Créez-en un ici</a></p>
         </form>
       </header>
 
       <section>
         <div class="">
           <form class="login" action="login.ctrl.php" method="post">
-            <label for="pseudo">Adresse mail</label>
+            <label for="pseudo">Adresse e-mail</label>
             <input type="text" name="pseudo" id="pseudo" placeholder="g.lagaffe@editions-dupuis.be" required>
 
             <label for="password">Mot de passe</label>

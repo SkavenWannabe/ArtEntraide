@@ -10,8 +10,8 @@
 
 <header>
   <div class="">
-    <a href="https://<?= $_SERVER['SERVER_NAME'] ?>:8080/" title="Accueil">
-      <img src="/view/design/logo2.png" alt="Logo de l'art de l'entraide">
+    <a href="https://<?= $_SERVER['SERVER_NAME'] ?>:8080/">
+      <img src="/view/design/logo2.png" alt="Logo de l'Art de l'Entraide" title="Art de l'Entraide - Accueil">
     </a>
       <!-- <h1>L'art de l'entraide</h1> -->
     <!-- </div> -->
@@ -22,7 +22,7 @@
         </form>
           <li>
               <div class="dropdown">
-                <button onclick="categorieDropDown()" class="dropbtn">Catégories</button>
+                <button onclick="categorieDropDown()" class="dropbtn" title="Rechercher par catégorie d'annonces">Catégories</button>
                 <div id="catDd" class="dropdown-content">
                   <?php foreach ($nomCategories as $nom) :?>
                     <a href="listeAnnonces.ctrl.php?categorie=<?=$nom?>"><?=$nom?></a>
@@ -32,15 +32,15 @@
           </li>
         <form class="" action="menu.ctrl.php" method="get">
           <?php if ($user == NULL): ?>
-            <li><button type="submit" name="etat" value="connexion">Se connecter</button></li>
-            <li><button type="submit" name="etat" value="creation">Créer un compte</button></li>
+            <li><button type="submit" name="etat" value="connexion" title="Si vous avez déjà un compte, vous pouvez vous connecter">Se connecter</button></li>
+            <li><button type="submit" name="etat" value="creation" title="Si vou n'avez pas encore de compte, vous pouvez en créer un">Créer un compte</button></li>
           <?php else: ?>
             <?php if ($user instanceof Certificateur): ?>
-              <li><button type="submit" name="etat" value="certification">Certifier</button></li>
+              <li><button type="submit" name="etat" value="certification" title="Certifier d'autres comptes">Certifier</button></li>
             <?php else: ?>
-              <li><button type="submit" name="etat" value="creationAnnonce">Créer une annonce</button></li>
+              <li><button type="submit" name="etat" value="creationAnnonce" title="Proposez ou demandez un service avec une annonce">Créer une annonce</button></li>
             <?php endif; ?>
-            <li><button type="submit" name="etat" value="profil"><?= $user->getPrenom() ?></button></li>
+            <li><button type="submit" name="etat" value="profil" title="Consulter votre profil"><?= $user->getPrenom() ?></button></li>
           <?php endif; ?>
         </form>
       </ul>

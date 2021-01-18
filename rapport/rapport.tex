@@ -58,7 +58,7 @@
 %---------- description ----------
 
 \subsection{Description du projet}
-En cette période de crise sanitaire, et notamment durant le confinement, nous avons pu observer une
+En cette période de crise sanitaire, et notamment durant le premier confinement, nous avons pu observer une
 émergence de la solidarité entre voisins. Au sein d’un immeuble, d’une rue ou bien d’un quartier,
 certains voisins ont œuvré pour une ambiance conviviale, voire familiale, afin d’apporter un soutien en
 cette période. Au travers de concerts improvisés, de cours de sport ou même de variantes de jeux
@@ -126,7 +126,7 @@ Nous avons comparé ces sites sur la base de critères simples (figure 1).\\
 Pour les services proposés, nous avons choisi le prix ou la gratuité pour comparer notre service aux leurs.
 Notre service se veut basé sur le bénévolat ou l'échange. Seul Pwiic propose ceci.
 Il nous fallait donc d'autres critères, comme l'ergonomie ; en effet, notre site se veut facile d'utilisation.
-Nous avons donc observé le guidage et la gestion d'erreurs, étant donné que les autres sites du marché ne semblent pas suivre de norme. Art Entraide se distinguera en suivant les normes W3C en matière d'ergonomie.\\
+Nous avons donc observé le guidage et la gestion d'erreurs, étant donné que les autres sites du marché ne semblent pas suivre de norme. \textit{L'Art de l'Entraide} se distinguera en suivant les normes W3C en matière d'ergonomie.\\
 Et enfin, le critère sur lequel nous voulons nous démarquer : la certification.
 Peu de sites possèdent un système de certification, et même quand c'est le cas, il est relativement facilement contournable et n'apporte pas de véritable protection.
 Nous voulons mettre en place un système où la vérification se fera par des institutions, des mairies ou des associations, de telle sorte que la certification soit un gage de confiance.\\
@@ -138,7 +138,7 @@ Nous voulons mettre en place un système où la vérification se fera par des in
 \end{figure}
 
 Le marché a donc une limite claire. L'utilisateur n'a pas de moyen concret de savoir si la personne avec qui il communique est réellement qualifiée, ou même existe.
-Art Entraide veut apporter ce moyen.\\
+\textit{L'Art de l'Entraide} veut apporter ce moyen.\\
 
 Une description plus poussée des sites est disponible en annexe.\\
 
@@ -183,15 +183,14 @@ comprises) pour réaliser ce projet.\\
 
 \subsubsection{Contrainte sanitaire}
 
-À la suite de la deuxième vague de la crise sanitaire du COVID-19, la contrainte sanitaire s'est renforcée.
-En effet, toutes les séances de projet sont désormais en distanciel.\\
+À la suite de la deuxième vague de la crise sanitaire du Covid-19, la contrainte sanitaire s'est renforcée : toutes les séances de projet sont désormais en distanciel.\\
 
 Cela pose donc la question du travail à distance. En effet, à présent la totalité du travail doit être effectué à distance. Nous devons donc utiliser des outils informatiques pour continuer à échanger des
 informations, discuter de l’avancée du projet, répartir les tâches etc...\\
 
 \subsubsection{Contrainte matérielle}
 
-Le travail à distance implique aussi une contrainte matérielle. En effet, les membres du groupe doivent
+Le travail à distance implique aussi une contrainte matérielle. Les membres du groupe doivent
 avoir un minimum de matériel informatique pour pouvoir travailler depuis chez eux.\\
 
 Les membres du groupe sont-ils tous dans de bonnes conditions pour travailler correctement à
@@ -203,7 +202,7 @@ Internet.\\
 La création de compte sur le site implique le stockage des données personnelles de l’utilisateur. Ces
 données pouvant être sensibles, telles que des adresses ou des mots de passe, elles sont soumises à
 certaines lois, notamment le règlement général sur la protection des données (RGPD). Nous devrons donc nous
-conformer à ces dernières, c'est donc une contrainte juridique.\\
+conformer à ces dernières, c'est une contrainte juridique.\\
 
 \pagebreak
 
@@ -227,7 +226,8 @@ serait majeur puisqu'il impliquerait une redistribution du travail et une hausse
 \subsubsection{Risque matériel}
 
 La perte de documents est probable, une feuille égarée ou un disque dur défaillant sont des choses
-qui peuvent arriver. Il est probable que ce risque survienne et son impact serait critique car le travail
+qui peuvent arriver. Il est peu probable que ce risque survienne car la plupart des documents
+seront sous forme numérique et son impact serait critique car le travail
 devrait être refait, ce qui serait une perte de temps, une ressource précieuse dans
 ce projet. Sa criticité est alors substantielle.\\
 
@@ -238,8 +238,17 @@ majeur car cela pourrait mettre en danger les utilisateurs. Sa criticité est do
 
 \subsubsection{Plan de mitigation}
 
+Après avoir réalisé la matrice de criticité si dessous, nous avons décidé de mettre en place un plan
+de mitigation pour tous les risques en zone orange.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{images/matrice-criticite.png}
+  \caption{Matrice de criticite}
+  \label{fig:matrice criticite}
+\end{figure}
+
 Pour la perte de documents, nous choisissons la protection : nous mettrons en place une redondance
-des documents en numérisant tous les documents physiques et en les stockant dans le cloud, ainsi
+des documents en numérisant tous les documents physiques et en les stockant dans le \textit{cloud}, ainsi
 que sur le disque dur d’au moins deux de nos machines. Le code sera hébergé sur le dépôt Gricad-Gitlab ainsi que sur chacune de nos machines.
 
 Enfin, par rapport à l’utilisation du site pour des actes malveillants, nous transférerons le risque à des
@@ -290,7 +299,7 @@ Afin de permettre d'identifier les différents utilisateurs sur le site, un syst
 
 Pour vérifier la fiabilité des utilisateurs, nous avons pensé à un système de réputation avec un score numérique, qui serait un premier critère de confiance.\\
 
-Pour la vérification de l'identité, les utilisateurs pourraient se faire certifier via un tiers comme une mairie ou une association.\\
+Pour la vérification de l'identité, les utilisateurs pourraient se faire certifier par un tiers, comme une mairie ou une association.\\
 
 Et le moyen pour la vérification des compétences n'est pas encore défini avec exactitude, n'étant pas une de nos priorités, nous gardons cette fonctionnalité pour un développement futur. Nous envisageons une certification par diplômes (liée aux mairies notamment) et/ou la certification de compétences par les usagers.
 Si X personnes, après avoir bénéficié d'un service de la part d'un certain utilisateur, attestent que cet utilisateur est qualifié, alors la certification peut être donnée.
@@ -311,7 +320,7 @@ puisse trier les annonces par leur localisation.\\
 Il sera donc nécessaire, au moment de l'inscription d'un utilisateur ou de la consultation d'annonces, d'enregistrer sa localisation
 géographique, afin de lui proposer des annonces proches et, vice-versa, de proposer ses annonces aux gens proches de lui.\\
 
-On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
+On pourra récupérer la localisation de l'utilisateur par plusieurs moyens :\\
 \begin{itemize}
   \item Demander simplement la saisie d'une adresse
   \item Récupérer la localisation de l'appareil via la permission du navigateur.
@@ -319,10 +328,10 @@ On pourra récupérer la localisation de l'utilisateur par plusieurs moyens:\\
 
 \subsubsection{Prioritisation des besoins}
 
-Certains de ces besoins sont prioritaires.
-La gestion des comptes et des annonces étaient une priorité, car c'est pour ces besoins que l'utilisateur vient sur le site.
-La certification et les types de comptes viennent ensuite, car ce sont eux qui nous démarque de la concurrence.
-La localisation n'étant pas une priorité absolue, par manque de temps pour la développer et la tester, nous avons décidé de la retarder et de solidifier ce qui était déjà en place.
+Certains de ces besoins sont prioritaires.\\
+La gestion des comptes et des annonces étaient une priorité puisqu'ils constituent la base du service : l'utilisateur visite le site avant tout pour chercher ou créer des annonces.\\
+La certification et les types de comptes viennent ensuite, car ce sont ces points qui nous démarquent de la concurrence.\\
+La localisation n'étant pas une priorité absolue et nécessitant le recours à une API, par manque de temps pour la développer et la tester, nous avons décidé de retarder son ajout et de solidifier ce qui était déjà en place.\\
 
 %---------- Besoins non fonctionnels ------------
 
@@ -341,9 +350,9 @@ On pourra ou bien se connecter via un système d'authentification programmé par
 
 Il faudra aussi s'assurer que la partie logique du site soit stockée côté serveur, et de n'envoyer à la machine de l'utilisateur que les informations auxquelles il est censé avoir accès.\\
 
-\textbf{Maintenabilité}
+\textbf{Maintenabilité}\\
 
-Pour assurer une maintenabilité facile, nous avons mis en place un MVC.
+Pour assurer une maintenabilité facile, nous avons mis en place un modèle MVC.\\
 
 
 \textbf{Échelle du projet}\\
@@ -359,7 +368,7 @@ possible, en suivant notamment les critères ergonomiques de Bastien et Scapin.\
 
 \textbf{Guidage}\\
 
-Pour faciliter l'utilisation du site aux utilisateurs et éviter qu'ils ne se retrouvent perdus, ils sera important dans le design des pages du site, de s'assurer de bien disposer les informations essentielles au centre et en haut de la page, afin que ce soit la première chose que l'utilisateur voie sans avoir besoin de \textit{scroller}.\\
+Pour faciliter l'utilisation du site aux utilisateurs et éviter qu'ils ne se retrouvent perdus, il sera important dans le design des pages du site, de s'assurer de bien disposer les informations essentielles au centre et en haut de la page, afin que ce soit la première chose que l'utilisateur voie sans avoir besoin de \textit{scroller}.\\
 
 Il est important que l'utilisateur n'ait pas à se demander ce que l'on attend de lui, dès l'instant où il pose ses yeux sur la page, ce qu'il doit faire est clair.\\
 
@@ -375,7 +384,7 @@ choisissant des couleurs assez différentes.\\
 
 \textbf{Charge de travail}\\
 
-Il faudra en même temps éviter de surcharger ce haut de page, et n'y laisser que les informations essentielles, afin d'éviter de surcharger l'utilisateur d'informations.\\
+Il faudra en même temps éviter de surcharger ce haut de page, et n'y laisser que les informations essentielles, afin de ne pas surcharger l'utilisateur d'informations.\\
 
 \textbf{Cohérence}\\
 
@@ -399,10 +408,10 @@ niveau d’expertise demandé ou une estimation de durée.\\
 \subsubsection{Recherche d’annonces}
 
 Une page de recherche d’annonces sera disponible sur le site, et permettra aux utilisateurs de
-rechercher des annonces correspondantes à leurs attentes. Ils pourront trier les annonces par
+rechercher des annonces correspondantes à leurs attentes. Ils pourront filtrer les annonces par
 localisation, par date, par catégorie, et par type (proposition ou demande). Une fois que l’utilisateur
-a trouvé une annonce qui l'intéresse, il pourra ensuite entrer en communication avec celui qui a
-publié l’annonce via un chat textuel.\\
+a trouvé une annonce qui l'intéresse, il pourra ensuite prendre avec celui qui a
+publié l’annonce via un \textit{chat} textuel pour discuter des modalités du service.\\
 
 \subsubsection{Gestion de comptes}
 
@@ -436,8 +445,7 @@ par le public ciblé, notamment des personnes âgées.\\
 \pagebreak
 
 \subparagraph{En-tête}
-
-L'en-tête est composé du logo du site, d'une barre de recherche et de 3 boutons.
+--  L'en-tête est composé du logo du site, d'une barre de recherche et de 3 boutons.
 Avec seulement 5 éléments, nous réduisons la densité informationnelle.\\
 La barre de recherche et le bouton "Catégories" servent tous les deux à rechercher une
 annonce, l'un avec des mots-clés, l'autre en filtrant par catégorie, renforcant
@@ -445,23 +453,21 @@ la flexibilité.\\
 
 
 Si l'utilisateur est déjà connecté, les boutons "Se connecter" et "S'inscrire"
-sont remplacés par le nom de l'utilisateur et son icône de profil, qui seront
-cliquables afin d'accéder aux paramètres de son compte.\\
+sont remplacés par un bouton à son nom menant vers son profil.
+Ce dernier permet de modifier ses informations personnelles, et d'accéder à ses annonces et discussions.\\
 
 \subparagraph{Page d'accueil}
-
-La page d'accueil est composée d'une courte description du site, de quatre annonces et
-d'un bouton permettant d'atteindre la page d'affichage/filtrage des annonces.
+ --  La page d'accueil est composée d'une courte description du site, de quatre annonces et
+d'un bouton permettant d'atteindre la page d'affichage/filtrage de l'ensemble des annonces.
 Le fait d'avoir uniquement une courte description et ces quatre premières annonces
 dès l'arrivée sur le site renforce l'incitation, expliquant tout de suite à quoi sert
 le site.\\
 
-Les sections représentant les annonces comportent les informations importantes des
-annonces, notamment leur titre, leur catégorie et un badge présent près de la photo de profil
-de l'auteur de l'annonce témoignant de sa certification s'il en a une. La catégorie d'une annonce
-est en fait un bouton permettant d'accéder à toutes les annonces de la même catégorie,
-renforcant encore une fois la flexibilité avec le l'en-tête ; de plus, l'encadré entier de l'annonce
-est aussi un lien menant vers le détail de l'annonce.\\
+Les encadrés représentant les annonces comportent les informations importantes des
+annonces, notamment leur titre, type, catégorie, un aperçu de leur description,
+et un badge présent près de l'icône de profil de l'auteur de l'annonce témoignant de
+sa certification s'il en a une.\\
+La catégorie d'une annonce est en fait un bouton permettant d'accéder à toutes les annonces de cette catégorie, de même que le type ; cela renforce encore une fois la flexibilité. De plus, le titre remplit la même fonction que le bouton "Voir le détail" en menant à la page de l'annonce.\\
 
 \paragraph{Évaluation ergonomique}\mbox{} \\
 
@@ -517,7 +523,7 @@ Depuis chaque page, l'utilisateur pourra accéder aux pages d'un niveau inférie
 mais il pourra aussi retourner à la page d'accueil à tout moment en cliquant sur le logo de l'en-tête.
 
 Le design du site se veut le plus simple et épuré possible tout en gardant un bon guidage. Il se
-rapprocherait du flat ou material design.
+rapprocherait du Flat ou Material Design.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/page-accueil.png}
@@ -555,16 +561,20 @@ Les diagrammes de séquence de haut niveau permettent de mieux définir la dynam
 Pour faire le lien entre la base de données et les contrôleurs, on utilise plusieurs classes comme définies par le diagramme de classes ci-dessous,
 plus la classe DAO qui permet l'accès à la base de données (cette dernière n'apparaît pas pour des questions de visibilité) :\\
 
+\pagebreak
+
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/PHP/DC.png}
+  \includegraphics[width=200px]{../Conception/PHP/DC.png}
   \caption{Diagramme de classes}
   \label{fig:diagramme-classe-php}
 \end{figure}
 
-La classe Utilisateur contient les informations des utilisateurs. Un utilisateur peut crée des annonces, des messages et accéder aux réponses qui le concerne (soit d'une de ses annonces, soit d'une annonce auquel il a répondu).
+\pagebreak
+
+La classe Utilisateur contient les informations des utilisateurs. Un utilisateur peut crée des annonces, des messages et accéder aux réponses qui le concernent (soit d'une de ses annonces, soit d'une annonce à laquelle il a répondu).
 Une annonce appartient à une categorie.
 
-Pour la même raison, les \textit{getters} et \textit{setters} n'apparaissent pas, mais il y en a un pour chaque attribut.
+Pour la même raison de lisibilité, les \textit{getters} et \textit{setters} n'apparaissent pas, mais il y en a un pour chaque attribut.
 L'attribut \texttt{Date\_creation} sert à indiquer la date de création de l'annonce.
 En revanche, l'attribut \texttt{Date\_service} est optionnel dans le constructeur et sert à indiquer si l'annonce à un impératif de date.
 Par exemple, pour de la garde d'enfants, la plupart du temps cela s'effectue sur un jour précis si ce n'est pas hebdomadaire.\\
@@ -576,32 +586,32 @@ SERIAL est un type de données fourni par PostgreSQL qui sert à créer des ID, 
 
 Chaque relation est identifiée par un id.\\
 Une categorie a un nom.\\
-Un utilisateur posséde :
+Un utilisateur possède :
 \begin{itemize}
     \item Un email et un mot de passe lui servant à s'identifier sur le site.
-    \item Des informations personnelles tel que le nom, prénom, adresse qui serve à reconnaitre un utilisateur.
-    \item Un boolean certif servant à savoir si l'utilisateur est certifié ou non.
-    \item Une réputation qui pour l'instant n'est pas exploiter mais servira à terme à faciliter la confiance entre les utilisateurs.
+    \item Des informations personnelles telles que le nom, prénom, adresse qui servent à reconnaître un utilisateur.
+    \item Un booléen "certif" servant à savoir si l'utilisateur est certifié ou non.
+    \item Une réputation, qui pour l'instant n'est pas exploitée, mais servira à terme à faciliter la confiance entre les utilisateurs.
 \end{itemize}
 
-Un certificateur est un utilisateur qui ne peut pas créer d'annonce et ne posséde pas d'attribut adresse, certif, et reputation.\\
-Une annonce posséde :
+Un certificateur est un utilisateur qui ne peut pas créer d'annonce et ne possède pas d'attribut adresse, certif, et réputation.\\
+Une annonce possède :
 \begin{itemize}
-    \item Un nom et une description qui sert à caractériser la demande de l'utilisateur
-    \item Une adresse et une date de service qui sert à connaitre le lieu du service et la potentielle date désirée.
+    \item Un nom et une description qui servent à caractériser la demande de l'utilisateur
+    \item Une adresse et une date de service qui sert à connaître le lieu du service et la potentielle date désirée.
     \item Une date de création renseigne sur l'ancienneté d'une annonce.
     \item un id\_createur qui permet de retrouver les informations de l'utilisateur ayant créé l'annonce.
     \item un id\_categorie qui permet de retrouver la catégorie de l'annonce.
 \end{itemize}
 
-Un message posséde :
+Un message possède :
 \begin{itemize}
-    \item Une chaine de charactères contant ce qu'a écris l'utilisateur.
+    \item Une chaîne de charactères contenant le corps du message.
     \item Une date servant d'indication.
     \item Un id\_auteur permettant de retrouver les informations de l'utilisateur ayant créé le message.
 \end{itemize}
 
-La relation reponse sert à lier les relations message, annonce et utilisateur.
+La relation Reponse sert à lier les relations message, annonce et utilisateur.
 
 \subsection{Solutions techniques envisageables}
 
@@ -648,7 +658,6 @@ limiter la duplication des données. Ce type de relations et de schémas d'accè
 d'un modèle relationnel. Compte tenu du temps imparti et de nos connaissances,
 il est envisagé d’utiliser une base relationnelle simple et facilement intégrable avec PHP et
 dans un serveur NginX, comme PostgreSQL.\\
-\pagebreak
 
 Pour sécuriser l’accès aux services du site, il est nécessaire de mettre un place une authentification
 avec un accès en mode HTTPS pour protéger les données qui circuleront sur le réseau. Il existe
@@ -671,6 +680,8 @@ les choix que nous avons fais pour le projet. \\
   \label{fig:choix-techno}
 \end{figure}
 
+\pagebreak
+
 \subsection{Réalisations techniques}
 
 Compte tenu des choix techniques faits pour la réalisation (HTML/CSS, NginX, PHP, PostgreSQL) nous avons
@@ -684,8 +695,8 @@ Le partage du code, le stockage et la gestion des versions seront gérés par un
 Gricad-GitLab.\\
 
 Pour faciliter la mise en place d'un environnement de travail, nous avons créé une machine virtuelle
-reproduisant l'environnement du serveur de production (serveur web et base de données) et comprenant
-aussi tous les outils nécessaires au développement (éditeur de texte + git). Ainsi les développeurs
+reproduisant l'environnement du serveur de production (serveur Web et base de données) et comprenant
+aussi tous les outils nécessaires au développement (éditeur de texte + it). Ainsi les développeurs
 ont juste à lancer la machine virtuelle et peuvent directement commencer à coder et tester leur code.
 
 \subsection{Organisation du travail}
@@ -698,14 +709,14 @@ Cela permet de corriger au plus tôt les problèmes liés au partage des tâches
 
 \subsubsection{Découpage du projet}
 
-Pour la deuxième itération, le projet a été découpé en 3 parties. L’équipe sera divisée en 3 binômes.\\
+Pour la deuxième itération, le projet a été découpé en 3 parties. L’équipe a été divisée en 3 binômes.\\
 
 Ce choix de binôme permet une plus grande flexibilité et une parallélisation des tâches, tout en étant
 moins stressant que du travail seul.\\
 
-Sur ce diagramme, Alexandre et Lucas s'occuperont du visuel du site,
-Elian et Marion s'occuperont de la logique de fonctionnement et
-Eliott et Vincenzo s'occuperont du stockage des données.\\
+Sur ce diagramme, Alexandre et Lucas se sont occupés du visuel du site,
+Elian et Marion de la logique de fonctionnement et
+Eliott et Vincenzo du stockage des données.\\
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/gantt-iteration2.png}
@@ -714,9 +725,8 @@ Eliott et Vincenzo s'occuperont du stockage des données.\\
 \end{figure}
 
 Suite à cette itération, les trois équipes on pris du retard, le travail était trop conséquent pour le temps donné.\\
-En effet, tous les binômes ont du retard. L'équipe stockage des données a une semaine de retard.
-L'équipe logique de fonctionnement a dû sauter quelques formulaires, le retard est d'environ une semaine.
-Et l'équipe visuels n'a pas eu le temps de faire toutes les vues prévues, le retard est de deux semaines, car leur binôme était celui avec le plus de travail.
+Pendant la troisième itération, les équipes ont pu terminer leurs tâches, puis toute l'équipe a été de nouveau regroupée
+pour s'occuper des derniers détails et correction de bugs.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{images/gantt-iteration3.png}
@@ -753,12 +763,18 @@ dynamiques avec du HTML/CSS grâce à un serveur Web NginX.\\
 
 La fonctionnalité principale du service, à savoir la gestion d'annonces, est opérationnelle.\\
 
-Les utilisateurs connectés peuvent créer une annonce depuis le bouton "Créer une annonce" accessible n'importe où sur le site ; on leur demande alors de rentrer les informations relatives à leur annonce (titre, description, etc...) et leur annonce est enregistrée dans la base de donnée. Ces utilisateurs peuvent ensuite accéder aux annonces qu'ils ont déja créées depuis la page de leur profil.\\
+Les utilisateurs connectés peuvent créer une annonce depuis le bouton "Créer une annonce" accessible
+n'importe où sur le site ; on leur demande alors de rentrer les informations relatives à leur annonce
+(titre, description, etc...) et leur annonce est enregistrée dans la base de données.
+Ces utilisateurs peuvent ensuite accéder aux annonces qu'ils ont déja créées depuis la page de leur profil.\\
 
-Une page "Rechercher une annonce" affiche les annonces, récupérées dynamiquement depuis la base de données, sous forme d'aperçus (titre, catégorie, début de description) ; elle permet également de les filtrer par catégorie, ou de rechercher par mots-clés (pour l'instant assez sommaire).\\
+Une page "Rechercher une annonce" affiche les annonces, récupérées dynamiquement depuis la base de données,
+sous forme d'aperçus (titre, catégorie, début de description) ; elle permet également de les filtrer par catégorie,
+ou de rechercher par mots-clés (pour l'instant assez sommaire).\\
 
 Chaque aperçu d'annonce permet d'accéder à une page présentant plus en détails l'annonce en question.\\
-Depuis cette page, le créateur de l'annonce peut la modifier ou la supprimer ; les autres utilisateurs peuvent répondre à l'annonce (voir section "Messages") ou la signaler si elle est inapropriée.\\
+Depuis cette page, le créateur de l'annonce peut la modifier ou la supprimer ; les autres utilisateurs peuvent
+répondre à l'annonce (voir section "Messages") ou la signaler si elle est inapropriée.\\
 
 \subsection{Messages}
 
@@ -799,7 +815,7 @@ catégorie et type, mais ne peut actuellement spécifier une zone géographique.
 
 % ---------- secutite ----------
 \subsection{Sécurité}
-Avec l'expansion des systèmes informatiques, la sécurité est devenue essentielle. Pour cela, nous avons mis en place plusieurs systèmes à commencer par le hachage des mots de passe avant chaque accès en base (pour les entrer ou les comparer) pour que même s'il y a une fuite de sécurité, l'impact soit limité. Nous nous sommes aussi prévenue des les injections de code et nous avons passer le protocoles du site en https.
+Avec l'expansion des systèmes informatiques, la sécurité est devenue essentielle. Pour cela, nous avons mis en place plusieurs systèmes, à commencer par le hachage des mots de passe avant chaque accès en base (pour les entrer ou les comparer) pour que même s'il y a une fuite de sécurité, l'impact soit limité. Nous nous sommes aussi prévenus des injections de code et nous avons passé le protocole du site en HTTPS.
 
 % ---------- Guidage ----------
 \subsection{Guidage}
@@ -823,7 +839,7 @@ De même pour la gestion des erreurs:
 Pour pouvoir tester et évaluer notre site, nous l'avons fait tester à des membres de notre famille, à des amis, en essayant d'avoir la plus grande diversité de profils possible.
 Pour avoir une évaluation cohérente des différents testeurs, nous nous sommes basés sur les critères ergonomiques de Bastien et Scapin pour notre grille d'évaluation.
 Elle comprend donc : le guidage, le contrôle explicite, la gestion d'erreur, la charge de travail et l'homogénéité.
-Cependant, en ce qui concerne l'adaptabilité, nous avons décidé de ne pas en tenir compte pour garder une simplicité optimale. Nous n'avons pas non plus tenu compte de la compatibilité,
+Cependant, en ce qui concerne l'adaptabilité, nous avons décidé de ne pas en tenir compte et d'éviter une surcharge de paramètres et options pour garder une simplicité optimale. Nous n'avons pas non plus tenu compte de la compatibilité,
  car, visant un public de tout horizon, les habitudes et caractéristiques de chacun sont aussi nombreuses que variées. Il est donc difficile d'évaluer ce critère. En ce qui concerne les autres éléments,
  nous avons demandé aux testeurs d'attribuer une note sur dix par catégorie.\\
 
@@ -831,21 +847,23 @@ Cela nous donne une moyenne générale de 9.0/10 avec :\\
 \begin{itemize}
   \item Guidage : 8.78/10
   \item Contrôle explicite : 8.7/10
-  \item Gestion d'errur : 8.8/10
+  \item Gestion d'erreurs : 8.8/10
   \item Charge de travail : 9.4/10
   \item Signifiance des codes et dénominations : 9.4/10
   \item Homogeneité : 9.4/10
 \end{itemize}
 
+\pagebreak
+
 Nous avions aussi rédigé un petit scénario à suivre pour le test du site :
 \begin{enumerate}
   \item Rechercher une annonce existante en base
-  \item Tenter d'y repondre (ce qui est impossible sans être connecté)
+  \item Tenter d'y répondre (ce qui est impossible sans être connecté)
   \item Créer un compte
-  \item Répondre à l'annonce recherchée plutôt
+  \item Répondre à l'annonce recherchée plus tôt
   \item Créer une annonce
   \item La modifier
-  \item Modifier son compte (créé plutôt)
+  \item Modifier son compte (créé plus tôt)
   \item Supprimer son compte
   \item Signaler une annonce
 \end{enumerate}
@@ -853,13 +871,13 @@ Nous avions aussi rédigé un petit scénario à suivre pour le test du site :
 Le détail des notes et des profils pour chaque testeur se trouve en annexe.
 
 \paragraph{Bugs détectés non résolus}\mbox{} \\
-Il reste quelques problèmes qui n'ont pas été corigés bien que détectés au vu du temps restant,
+Il reste quelques problèmes qui n'ont pas été corrigés -- bien que détectés -- au vu du temps restant,
 et de leurs conséquences non critiques sur le fonctionnement du site.
 \begin{enumerate}
   \item Le menu déroulant des catégories est parfois vide mais semble dépendre du navigateur utilisé, il se corrige automatiquement en effectuant un retour arrière et en revenant
-  \item Si le détail de l'annonce est trop conséquent, test réalisé avec un texte de 2 Mo copié dans le champ detail, la page ne répond plus il faut une fermeture/rechargement de l'accueil
+  \item Si le détail de l'annonce est trop conséquent, test réalisé avec un texte de 2 Mo copié dans le champ Description, la page ne répond plus. il faut une fermeture/rechargement de l'accueil
   \item Le formatage du détail d'une annonce n'est pas conservé (les retours à la ligne n'apparaissent pas, contrairement au bloc d'édition de la modification d'annonce)
-  \item Lors de la modification d'une date au clavier si l'utilisateur rentre un numéro de jour au delà de 39 ou de mois au delà de 19 le chiffre des dizaines est pris comme chiffre des unités et le chiffre des unités passe à la catégorie suivante
+  \item Lors de la modification d'une date au clavier, si l'utilisateur rentre un numéro de jour au delà de 39 ou de mois au delà de 19 le chiffre des dizaines est pris comme chiffre des unités et le chiffre des unités passe à la catégorie suivante
 \end{enumerate}
 
 % ---------- Utilisation (pour les profs) ----------
@@ -1020,10 +1038,10 @@ Pwiic ne demande même pas de nom, l’utilisateur s’identifie par un pseudo.\
 AlloVoisins possèdent un système où un utilisateur est certifié par son numéro de téléphone,
 cela lui permet notamment d’accéder à la messagerie du site. (\href{https://support.allovoisins.com/hc/fr/articles/360000816614-Pourquoi-dois-je-certifier-mon-num%C3%A9ro-de-mobile-pour-pouvoir-acc%C3%A9der-%C3%A0-la-messagerie-}{source})
 
-\subsection{Diragramme de séquence}
+\subsection{Diagramme de séquence}
 
 \begin{figure}[H]
-  \includegraphics[width=\linewidth]{../Conception/DS_Connexion.png}
+  \includegraphics[width=400px]{../Conception/DS_Connexion.png}
   \caption{Diagramme de Séquence haut niveau représentant l'authentification}
   \label{fig:ds-connexion}
 \end{figure}
