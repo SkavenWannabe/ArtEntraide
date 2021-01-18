@@ -68,7 +68,7 @@ $nomCategorie = nom de la catégorie de l'annonce
       </div>
 
 
-      <?php if ($user instanceof Utilisateur): ?>
+      <?php if (!isset($user) || $user instanceof Utilisateur): ?>
         <div class="optionEtranger">
 
 
