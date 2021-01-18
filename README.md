@@ -167,7 +167,10 @@ Mot de passe: `vealemS3`
 
 ### Configuration du serveur (NGINX)
 
-```Nginx
+PROJECT_ROOT est le chemin du repo git cloné
+SERVER_NAME est l'url depuis laquelle le site sera accessible (localhost pour utilisation locale)
+
+```configuration
 server {
 
 	root PROJECT_ROOT/art-entraide;
@@ -177,7 +180,7 @@ server {
 
 	error_log /var/log/nginx/error.log;
 
-	server_name localhost 127.0.0.1;
+	server_name SERVER_NAME;
 
 	location / {
 		# First attempt to serve request as file, then
