@@ -115,13 +115,6 @@ Lors des rendus, le `rapport.pdf` est copié dans `docs/` pour ne plus être "gi
 
 Voir [le README dédié](https://gricad-gitlab.univ-grenoble-alpes.fr/iut2-info/m3301/2020-s3/team-9/rendus/-/blob/master/rapport/README.md) dans `rapport/` pour la syntaxe LaTeX.
 
-### Acces au site
-
-Le lien du site : https://art-entraide.ddns.net:8080
-
-Les identifiants des comptes utilisateurs sont pour le login "prenom.nom@iut2.univ-grenoble-alpes.fr" et le mot de passe est "ens".
-L'identifiant du comptes certificateur unique a pour login "ens@iut2.univ-grenoble-alpes.fr" et comme mot de passe "ens".
-
 ### Machine virtuelle
 
 Une machine virtuelle VirtualBox est mise à disposition pour tester le code
